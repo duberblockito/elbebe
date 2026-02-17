@@ -198,8 +198,7 @@ function renderHeader() {
     <header class="site-header" role="banner">
       <div class="header-content">
         <a href="../index.html" class="logo">
-          <span class="logo-icon">🎮</span>
-          <span data-i18n="siteTitle">${tText.siteTitle}</span>
+          <img src="/assets/images/logo-elbebe-co.png" alt="El Bebe Games" class="logo-img">
         </a>
         <nav class="header-nav" role="navigation" aria-label="Main navigation">
           <a href="../index.html" class="header-link" data-i18n="home">${tText.home}</a>
@@ -215,6 +214,13 @@ function renderHeader() {
         </nav>
       </div>
     </header>
+    
+    <!-- Brand Bar (Title Section) -->
+    <div class="brand-bar">
+      <div class="brand-content">
+        <h1 class="brand-title" data-i18n="siteTitle">${tText.siteTitle}</h1>
+      </div>
+    </div>
   `;
 
   // Insert header at the beginning of body

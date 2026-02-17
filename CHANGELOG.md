@@ -11,6 +11,17 @@ y este proyecto se adhiere a [Semantic Versioning](https://semver.org/lang/es/).
 -   Archivo `README.md` con información del proyecto.
 -   Archivo `CHANGELOG.md` para seguimiento de versiones.
 
+## [0.2.1] - 2026-02-17 (Mejoras Visuales y Técnicas)
+
+### Added
+-   **UI**: Nueva "Barra de Marca" separada del Header para mejorar la jerarquía visual y evitar problemas en móviles.
+-   **Mobile**: Ajuste en la posición `sticky` de los filtros para adaptarse al nuevo header.
+
+### Fixed
+-   **Mobile**: Corrección del apilamiento de texto en el logo (que anteriormente rompía el diseño).
+-   **Tech**: Movida la importación de fuentes CSS al inicio del archivo para cumplir estándares y eliminar warnings.
+-   **Seguridad**: Validación de ausencia de `eval()` y uso seguro de `setTimeout`.
+
 ## [0.2.0] - 2026-02-17 (Diseño y Branding)
 
 ### Added

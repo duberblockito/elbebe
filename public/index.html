@@ -12,6 +12,13 @@
     <meta property="og:title" content="elbebe: Juegos para Susana y Julieta">
     <meta property="og:description" content="Juegos divertidos y educativos para niños de 0 a 15 años">
 
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+
     <title data-i18n="siteTitle">elbebe: Juegos para Susana y Julieta</title>
 
     <!-- Stylesheets -->
@@ -23,7 +30,39 @@
     <a href="#games-grid" class="skip-link">Skip to main content</a>
 
     <main class="site-main" role="main">
-        <!-- Hero Section -->
+        
+        <!-- Age Filter Section (Moved Top) -->
+        <section class="filters-section">
+            <div class="filter-header">
+                <span class="filter-label" data-i18n="selectAge">Selecciona Edad:</span>
+            </div>
+            
+            <div class="age-filter" role="group" aria-label="Filter games by age">
+                <button class="age-filter-btn active" data-age="all" type="button" aria-pressed="true">
+                    <span data-i18n="allAges">Todas</span>
+                </button>
+                <button class="age-filter-btn" data-age="0-1" type="button" aria-pressed="false">
+                    <span data-i18n="ageGroups.0-1">0-1 años</span>
+                </button>
+                <button class="age-filter-btn" data-age="1-2" type="button" aria-pressed="false">
+                    <span data-i18n="ageGroups.1-2">1-2 años</span>
+                </button>
+                <button class="age-filter-btn" data-age="2-3" type="button" aria-pressed="false">
+                    <span data-i18n="ageGroups.2-3">2-3 años</span>
+                </button>
+                <button class="age-filter-btn" data-age="3-5" type="button" aria-pressed="false">
+                    <span data-i18n="ageGroups.3-5">3-5 años</span>
+                </button>
+                <button class="age-filter-btn" data-age="5-8" type="button" aria-pressed="false">
+                    <span data-i18n="ageGroups.5-8">5-8 años</span>
+                </button>
+                <button class="age-filter-btn" data-age="8-15" type="button" aria-pressed="false">
+                    <span data-i18n="ageGroups.8-15">8-15 años</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Hero Section (Featured Game) -->
         <section id="hero" class="hero">
             <h1 class="hero-title" data-i18n="heroTitle">¡Juegos Divertidos para Pequeños!</h1>
             <p class="hero-subtitle" data-i18n="heroSubtitle">
@@ -36,71 +75,8 @@
             <div class="loading-spinner"></div>
         </div>
 
-        <!-- Games Section -->
+        <!-- Games Grid -->
         <section id="games-section" class="games-section">
-            <h2 class="section-title" data-i18n="selectAge">Selecciona Edad:</h2>
-
-            <!-- Age Filter Buttons -->
-            <div class="age-filter" role="group" aria-label="Filter games by age">
-                <button
-                    class="age-filter-btn active"
-                    data-age="all"
-                    type="button"
-                    aria-pressed="true"
-                >
-                    <span data-i18n="allAges">Todas</span>
-                </button>
-                <button
-                    class="age-filter-btn"
-                    data-age="0-1"
-                    type="button"
-                    aria-pressed="false"
-                >
-                    <span data-i18n="ageGroups.0-1">0-1 años</span>
-                </button>
-                <button
-                    class="age-filter-btn"
-                    data-age="1-2"
-                    type="button"
-                    aria-pressed="false"
-                >
-                    <span data-i18n="ageGroups.1-2">1-2 años</span>
-                </button>
-                <button
-                    class="age-filter-btn"
-                    data-age="2-3"
-                    type="button"
-                    aria-pressed="false"
-                >
-                    <span data-i18n="ageGroups.2-3">2-3 años</span>
-                </button>
-                <button
-                    class="age-filter-btn"
-                    data-age="3-5"
-                    type="button"
-                    aria-pressed="false"
-                >
-                    <span data-i18n="ageGroups.3-5">3-5 años</span>
-                </button>
-                <button
-                    class="age-filter-btn"
-                    data-age="5-8"
-                    type="button"
-                    aria-pressed="false"
-                >
-                    <span data-i18n="ageGroups.5-8">5-8 años</span>
-                </button>
-                <button
-                    class="age-filter-btn"
-                    data-age="8-15"
-                    type="button"
-                    aria-pressed="false"
-                >
-                    <span data-i18n="ageGroups.8-15">8-15 años</span>
-                </button>
-            </div>
-
-            <!-- Games Grid -->
             <div id="gamesGrid" class="games-grid" role="list" aria-label="Available games">
                 <!-- Games will be dynamically loaded here -->
             </div>

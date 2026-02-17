@@ -22,6 +22,7 @@ Each game must be self-contained within its own directory under `/games/`.
 *   **No Frameworks**: Avoid external library dependencies like React, Vue, or Angular unless they are pre-compiled and bundled within the game folder.
 *   **Static Serving**: The game must run locally without a build step.
 *   **Responsiveness**: Games must be playable on Desktop, Tablet, and Mobile.
+    *   **CRITICAL**: Must look perfect on **375x667** (iPhone SE resolution).
     *   Use CSS Grid/Flexbox.
     *   Touch events must be supported.
 
