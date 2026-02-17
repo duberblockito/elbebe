@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Burbujas Pop 💙💚💛</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            overflow: hidden;
+            touch-action: none;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #87CEEB, #E0F6FF);
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+        }
+
+        #gameCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            touch-action: none;
+        }
+
+        #popCounter {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50px;
+            padding: 15px 25px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        #popCounter span {
+            font-size: 32px;
+        }
+
+        .instructions {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 50px;
+            padding: 12px 30px;
+            font-size: 18px;
+            color: #666;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 100;
+            text-align: center;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        .fade-out {
+            animation: fadeOut 3s forwards;
+        }
+
+        @keyframes fadeOut {
+            0% { opacity: 1; }
+            70% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="gameCanvas"></canvas>
+
+    <div id="popCounter">
+        <span>🫧</span> <span id="popCount">0</span>
+    </div>
+
+    <div class="instructions" id="instructions">
+        ¡Toca las burbujas! 🫧✨
+    </div>
+
+    <script>
+        // Configuración del juego
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        const popCounter = document.getElementById('popCount');
+
+        let bubbles = [];
+        let particles = [];
+        let popCount = 0;
+        let animationId;
+        let lastBubbleTime = 0;
+        const bubbleInterval = 800; // Nueva burbuja cada 800ms
+
+        // Colores de burbujas (translúcidos y brillantes)
+        const bubbleColors = [
+            { r: 0, g: 191, b: 255 },    // Azul brillante
+            { r: 0, g: 255, b: 127 },    // Verde primavera
+            { r: 255, g: 215, b: 0 },    // Dorado
+            { r: 255, g: 105, b: 180 },  // Rosa
+            { r: 218, g: 112, b: 214 },  // Púrpura
+            { r: 135, g: 206, b: 250 },  // Azul cielo
+            { r: 255, g: 127, b: 80 }    // Coral
+        ];
+
+        // Ajustar canvas a pantalla completa
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        // Clase Burbuja
+        class Bubble {
+            constructor() {
+                this.radius = Math.random() * 25 + 30; // 30-55px de radio
+                this.x = Math.random() * (canvas.width - 2 * this.radius) + this.radius;
+                this.y = canvas.height + this.radius + 20;
+                this.speed = Math.random() * 20 + 30; // 30-50px/s
+                this.color = bubbleColors[Math.floor(Math.random() * bubbleColors.length)];
+                this.wobble = Math.random() * Math.PI * 2;
+                this.wobbleSpeed = Math.random() * 0.5 + 1;
+                this.wobbleAmplitude = Math.random() * 20 + 10;
+                this.opacity = 0;
+                this.fadingIn = true;
+            }
+
+            update(deltaTime) {
+                // Movimiento hacia arriba
+                this.y -= this.speed * deltaTime;
+
+                // Movimiento ondulante
+                this.wobble += this.wobbleSpeed * deltaTime;
+                const wobbleOffset = Math.sin(this.wobble) * this.wobbleAmplitude;
+                this.x += wobbleOffset * deltaTime * 0.5;
+
+                // Fade in cuando aparece
+                if (this.fadingIn) {
+                    this.opacity += deltaTime * 2;
+                    if (this.opacity >= 0.7) {
+                        this.opacity = 0.7;
+                        this.fadingIn = false;
+                    }
+                }
+            }
+
+            draw() {
+                ctx.save();
+
+                // Sombra de la burbuja
+                ctx.beginPath();
+                ctx.arc(this.x + 3, this.y + 3, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(0, 0, 0, 0.1)`;
+                ctx.fill();
+
+                // Cuerpo de la burbuja
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                const gradient = ctx.createRadialGradient(
+                    this.x - this.radius * 0.3,
+                    this.y - this.radius * 0.3,
+                    0,
+                    this.x,
+                    this.y,
+                    this.radius
+                );
+                gradient.addColorStop(0, `rgba(${this.color.r}, ${this.color.g}, ${this.color.b}, ${this.opacity})`);
+                gradient.addColorStop(0.5, `rgba(${this.color.r}, ${this.color.g}, ${this.color.b}, ${this.opacity * 0.8})`);
+                gradient.addColorStop(1, `rgba(${this.color.r}, ${this.color.g}, ${this.color.b}, ${this.opacity * 0.3})`);
+                ctx.fillStyle = gradient;
+                ctx.fill();
+
+                // Reflejo de luz (destacado)
+                ctx.beginPath();
+                ctx.arc(
+                    this.x - this.radius * 0.3,
+                    this.y - this.radius * 0.3,
+                    this.radius * 0.2,
+                    0,
+                    Math.PI * 2
+                );
+                const reflectionGradient = ctx.createRadialGradient(
+                    this.x - this.radius * 0.3,
+                    this.y - this.radius * 0.3,
+                    0,
+                    this.x - this.radius * 0.3,
+                    this.y - this.radius * 0.3,
+                    this.radius * 0.2
+                );
+                reflectionGradient.addColorStop(0, `rgba(255, 255, 255, 0.8)`);
+                reflectionGradient.addColorStop(1, `rgba(255, 255, 255, 0)`);
+                ctx.fillStyle = reflectionGradient;
+                ctx.fill();
+
+                // Reflejo secundario (abajo a la derecha)
+                ctx.beginPath();
+                ctx.arc(
+                    this.x + this.radius * 0.4,
+                    this.y + this.radius * 0.4,
+                    this.radius * 0.1,
+                    0,
+                    Math.PI * 2
+                );
+                ctx.fillStyle = `rgba(255, 255, 255, 0.4)`;
+                ctx.fill();
+
+                ctx.restore();
+            }
+
+            containsPoint(px, py) {
+                const dx = this.x - px;
+                const dy = this.y - py;
+                return Math.sqrt(dx * dx + dy * dy) <= this.radius + 10; // +10px de margen
+            }
+        }
+
+        // Clase Partícula (confetti)
+        class Particle {
+            constructor(x, y, color) {
+                this.x = x;
+                this.y = y;
+                this.color = color;
+                this.size = Math.random() * 8 + 4;
+                this.speedX = (Math.random() - 0.5) * 200;
+                this.speedY = (Math.random() - 0.5) * 200 - 50; // Inicialmente hacia arriba
+                this.gravity = 300;
+                this.life = 1;
+                this.decay = Math.random() * 0.8 + 0.5;
+                this.rotation = Math.random() * Math.PI * 2;
+                this.rotationSpeed = (Math.random() - 0.5) * 10;
+            }
+
+            update(deltaTime) {
+                this.x += this.speedX * deltaTime;
+                this.y += this.speedY * deltaTime;
+                this.speedY += this.gravity * deltaTime;
+                this.life -= this.decay * deltaTime;
+                this.rotation += this.rotationSpeed * deltaTime;
+            }
+
+            draw() {
+                if (this.life <= 0) return;
+
+                ctx.save();
+                ctx.translate(this.x, this.y);
+                ctx.rotate(this.rotation);
+                ctx.globalAlpha = this.life;
+
+                // Dibujar partícula (estrella o cuadrado)
+                ctx.fillStyle = `rgb(${this.color.r}, ${this.color.g}, ${this.color.b})`;
+                if (Math.random() > 0.5) {
+                    // Cuadrado
+                    ctx.fillRect(-this.size / 2, -this.size / 2, this.size, this.size);
+                } else {
+                    // Círculo
+                    ctx.beginPath();
+                    ctx.arc(0, 0, this.size / 2, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+
+                ctx.restore();
+            }
+
+            isDead() {
+                return this.life <= 0;
+            }
+        }
+
+        // Sistema de audio
+        let audioContext;
+
+        function initAudio() {
+            if (!audioContext) {
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            }
+            if (audioContext.state === 'suspended') {
+                audioContext.resume();
+            }
+        }
+
+        function playPopSound(size) {
+            initAudio();
+
+            const oscillator = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
+
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+
+            // Frecuencia más baja para burbujas grandes
+            const baseFreq = 800 - size * 5; // 800-525 Hz
+            oscillator.frequency.setValueAtTime(baseFreq, audioContext.currentTime);
+            oscillator.frequency.exponentialRampToValueAtTime(baseFreq * 0.5, audioContext.currentTime + 0.1);
+
+            oscillator.type = 'sine';
+
+            gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.15);
+
+            oscillator.start(audioContext.currentTime);
+            oscillator.stop(audioContext.currentTime + 0.15);
+        }
+
+        function playWhooshSound() {
+            initAudio();
+
+            const oscillator = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
+
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+
+            oscillator.frequency.setValueAtTime(200, audioContext.currentTime);
+            oscillator.frequency.exponentialRampToValueAtTime(100, audioContext.currentTime + 0.3);
+
+            oscillator.type = 'triangle';
+
+            gainNode.gain.setValueAtTime(0.05, audioContext.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 0.3);
+
+            oscillator.start(audioContext.currentTime);
+            oscillator.stop(audioContext.currentTime + 0.3);
+        }
+
+        // Crear explosión de partículas
+        function createExplosion(x, y, color) {
+            const particleCount = Math.floor(Math.random() * 15) + 20; // 20-35 partículas
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle(x, y, color));
+            }
+        }
+
+        // Manejar eventos de toque/click
+        function handleInput(x, y) {
+            initAudio();
+
+            // Buscar la burbuja más cercana que fue tocada
+            for (let i = bubbles.length - 1; i >= 0; i--) {
+                if (bubbles[i].containsPoint(x, y)) {
+                    // Explotar burbuja
+                    const bubble = bubbles[i];
+                    playPopSound(bubble.radius);
+                    createExplosion(bubble.x, bubble.y, bubble.color);
+
+                    // Incrementar contador
+                    popCount++;
+                    popCounter.textContent = popCount;
+                    popCounter.style.animation = 'none';
+                    popCounter.offsetHeight; // Trigger reflow
+                    popCounter.style.animation = 'bounce 0.3s';
+
+                    // Remover burbuja
+                    bubbles.splice(i, 1);
+                    return;
+                }
+            }
+        }
+
+        // Event listeners para toque
+        canvas.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            for (let touch of e.changedTouches) {
+                handleInput(touch.clientX, touch.clientY);
+            }
+        }, { passive: false });
+
+        canvas.addEventListener('touchend', (e) => {
+            e.preventDefault();
+        }, { passive: false });
+
+        canvas.addEventListener('mousedown', (e) => {
+            handleInput(e.clientX, e.clientY);
+        });
+
+        // Fade out instructions
+        setTimeout(() => {
+            document.getElementById('instructions').classList.add('fade-out');
+            setTimeout(() => {
+                document.getElementById('instructions').style.display = 'none';
+            }, 3000);
+        }, 3000);
+
+        // Game loop
+        let lastTime = 0;
+
+        function gameLoop(timestamp) {
+            const deltaTime = Math.min((timestamp - lastTime) / 1000, 0.1); // Limitar a 100ms
+            lastTime = timestamp;
+
+            // Limpiar canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Crear nuevas burbujas
+            if (timestamp - lastBubbleTime > bubbleInterval) {
+                bubbles.push(new Bubble());
+                lastBubbleTime = timestamp;
+            }
+
+            // Actualizar y dibujar burbujas
+            for (let i = bubbles.length - 1; i >= 0; i--) {
+                bubbles[i].update(deltaTime);
+                bubbles[i].draw();
+
+                // Remover burbujas que salieron de la pantalla
+                if (bubbles[i].y < -bubbles[i].radius) {
+                    playWhooshSound();
+                    bubbles.splice(i, 1);
+                }
+            }
+
+            // Actualizar y dibujar partículas
+            for (let i = particles.length - 1; i >= 0; i--) {
+                particles[i].update(deltaTime);
+                particles[i].draw();
+
+                if (particles[i].isDead()) {
+                    particles.splice(i, 1);
+                }
+            }
+
+            animationId = requestAnimationFrame(gameLoop);
+        }
+
+        // Iniciar juego
+        animationId = requestAnimationFrame(gameLoop);
+
+        // Inicializar audio al primer interacción
+        document.addEventListener('click', initAudio, { once: true });
+        document.addEventListener('touchstart', initAudio, { once: true });
+    </script>
+</body>
+</html>
