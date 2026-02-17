@@ -38,8 +38,11 @@ elbebe/
 
 Para realizar cambios en el diseño o la lógica:
 
--   **Estilos**: Edita `public/css/style.css`.
 -   **Lógica**: Edita `public/js/home.js` (para la página principal) o `public/js/main.js` (funciones globales).
+
+## Licencia
+
+Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` para más detalles.
 
 ## 🤖 Prompt para Agentes de IA
 
