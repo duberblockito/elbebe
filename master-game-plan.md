@@ -113,6 +113,7 @@ This document outlines the development roadmap for the 41 games currently in the
 
 ---
 **Next Steps:**
-1. Select a game to start development (Recommended: **0-1-001 Burbujas Mágicas**).
-2. Set up the project structure for the selected game.
-3. Begin implementation phase.
+1.  **Check Queue**: detailed order is in `development-queue.md`.
+2.  **Next Game**: `1-2-001-poppit-burbujas` (after site redesign).
+3.  Set up the project structure for the selected game.
+4.  Begin implementation phase.

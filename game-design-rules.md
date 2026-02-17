@@ -82,9 +82,12 @@ All games must include a progression system suitable for children.
 - [ ] Thumbnail image exists.
 - [ ] Game works on mobile resize.
 - [ ] No console errors on load.
+- [ ] `CHANGELOG.md` updated with the new game release.
 
 ## 9. Definition of Done (Workflow)
 
 Once a game is fully implemented and tested:
 1.  **Move Backlog File**: The original game plan file (e.g., `games-backlog/0-1-001-burbujas.md`) MUST be moved to the `/games-done/` directory.
 2.  **Update Master Plan**: Mark the game as "✅ Done" in `master-game-plan.md`.
+3.  **Update Queue**: Increment the count in `development-queue.md` and check off the game.
+4.  **Update Changelog**: Add an entry to `CHANGELOG.md` (e.g., "Added game [Name] to [Age Group]").

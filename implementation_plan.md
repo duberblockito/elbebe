@@ -77,7 +77,9 @@ Since we cannot use server-side rendering or frameworks, we will use a simple cl
 3.  Create `index.html` skeleton with Dynamic Selector logic.
 4.  Create `game-design-rules.md` (Done).
 5.  Create `test-plan.md` (Done).
-6.  Create a "Template Game" to verify the structure.
+6.  **Create `development-queue.md`** (Done - defines "Round Robin" strategy).
+7.  Create a "Template Game" to verify the structure.
+8.  Create Legal/About pages.
 7.  Create Legal/About pages.
 
 ## 6. Verification Plan
