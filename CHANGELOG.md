@@ -11,6 +11,22 @@ y este proyecto se adhiere a [Semantic Versioning](https://semver.org/lang/es/).
 -   Archivo `README.md` con información del proyecto.
 -   Archivo `CHANGELOG.md` para seguimiento de versiones.
 
+## [0.2.0] - 2026-02-17 (Diseño y Branding)
+
+### Added
+-   **Branding**: Título actualizado a "elbebe: Juegos diseñados para Susana y Julieta".
+-   **Diseño**: Nuevo tema visual colorido ("Kid-Friendly"), tipografía `Comic Neue` y `Nunito`, y botones "chunky".
+-   **Bilingüe**: Soporte completo ES/EN en Header, Footer, Home, Privacidad, Términos y About.
+-   **Documentación**:
+    -   `development-queue.md` para estrategia Balanceada (Round Robin).
+    -   Prompt para Agentes IA en `README.md`.
+    -   Reglas de Registro en `game-design-rules.md`.
+-   **Página About**: Historia personal del creador.
+
+### Changed
+-   Actualizada lógica de cambio de idioma en `main.js` para ser instantánea y recursiva.
+-   Mejorada la accesibilidad con etiquetas `aria` y contrastes de color.
+
 ## [0.1.0] - 2026-02-17
 
 ### Added

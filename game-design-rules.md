@@ -42,6 +42,28 @@ Every game must include a `manifest.json` file in its root directory. This is us
 }
 ```
 
+## 4. Game Registration (CRITICAL)
+
+**IMPORTANT:** Simply creating the folder is NOT enough. You must register the game in the central registry.
+
+1.  Open `public/js/games-list.json`.
+2.  Add a new entry to the `games` array with the metadata (same as manifest).
+3.  **Validate JSON**: Ensure comma separation is correct.
+
+Example:
+```json
+{
+  "games": [
+    { ... existing games ... },
+    {
+      "id": "my-new-game",
+      "title": "Super Fun Adventure",
+      ...
+    }
+  ]
+}
+```
+
 ## 4. Game Interface
 
 *   **Entry Point**: Must be `index.html`.
@@ -79,15 +101,21 @@ All games must include a progression system suitable for children.
 - [ ] Folder name is lowercase-kebab-cased.
 - [ ] `index.html` exists and works.
 - [ ] `manifest.json` is valid.
+- [ ] **Registered in `public/js/games-list.json`**.
 - [ ] Thumbnail image exists.
 - [ ] Game works on mobile resize.
 - [ ] No console errors on load.
+- [ ] No console errors on load.
 - [ ] `CHANGELOG.md` updated with the new game release.
+- [ ] `SITE_VERSION` updated in `public/js/main.js`.
 
 ## 9. Definition of Done (Workflow)
 
 Once a game is fully implemented and tested:
-1.  **Move Backlog File**: The original game plan file (e.g., `games-backlog/0-1-001-burbujas.md`) MUST be moved to the `/games-done/` directory.
-2.  **Update Master Plan**: Mark the game as "✅ Done" in `master-game-plan.md`.
-3.  **Update Queue**: Increment the count in `development-queue.md` and check off the game.
-4.  **Update Changelog**: Add an entry to `CHANGELOG.md` (e.g., "Added game [Name] to [Age Group]").
+1.  **Register Game**: Add the game entry to `public/js/games-list.json`.
+2.  **Move Backlog File**: The original game plan file (e.g., `games-backlog/0-1-001-burbujas.md`) MUST be moved to the `/games-done/` directory.
+3.  **Update Master Plan**: Mark the game as "✅ Done" in `master-game-plan.md`.
+4.  **Update Queue**: Increment the count in `development-queue.md` and check off the game.
+5.  **Update Changelog & Version**:
+    *   Add an entry to `CHANGELOG.md` (e.g., "Added game [Name] to [Age Group]").
+    *   **CRITICAL**: Update the `SITE_VERSION` constant in `public/js/main.js` to match the new version in the changelog.

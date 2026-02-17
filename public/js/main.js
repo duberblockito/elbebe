@@ -38,7 +38,7 @@ const SUPPORTED_LANGUAGES = ['es', 'en'];
  */
 const translations = {
   es: {
-    siteTitle: 'El Bebe Games',
+    siteTitle: 'elbebe: Juegos para Susana y Julieta',
     home: 'Inicio',
     about: 'Sobre Nosotros',
     terms: 'Términos',
@@ -62,7 +62,7 @@ const translations = {
     madeWithLove: 'Hecho con '
   },
   en: {
-    siteTitle: 'El Bebe Games',
+    siteTitle: 'elbebe: Games for Susana and Julieta',
     home: 'Home',
     about: 'About',
     terms: 'Terms',
@@ -82,7 +82,7 @@ const translations = {
     play: 'Play!',
     noGames: 'No games available in this category',
     loading: 'Loading games...',
-    copyright: '© 2025 El Bebe Games. All rights reserved.',
+    copyright: '© 2025 elbebe. All rights reserved.',
     madeWithLove: 'Made with '
   }
 };
@@ -121,6 +121,13 @@ function toggleLanguage() {
 }
 
 /**
+ * Helper to get nested object value by string key
+ */
+function getNestedValue(obj, key) {
+  return key.split('.').reduce((o, i) => (o ? o[i] : null), obj);
+}
+
+/**
  * Update page text based on language
  */
 function updatePageLanguage(lang) {
@@ -129,8 +136,11 @@ function updatePageLanguage(lang) {
   // Update elements with data-i18n attribute
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
-    if (t[key]) {
-      el.textContent = t[key];
+    // Try direct key first, then nested
+    const text = t[key] || getNestedValue(t, key);
+    
+    if (text) {
+      el.textContent = text;
     }
   });
 
@@ -141,6 +151,15 @@ function updatePageLanguage(lang) {
 
   // Update HTML lang attribute
   document.documentElement.lang = lang;
+
+// Update language-specific content blocks
+  document.querySelectorAll('.lang-content').forEach(el => {
+    if (el.getAttribute('lang') === lang) {
+      el.style.display = 'block';
+    } else {
+      el.style.display = 'none';
+    }
+  });
 
   // Dispatch custom event for other scripts to listen
   window.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang } }));
@@ -212,6 +231,8 @@ function renderHeader() {
 // Footer Component
 // ============================================
 
+const SITE_VERSION = '0.2.0';
+
 /**
  * Render the site footer
  */
@@ -229,6 +250,8 @@ function renderFooter() {
         </div>
         <p class="footer-copyright">
           <span data-i18n="copyright">${tText.copyright}</span>
+          <br>
+          <span class="site-version" style="font-size: 0.8rem; opacity: 0.7;">v${SITE_VERSION}</span>
         </p>
       </div>
     </footer>
@@ -254,7 +277,9 @@ function loadSharedComponents() {
   renderFooter();
 
   // Set initial language state
-  updateLanguageToggle(getCurrentLanguage());
+  const currentLang = getCurrentLanguage();
+  updateLanguageToggle(currentLang);
+  updatePageLanguage(currentLang);
 
   // Make translation function available globally
   window.t = t;

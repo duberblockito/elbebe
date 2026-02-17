@@ -40,3 +40,37 @@ Para realizar cambios en el diseño o la lógica:
 
 -   **Estilos**: Edita `public/css/style.css`.
 -   **Lógica**: Edita `public/js/home.js` (para la página principal) o `public/js/main.js` (funciones globales).
+
+## 🤖 Prompt para Agentes de IA
+
+Si utilizas un asistente de IA para desarrollar nuevos juegos, usa este prompt para garantizar que siga los estándares del proyecto:
+
+```text
+Actúa como un Experto en Desarrollo de Juegos Web y UX Infantil.
+Tu objetivo es desarrollar el siguiente juego en la cola de producción.
+
+Por favor, lee y analiza los siguientes archivos de contexto antes de empezar:
+
+1.  CONTEXTO DE COLA (Qué juego sigue):
+    @[development-queue.md]
+    (Identifica el juego marcado como [NEXT] en la sección "Próximos Juegos")
+
+2.  REGLAS DE DISEÑO (Estándares Técnicos):
+    @[game-design-rules.md]
+    (Sigue estrictamente estas reglas: HTML/CSS/JS puro, estructura de carpetas, responsividad móvil)
+
+3.  ESPECIFICACIONES DEL JUEGO (Mecánicas y Assets):
+    (Identifica el archivo correspondiente en games-backlog/ según el ID del juego)
+
+4.  REGISTRO CENTRAL (Integración):
+    @[public/js/games-list.json]
+    (Archivo donde DEBES registrar el juego nuevo para que aparezca en el home)
+
+TAREA:
+Implementa de principio a fin el siguiente juego.
+Asegúrate de:
+1. Crear la carpeta y archivos en 'public/games/[id-juego]/'.
+2. Implementar la lógica y diseño según el backlog.
+3. Registrar el juego en 'games-list.json' (CRÍTICO).
+4. Actualizar 'CHANGELOG.md' y marcarlo como hecho en 'development-queue.md'.
+```
