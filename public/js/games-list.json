@@ -1,0 +1,19 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2025-02-17",
+  "games": [
+    {
+      "id": "burbujas-magicas",
+      "title": "Burbujas Mágicas",
+      "title_en": "Magic Bubbles",
+      "description": "¡Herramientas de colores flotantes que explotan con sonidos suaves cuando las tocas!",
+      "description_en": "Colorful floating bubbles that pop with soft sounds when you touch them!",
+      "category": "sensory",
+      "author": "El Bebe Games",
+      "version": "1.0.0",
+      "thumbnail": "thumbnail.svg",
+      "recommended_age": "0-1",
+      "tags": ["touch", "colors", "sounds", "sensory"]
+    }
+  ]
+}

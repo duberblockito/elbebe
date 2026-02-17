@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Juego de burbujas mágicas para bebés - Magic bubbles game for babies">
+    <title>Burbujas Mágicas - El Bebe Games</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: fixed;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(180deg, #87CEEB 0%, #E0F7FA 50%, #B2EBF2 100%);
+        }
+
+        #gameCanvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        /* HUD - Heads Up Display */
+        .hud {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .level-display {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            font-weight: bold;
+            color: #FF6B6B;
+            font-size: 1rem;
+        }
+
+        /* Progress bars container */
+        .bars-container {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .bar-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .bar-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .bar-label {
+            font-size: 0.85rem;
+            color: #666;
+            min-width: 60px;
+        }
+
+        .bar-value {
+            font-weight: bold;
+            color: #FF6B6B;
+            min-width: 50px;
+            text-align: right;
+        }
+
+        .bar-bg {
+            flex: 1;
+            height: 14px;
+            background: #E0E0E0;
+            border-radius: 7px;
+            overflow: hidden;
+        }
+
+        .bar-fill {
+            height: 100%;
+            border-radius: 7px;
+            transition: width 0.3s ease, background 0.3s ease;
+            width: 0%;
+        }
+
+        #progressBar {
+            background: linear-gradient(90deg, #FF6B6B, #4ECDC4);
+        }
+
+        #timerBar {
+            background: linear-gradient(90deg, #4ECDC4, #22C55E);
+        }
+
+        /* Celebration effect */
+        .celebration {
+            position: fixed;
+            font-size: 4rem;
+            animation: celebrate 0.5s ease-out;
+            pointer-events: none;
+            z-index: 20;
+        }
+
+        @keyframes celebrate {
+            0% { transform: translate(-50%, -50%) scale(0); opacity: 1; }
+            50% { transform: translate(-50%, -50%) scale(1.5); opacity: 1; }
+            100% { transform: translate(-50%, -50%) scale(1); opacity: 0; }
+        }
+
+        /* Back button */
+        .back-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s;
+            z-index: 10;
+        }
+
+        .back-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* Instructions */
+        .instructions {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            z-index: 100;
+            animation: fadeInOut 5s ease-in-out forwards;
+        }
+
+        .instructions .emoji {
+            font-size: 4rem;
+            animation: bounce 1s ease-in-out infinite;
+        }
+
+        .instructions h2 {
+            color: #FF6B6B;
+            margin: 10px 0;
+            font-size: 1.5rem;
+        }
+
+        .instructions p {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        @keyframes fadeInOut {
+            0% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+            10%, 85% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+            100% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Modals */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 200;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 25px;
+            padding: 30px;
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            animation: popIn 0.3s ease-out;
+        }
+
+        @keyframes popIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .modal-emoji {
+            font-size: 4rem;
+            margin-bottom: 15px;
+        }
+
+        .modal-title {
+            color: #FF6B6B;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .modal-message {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .modal-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .modal-btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 15px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .modal-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #FF6B6B, #4ECDC4);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: #E0E0E0;
+            color: #666;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Canvas for bubbles -->
+    <canvas id="gameCanvas"></canvas>
+
+    <!-- HUD -->
+    <div class="hud">
+        <div class="level-display">
+            <span>Nivel <span id="levelNumber">1/5</span></span>
+        </div>
+        <div class="bars-container">
+            <div class="bar-row">
+                <span class="bar-label">Burbujas</span>
+                <div class="bar-bg">
+                    <div class="bar-fill" id="progressBar"></div>
+                </div>
+                <span class="bar-value"><span id="targetBubbles">0</span>/<span id="targetNeeded">5</span></span>
+            </div>
+            <div class="bar-row">
+                <span class="bar-label">Tiempo</span>
+                <div class="bar-bg">
+                    <div class="bar-fill" id="timerBar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Instructions -->
+    <div class="instructions" id="instructions">
+        <div class="emoji">🫧</div>
+        <h2>¡Toca las burbujas!</h2>
+        <p>¡Completa el objetivo antes de que se acabe el tiempo!</p>
+    </div>
+
+    <!-- Back button -->
+    <button class="back-btn" id="backBtn">🏠</button>
+
+    <!-- Level Complete Modal -->
+    <div class="modal" id="levelCompleteModal">
+        <div class="modal-content">
+            <div class="modal-emoji">🎉</div>
+            <h2 class="modal-title" id="levelCompleteTitle">¡Nivel Completado!</h2>
+            <p class="modal-message" id="levelCompleteMessage">¡Hiciste 5 burbujas!</p>
+            <div class="modal-buttons">
+                <button class="modal-btn btn-secondary" id="menuBtn">Menú</button>
+                <button class="modal-btn btn-primary" id="nextLevelBtn">Siguiente →</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Over Modal -->
+    <div class="modal" id="gameOverModal">
+        <div class="modal-content">
+            <div class="modal-emoji">⏰</div>
+            <h2 class="modal-title" id="gameOverTitle">¡Se Acabó el Tiempo!</h2>
+            <p class="modal-message" id="gameOverMessage">Hiciste 3 de 5 burbujas.</p>
+            <div class="modal-buttons">
+                <button class="modal-btn btn-secondary" onclick="window.goToMenu()">Menú</button>
+                <button class="modal-btn btn-primary" id="retryBtn">Intentar de Nuevo</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Complete Modal -->
+    <div class="modal" id="gameCompleteModal">
+        <div class="modal-content">
+            <div class="modal-emoji">🏆</div>
+            <h2 class="modal-title" id="gameCompleteTitle">¡Felicidades!</h2>
+            <p class="modal-message" id="gameCompleteMessage">¡Completaste todos los niveles!</p>
+            <div class="modal-buttons">
+                <button class="modal-btn btn-primary" onclick="window.goToMenu()">Volver al Menú</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game script -->
+    <script src="js/game.js"></script>
+</body>
+</html>

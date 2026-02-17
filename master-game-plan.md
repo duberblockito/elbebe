@@ -15,7 +15,7 @@ This document outlines the development roadmap for the 41 games currently in the
 
 | ID | Game Name | Concept | Status |
 |----|-----------|---------|--------|
-| 001 | **Burbujas Mágicas** | Pop bubbles with simple taps. | 📝 Ready |
+| 001 | **Burbujas Mágicas** | Pop bubbles with simple taps. | ✅ Done |
 | 002 | **Caja de Sonidos** | Tap box to hear animals. | 📝 Ready |
 | 003 | **Colores que Vibran** | Color changes on tap. | 📝 Ready |
 | 004 | **Peek-a-Boo** | Animals hide and appear. | 📝 Ready |

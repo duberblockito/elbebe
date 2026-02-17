@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sobre nosotros - El Bebe Games">
+    <title>Sobre Nosotros - El Bebe Games</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <style>
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: var(--spacing-xl);
+            text-align: center;
+        }
+        .about-hero {
+            font-size: 4rem;
+            margin-bottom: var(--spacing-lg);
+            animate-bounce: true;
+        }
+        .about-content h1 {
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-lg);
+        }
+        .about-content h2 {
+            color: var(--color-secondary);
+            margin-top: var(--spacing-xl);
+            margin-bottom: var(--spacing-md);
+        }
+        .about-content p {
+            line-height: 1.8;
+            margin-bottom: var(--spacing-md);
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+            margin: var(--spacing-xl) 0;
+        }
+        .feature-card {
+            background: var(--color-card-bg);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            box-shadow: 0 4px 15px var(--color-shadow);
+            transition: transform var(--transition-bounce);
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: var(--spacing-sm);
+        }
+        .feature-title {
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-xs);
+        }
+        .mission-box {
+            background: linear-gradient(135deg, var(--color-bg-alt), var(--color-bg));
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            margin: var(--spacing-xl) 0;
+        }
+    </style>
+</head>
+<body>
+    <main class="site-main">
+        <div class="about-content">
+            <div class="about-hero animate-bounce">🎮</div>
+            <h1 data-i18n="about">Sobre Nosotros</h1>
+
+            <div class="mission-box">
+                <h2>Nuestra Misión</h2>
+                <p>
+                    El Bebe Games es un portal de juegos seguros, gratuitos y educativos
+                    diseñados específicamente para niños de 0 a 15 años. Creemos en el poder
+                    del juego para aprender, crecer y desarrollar habilidades importantes.
+                </p>
+            </div>
+
+            <h2>Lo Que Ofrecemos</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">👶</div>
+                    <div class="feature-title">Para Todas las Edades</div>
+                    <p>Juegos adaptados a cada etapa de desarrollo, desde bebés hasta preadolescentes.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <div class="feature-title">Diseño Colorido</div>
+                    <p>Interfaz amigable con colores brillantes y animaciones divertidas.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <div class="feature-title">Responsive</div>
+                    <p>Funciona perfectamente en tablets, móviles y computadoras de escritorio.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <div class="feature-title">Seguro</div>
+                    <p>Sin anuncios, sin compras integradas, sin recopilación de datos personales.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <div class="feature-title">Bilingüe</div>
+                    <p>Disponible en español e inglés para familias bilingües.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎓</div>
+                    <div class="feature-title">Educativo</div>
+                    <p>Juegos que desarrollan habilidades cognitivas, motoras y sociales.</p>
+                </div>
+            </div>
+
+            <h2>Categorías de Juegos</h2>
+            <p>
+                Nuestros juegos están organizados por grupos de edad para facilitar
+                la búsqueda del contenido apropiado:
+            </p>
+            <ul style="list-style: none; padding: 0;">
+                <li><strong>0-1 años:</strong> Juegos sensoriales simples con sonidos y colores</li>
+                <li><strong>1-2 años:</strong> Primeras interacciones y descubrimientos</li>
+                <li><strong>2-3 años:</strong> Exploración y habilidades motoras básicas</li>
+                <li><strong>3-5 años:</strong> Juegos de aprendizaje y creatividad</li>
+                <li><strong>5-8 años:</strong> Desafíos cognitivos y resolución de problemas</li>
+                <li><strong>8-15 años:</strong> Aventuras más complejas y proyectos creativos</li>
+            </ul>
+
+            <h2>Tecnología</h2>
+            <p>
+                El Bebe Games está construido con tecnologías web modernas:
+            </p>
+            <ul style="list-style: none; padding: 0;">
+                <li>✓ HTML5, CSS3 y JavaScript puro</li>
+                <li>✓ Sitio estático para máxima seguridad</li>
+                <li>✓ Sin dependencias externas pesadas</li>
+                <li>✓ Funciona offline (Service Workers próximamente)</li>
+            </ul>
+
+            <h2>Contacto</h2>
+            <p>
+                ¿Tienes preguntas, sugerencias o quieres reportar un problema?
+                Estamos siempre buscando mejorar y hacer la experiencia mejor para los pequeños.
+            </p>
+            <p style="margin-top: var(--spacing-lg);">
+                <a href="../index.html" class="header-link">← Volver al inicio</a>
+            </p>
+        </div>
+    </main>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
