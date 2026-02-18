@@ -2,7 +2,7 @@
 
 **Fecha reportado:** 2026-02-18 18:40 UTC
 **Reporter:** Blockito AI (QA)
-**Estado:** [Reported]
+**Estado:** [Fixed & Committed]
 **Severidad:** ALTA
 **Juego afectado:** 002-animalitos-suenan (Animalitos que Suenan - 1-2 Años)
 

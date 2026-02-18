@@ -2,7 +2,7 @@
 
 **Fecha reportado:** 2026-02-18 18:40 UTC
 **Reporter:** Blockito AI (QA)
-**Estado:** [Reported]
+**Estado:** [Fixed & Committed]
 **Severidad:** ALTA
 **Juego afectado:** 001-pinta-nubes (Pinta las Nubes - 2-3 Años)
 
