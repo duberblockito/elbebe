@@ -2,6 +2,58 @@
 
 ---
 
+## [v1.4.0] - 2026-02-18 13:40 UTC (Bogotá)
+
+### ✨ Nuevo Juego Implementado
+
+**Juego:** animalitos-suenan (Animalitos que Suenan)
+**Categoría:** 1-2 Años (Toddlers)
+**Fuente del plan:** Idea #2 de `/games-backlog/1-2/002-animalitos-suenan.md`
+
+**Descripción:**
+Orquesta de animales que se iluminan y suenan al tocarlos. Incluye 5 niveles progresivos, sistema de puntuación, temporizador visual y persistencia en localStorage. Los niños tocan los animales para escuchar sus sonidos característicos mientras avanzan por niveles.
+
+**Características implementadas:**
+- ✅ Sistema de 5 niveles progresivos (30-50s por nivel)
+- ✅ Temporizador visual con barra de tiempo (verde → naranja → roja según restante)
+- ✅ Sistema de puntuación (contador de animales tocados)
+- ✅ Persistencia en localStorage (`animalitos-suenan-progress`)
+- ✅ Touch events optimizados para móviles (tap, multi-touch)
+- ✅ Diseño responsivo (Desktop, Tablet, Móvil)
+- ✅ 5 sonidos de animales sintetizados con Web Audio API (vaca, perro, gato, pájaro, pato)
+- ✅ Modales: Nivel Completado, Tiempo Agotado, Juego Completado
+- ✅ Efectos visuales y audio (animaciones de pulso al tocar, iluminación de animales)
+- ✅ Game Over al terminar todos los niveles
+
+**Archivos creados:**
+- `games/animalitos-suenan/index.html` (Punto de entrada HTML)
+- `games/animalitos-suenan/game.js` (Lógica del juego - 16.2 KB)
+- `games/animalitos-suenan/game.css` (Estilos - 8.0 KB)
+- `games/animalitos-suenan/manifest.json` (Metadatos - 0.6 KB)
+- `games/animalitos-suenan/thumbnail.svg` (Thumbnail SVG animado - 6.3 KB)
+
+**Tecnologías utilizadas:**
+- HTML5 (semántico)
+- JavaScript ES6+ (Web Audio API, localStorage, touch events)
+- CSS3 (flexbox, grid, animaciones, media queries)
+- SVG (thumbnail animado)
+- Responsive design (375x667px base para iPhone SE)
+
+**Cumplimiento de reglas de diseño (game-design-rules.md):**
+- ✅ Sección 7 (Levels & Progression): Niveles progresivos, temporizador visual, persistencia
+- ✅ Sección 2 (Technical Requirements): HTML/CSS/JS puro, touch events, Web Audio API
+- ✅ Sección 4 (Game Registration): Registrado en `games-list.json`
+- ✅ Sección 9 (Accessibility): Objetivos grandes (80x80px mínimo), alto contraste
+- ✅ Sección 10 (Mobile First): Touch events, diseño responsivo, sin gestos complejos
+
+**Valor educativo:**
+- Exploración auditiva (identificación de sonidos de animales)
+- Causa-efecto básico (tocar → sonido)
+- Atención sostenida (30-50s por nivel)
+- Reconocimiento de animales
+
+---
+
 ## [v1.3.0] - 2026-02-18 06:30 UTC (Bogotá)
 
 ### ✨ Nuevo Juego Implementado

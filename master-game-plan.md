@@ -23,7 +23,7 @@ This document outlines the development roadmap for the 41 games currently in the
 | ID | Game Name | Concept | Status |
 |----|-----------|--------|
 | 001 | **Poppit! Burbujas** | Advanced bubble popping. | ✅ Done |
-| 002 | **Animalitos que Suenan** | Animal orchestra. | 📝 Ready |
+| 002 | **Animalitos que Suenan** | Animal orchestra. | ✅ Done |
 
 ## 👦 2-3 Years (Preschoolers)
 

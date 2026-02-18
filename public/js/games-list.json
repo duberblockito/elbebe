@@ -1,5 +1,5 @@
 {
-  "version": "1.3.0",
+  "version": "1.4.0",
   "lastUpdated": "2026-02-18",
   "games": [
     {
@@ -92,6 +92,19 @@
       "thumbnail": "thumbnail.svg",
       "recommended_age": "0-1",
       "tags": ["touch", "sounds", "animals", "objects"]
+    },
+    {
+      "id": "animalitos-suenan",
+      "title": "Animalitos que Suenan",
+      "title_en": "Animals that Sound",
+      "description": "Orquesta de animales que se iluminan y suenan al tocarlos. Incluye 5 niveles progresivos, sistema de puntuación y temporizador visual.",
+      "description_en": "Orchestra of animals that illuminate and play sounds when touched. Includes 5 progressive levels, scoring system, and visual timer.",
+      "category": "sensory",
+      "author": "El Bebe Games",
+      "version": "1.0.0",
+      "thumbnail": "thumbnail.svg",
+      "recommended_age": "1-2",
+      "tags": ["touch", "sounds", "animals", "levels", "timer", "progress"]
     }
   ]
 }

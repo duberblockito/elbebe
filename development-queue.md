@@ -34,7 +34,7 @@ La estrategia de desarrollo sigue un ciclo "Round Robin" entre las categorías d
 | Categoría | Terminados | Meta Actual |
 | :--- | :---: | :---: |
 | 0-1 Años | 2 | 2 |
-| 1-2 Años | 1 | 2 |
+| 1-2 Años | 2 | 2 |
 | 2-3 Años | 1 | 2 |
 | 3-5 Años | 1 | 2 |
 | 5-8 Años | 1 | 2 |
@@ -54,8 +54,8 @@ Basado en la regla de equilibrio, este es el orden inmediato de desarrollo:
 4.  **[Done]** **5-8 Años**: `001-math-blaster` (Math Blaster)
 5.  **[Done]** **8-15 Años**: `001-code-quest` (Code Quest)
 6.  **[Done]** **0-1 Años**: `002-caja-sonidos` (Caja de Sonidos)
-7.  **[Done]** **1-2 Años**: `002-animalitos-suenan` (Animalitos que Suenan) ⏩ **EN DESARROLLO**
-8.  **[Ready]** **2-3 Años**: `002-pintura-dedos` (Pintura de Dedos)
+7.  **[Done]** **1-2 Años**: `002-animalitos-suenan` (Animalitos que Suenan)
+8.  **[Next]** **2-3 Años**: `002-arrastra-fruta` (Arrastra la Fruta)
 
 ---
 
@@ -82,47 +82,36 @@ Basado en la regla de equilibrio, este es el orden inmediato de desarrollo:
 
 ## 🎮 Juego Actual en Desarrollo
 
-**🏩 002-animalitos-suenan (Animalitos que Suenan) - 1-2 Años**
+**🏩 No hay juego en desarrollo actualmente**
 
-**Estado:** ⏩ **EN DESARROLLO**
+**Estado:** ⏳ **LISTO PARA EMPEZAR NUEVO JUEGO**
 
-**Fuente del plan:** Idea #2 de `/games-backlog/1-2/002-animalitos-suenan.md`
+**Próximo juego:** `002-arrastra-fruta` (Arrastra la Fruta - 2-3 Años)
 
-**Categoría:** 1-2 Años (Toddlers)
+**Fuente del plan:** Idea #2 de `/games-backlog/2-3-002-arrastra-fruta.md`
+
+**Categoría:** 2-3 Años (Preschoolers)
 
 **Detalles del concepto:**
-Orquesta de animales que se iluminan y suenan al tocarlos. Incluye sistema de 5 niveles progresivos, temporizador visual, puntuación y persistencia en localStorage.
+Juego de arrastrar y soltar donde los niños arrastran frutas a su cesta correspondiente. Incluye sistema de niveles, puntuación y feedback visual.
 
-**Fecha de inicio:** 2026-02-18 06:45 UTC
-
-**Rama de desarrollo:** `feature/animalitos-suenan` (o `feature/animalitos-suenan-1-2`)
-
-**Archivos del juego:** `/games/animalitos-suenan/`
-- `index.html` (Punto de entrada HTML)
-- `game.js` (Lógica del juego)
-- `game.css` (Estilos del juego)
-- `manifest.json` (Metadatos del juego)
-
-**Notas de implementación:**
-- Estructura base creada ✅
-- Lógica del juego completa (niveles, temporizador, persistencia, audio, touch events, responsiveness)
-- Testing pendiente (móvil y desktop)
-- Integración en games-list.json pendiente
-- Commit y push pendiente
-
-**Siguiente paso:** Completar implementación del juego (lógica completa, testing, integración completa, commit y push)
+**Notas:**
+- Último juego completado: `002-animalitos-suenan` (Animalitos que Suenan - 1-2 Años) ✅
+- Fecha de completado: 2026-02-18 13:40 UTC
+- Próximo paso: Iniciar implementación de `002-arrastra-fruta`
 
 ---
 
 ## 📊 Estado Actual del Proyecto
 
 **Total juegos planificados:** 41
-**Total juegos terminados:** 7/41 (17.1%)
+**Total juegos terminados:** 8/41 (19.5%)
 
 **Estado actual del sistema:**
 - ✅ Bugs: Resueltos y commitados en `/bugs-resolved/`
 - ✅ Regla "Bugs First": Cumplida
 - ✅ Cron jobs activos: Ideas de juegos generándose automáticamente
 - ✅ QA Agent: Validando juegos automáticamente
+- ✅ Último juego completado: `002-animalitos-suenan` (Animalitos que Suenan)
 
-**Próximo juego:** 003-pintura-dedos (Pintura de Dedos - 1-2 años)
+**Próximo juego:** `002-arrastra-fruta` (Arrastra la Fruta - 2-3 años)
