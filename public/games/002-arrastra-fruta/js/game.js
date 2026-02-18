@@ -298,6 +298,7 @@ class ArrastraFruta {
         this.updateLevelDisplay();
         this.updateScoreDisplay();
         this.updateTimerDisplay();
+        this.updateProgressBar();
 
         this.generateFruits();
         this.startTimer();
@@ -408,6 +409,19 @@ class ArrastraFruta {
      */
     updateScoreDisplay() {
         this.scoreDisplay.textContent = this.score;
+        this.updateProgressBar();
+    }
+
+    /**
+     * Actualiza la barra de progreso visual
+     */
+    updateProgressBar() {
+        const progressFill = document.getElementById('progress-fill');
+        if (progressFill) {
+            const numFruits = this.target + (this.currentLevel - 1) * 2;
+            const percentage = (this.score / numFruits) * 100;
+            progressFill.style.width = `${percentage}%`;
+        }
     }
 
     /**

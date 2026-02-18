@@ -259,15 +259,23 @@ class ArtBattle {
     updateProgressBar() {
         const percentage = (this.timeLeft / this.timeLimit) * 100;
         this.progressBar.style.width = percentage + '%';
-        this.timeText.textContent = this.timeLeft + 's';
-        
-        // Cambiar color si queda poco tiempo
-        if (percentage < 30) {
-            this.progressBar.style.background = 'linear-gradient(90deg, #ff6b6b 0%, #ff8787 100%)';
-        } else if (percentage < 60) {
-            this.progressBar.style.background = 'linear-gradient(90deg, #feca57 0%, #ffdd59 100%)';
-        } else {
-            this.progressBar.style.background = 'linear-gradient(90deg, #4facfe 0%, #00f2fe 100%)';
+
+        // Actualizar barra de tiempo visual
+        const timerFill = document.getElementById('timer-fill');
+        const timeRemainingEl = document.getElementById('time-remaining');
+
+        if (timerFill && timeRemainingEl) {
+            timerFill.style.width = `${percentage}%`;
+            timeRemainingEl.textContent = this.timeLeft;
+
+            // Cambiar color cuando quede poco tiempo
+            if (percentage < 25) {
+                timerFill.style.background = '#EF4444';
+            } else if (percentage < 50) {
+                timerFill.style.background = '#F59E0B';
+            } else {
+                timerFill.style.background = 'linear-gradient(90deg, #4CAF50, #8BC34A)';
+            }
         }
     }
 
