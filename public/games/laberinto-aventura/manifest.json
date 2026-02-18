@@ -1,0 +1,10 @@
+{
+  "id": "laberinto-aventura",
+  "title": "Laberinto Aventura",
+  "description": "Guide a character through a maze to find keys and open chests!",
+  "category": "adventure",
+  "author": "Elbebe Games Team",
+  "version": "1.0.0",
+  "thumbnail": "thumbnail.png",
+  "recommended_age": "5-8"
+}

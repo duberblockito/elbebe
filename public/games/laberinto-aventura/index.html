@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Laberinto Aventura - Elbebe Games</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+    }
+
+    #gameContainer {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      padding: 20px;
+      max-width: 100%;
+      width: 100%;
+    }
+
+    #gameTitle {
+      text-align: center;
+      font-size: 1.5rem;
+      color: #2C3E50;
+      margin-bottom: 15px;
+    }
+
+    #hud {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      padding: 10px;
+      background: #F8F9FA;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: bold;
+      color: #2C3E50;
+    }
+
+    #hud > div {
+      flex: 1;
+      text-align: center;
+    }
+
+    #progressBar {
+      height: 8px;
+      background: #E74C3C;
+      border-radius: 4px;
+      margin-top: 5px;
+      transition: width 0.3s ease;
+    }
+
+    #timerBar {
+      height: 8px;
+      background: #27AE60;
+      border-radius: 4px;
+      margin-top: 5px;
+      transition: width 0.3s ease, background-color 0.3s ease;
+    }
+
+    #gameCanvas {
+      display: block;
+      margin: 0 auto;
+      border: 3px solid #2C3E50;
+      border-radius: 10px;
+      background: #ECF0F1;
+      touch-action: none;
+    }
+
+    #message {
+      display: none;
+      text-align: center;
+      font-size: 1.2rem;
+      color: #E74C3C;
+      font-weight: bold;
+      margin: 10px 0;
+      animation: pulse 1s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      max-width: 90%;
+      width: 350px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      animation: slideIn 0.3s ease-out;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .modal-content h2 {
+      color: #2C3E50;
+      margin-bottom: 15px;
+      font-size: 1.8rem;
+    }
+
+    .modal-content p {
+      color: #7F8C8D;
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+    }
+
+    .btn {
+      padding: 12px 30px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: white;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    #instructions {
+      text-align: center;
+      margin-top: 15px;
+      padding: 15px;
+      background: #F8F9FA;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      color: #2C3E50;
+    }
+
+    #instructions h3 {
+      margin-bottom: 10px;
+      color: #667eea;
+    }
+
+    #instructions p {
+      margin: 5px 0;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .control-btn {
+      padding: 10px 20px;
+      font-size: 1rem;
+      background: #2C3E50;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+    }
+
+    /* Mobile responsive */
+    @media (max-width: 480px) {
+      #gameTitle {
+        font-size: 1.2rem;
+      }
+
+      #hud {
+        font-size: 0.8rem;
+        padding: 8px;
+      }
+
+      .modal-content {
+        padding: 20px;
+        width: 90%;
+      }
+
+      .modal-content h2 {
+        font-size: 1.5rem;
+      }
+
+      .modal-content p {
+        font-size: 1rem;
+      }
+
+      .btn {
+        padding: 10px 25px;
+        font-size: 1rem;
+      }
+
+      #instructions {
+        font-size: 0.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="gameContainer">
+    <h1 id="gameTitle">🏰 Laberinto Aventura 🗺️</h1>
+
+    <div id="hud">
+      <div>
+        <div id="level">Nivel: 1</div>
+        <div id="progressBar" style="width: 0%;"></div>
+      </div>
+      <div>
+        <div id="keys">Llaves: 0/1</div>
+      </div>
+      <div>
+        <div id="timer">Tiempo: 45s</div>
+        <div id="timerBar" style="width: 100%;"></div>
+      </div>
+    </div>
+
+    <canvas id="gameCanvas"></canvas>
+
+    <div id="message"></div>
+
+    <div id="instructions">
+      <h3>🎮 ¿Cómo Jugar?</h3>
+      <p>👆 Mueve al personaje con las flechas, WASD o deslizando</p>
+      <p>🔑 Recoge todas las llaves para abrir el cofre</p>
+      <p>💎 Abre el cofre y busca la salida para completar el nivel</p>
+      <p>⏱️ ¡Completa el nivel antes de que se acabe el tiempo!</p>
+    </div>
+
+    <div class="controls">
+      <button class="control-btn" onclick="game.moveCharacter(-1, 0)">⬅️</button>
+      <button class="control-btn" onclick="game.moveCharacter(0, -1)">⬆️</button>
+      <button class="control-btn" onclick="game.moveCharacter(0, 1)">⬇️</button>
+      <button class="control-btn" onclick="game.moveCharacter(1, 0)">➡️</button>
+    </div>
+  </div>
+
+  <!-- Menu Modal -->
+  <div id="menuModal" class="modal">
+    <div class="modal-content">
+      <h2>🏰 Laberinto Aventura</h2>
+      <p>¡Ayuda al héroe a encontrar el tesoro!</p>
+      <button id="startBtn" class="btn">¡Comenzar!</button>
+    </div>
+  </div>
+
+  <!-- Level Complete Modal -->
+  <div id="levelCompleteModal" class="modal">
+    <div class="modal-content">
+      <h2>🎉 ¡Nivel Completado!</h2>
+      <p>¡Excelente trabajo!</p>
+      <button id="nextLevelBtn" class="btn">Siguiente Nivel</button>
+    </div>
+  </div>
+
+  <!-- Time Up Modal -->
+  <div id="timeUpModal" class="modal">
+    <div class="modal-content">
+      <h2>⏱️ ¡Tiempo Agotado!</h2>
+      <p>¡Intenta de nuevo!</p>
+      <button id="retryBtn" class="btn">Reintentar</button>
+    </div>
+  </div>
+
+  <!-- Game Complete Modal -->
+  <div id="gameCompleteModal" class="modal">
+    <div class="modal-content">
+      <h2>🏆 ¡Juego Completado!</h2>
+      <p>¡Eres un maestro de laberintos!</p>
+      <button id="startBtn" class="btn">Jugar de Nuevo</button>
+    </div>
+  </div>
+
+  <script src="js/game.js"></script>
+</body>
+</html>
