@@ -47,7 +47,7 @@ This document outlines the development roadmap for the 41 games currently in the
 
 | ID | Game Name | Concept | Status |
 |----|-----------|---------|--------|
-| 001 | **Pinta las Nubes** | Reveal animals in clouds. | 📝 Ready |
+| 001 | **Pinta las Nubes** | Reveal animals in clouds. | ✅ Done |
 | 002 | **Arrastra la Fruta** | Sorting game picnic. | 📝 Ready |
 | 003 | **Animales Cantan** | Musical sequence memory. | 📝 Ready |
 | 004 | **Bloques Caen** | Tetris-lite catching. | 📝 Ready |

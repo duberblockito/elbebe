@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Pinta las Nubes - El Bebe Games</title>
+    <link rel="stylesheet" href="game.css">
+</head>
+<body>
+    <div class="game-container">
+        <header class="game-header">
+            <h1>Pinta las Nubes ☁️🎨</h1>
+            <button class="home-btn" onclick="window.location.href='../../index.html'">
+                🏠 Inicio
+            </button>
+        </header>
+
+        <main class="game-area">
+            <div class="clouds-container" id="clouds-container">
+                <!-- Las nubes se generan dinámicamente -->
+            </div>
+
+            <div class="feedback-container">
+                <div class="animal-feedback" id="animal-feedback"></div>
+                <div class="animal-name" id="animal-name"></div>
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <div class="progress-text">
+                <span id="found-count">0</span> / <span id="total-count">0</span> animales encontrados
+            </div>
+        </main>
+
+        <div class="celebration" id="celebration">
+            <div class="celebration-content">
+                <h2>🎉 ¡Excelente! 🎉</h2>
+                <p>¡Encontraste todos los animales!</p>
+                <button class="restart-btn" onclick="restartGame()">
+                    🔄 Jugar de nuevo
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>

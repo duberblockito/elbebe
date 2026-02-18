@@ -1,0 +1,13 @@
+{
+  "id": "pinta-nubes",
+  "title": "Pinta las Nubes",
+  "title_en": "Paint the Clouds",
+  "description": "¡Toca las nubes grises para revelar animales coloridos ocultos dentro! Un juego sensorial para descubrir sorpresas.",
+  "description_en": "Touch the grey clouds to reveal colorful animals hidden inside! A sensory game for discovering surprises.",
+  "category": "sensory",
+  "author": "El Bebe Games",
+  "version": "1.0.0",
+  "thumbnail": "thumbnail.svg",
+  "recommended_age": "2-3",
+  "tags": ["touch", "animals", "sensory", "colors", "sounds"]
+}
