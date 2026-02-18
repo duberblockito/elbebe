@@ -1,12 +1,48 @@
 // Constructor de Palabras - Game Logic
 
+// ============================================
+// Game Levels Configuration
+// ============================================
+
+const LEVELS = [
+    {
+        level: 1,
+        wordLength: 3,
+        timeLimit: 60,
+        wordsPerLevel: 5
+    },
+    {
+        level: 2,
+        wordLength: 4,
+        timeLimit: 55,
+        wordsPerLevel: 5
+    },
+    {
+        level: 3,
+        wordLength: 5,
+        timeLimit: 50,
+        wordsPerLevel: 5
+    },
+    {
+        level: 4,
+        wordLength: 5,
+        timeLimit: 45,
+        wordsPerLevel: 6
+    },
+    {
+        level: 5,
+        wordLength: 5,
+        timeLimit: 40,
+        wordsPerLevel: 7
+    }
+];
+
 class WordBuilderGame {
     constructor() {
         // Game State
         this.currentLevel = 1;
         this.score = 0;
         this.wordsCompleted = 0;
-        this.wordsPerLevel = 5;
         this.currentWord = null;
         this.currentLetters = [];
         this.userLetters = [];
@@ -90,6 +126,11 @@ class WordBuilderGame {
     init() {
         this.loadProgress();
         this.setupEventListeners();
+        
+        // Load level configuration
+        const levelConfig = this.getWordsForLevel(this.currentLevel);
+        this.wordsPerLevel = LEVELS[this.currentLevel - 1].wordsPerLevel;
+        
         this.loadNewWord();
         this.startTimer();
         this.updateUI();
@@ -99,8 +140,12 @@ class WordBuilderGame {
         const savedProgress = localStorage.getItem('constructor-palabras-progress');
         if (savedProgress) {
             const progress = JSON.parse(savedProgress);
-            this.currentLevel = progress.level || 1;
+            // Ensure level is within valid range
+            this.currentLevel = Math.min(progress.level || 1, LEVELS.length);
             this.score = progress.score || 0;
+        } else {
+            this.currentLevel = 1;
+            this.score = 0;
         }
     }
 
@@ -186,21 +231,23 @@ class WordBuilderGame {
     }
 
     getWordsForLevel(level) {
-        // Level 1: 3-4 letters words, 60 seconds
-        if (level === 1) {
-            this.timeLimit = 60;
-            return this.wordDatabase.filter(w => w.word.length <= 4);
+        const levelIndex = level - 1; // Convert to 0-based index
+        
+        // Check if level exists in LEVELS array
+        if (levelIndex < 0 || levelIndex >= LEVELS.length) {
+            // If level exceeds defined levels, use last level config
+            const lastLevel = LEVELS[LEVELS.length - 1];
+            this.timeLimit = lastLevel.timeLimit;
+            return this.wordDatabase.filter(w => w.word.length === lastLevel.wordLength);
         }
-        // Level 2: 4-5 letters words, 90 seconds
-        else if (level === 2) {
-            this.timeLimit = 90;
-            return this.wordDatabase.filter(w => w.word.length >= 4 && w.word.length <= 5);
-        }
-        // Level 3+: All words, 120 seconds
-        else {
-            this.timeLimit = 120;
-            return this.wordDatabase;
-        }
+        
+        // Get level configuration
+        const levelConfig = LEVELS[levelIndex];
+        this.timeLimit = levelConfig.timeLimit;
+        this.wordsPerLevel = levelConfig.wordsPerLevel;
+        
+        // Filter words by length
+        return this.wordDatabase.filter(w => w.word.length === levelConfig.wordLength);
     }
 
     loadNewWord() {
@@ -410,8 +457,19 @@ class WordBuilderGame {
     }
 
     nextLevel() {
+        const nextLevelIndex = this.currentLevel; // Current level is 1-based, so this is the NEXT level
+        
+        // Check if all levels complete
+        if (nextLevelIndex > LEVELS.length) {
+            // Game complete - show final modal
+            this.elements.finalScore.textContent = this.score;
+            this.elements.wordsCompleted.textContent = this.wordsCompleted;
+            this.elements.gameOverModal.classList.add('show');
+            return;
+        }
+        
         this.stopTimer();
-        this.currentLevel++;
+        this.currentLevel = nextLevelIndex;
         this.wordsCompleted = 0;
         this.elements.gameOverModal.classList.remove('show');
         this.loadNewWord();

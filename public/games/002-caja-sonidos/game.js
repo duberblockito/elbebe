@@ -170,41 +170,75 @@ function playSound(soundId) {
 }
 
 // ============================================
+// HUD (Heads-Up Display) Updates
+// ============================================
+
+function updateHUD() {
+  const currentLevelConfig = LEVELS[gameState.currentLevel];
+  
+  // Update Level Display
+  const levelDisplay = document.getElementById('level-display');
+  if (levelDisplay) {
+    const levelNum = gameState.currentLevel + 1;
+    const totalLevels = LEVELS.length;
+    levelDisplay.textContent = `${levelNum}/${totalLevels}`;
+  }
+  
+  // Update Timer Display
+  const timerDisplay = document.getElementById('timer-display');
+  if (timerDisplay) {
+    const remaining = Math.max(0, gameState.timeRemaining);
+    timerDisplay.textContent = `${remaining}s`;
+    
+    // Update timer color based on remaining time
+    const timerContainer = document.querySelector('.timer-display');
+    timerContainer.classList.remove('warning', 'critical');
+    
+    if (remaining < 10) {
+      timerContainer.classList.add('critical');
+    } else if (remaining < 20) {
+      timerContainer.classList.add('warning');
+    }
+  }
+  
+  // Update Progress Bar
+  const progressBar = document.getElementById('progress-bar');
+  if (progressBar && currentLevelConfig) {
+    const target = currentLevelConfig.scoreRequirement;
+    const current = gameState.soundsPlayed;
+    const percentage = Math.min(100, (current / target) * 100);
+    
+    progressBar.style.width = `${percentage}%`;
+    progressBar.textContent = `${current}/${target}`;
+  }
+}
+
+// ============================================
 // Game Board & Rendering
 // ============================================
 
 function initGameBoard() {
   const gameBoard = document.getElementById('gameBoard');
-  const header = document.querySelector('.game-title');
   
-  // Clear existing content
+  // Clear existing content (but keep start button if exists)
+  const startBtn = document.getElementById('btn-start');
   gameBoard.innerHTML = '';
+  
+  if (startBtn) {
+    gameBoard.appendChild(startBtn);
+  }
   
   // Render sound icons
   const currentLevelConfig = LEVELS[gameState.currentLevel];
   const unlockedSounds = SOUNDS.slice(0, currentLevelConfig.targetSounds);
-  unlockedSounds.forEach(soundId => {
-    const sound = SOUNDS.find(s => s.id === soundId);
+  unlockedSounds.forEach(sound => {
     const icon = createSoundIcon(sound);
-    icon.dataset.soundId = soundId;
+    icon.dataset.soundId = sound.id;
     gameBoard.appendChild(icon);
   });
   
-  // Update header
-  const levelNum = gameState.currentLevel + 1;
-  header.textContent = `🎵 Caja de Sonidos Mágica - Nivel ${levelNum}`;
-  
-  // Create score display
-  const scoreText = document.createElement('div');
-  scoreText.className = 'score';
-  scoreText.innerHTML = `🔊 Sonidos: ${gameState.soundsPlayed}`;
-  gameBoard.appendChild(scoreText);
-  
-  // Create timer display
-  const timerText = document.createElement('div');
-  timerText.className = 'timer';
-  timerText.id = 'timer';
-  gameBoard.appendChild(timerText);
+  // Update HUD elements
+  updateHUD();
 }
 
 function createSoundIcon(sound) {
@@ -233,7 +267,6 @@ function getUnlockedIcons() {
 // ============================================
 
 function startTimer(durationSeconds) {
-  const timerText = document.getElementById('timer');
   const startTime = Date.now();
   
   gameState.timerInterval = setInterval(() => {
@@ -243,19 +276,8 @@ function startTimer(durationSeconds) {
     
     gameState.timeRemaining = remaining;
     
-    // Update timer display
-    if (timerText) {
-      timerText.textContent = `${remaining}s`;
-      
-      // Change color based on remaining time
-      if (remaining < 10) {
-        timerText.style.color = '#4CAF50'; // Green
-      } else if (remaining < 20) {
-        timerText.style.color = '#FFC107'; // Orange
-      } else {
-        timerText.style.color = '#EF4444'; // Red
-      }
-    }
+    // Update HUD timer display
+    updateHUD();
     
     // Check for time up
     if (remaining <= 0 && gameState.isRunning) {
@@ -263,23 +285,6 @@ function startTimer(durationSeconds) {
       levelComplete();
     }
   }, 1000);
-}
-
-function updateTimerDisplay() {
-  const timerText = document.getElementById('timer');
-  if (timerText) {
-    const remaining = Math.max(0, gameState.timeRemaining);
-    timerText.textContent = `${remaining}s`;
-    
-    // Change color based on remaining time
-    if (remaining < 10) {
-      timerText.style.color = '#4CAF50'; // Green
-    } else if (remaining < 20) {
-      timerText.style.color = '#FFC107'; // Orange
-    } else {
-      timerText.style.color = '#EF4444'; // Red
-    }
-  }
 }
 
 // ============================================
@@ -343,10 +348,8 @@ function startGame() {
 }
 
 function updateScore() {
-  const scoreText = document.querySelector('.score');
-  if (scoreText) {
-    scoreText.innerHTML = `🔊 Sonidos: ${gameState.soundsPlayed}`;
-  }
+  // Update HUD progress bar
+  updateHUD();
 }
 
 function levelComplete() {
@@ -521,6 +524,7 @@ window.addEventListener('DOMContentLoaded', () => {
   
   // Wait for user interaction to start
   const startBtn = document.createElement('button');
+  startBtn.id = 'btn-start';
   startBtn.className = 'btn-primary';
   startBtn.textContent = '▶️ Jugar';
   startBtn.style.marginTop = '20px';
@@ -533,6 +537,9 @@ window.addEventListener('DOMContentLoaded', () => {
   // Add start button to page
   const gameBoard = document.getElementById('gameBoard');
   gameBoard.appendChild(startBtn);
+  
+  // Initial HUD update
+  updateHUD();
   
   // Initial resize
   handleResize();
