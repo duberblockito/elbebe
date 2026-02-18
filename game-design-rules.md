@@ -120,3 +120,156 @@ Once a game is fully implemented and tested:
 5.  **Update Changelog & Version**:
     *   Add an entry to `CHANGELOG.md` (e.g., "Added game [Name] to [Age Group]").
     *   **CRITICAL**: Update the `SITE_VERSION` constant in `public/js/main.js` to match the new version in the changelog.
+
+
+## 10. Bug Management Workflow (CRITICAL)
+
+### 10.1 Bug Reporting
+
+When a bug is reported in a game:
+
+1. **Create Bug File**: Create a new bug report file in `/bugs/` using `template.md`:
+   - Naming convention: `BUG-XXX-game-name-brief-description.md`
+   - XXX: Sequential bug number (001, 002, 003...)
+   - Example: `BUG-002-pinta-nubes-sin-niveles-timer-progresion.md`
+
+2. **Update Status**: Set initial status in bug file to `[Reported]`
+
+3. **Block Next Game**: Mark the game as `[Blocked]` in `development-queue.md`
+
+### 10.2 Bug Fixing Process
+
+When fixing a bug:
+
+1. **Create Feature Branch**: Create a branch from `master` for bug fixes:
+   ```bash
+   git checkout master
+   git pull origin master
+   git checkout -b fix/BUG-XXX-game-name
+   ```
+
+2. **Implement Fix**: Fix the bug in the feature branch and test thoroughly.
+
+3. **Update Bug File**: Update the status in `/bugs/BUG-XXX-...md` to `[Fixed]`
+
+4. **Commit & Push**: Commit the fix to the feature branch:
+   ```bash
+   git add .
+   git commit -m "fix: BUG-XXX - [brief description]"
+   git push origin fix/BUG-XXX-game-name
+   ```
+
+5. **Create PR or Merge**: After validation, merge to `master`:
+   ```bash
+   git checkout master
+   git merge fix/BUG-XXX-game-name
+   git push origin master
+   ```
+
+6. **Move Bug File to Resolved**: Once the fix is merged to `master`:
+   - Move bug file from `/bugs/` to `/bugs-resolved/`
+   - Update status to `[Fixed & Committed]`
+
+### 10.3 Rule: Bugs First (CRITICAL)
+
+**NO SE PUEDE INICIAR UN NUEVO JUEGO HASTA QUE TODOS LOS BUGS ESTÉN RESUELTOS Y COMMITADOS**
+
+1. **Check `/bugs/` Directory**: Before starting a new game:
+   ```bash
+   ls -la bugs/
+   ```
+
+2. **Validation**:
+   - If `/bugs/` has files: **STOP** - Fix bugs first
+   - If `/bugs/` is empty or all bugs are in `/bugs-resolved/`: **PROCEED** - Start new game
+
+3. **Priority Order**: Fix bugs in alphabetical order (BUG-001, BUG-002, BUG-003...)
+
+### 10.4 Branch Naming Convention
+
+**Para Juegos Nuevos:**
+- Format: `feature/game-name` or `feature/game-name-age-group`
+- Example: `feature/caja-sonidos` or `feature/caja-sonidos-1-2`
+
+**Para Bugs:**
+- Format: `fix/BUG-XXX-game-name`
+- Example: `fix/BUG-002-pinta-nubes`
+
+**SIEMPRE:** Crear la rama desde `master`:
+```bash
+git checkout master
+git pull origin master
+git checkout -b [nombre-rama]
+```
+
+
+### 10.5 Complete Workflow Example
+
+**Escenario 1: Reportar Bug**
+\`\`\`bash
+# 1. Usuario reporta bug en Pinta las Nubes
+# 2. El sistema crea /bugs/BUG-002-pinta-nubes-sin-niveles-timer-progresion.md
+# 3. Marcar juego como [Blocked] en development-queue.md
+\`\`\`
+
+**Escenario 2: Corregir Bug**
+\`\`\`bash
+# 1. Crear rama de fix desde master
+git checkout master
+git pull origin master
+git checkout -b fix/BUG-002-pinta-nubes
+
+# 2. Implementar la corrección
+# (edit game.js, game.css, index.html)
+
+# 3. Actualizar estado del bug
+# Editar /bugs/BUG-002-pinta-nubes-sin-niveles-timer-progresion.md
+# Cambiar [Reported] → [Fixed]
+
+# 4. Commit y push
+git add .
+git commit -m "fix: BUG-002 - Agregados niveles, temporizador y progresión"
+git push origin fix/BUG-002-pinta-nubes
+
+# 5. Merge a master
+git checkout master
+git merge fix/BUG-002-pinta-nubes
+git push origin master
+
+# 6. Mover bug a resolved
+mv bugs/BUG-002-pinta-nubes-sin-niveles-timer-progresion.md bugs-resolved/
+# Actualizar status a [Fixed & Committed]
+\`\`\`
+
+**Escenario 3: Iniciar Juego Nuevo (después de resolver bugs)**
+\`\`\`bash
+# 1. Verificar que bugs/ está vacío
+ls -la bugs/
+
+# 2. Verificar en development-queue.md que no hay juegos bloqueados
+# Buscar "[Blocked]" - si no hay, PROCEED
+
+# 3. Crear rama de feature desde master
+git checkout master
+git pull origin master
+git checkout -b feature/caja-sonidos
+
+# 4. Implementar juego
+# (crear archivos del juego)
+
+# 5. Testing y validación
+# (probar juego en móvil y desktop)
+
+# 6. Completar checklist de game-design-rules.md Sección 9
+# Registrar juego, mover backlog, actualizar queue, etc.
+
+# 7. Commit y push
+git add .
+git commit -m "feat: add 001-caja-sonidos - Caja de Sonidos (1-2 años)"
+git push origin feature/caja-sonidos
+
+# 8. Merge a master
+git checkout master
+git merge feature/caja-sonidos
+git push origin master
+\`\`\`
