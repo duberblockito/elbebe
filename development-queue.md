@@ -184,21 +184,21 @@ Ver `/QA-REPORT-004-rompecabezas.md` para detalles completos de la validación Q
 
 ### Bugs Pendientes Actuales
 
-🔴 **2 BUGS PENDIENTES** - Reportados por QA el 2026-02-18 19:50 UTC
+🔴 **2 BUGS PENDIENTES** - Reportados el 2026-02-18 20:30 UTC
 
-**BUG-008:** SITE_VERSION No Actualizado (laberinto-aventura)
+**BUG-010:** 002-caja-sonidos - Thumbnail faltante
 - Severidad: MEDIA
-- Detalle: SITE_VERSION en public/js/main.js es 1.12.0 pero debería ser 1.13.0
-- Archivo afectado: /bugs/BUG-008-site-version-no-actualizado.md
+- Detalle: manifest.json define "thumbnail": "thumbnail.svg" pero el archivo NO existe
+- Archivo afectado: /bugs/BUG-010-caja-sonidos-thumbnail-missing.md
 - Estado: [Reported]
 
-**BUG-009:** Archivos de Audio Externos No Existen (003-tren-numeros)
+**BUG-011:** rompecabezas - Thumbnail es archivo de texto (no imagen)
 - Severidad: MEDIA
-- Detalle: El juego intenta cargar archivos MP3 desde ../../assets/sounds/ que no existen
-- Archivo afectado: /bugs/BUG-009-audio-externo-no-existe.md
+- Detalle: manifest.json define "thumbnail": "thumbnail.jpg" pero solo existe "thumbnail.txt" (no es imagen)
+- Archivo afectado: /bugs/BUG-011-rompecabezas-thumbnail-texto.md
 - Estado: [Reported]
 
-**Próxima tarea:** Corregir BUG-008 y BUG-009 en orden alfabético
+**Próxima tarea:** Corregir BUG-010 y BUG-011 en orden alfabético
 **Estado:** 🔴 BLOQUEADO - NO se puede iniciar desarrollo de nuevo juego hasta resolver bugs
 
 ⚠️ **ACTUALIZACIÓN DEPLOYMENT (2026-02-18 16:20 UTC):**
