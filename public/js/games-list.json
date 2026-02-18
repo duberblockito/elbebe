@@ -17,10 +17,10 @@
     },
     {
       "id": "poppit-burbujas",
-      "title": "Poppit! Burbujas Mágicas",
-      "title_en": "Poppit! Magic Bubbles",
+      "title": "Poppit! Burbujas",
+      "title_en": "Poppit! Bubbles",
       "description": "¡Burbujas de colores flotan hacia arriba! Toca las burbujas para explotarlas con partículas mágicas y sonidos divertidos.",
-      "description_en": "Colorful bubbles float up! Touch the bubbles to pop them with magical particles and fun sounds.",
+      "description_en": "Colorful bubbles float up! Touch bubbles to pop them with magical particles and fun sounds.",
       "category": "sensory",
       "author": "El Bebe Games",
       "version": "1.0.0",
@@ -33,13 +33,13 @@
       "title": "Pinta las Nubes",
       "title_en": "Paint the Clouds",
       "description": "¡Toca las nubes grises para revelar animales coloridos ocultos dentro! Un juego sensorial para descubrir sorpresas.",
-      "description_en": "Touch the grey clouds to reveal colorful animals hidden inside! A sensory game for discovering surprises.",
+      "description_en": "Touch grey clouds to reveal colorful animals hidden inside! A sensory game for discovering surprises.",
       "category": "sensory",
       "author": "El Bebe Games",
       "version": "1.0.0",
       "thumbnail": "thumbnail.svg",
       "recommended_age": "2-3",
-      "tags": ["touch", "animals", "sensory", "colors", "sounds"]
+      "tags": ["touch", "animals", "sensory", "colors", "reveal"]
     },
     {
       "id": "001-chef-monstruos",
@@ -49,10 +49,10 @@
       "description_en": "Make fun pizzas for friendly monsters! Drag ingredients according to what each monster requests.",
       "category": "cooking",
       "author": "El Bebe Games",
-      "version": "1.0.0",
+      "version": "1.4.1",
       "thumbnail": "thumbnail.svg",
       "recommended_age": "3-5",
-      "tags": ["cooking", "drag-drop", "monsters", "logic", "creativity"]
+      "tags": ["touch", "drag-drop", "monsters", "cooking", "creativity"]
     },
     {
       "id": "001-math-blaster",
@@ -65,7 +65,7 @@
       "version": "1.0.0",
       "thumbnail": "thumbnail.svg",
       "recommended_age": "5-8",
-      "tags": ["math", "addition", "subtraction", "asteroids", "space"]
+      "tags": ["math", "addition", "subtraction", "asteroids", "space", "educational"]
     },
     {
       "id": "code-quest",
@@ -78,7 +78,20 @@
       "version": "1.0.0",
       "thumbnail": "thumbnail.svg",
       "recommended_age": "8-15",
-      "tags": ["coding", "javascript", "logic", "educational", "variables", "loops", "conditionals"]
+      "tags": ["coding", "javascript", "logic", "puzzles", "educational", "adventure"]
+    },
+    {
+      "id": "002-caja-sonidos",
+      "title": "Caja de Sonidos Mágica",
+      "title_en": "Magical Sound Box",
+      "description": "Grid de 6-8 grandes iconos (animales/objetos) que al tocarlos reproducen sonidos y se animan.",
+      "description_en": "Grid of 6-8 large icons (animals/objects) that play sounds and animate when touched.",
+      "category": "sensory",
+      "author": "El Bebe Games",
+      "version": "1.0.0",
+      "thumbnail": "thumbnail.svg",
+      "recommended_age": "0-1",
+      "tags": ["touch", "sounds", "animals", "objects"]
     }
   ]
 }
