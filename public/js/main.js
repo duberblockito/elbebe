@@ -17,7 +17,7 @@
  * 2. Update games-list.json version field
  * 3. Deploy to production to force cache refresh on all devices
  */
-const SITE_VERSION = '1.6.0';
+const SITE_VERSION = '1.7.0';
 
 /**
  * Get current application version

@@ -2,6 +2,71 @@
 
 ---
 
+## [v1.7.0] - 2026-02-18 14:25 UTC (Bogotá)
+
+### ✨ Nuevo Juego Implementado
+
+**Juego:** 002-constructor-palabras (Constructor de Palabras)
+**Categoría:** 5-8 Años (Early Elementary)
+**Fuente del plan:** Idea #2 de `/games-backlog/5-8-002-constructor-palabras.md`
+
+**Descripción:**
+Juego educativo de ortografía con drag and drop. Los niños arrastran letras para formar palabras que se muestran en imágenes. Incluye sistema de 3 niveles progresivos, puntuación, feedback visual y persistencia en localStorage. Los niños desarrollan habilidades de ortografía, vocabulario y coordinación motora fina mientras juegan.
+
+**Características implementadas:**
+- ✅ Sistema de 3 niveles progresivos (30 palabras por nivel, 5 por nivel completado)
+- ✅ Temporizador visual con barra de progreso (verde → amarillo según progreso)
+- ✅ Sistema de puntuación (puntos basados en nivel del juego)
+- ✅ Persistencia en localStorage (`constructor-palabras-progress`)
+- ✅ Touch events optimizados para móviles (tap para seleccionar, click en slots)
+- ✅ Diseño responsivo (Desktop, Tablet, Móvil - 375x667px base para iPhone SE)
+- ✅ 30 palabras diferentes con imágenes (emojis) y pistas
+  - Nivel 1: Palabras de 3-4 letras (SOL, LUN, MAR, FLOR, CASA, etc.)
+  - Nivel 2: Palabras de 4-5 letras (LIBRO, JUGO, ARBOL, PEZ, etc.)
+  - Nivel 3+: Todas las palabras (incluye palabras más largas)
+- ✅ Lógica de mezcla de letras (shuffle para dificultad)
+- ✅ Validación de ortografía en tiempo real
+- ✅ Feedback visual (éxito verde, error rojo)
+- ✅ Modal: Nivel Completado
+- ✅ Animaciones: tiles destacados, slots highlight, feedback messages
+- ✅ Drag & drop (mouse) y touch events (móvil)
+
+**Archivos creados:**
+- `games/002-constructor-palabras/index.html` (Punto de entrada HTML)
+- `games/002-constructor-palabras/js/game.js` (Lógica del juego - 12.9 KB)
+- `games/002-constructor-palabras/assets/game.css` (Estilos - 7.6 KB)
+- `games/002-constructor-palabras/manifest.json` (Metadatos - 0.4 KB)
+- `games/002-constructor-palabras/thumbnail.jpg` (Thumbnail - placeholder)
+
+**Tecnologías utilizadas:**
+- HTML5 (semántico)
+- JavaScript ES6+ (localStorage, touch events, mouse events, drag & drop API)
+- CSS3 (flexbox, grid, animaciones, media queries, gradients)
+- Responsive design (375x667px base para iPhone SE)
+- Drag & Drop API (desktop) + Touch Events (mobile)
+
+**Cumplimiento de reglas de diseño (game-design-rules.md):**
+- ✅ Sección 7 (Levels & Progression): Niveles progresivos, barra de progreso, persistencia
+- ✅ Sección 2 (Technical Requirements): HTML/CSS/JS puro, touch/mouse events, drag & drop
+- ✅ Sección 4 (Game Registration): Registrado en `games-list.json`
+- ✅ Sección 9 (Accessibility): Objetivos grandes (70x80px para tiles, 80x80px para slots), alto contraste
+- ✅ Sección 10 (Mobile First): Touch events, diseño responsivo, sin gestos complejos
+
+**Valor educativo:**
+- Desarrollo ortografía (formación de palabras)
+- Vocabulario (aprendizaje de nuevas palabras)
+- Coordinación motora fina (drag & drop)
+- Memoria visual (recuerdo de la palabra mostrada)
+- Discriminación visual (identificación de letras correctas)
+
+**Notas de desarrollo:**
+- El juego usa emojis como imágenes de palabras para simplificar la implementación
+- Se puede mejorar en futuras versiones usando imágenes reales
+- Las palabras están en español, pero la estructura soporta multilenguaje
+- El sistema de dificultad es balanceado: palabras cortas primero, luego palabras más largas
+
+---
+
 ## [v1.6.0] - 2026-02-18 14:20 UTC (Bogotá)
 
 ### ✨ Nuevo Juego Implementado

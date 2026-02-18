@@ -37,10 +37,10 @@ La estrategia de desarrollo sigue un ciclo "Round Robin" entre las categorías d
 | 1-2 Años | 2 | 2 |
 | 2-3 Años | 2 | 2 |
 | 3-5 Años | 2 | 2 |
-| 5-8 Años | 1 | 2 |
+| 5-8 Años | 2 | 2 |
 | 8-15 Años | 1 | 2 |
 
-*Nota: Las categorías 0-1, 1-2, 2-3 y 3-5 ya tienen 2 juegos cada una. Por lo tanto, el foco pasa a la siguiente categoría para igualarlas a 2.*
+*Nota: Las categorías 0-1, 1-2, 2-3, 3-5 y 5-8 ya tienen 2 juegos cada una. Por lo tanto, el foco pasa a la siguiente categoría para igualarlas a 2.*
 
 ---
 
@@ -57,7 +57,8 @@ Basado en la regla de equilibrio, este es el orden inmediato de desarrollo:
 7.  **[Done]** **1-2 Años**: `002-animalitos-suenan` (Animalitos que Suenan)
 8.  **[Done]** **2-3 Años**: `002-arrastra-fruta` (Arrastra la Fruta)
 9.  **[Done]** **3-5 Años**: `002-super-formas` (Super Formas)
-10. **[Next]** **5-8 Años**: `002-constructor-palabras` (Constructor Palabras)
+10. **[Done]** **5-8 Años**: `002-constructor-palabras` (Constructor Palabras)
+11. **[Next]** **8-15 Años**: `002-adventure-quest` (Adventure Quest)
 
 ---
 
@@ -88,32 +89,32 @@ Basado en la regla de equilibrio, este es el orden inmediato de desarrollo:
 
 **Estado:** ⏳ **LISTO PARA EMPEZAR NUEVO JUEGO**
 
-**Próximo juego:** `002-constructor-palabras` (Constructor Palabras - 5-8 Años)
+**Próximo juego:** `002-adventure-quest` (Adventure Quest - 8-15 Años)
 
-**Fuente del plan:** Idea #2 de `/games-backlog/5-8-002-constructor-palabras.md`
+**Fuente del plan:** Pendiente de idea en backlog
 
-**Categoría:** 5-8 Años (Early Elementary)
+**Categoría:** 8-15 Años (Tweens/Teens)
 
 **Detalles del concepto:**
-Juego de ortografía con drag and drop. Los niños arrastran letras para formar palabras.
+Pendiente de definición.
 
 **Notas:**
-- Último juego completado: `002-super-formas` (Super Formas - 3-5 Años) ✅
-- Fecha de completado: 2026-02-18 14:20 UTC
-- Próximo paso: Iniciar implementación de `002-constructor-palabras`
+- Último juego completado: `002-constructor-palabras` (Constructor Palabras - 5-8 Años) ✅
+- Fecha de completado: 2026-02-18 14:25 UTC
+- Próximo paso: Definir e implementar `002-adventure-quest`
 
 ---
 
 ## 📊 Estado Actual del Proyecto
 
 **Total juegos planificados:** 41
-**Total juegos terminados:** 10/41 (24.4%)
+**Total juegos terminados:** 11/41 (26.8%)
 
 **Estado actual del sistema:**
 - ✅ Bugs: Resueltos y commitados en `/bugs-resolved/`
 - ✅ Regla "Bugs First": Cumplida
 - ✅ Cron jobs activos: Ideas de juegos generándose automáticamente
 - ✅ QA Agent: Validando juegos automáticamente
-- ✅ Último juego completado: `002-arrastra-fruta` (Arrastra la Fruta)
+- ✅ Último juego completado: `002-constructor-palabras` (Constructor Palabras)
 
-**Próximo juego:** `002-super-formas` (Super Formas - 3-5 años)
+**Próximo juego:** `002-adventure-quest` (Adventure Quest - 8-15 años)

@@ -131,6 +131,19 @@
       "thumbnail": "thumbnail.svg",
       "recommended_age": "3-5",
       "tags": ["drag-drop", "touch", "shapes", "puzzle", "levels", "timer", "progress", "educational"]
+    },
+    {
+      "id": "002-constructor-palabras",
+      "title": "Constructor de Palabras",
+      "title_en": "Word Builder",
+      "description": "Arrastra letras para formar palabras que se muestran en imágenes. Juego educativo para aprender ortografía de manera divertida con niveles progresivos.",
+      "description_en": "Drag letters to spell words shown in images. Educational game to learn spelling in a fun way with progressive levels.",
+      "category": "educational",
+      "author": "Blockito AI",
+      "version": "1.0.0",
+      "thumbnail": "thumbnail.jpg",
+      "recommended_age": "5-8",
+      "tags": ["drag-drop", "touch", "spelling", "letters", "words", "levels", "timer", "progress", "educational"]
     }
   ]
 }

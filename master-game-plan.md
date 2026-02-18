@@ -44,7 +44,7 @@ This document outlines the development roadmap for the 41 games currently in the
 | ID | Game Name | Concept | Status |
 |----|-----------|--------|
 | 001 | **Math Blaster** | Blast asteroids with math. | ✅ Done |
-| 002 | **Constructor Palabras** | Spelling with drag and drop. | 📝 Ready |
+| 002 | **Constructor Palabras** | Spelling with drag and drop. | ✅ Done |
 
 ## 👱 8-15 Years (Tweens/Teens)
 
@@ -58,12 +58,12 @@ This document outlines the development roadmap for the 41 games currently in the
 
 | Age Group | Completed | Target |
 |-----------|---------|--------|
-| 0-1 Years | 2 | 1 |
-| 1-2 Years | 1 | 1 |
-| 2-3 Years | 1 | 1 |
-| 3-5 Years | 1 | 1 |
-| 5-8 Years | 1 | 1 |
-| 8-15 Years | 1 | 1 |
+| 0-1 Years | 2 | 2 |
+| 1-2 Years | 2 | 2 |
+| 2-3 Years | 2 | 2 |
+| 3-5 Years | 2 | 2 |
+| 5-8 Years | 2 | 2 |
+| 8-15 Years | 1 | 2 |
 
 ---
 
