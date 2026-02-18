@@ -76,6 +76,7 @@ Asegúrate de:
 2. Implementar la lógica y diseño según el backlog.
 3. Registrar el juego en 'games-list.json' (CRÍTICO).
 75. **Git Flow**:
+    - **Sincroniza**: `git fetch && git pull origin master` (CRÍTICO para evitar conflictos).
     - Crea una rama nueva: `git checkout -b feature/[id-juego]`.
     - Al terminar, actualiza `CHANGELOG.md` bumping la versión.
     - Documenta cambios: `git commit -m "feat: add [id-juego]"`.

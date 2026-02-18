@@ -58,8 +58,9 @@ Basado en la regla anterior, este es el orden inmediato de desarrollo:
 
 ## 📝 Instrucciones para el Desarrollador
 
-1.  **Consulta** este archivo para identificar el siguiente juego ([NEXT]).
-2.  **Crea una rama nueva** para el desarrollo: `git checkout -b feature/nombre-del-juego`.
+1.  **Sincronización**: Actualiza tu repositorio local: `git fetch && git pull origin master`.
+2.  **Consulta** este archivo para identificar el siguiente juego ([NEXT]).
+3.  **Crea una rama nueva** para el desarrollo: `git checkout -b feature/nombre-del-juego`.
 3.  **Desarrolla y Prueba** el juego localmente.
 4.  **Finalización**:
     -   Actualiza `master-game-plan.md` a ✅ Done.
