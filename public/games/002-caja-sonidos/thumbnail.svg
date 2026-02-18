@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300">
+  <!-- Background -->
+  <rect width="300" height="300" fill="#FFE4B5" rx="20"/>
+  
+  <!-- Sound Box - Main Box -->
+  <rect x="50" y="120" width="200" height="140" rx="20" fill="#FF6B9D" stroke="#E85A8D" stroke-width="4"/>
+  
+  <!-- Box Top Panel (lid effect) -->
+  <rect x="50" y="100" width="200" height="30" rx="15" fill="#FF8FB3" stroke="#E85A8D" stroke-width="4"/>
+  
+  <!-- Box Inner Circle (Speaker Area) -->
+  <circle cx="150" cy="180" r="50" fill="#FFD700" stroke="#FFA500" stroke-width="3"/>
+  
+  <!-- Speaker Grills -->
+  <circle cx="150" cy="170" r="8" fill="#FF6B9D"/>
+  <circle cx="150" cy="180" r="8" fill="#FF6B9D"/>
+  <circle cx="150" cy="190" r="8" fill="#FF6B9D"/>
+  
+  <!-- Musical Notes -->
+  <!-- Note 1 - Pink -->
+  <g transform="translate(80, 60)">
+    <ellipse cx="15" cy="30" rx="12" ry="8" fill="#9B59B6" transform="rotate(-15)"/>
+    <rect x="22" y="5" width="3" height="30" fill="#9B59B6"/>
+  </g>
+  
+  <!-- Note 2 - Orange -->
+  <g transform="translate(200, 50)">
+    <ellipse cx="15" cy="30" rx="12" ry="8" fill="#FF6347" transform="rotate(-15)"/>
+    <rect x="22" y="5" width="3" height="30" fill="#FF6347"/>
+  </g>
+  
+  <!-- Note 3 - Blue -->
+  <g transform="translate(60, 200)">
+    <ellipse cx="15" cy="30" rx="12" ry="8" fill="#3498DB" transform="rotate(-15)"/>
+    <rect x="22" y="5" width="3" height="30" fill="#3498DB"/>
+  </g>
+  
+  <!-- Note 4 - Green -->
+  <g transform="translate(220, 200)">
+    <ellipse cx="15" cy="30" rx="12" ry="8" fill="#2ECC71" transform="rotate(-15)"/>
+    <rect x="22" y="5" width="3" height="30" fill="#2ECC71"/>
+  </g>
+  
+  <!-- Note 5 - Purple (above box) -->
+  <g transform="translate(130, 30)">
+    <ellipse cx="15" cy="30" rx="12" ry="8" fill="#8E44AD" transform="rotate(-15)"/>
+    <rect x="22" y="5" width="3" height="30" fill="#8E44AD"/>
+  </g>
+  
+  <!-- Small decorative stars/sparkles -->
+  <circle cx="90" cy="280" r="5" fill="#FFD700"/>
+  <circle cx="210" cy="280" r="5" fill="#FFD700"/>
+  <circle cx="40" cy="150" r="4" fill="#FFD700"/>
+  <circle cx="260" cy="150" r="4" fill="#FFD700"/>
+</svg>
