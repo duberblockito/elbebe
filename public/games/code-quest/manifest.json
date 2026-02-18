@@ -1,0 +1,13 @@
+{
+  "id": "code-quest",
+  "title": "Code Quest: Mystery Island",
+  "title_en": "Code Quest: Mystery Island",
+  "description": "¡Aprende a programar resolviendo puzzles de código! Usa variables, loops y condicionales para mover el personaje hacia la meta en esta aventura educativa.",
+  "description_en": "Learn to program by solving code puzzles! Use variables, loops, and conditionals to move the character to the goal in this educational adventure.",
+  "category": "educational",
+  "author": "El Bebe Games",
+  "version": "1.0.0",
+  "thumbnail": "thumbnail.svg",
+  "recommended_age": "8-15",
+  "tags": ["coding", "javascript", "logic", "educational", "variables", "loops", "conditionals"]
+}

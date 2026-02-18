@@ -2,6 +2,103 @@
 
 ---
 
+## [v1.5.0] - 2026-02-18 04:50 UTC (Bogotá)
+
+### ✨ Nuevo Juego
+- **Code Quest: Mystery Island (code-quest)** - 8-15 Años
+  - Tema: Aprende a programar resolviendo puzzles de código
+  - Sistema de niveles: 5 niveles con dificultad progresiva
+  - Conceptos: Variables, Loops, Condicionales, Combinación de todo
+  - Objetivos por nivel: Mover personaje a la meta usando código
+  - Duración por nivel: 2-3 minutos (120-180s)
+  - Barra de progreso visual de código escrito en tiempo real
+  - Temporizador visual con cambio de color (verde → amarillo → rojo)
+  - Sistema de persistencia: LocalStorage para niveles desbloqueados y puzzles resueltos
+  - Editor de código simplificado con validación básica
+  - Grid de 5x5 para navegación del personaje
+  - Obstáculos que requieren lógica condicional
+  - Modales: Nivel completado, Tiempo agotado, Juego completo, Pistas
+  - Responsivo: Funciona en 375x667px (iPhone SE)
+  - Touch events: Botones táctiles optimizados
+
+### 📋 Características Implementadas
+- **Sistema de Niveles (5 niveles):**
+  - Nivel 1: Variables básicas (2 min)
+  - Nivel 2: Loops simples (2.5 min)
+  - Nivel 3: Condicionales (3 min)
+  - Nivel 4: Loops + Condicionales (3 min)
+  - Nivel 5: Desafío final con todo combinado (3 min)
+
+- **Sistema de Código:**
+  - Editor de código simplificado (textarea con validación)
+  - Funciones disponibles: `moverDerecha()`, `moverAbajo()`, `hayObstaculo()`
+  - Validación de errores básica
+  - Ejecución segura de código usuario
+
+- **Sistema de Progresión:**
+  - Barra de progreso visual de código escrito
+  - Cálculo de similitud con código esperado
+  - Indicador de pasos restantes para llegar a la meta
+  - Sistema de pistas (3 por nivel)
+
+- **Sistema de Persistencia:**
+  - Clave: `code-quest-progress`
+  - Datos guardados: `unlockedLevels`, `currentLevel`, `totalPuzzlesSolved`, `lastPlayed`, `playerName`
+  - Carga automática al iniciar
+  - Guardado automático al completar nivel
+
+### 📝 Archivos Creados
+- `public/games/code-quest/index.html` (4522 bytes)
+  - Estructura HTML completa con HUD, grid, editor, modales
+  - Sistema de pantallas (intro, juego)
+  - Modales: Nivel completado, Tiempo agotado, Juego completo, Pistas
+- `public/games/code-quest/manifest.json` (693 bytes)
+  - Metadatos completos del juego
+- `public/games/code-quest/thumbnail.svg` (1410 bytes)
+  - Imagen de vista previa con tema de coding
+- `public/games/code-quest/game.css` (8699 bytes)
+  - Estilos completos con animaciones
+  - Colores temáticos (gradiente púrpura)
+  - Diseño responsive (375px, 320px)
+  - Touch events optimizados
+- `public/games/code-quest/game.js` (16579 bytes)
+  - Lógica completa del juego
+  - Sistema de niveles, temporizador, persistencia
+  - Ejecución segura de código usuario
+  - Validación de código básica
+  - Sistema de movimiento del personaje
+  - Detección de obstáculos
+
+### 📋 Validación TDD (Test-Driven Development)
+- ✅ Niveles divididos (5 niveles, no infinito)
+- ✅ Cada nivel tiene límite de tiempo (120-180s)
+- ✅ Barra de progreso visual funciona (real-time)
+- ✅ Temporizador visual funciona (cuenta regresiva + cambio de color)
+- ✅ Progresión de dificultad (niveles más complejos)
+- ✅ LocalStorage guarda progreso (niveles desbloqueados, puzzles resueltos)
+- ✅ Responsivo 375x667px (iPhone SE)
+- ✅ Touch events funcionan (botones táctiles optimizados)
+- ✅ Manifest.json válido
+- ✅ Registrado en games-list.json
+
+### 🎯 Estado del Proyecto
+- **Juegos completados:** 6/41
+- **Ciclo 1 Completado:** ✅ Todas las categorías tienen 1 juego (0-1, 1-2, 2-3, 3-5, 5-8, 8-15)
+- **Total de ideas documentadas:** 356/600
+- **Bugs pendientes:** 0 (Todos corregidos)
+
+### 🏷️ Etiquetas
+- NewGame
+- Coding
+- Education
+- Levels
+- Progression
+- Persistence
+- Responsive
+- TouchEvents
+
+---
+
 ## [v1.4.2] - 2026-02-18 04:40 UTC (Bogotá)
 
 ### 🐛 Bug Fixes

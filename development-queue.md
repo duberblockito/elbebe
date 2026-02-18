@@ -36,7 +36,7 @@ La estrategia de desarrollo sigue un ciclo "Round Robin" entre las categorías d
 | 2-3 Años | 1 | 1 |
 | 3-5 Años | 1 | 1 |
 | 5-8 Años | 1 | 1 |
-| 8-15 Años | 0 | 1 |
+| 8-15 Años | 1 | 1 |
 
 *Nota: La categoría 0-1, 1-2, 2-3, 3-5, 5-8 ya tienen 1 juego. Por lo tanto, el foco pasa a la siguiente categoría para igualarlas a 1.*
 
@@ -48,7 +48,7 @@ Basado en la regla anterior, este es el orden inmediato de desarrollo:
 2.  **[Done]** **2-3 Años**: `001-pinta-nubes` (Pinta las Nubes)
 3.  **[Done]** **3-5 Años**: `001-chef-monstruos` (Chef de Monstruos)
 4.  **[Done]** **5-8 Años**: `001-math-blaster` (Math Blaster)
-5.  **[NEXT]** **8-15 Años**: `001-code-quest` (Code Quest)
+5.  **[Done]** **8-15 Años**: `001-code-quest` (Code Quest)
 6.  -- *Fin del Ciclo 1 (Todos tienen 1 juego)* --
 7.  **0-1 Años**: `002-caja-sonidos` (Caja de Sonidos)
 8.  **1-2 Años**: `002-animalitos-suenan` (Animalitos que Suenan)

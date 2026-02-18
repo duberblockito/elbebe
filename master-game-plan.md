@@ -99,7 +99,7 @@ This document outlines the development roadmap for the 41 games currently in the
 
 | ID | Game Name | Concept | Status |
 |----|-----------|---------|--------|
-| 001 | **Code Quest** | Isometric coding adventure. | 📝 Ready |
+| 001 | **Code Quest** | Isometric coding adventure. | ✅ Done |
 | 002 | **Art Battle** | Multiplayer art competition. | 📝 Ready |
 | 003 | **Science Lab** | Element fusion simulation. | 📝 Ready |
 | 004 | **Eco Warriors** | Ecosystem management sim. | 📝 Ready |

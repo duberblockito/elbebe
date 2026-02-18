@@ -1,0 +1,518 @@
+/* Code Quest: Mystery Island - Styles */
+/* Target: 8-15 years old children */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* Intro Screen */
+.intro-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.intro-content {
+    text-align: center;
+    color: white;
+    padding: 2rem;
+}
+
+.intro-content h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.intro-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.start-btn {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.start-btn:hover {
+    background: #45a049;
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.start-btn:active {
+    transform: scale(0.95);
+}
+
+/* HUD */
+#hud {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 50;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.level-indicator {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #667eea;
+}
+
+.save-btn {
+    background: #2196F3;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.save-btn:hover {
+    background: #1976D2;
+    transform: scale(1.1);
+}
+
+/* Timer Bar */
+.timer-bar-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.timer-bar {
+    width: 100px;
+    height: 20px;
+    background: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.timer-fill {
+    height: 100%;
+    background: #4CAF50;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+}
+
+.timer-fill.warning {
+    background: #FFC107;
+}
+
+.timer-fill.danger {
+    background: #F44336;
+}
+
+.timer-text {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Game Container */
+#gameContainer {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    padding: 80px 1rem 1rem;
+    overflow-y: auto;
+}
+
+/* Instructions */
+.instructions {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+}
+
+.instructions h3 {
+    color: #667eea;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.instructions p {
+    color: #333;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* Grid */
+.grid-container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 5px;
+    width: 300px;
+    height: 300px;
+}
+
+.grid-cell {
+    background: #f5f5f5;
+    border: 2px solid #e0e0e0;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    transition: all 0.3s ease;
+}
+
+.grid-cell.obstacle {
+    background: #FF9800;
+}
+
+.grid-cell.goal {
+    background: #4CAF50;
+}
+
+.grid-cell.character {
+    background: #2196F3;
+}
+
+/* Code Editor */
+.code-editor-container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+}
+
+.code-editor {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+#codeEditor {
+    width: 100%;
+    height: 150px;
+    background: #1e1e1e;
+    color: #d4d4d4;
+    border: 2px solid #333;
+    border-radius: 5px;
+    padding: 1rem;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    resize: none;
+    outline: none;
+}
+
+#codeEditor:focus {
+    border-color: #667eea;
+}
+
+/* Progress Bar */
+.progress-bar-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 20px;
+    background: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    transition: width 0.3s ease;
+    border-radius: 10px;
+}
+
+.progress-text {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Objective Indicator */
+.objective-indicator {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 0.5rem;
+    background: #f5f5f5;
+    border-radius: 5px;
+}
+
+.objective-text {
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.steps-remaining {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.run-btn, .reset-btn {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.run-btn {
+    background: #4CAF50;
+    color: white;
+}
+
+.run-btn:hover {
+    background: #45a049;
+    transform: scale(1.05);
+}
+
+.reset-btn {
+    background: #FF9800;
+    color: white;
+}
+
+.reset-btn:hover {
+    background: #F57C00;
+    transform: scale(1.05);
+}
+
+.hint-btn {
+    width: 40px;
+    height: 40px;
+    background: #9C27B0;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hint-btn:hover {
+    background: #7B1FA2;
+    transform: scale(1.1);
+}
+
+/* Modals */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 90%;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.modal-content h2 {
+    color: #667eea;
+    margin-bottom: 1rem;
+}
+
+.modal-content p {
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.modal-btn {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.modal-btn:hover {
+    background: #45a049;
+    transform: scale(1.05);
+}
+
+/* Responsive - Mobile (375px) */
+@media (max-width: 375px) {
+    .game-grid {
+        width: 280px;
+        height: 280px;
+    }
+
+    .grid-cell {
+        font-size: 1.5rem;
+    }
+
+    #codeEditor {
+        height: 120px;
+        font-size: 12px;
+    }
+
+    .timer-bar {
+        width: 80px;
+    }
+
+    .instructions h3 {
+        font-size: 1rem;
+    }
+
+    .instructions p {
+        font-size: 0.85rem;
+    }
+
+    .run-btn, .reset-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .intro-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .intro-content p {
+        font-size: 1rem;
+    }
+}
+
+/* Responsive - iPhone SE (320px) */
+@media (max-width: 320px) {
+    .game-grid {
+        width: 260px;
+        height: 260px;
+    }
+
+    .grid-cell {
+        font-size: 1.2rem;
+    }
+
+    #codeEditor {
+        height: 100px;
+        font-size: 11px;
+    }
+
+    .timer-bar {
+        width: 60px;
+    }
+
+    .level-indicator {
+        font-size: 0.85rem;
+    }
+
+    .instructions {
+        padding: 0.5rem;
+    }
+
+    .instructions h3 {
+        font-size: 0.9rem;
+    }
+
+    .instructions p {
+        font-size: 0.8rem;
+    }
+
+    .action-buttons {
+        flex-wrap: wrap;
+    }
+
+    .run-btn, .reset-btn {
+        flex: 1;
+        min-width: 100px;
+    }
+}
+
+/* Animations */
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.slide-up {
+    animation: slideUp 0.3s ease;
+}
