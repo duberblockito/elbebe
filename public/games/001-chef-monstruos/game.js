@@ -1,6 +1,6 @@
 // Chef de Monstruos - Game Logic
 // Age Group: 3-5 years
-// Version: 1.0.0
+// Version: 1.1.0 (FIXED: Mobile drag + Help system)
 
 // ===============================
 // CONFIGURACIÓN DE NIVELES
@@ -49,12 +49,69 @@ const LEVELS = [
 ];
 
 // ===============================
+// CONFIGURACIÓN DE IDIOMA
+// ===============================
+const LANGUAGES = {
+  es: {
+    helpTitle: '¿Cómo Jugar?',
+    helpContent: `
+      <strong>Objetivo:</strong> Alimentar a los monstruos con los ingredientes que piden<br><br>
+      <strong>Paso 1:</strong> Toca un ingrediente de la bandeja de ingredientes<br>
+      <strong>Paso 2:</strong> Arrástralo hacia el monstruo que lo quiere<br>
+      <strong>Paso 3:</strong> ¡El monstruo se comerá y ganarás puntos!<br><br>
+      <strong>Consejo:</strong> ¡Completa todos los pedidos antes de que se acabe el tiempo!
+    `,
+    level: 'Nivel',
+    time: 'Tiempo',
+    orders: 'Pedidos',
+    complete: '¡Completado!',
+    timeUp: '¡Se Acabó el Tiempo!',
+    gameComplete: '¡Juego Completado!',
+    nextLevel: 'Siguiente Nivel →',
+    retry: 'Intentar de Nuevo',
+    backToMenu: 'Volver al Menú',
+    playAgain: 'Jugar de Nuevo',
+    ordersCompleted: 'Pedidos completados',
+    monstersFed: 'Monstruos alimentados',
+    totalOrders: 'Pedidos totales',
+    youAre: '¡Eres un Chef de Monstruos experto!'
+  },
+  en: {
+    helpTitle: 'How to Play?',
+    helpContent: `
+      <strong>Goal:</strong> Feed the monsters with the ingredients they want<br><br>
+      <strong>Step 1:</strong> Tap an ingredient from the ingredients tray<br>
+      <strong>Step 2:</strong> Drag it to the monster that wants it<br>
+      <strong>Step 3:</strong> The monster will eat it and you'll get points!<br><br>
+      <strong>Tip:</strong> Complete all orders before time runs out!
+    `,
+    level: 'Level',
+    time: 'Time',
+    orders: 'Orders',
+    complete: 'Complete!',
+    timeUp: 'Time\'s Up!',
+    gameComplete: 'Game Complete!',
+    nextLevel: 'Next Level →',
+    retry: 'Try Again',
+    backToMenu: 'Back to Menu',
+    playAgain: 'Play Again',
+    ordersCompleted: 'Orders completed',
+    monstersFed: 'Monsters fed',
+    totalOrders: 'Total orders',
+    youAre: 'You are an expert Monster Chef!'
+  }
+};
+
+let currentLanguage = 'es'; // Default language
+
+// ===============================
 // DEFINICIÓN DE INGREDIENTES
 // ===============================
 const INGREDIENTS = {
   cheese: {
     id: 'cheese',
     name: 'Queso',
+    nameEn: 'Cheese',
     emoji: '🧀',
     color: '#FFD700'
   },
@@ -67,30 +124,35 @@ const INGREDIENTS = {
   olives: {
     id: 'olives',
     name: 'Aceitunas',
+    nameEn: 'Olives',
     emoji: '🫒',
     color: '#000080'
   },
   mushrooms: {
     id: 'mushrooms',
     name: 'Champiñones',
+    nameEn: 'Mushrooms',
     emoji: '🍄',
     color: '#8B4513'
   },
   onions: {
     id: 'onions',
     name: 'Cebollas',
+    nameEn: 'Onions',
     emoji: '🧄',
     color: '#FFFAF0'
   },
   tomatoes: {
     id: 'tomatoes',
     name: 'Tomates',
+    nameEn: 'Tomatoes',
     emoji: '🍅',
     color: '#FF6347'
   },
   peppers: {
     id: 'peppers',
     name: 'Pimientos',
+    nameEn: 'Peppers',
     emoji: '🫑',
     color: '#228B22'
   }
@@ -153,6 +215,7 @@ function saveProgress() {
     currentLevel: gameState.currentLevel,
     totalOrdersCompleted: gameState.totalOrdersCompleted,
     totalMonstersFed: gameState.totalMonstersFed,
+    language: currentLanguage,
     lastPlayed: Date.now()
   };
   localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
@@ -166,6 +229,7 @@ function loadProgress() {
     gameState.currentLevel = progress.currentLevel || 0;
     gameState.totalOrdersCompleted = progress.totalOrdersCompleted || 0;
     gameState.totalMonstersFed = progress.totalMonstersFed || 0;
+    currentLanguage = progress.language || 'es';
   }
 }
 
@@ -183,6 +247,47 @@ function resetProgress() {
     isRunning: false,
     timerInterval: null
   };
+  currentLanguage = 'es';
+}
+
+// ===============================
+// CAMBIO DE IDIOMA
+// ===============================
+function toggleLanguage() {
+  currentLanguage = currentLanguage === 'es' ? 'en' : 'es';
+  saveProgress();
+  updateUI();
+}
+
+function updateUI() {
+  const lang = LANGUAGES[currentLanguage];
+  
+  // Update header
+  document.getElementById('levelLabel').textContent = lang.level;
+  document.getElementById('timeLabel').textContent = lang.time;
+  document.getElementById('ordersLabel').textContent = lang.orders;
+  
+  // Update modals
+  document.getElementById('levelCompleteTitle').textContent = lang.complete;
+  document.getElementById('levelCompleteText').textContent = lang.ordersCompleted;
+  document.getElementById('timeUpTitle').textContent = lang.timeUp;
+  document.getElementById('timeUpText').innerHTML = `${lang.ordersCompleted}: <span id="ordersCompleted">0</span> / <span id="ordersTarget">3</span>`;
+  document.getElementById('gameCompleteTitle').textContent = lang.gameComplete;
+  document.getElementById('gameCompleteText').textContent = lang.youAre;
+  document.getElementById('nextLevelBtn').textContent = lang.nextLevel;
+  document.getElementById('retryBtn').textContent = lang.retry;
+  document.getElementById('backToMenuBtn').textContent = lang.backToMenu;
+  document.getElementById('playAgainBtn').textContent = lang.playAgain;
+  
+  // Update stats labels
+  document.querySelector('.orders-stat-label').textContent = lang.ordersCompleted;
+  document.querySelector('.monsters-stat-label').textContent = lang.monstersFed;
+  document.querySelector('.total-orders-stat-label').textContent = lang.totalOrders;
+  document.querySelector('.total-monsters-stat-label').textContent = lang.totalMonstersFed;
+  
+  // Update help modal
+  document.getElementById('helpTitle').textContent = lang.helpTitle;
+  document.getElementById('helpContent').innerHTML = lang.helpContent;
 }
 
 // ===============================
@@ -216,6 +321,7 @@ function initLevel(levelIndex) {
   // Actualizar UI del nivel
   document.getElementById('currentLevel').textContent = level.id;
   document.getElementById('totalLevels').textContent = LEVELS.length;
+  updateUI();
 
   // Generar monstruos con pedidos
   generateMonsters(level);
@@ -312,14 +418,14 @@ function generateIngredients(level) {
       <span class="ingredient-emoji">${ing.emoji}</span>
     `;
 
-    // Eventos de drag and drop (desktop)
+    // Eventos de drag (desktop)
     ingEl.addEventListener('dragstart', handleDragStart);
     ingEl.addEventListener('dragend', handleDragEnd);
 
-    // Eventos de touch (móvil)
-    ingEl.addEventListener('touchstart', handleTouchStart);
-    ingEl.addEventListener('touchmove', handleTouchMove);
-    ingEl.addEventListener('touchend', handleTouchEnd);
+    // Eventos de touch (móvil - CORREGIDO)
+    ingEl.addEventListener('touchstart', handleTouchStart, { passive: false });
+    ingEl.addEventListener('touchmove', handleTouchMove, { passive: false });
+    ingEl.addEventListener('touchend', handleTouchEnd, { passive: false });
 
     container.appendChild(ingEl);
   });
@@ -331,6 +437,10 @@ function generateIngredients(level) {
     card.addEventListener('drop', handleDrop);
     card.addEventListener('dragenter', handleDragEnter);
     card.addEventListener('dragleave', handleDragLeave);
+    
+    // Eventos de touch para drop en móvil
+    card.addEventListener('touchmove', handleTouchMove, { passive: false });
+    card.addEventListener('touchend', handleTouchDropMobile, { passive: false });
   });
 }
 
@@ -381,51 +491,88 @@ function handleDrop(e) {
 }
 
 // ===============================
-// DRAG AND DROP (MÓVIL - TOUCH)
+// DRAG AND DROP (MÓVIL - CORREGIDO)
 // ===============================
 let touchIngredient = null;
 let touchElement = null;
+let touchStartX = 0;
+let touchStartY = 0;
+let touchElementStartX = 0;
+let touchElementStartY = 0;
 
 function handleTouchStart(e) {
-  touchIngredient = e.target.dataset.ingredient;
-  touchElement = e.target;
+  const touch = e.touches[0];
+  touchIngredient = e.target.closest('.ingredient-item');
+  
+  if (!touchIngredient) return;
+  
+  touchElement = touchIngredient;
+  touchStartX = touch.clientX;
+  touchStartY = touch.clientY;
+  
+  // Obtener posición inicial del elemento
+  const rect = touchElement.getBoundingClientRect();
+  touchElementStartX = rect.left;
+  touchElementStartY = rect.top;
+  
   touchElement.classList.add('dragging');
   e.preventDefault();
 }
 
 function handleTouchMove(e) {
+  if (!touchElement) return;
+  
   e.preventDefault();
   const touch = e.touches[0];
+  
+  // Calcular movimiento
+  const deltaX = touch.clientX - touchStartX;
+  const deltaY = touch.clientY - touchStartY;
+  
+  // Mover elemento visualmente
+  touchElement.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+  touchElement.style.zIndex = '1000';
+  
+  // Detectar monstruo debajo del dedo
   const element = document.elementFromPoint(touch.clientX, touch.clientY);
   const card = element?.closest('.monster-card');
-
+  
   document.querySelectorAll('.monster-card').forEach(c => {
     c.classList.remove('drag-over');
   });
-
+  
   if (card) {
     card.classList.add('drag-over');
   }
 }
 
 function handleTouchEnd(e) {
-  if (!touchIngredient || !touchElement) return;
+  if (!touchElement || !touchIngredient) return;
 
   touchElement.classList.remove('dragging');
+  touchElement.style.transform = '';
+  touchElement.style.zIndex = '';
+  
   const touch = e.changedTouches[0];
   const element = document.elementFromPoint(touch.clientX, touch.clientY);
   const card = element?.closest('.monster-card');
-
+  
   document.querySelectorAll('.monster-card').forEach(c => {
     c.classList.remove('drag-over');
   });
-
+  
   if (card) {
-    placeIngredient(card.id, touchIngredient);
+    const monsterId = card.id;
+    const ingredientId = touchIngredient.dataset.ingredient;
+    placeIngredient(monsterId, ingredientId);
   }
-
+  
   touchIngredient = null;
   touchElement = null;
+}
+
+function handleTouchDropMobile(e) {
+  // Ya manejado en handleTouchEnd
 }
 
 // ===============================
@@ -606,7 +753,7 @@ function playSound(type) {
     oscillator.stop(audioContext.currentTime + 0.15);
   } else if (type === 'levelComplete') {
     // Fanfarria
-    [523.25, 659.25, 783.99].forEach((freq, i) => {
+    [523.25, 659.25, 783.99, 1046.50].forEach((freq, i) => {
       const osc = audioContext.createOscillator();
       const gain = audioContext.createGain();
       osc.connect(gain);
@@ -695,6 +842,19 @@ function goToMenu() {
   hideModals();
   stopTimer();
   window.location.href = '../../index.html';
+}
+
+// ===============================
+// MODAL DE AYUDA
+// ===============================
+function showHelp() {
+  const modal = document.getElementById('helpModal');
+  modal.classList.add('active');
+}
+
+function hideHelp() {
+  const modal = document.getElementById('helpModal');
+  modal.classList.remove('active');
 }
 
 // ===============================

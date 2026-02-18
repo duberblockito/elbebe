@@ -1,6 +1,6 @@
 /* Chef de Monstruos - Styles
    Age Group: 3-5 years
-   Version: 1.0.0 */
+   Version: 1.1.0 (FIXED: Mobile drag + Help system + Language switch) */
 
 /* ===============================
    RESET Y BASE
@@ -18,6 +18,7 @@ body {
   color: #333;
   overflow: hidden;
   -webkit-tap-highlight-color: transparent;
+  user-select: none;
 }
 
 /* ===============================
@@ -54,23 +55,47 @@ body {
   gap: 10px;
 }
 
+.btn-lang,
+.btn-help,
 .btn-menu {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   border: none;
-  background: #667eea;
-  color: white;
   font-size: 1.2rem;
   cursor: pointer;
   transition: transform 0.2s, background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.btn-lang {
+  background: #764ba2;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.btn-help {
+  background: #f59e0b;
+  color: white;
+}
+
+.btn-menu {
+  background: #667eea;
+  color: white;
+}
+
+.btn-lang:hover,
+.btn-help:hover,
 .btn-menu:hover {
   transform: scale(1.1);
-  background: #5568d3;
+  filter: brightness(1.1);
 }
 
+.btn-lang:active,
+.btn-help:active,
 .btn-menu:active {
   transform: scale(0.95);
 }
@@ -124,6 +149,7 @@ body {
 
 .timer-icon {
   font-size: 1.2rem;
+  margin-right: 5px;
 }
 
 /* ===============================
@@ -153,14 +179,17 @@ body {
   border-radius: 20px;
   padding: 15px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s, border 0.2s;
   border: 3px solid transparent;
+  position: relative;
+  touch-action: none; /* Prevenir scroll mientras se arrastra */
 }
 
 .monster-card.drag-over {
   border-color: #667eea;
   transform: scale(1.02);
   box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+  background: #f0f4ff;
 }
 
 .monster-avatar {
@@ -173,10 +202,6 @@ body {
   margin: 0 auto 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s;
-}
-
-.monster-emoji {
-  font-size: 2.5rem;
 }
 
 .monster-avatar.happy {
@@ -277,6 +302,8 @@ body {
   padding: 15px;
   box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
   flex-shrink: 0;
+  max-height: 180px;
+  overflow-y: auto;
 }
 
 .chef-header {
@@ -294,6 +321,7 @@ body {
   font-size: 1.2rem;
   color: #333;
   font-weight: bold;
+  margin: 0;
 }
 
 .ingredients-tray {
@@ -304,7 +332,6 @@ body {
   padding: 10px;
   background: #F9FAFB;
   border-radius: 15px;
-  min-height: 80px;
 }
 
 .ingredient-item {
@@ -319,6 +346,12 @@ body {
   cursor: grab;
   transition: all 0.2s;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  touch-action: none; /* Importante para drag móvil */
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none; /* Prevenir drag nativo */
+  position: relative;
+  z-index: 10;
 }
 
 .ingredient-item:hover {
@@ -328,8 +361,12 @@ body {
 }
 
 .ingredient-item.dragging {
-  opacity: 0.5;
+  opacity: 0.8;
   cursor: grabbing;
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  z-index: 1000; /* Traer al frente mientras se arrastra */
+  position: relative; /* Permitir transform */
 }
 
 .ingredient-item:active {
@@ -338,6 +375,7 @@ body {
 
 .ingredient-emoji {
   font-size: 2.5rem;
+  pointer-events: none; /* Prevenir que el emoji interfiere con el touch */
   user-select: none;
   -webkit-user-select: none;
 }
@@ -373,6 +411,8 @@ body {
   padding: 30px;
   max-width: 400px;
   width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
   text-align: center;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
   transform: scale(0.8);
@@ -415,17 +455,37 @@ body {
   align-items: center;
 }
 
+.stat-label {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 5px;
+}
+
 .stat-value {
   font-size: 2rem;
   font-weight: bold;
   color: #667eea;
 }
 
-.stat-label {
-  font-size: 0.9rem;
-  color: #666;
+/* Estilos específicos del modal de ayuda */
+.help-content {
+  text-align: left;
+  background: #F9FAFB;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  line-height: 1.8;
 }
 
+.help-content strong {
+  color: #667eea;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* ===============================
+   BOTONES
+   =============================== */
 .btn-primary,
 .btn-secondary {
   padding: 12px 24px;
@@ -436,6 +496,7 @@ body {
   cursor: pointer;
   transition: all 0.2s;
   margin: 5px;
+  font-family: inherit;
 }
 
 .btn-primary {
@@ -469,9 +530,18 @@ body {
 @media (max-width: 375px) {
   .level-header {
     padding: 8px 10px;
+    border-radius: 0 0 15px 15px;
   }
 
   .level-indicator {
+    font-size: 1rem;
+  }
+
+  .btn-lang,
+  .btn-help,
+  .btn-menu {
+    width: 35px;
+    height: 35px;
     font-size: 1rem;
   }
 
@@ -530,6 +600,7 @@ body {
 
   .modal-content {
     padding: 20px;
+    max-height: 85vh;
   }
 
   .modal-icon {
@@ -552,6 +623,20 @@ body {
   .btn-secondary {
     padding: 10px 20px;
     font-size: 0.9rem;
+  }
+
+  .chef-station {
+    max-height: 120px;
+  }
+
+  .ingredients-tray {
+    padding: 8px;
+    gap: 8px;
+  }
+
+  .help-content {
+    padding: 15px;
+    font-size: 0.95rem;
   }
 }
 
@@ -576,6 +661,7 @@ body {
 
   .order-item {
     font-size: 1.3rem;
+    padding: 2px;
   }
 
   .order-slot {
@@ -591,6 +677,18 @@ body {
 
   .ingredient-emoji {
     font-size: 1.8rem;
+  }
+
+  .modal-icon {
+    font-size: 2.5rem;
+  }
+
+  .btn-lang,
+  .btn-help,
+  .btn-menu {
+    width: 30px;
+    height: 30px;
+    font-size: 0.9rem;
   }
 }
 
@@ -630,17 +728,14 @@ button:focus,
   outline-offset: 2px;
 }
 
-button {
-  font-family: inherit;
-}
-
 /* ===============================
    PRINT STYLES
    =============================== */
 @media print {
   .level-header,
   .game-hud,
-  .chef-station {
+  .chef-station,
+  .header-buttons {
     display: none;
   }
 }

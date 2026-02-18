@@ -11,12 +11,14 @@
   <div class="level-header">
     <div class="level-indicator">
       <span class="level-icon">🎯</span>
-      <span>Nivel</span>
+      <span id="levelLabel">Nivel</span>
       <span id="currentLevel">1</span>
       <span>/</span>
       <span id="totalLevels">5</span>
     </div>
     <div class="header-buttons">
+      <button onclick="toggleLanguage()" class="btn-lang" id="langBtn">ES</button>
+      <button onclick="showHelp()" class="btn-help">❓</button>
       <button onclick="goToMenu()" class="btn-menu">🏠</button>
     </div>
   </div>
@@ -29,6 +31,7 @@
       </div>
       <div class="timer-text">
         <span class="timer-icon">⏱️</span>
+        <span id="timeLabel">Tiempo</span>
         <span id="timeRemaining">40</span>s
       </div>
     </div>
@@ -38,7 +41,8 @@
         <div class="progress-fill" id="progressFill"></div>
       </div>
       <div class="progress-text">
-        <span id="completedOrders">0</span> / <span id="totalOrders">3</span> pedidos
+        <span id="ordersLabel">Pedidos</span>
+        <span id="completedOrders">0</span> / <span id="totalOrders">3</span>
       </div>
     </div>
   </div>
@@ -54,7 +58,7 @@
     <div class="chef-station">
       <div class="chef-header">
         <span class="chef-icon">👨‍🍳</span>
-        <h3>Ingredientes Disponibles</h3>
+        <h3 id="ingredientsTitle">Ingredientes Disponibles</h3>
       </div>
       <div class="ingredients-tray" id="ingredientsTray">
         <!-- Los ingredientes se generan dinámicamente aquí -->
@@ -66,19 +70,19 @@
   <div class="modal" id="levelCompleteModal">
     <div class="modal-content">
       <div class="modal-icon">🎉</div>
-      <h2 class="modal-title">¡Nivel Completado!</h2>
-      <p class="modal-text">Completaste todos los pedidos</p>
+      <h2 class="modal-title" id="levelCompleteTitle">¡Nivel Completado!</h2>
+      <p class="modal-text" id="levelCompleteText">Completaste todos los pedidos</p>
       <div class="modal-stats">
         <div class="stat-item">
+          <span class="stat-label orders-stat-label" id="ordersLabel2">Pedidos</span>
           <span class="stat-value" id="ordersCompleted">0</span>
-          <span class="stat-label">Pedidos</span>
         </div>
         <div class="stat-item">
+          <span class="stat-label monsters-stat-label" id="monstersLabel">Monstruos</span>
           <span class="stat-value" id="monstersFed">0</span>
-          <span class="stat-label">Monstruos</span>
         </div>
       </div>
-      <button onclick="nextLevel()" class="btn-primary">Siguiente Nivel →</button>
+      <button onclick="nextLevel()" class="btn-primary" id="nextLevelBtn">Siguiente Nivel →</button>
     </div>
   </div>
 
@@ -86,10 +90,10 @@
   <div class="modal" id="timeUpModal">
     <div class="modal-content">
       <div class="modal-icon">⏰</div>
-      <h2 class="modal-title">¡Se Acabó el Tiempo!</h2>
-      <p class="modal-text">Pedidos completados: <span id="ordersCompleted">0</span> de <span id="ordersTarget">3</span></p>
-      <button onclick="retryLevel()" class="btn-primary">Intentar de Nuevo</button>
-      <button onclick="goToMenu()" class="btn-secondary">Volver al Menú</button>
+      <h2 class="modal-title" id="timeUpTitle">¡Se Acabó el Tiempo!</h2>
+      <p class="modal-text"><span id="ordersLabel3">Pedidos completados</span>: <span id="ordersCompletedTimeUp">0</span> de <span id="ordersTargetTimeUp">3</span></p>
+      <button onclick="retryLevel()" class="btn-primary" id="retryBtn">Intentar de Nuevo</button>
+      <button onclick="goToMenu()" class="btn-secondary" id="backToMenuBtn">Volver al Menú</button>
     </div>
   </div>
 
@@ -97,19 +101,31 @@
   <div class="modal" id="gameCompleteModal">
     <div class="modal-content">
       <div class="modal-icon">🎊</div>
-      <h2 class="modal-title">¡Juego Completado!</h2>
-      <p class="modal-text">¡Eres un Chef de Monstruos experto!</p>
+      <h2 class="modal-title" id="gameCompleteTitle">¡Juego Completado!</h2>
+      <p class="modal-text" id="gameCompleteText">¡Eres un Chef de Monstruos experto!</p>
       <div class="modal-stats">
         <div class="stat-item">
+          <span class="stat-label total-orders-stat-label" id="totalOrdersLabel">Total Pedidos</span>
           <span class="stat-value" id="totalOrdersComplete">0</span>
-          <span class="stat-label">Total Pedidos</span>
         </div>
         <div class="stat-item">
+          <span class="stat-label total-monsters-stat-label" id="totalMonstersLabel">Total Monstruos</span>
           <span class="stat-value" id="totalMonstersComplete">0</span>
-          <span class="stat-label">Total Monstruos</span>
         </div>
       </div>
-      <button onclick="playAgain()" class="btn-primary">Jugar de Nuevo</button>
+      <button onclick="playAgain()" class="btn-primary" id="playAgainBtn">Jugar de Nuevo</button>
+    </div>
+  </div>
+
+  <!-- Modal: Ayuda -->
+  <div class="modal" id="helpModal">
+    <div class="modal-content">
+      <div class="modal-icon">❓</div>
+      <h2 class="modal-title" id="helpTitle">¿Cómo Jugar?</h2>
+      <div class="help-content" id="helpContent">
+        Contenido de ayuda...
+      </div>
+      <button onclick="hideHelp()" class="btn-primary" id="closeHelpBtn">Entendido</button>
     </div>
   </div>
 
