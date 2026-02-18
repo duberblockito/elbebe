@@ -49,6 +49,7 @@ This document outlines the development roadmap for the 41 games currently in the
 |----|-----------|--------|
 | 001 | **Math Blaster** | Blast asteroids with math. | ✅ Done |
 | 002 | **Constructor Palabras** | Spelling with drag and drop. | ✅ Done |
+| 003 | **Laberinto Aventura** | Guide character through maze to find keys and chests. | ✅ Done |
 
 ## 👱 8-15 Years (Tweens/Teens)
 
@@ -67,10 +68,10 @@ This document outlines the development roadmap for the 41 games currently in the
 | 1-2 Years | 3 | 3 |
 | 2-3 Years | 3 | 3 |
 | 3-5 Years | 3 | 3 |
-| 5-8 Years | 2 | 3 |
+| 5-8 Years | 3 | 3 |
 | 8-15 Years | 2 | 3 |
 
-*Nota: `003-colores-vibran`, `003-pintura-dedos` y `003-rompecabezas` completados y validados por QA*
+*Nota: `003-colores-vibran`, `003-pintura-dedos`, `003-rompecabezas` y `laberinto-aventura` completados y validados*
 
 ---
 

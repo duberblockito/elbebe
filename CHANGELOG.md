@@ -2,6 +2,58 @@
 
 ---
 
+## [v1.13.0] - 2026-02-18 19:43 UTC (Bogotá)
+
+### ✨ Nuevo Juego Implementado
+
+**Juego:** laberinto-aventura (Laberinto Aventura)
+**Categoría:** 5-8 Años (Early Elementary)
+**Fuente del plan:** Idea #3 de `/games-idea/5-8/ideas-5-8.md`
+
+**Descripción:**
+Guía al héroe a través de un laberinto para encontrar llaves y abrir cofres. Usa las flechas o desliza para moverte. Recoge todas las llaves, abre el cofre y busca la salida antes de que se acabe el tiempo. Incluye 5 niveles progresivos con laberintos más complejos, más llaves por recoger y tiempos más ajustados. Diseñado específicamente para niños de 5-8 años que están desarrollando habilidades de resolución de problemas y navegación espacial.
+
+**Características implementadas:**
+- ✅ Generación procedural de laberintos (algoritmo recursive backtracker)
+- ✅ Controles múltiples: flechas del teclado, WASD, swipe táctil, botones en pantalla
+- ✅ Personaje con ojos y sonidos de movimiento
+- ✅ Sistema de 5 niveles progresivos:
+  - Nivel 1: 9x9, 1 llave, 45s
+  - Nivel 2: 11x11, 1 llave, 50s
+  - Nivel 3: 13x13, 2 llaves, 55s
+  - Nivel 4: 15x15, 2 llaves, 60s
+  - Nivel 5: 17x17, 3 llaves, 65s
+- ✅ Llaves doradas que brillan y suenan al recogerlas
+- ✅ Cofres rojos que solo se abren con todas las llaves
+- ✅ Salida verde que completa el nivel
+- ✅ Barra de progreso visual mostrando llaves recogidas vs necesarias
+- ✅ Barra de temporizador visual (verde → amarillo → rojo según tiempo restante)
+- ✅ HUD (Heads Up Display) con nivel actual, llaves, tiempo
+- ✅ Persistencia en localStorage (`laberinto-aventura-progress`)
+  - currentLevel: Nivel actual desbloqueado
+- ✅ Mensajes en pantalla: "¡Busca el cofre!", "¡Busca la salida!"
+- ✅ Modales: Nivel Completado, Tiempo Agotado, Juego Completado
+- ✅ Feedback de sonido: key, chest, levelUp, gameOver, step
+- ✅ Diseño responsivo optimizado para móvil (375x667px base para iPhone SE)
+- ✅ Touch events completos para dispositivos móviles
+- ✅ Laberintos con colores distintivos y alto contraste
+- ✅ Personaje púrpura con ojos expresivos
+- ✅ Animaciones fluidas a 60fps
+
+**Archivos creados:**
+- `games/laberinto-aventura/index.html` (Punto de entrada HTML - 7.1 KB)
+- `games/laberinto-aventura/js/game.js` (Lógica del juego - 19.0 KB)
+- `games/laberinto-aventura/manifest.json` (Metadatos - 0.3 KB)
+- `games/laberinto-aventura/thumbnail.png` (Thumbnail PNG - 6.1 KB)
+- `games/laberinto-aventura/thumbnail.svg` (Thumbnail SVG - 1.0 KB)
+
+**Archivos actualizados:**
+- `public/js/games-list.json` - Registro del nuevo juego
+- `master-game-plan.md` - Marcado como ✅ Done
+- `development-queue.md` - Contador actualizado de juegos 5-8 Años
+
+---
+
 ## [v1.12.0] - 2026-02-18 19:30 UTC (Bogotá)
 
 ### ✨ Nuevo Juego Implementado
