@@ -2,6 +2,71 @@
 
 ---
 
+## [v1.6.0] - 2026-02-18 05:55 UTC (Bogotá)
+
+### ✨ Cache Busting System
+- **Sistema de versionamiento de enlaces para control de caché**
+  - Creado archivo `js/main.js` con constante global `SITE_VERSION = '1.6.0'`
+  - Implementada función `buildUrlWithVersion()` para agregar parámetro `?v=X.Y.Z` a URLs
+  - Actualizado `home.js` para usar cache busting en:
+    * Enlaces de juegos (`launchGame()`)
+    * Thumbnails de juegos (evita imágenes stale)
+  - Actualizado `index.html` para agregar version a CSS y JS
+  - Actualizado juego `001-pinta-nubes` como ejemplo de implementación
+
+### 📋 Funcionalidades
+- **Control de versión global:**
+  - Versión centralizada en `main.js` (APP_VERSION)
+  - Disponible globalmente como `window.APP_VERSION`
+  - Función `getAppVersion()` para consultar versión actual
+
+- **Cache busting automático:**
+  - URLs de juegos ahora incluyen versión: `games/pinta-nubes/?v=1.6.0`
+  - Thumbnails actualizan automáticamente con versión
+  - CSS y JS principales con versión en URL
+
+- **Beneficios:**
+  - Los navegadores detectan cambios de versión y refrescan caché
+  - Los dispositivos siempre usan la versión más reciente
+  - Soluciona problemas de usuarios viendo versiones antiguas
+
+### 📝 Archivos Creados
+- `public/js/main.js` (1873 bytes)
+  - Definición de SITE_VERSION = '1.6.0'
+  - Función `buildUrlWithVersion(baseUrl, version)`
+  - Exportación global de funciones
+  - Logging de versión en consola para debugging
+
+### 📝 Archivos Modificados
+- `public/index.html` (+2 lines)
+  - Agregado `?v=1.6.0` a CSS: `css/style.css?v=1.6.0`
+  - Agregado `?v=1.6.0` a CSS: `css/animations.css?v=1.6.0`
+  - Agregado `?v=1.6.0` a JS: `js/main.js?v=1.6.0`
+  - Agregado `?v=1.6.0` a JS: `js/home.js?v=1.6.0`
+
+- `public/js/home.js` (+4 lines, -2 lines)
+  - Actualizada `launchGame()` para usar `buildUrlWithVersion()`
+  - Actualizada `createGameCard()` para agregar versión a thumbnails
+  - Mantén backward compatibility si `main.js` no carga primero
+
+- `public/games/001-pinta-nubes/index.html` (+2 lines)
+  - Agregado `?v=1.6.0` a `game.css`
+  - Agregado `?v=1.6.0` a `game.js`
+
+### 📋 Próximos Pasos
+- [ ] Actualizar juegos restantes con cache busting (poppit-burbujas, 001-chef-monstruos, 001-math-blaster, code-quest)
+- [ ] Crear script automatizado para actualizar versiones en todos los juegos
+- [ ] Documentar proceso de actualización de versión para futuros releases
+
+### 🏷️ Etiquetas
+- CacheBusting
+- VersionManagement
+- Performance
+- CacheControl
+- UX
+
+---
+
 ## [v1.5.0] - 2026-02-18 04:50 UTC (Bogotá)
 
 ### ✨ Nuevo Juego

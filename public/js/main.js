@@ -4,6 +4,51 @@
  */
 
 // ============================================
+// Application Version
+// ============================================
+
+/**
+ * Current application version
+ * This version is tracked in CHANGELOG.md and used for cache busting
+ * Format: MAJOR.MINOR.PATCH (following Semantic Versioning)
+ *
+ * When updating this version:
+ * 1. Update CHANGELOG.md with release notes
+ * 2. Update games-list.json version field
+ * 3. Deploy to production to force cache refresh on all devices
+ */
+const SITE_VERSION = '1.6.0';
+
+/**
+ * Get current application version
+ * @returns {string} Current version in MAJOR.MINOR.PATCH format
+ */
+function getAppVersion() {
+  return SITE_VERSION;
+}
+
+/**
+ * Build URL with cache busting parameter
+ * Adds version parameter to force browser to fetch fresh content
+ *
+ * @param {string} baseUrl - Base URL without parameters
+ * @param {string} version - Version parameter (defaults to current app version)
+ * @returns {string} URL with version parameter
+ *
+ * @example
+ * buildUrlWithVersion('games/pinta-nubes/')
+ * // Returns: 'games/pinta-nubes/?v=1.5.0'
+ *
+ * @example
+ * buildUrlWithVersion('css/style.css', '1.4.0')
+ * // Returns: 'css/style.css?v=1.4.0'
+ */
+function buildUrlWithVersion(baseUrl, version = SITE_VERSION) {
+  const separator = baseUrl.includes('?') ? '&' : '?';
+  return `${baseUrl}${separator}v=${version}`;
+}
+
+// ============================================
 // Google Analytics Configuration
 // ============================================
 const GA_TRACKING_ID = 'G-TRN3EYQ6H1';
@@ -237,8 +282,6 @@ function renderHeader() {
 // Footer Component
 // ============================================
 
-const SITE_VERSION = '1.3.0';
-
 /**
  * Render the site footer
  */
@@ -291,6 +334,18 @@ function loadSharedComponents() {
   window.t = t;
   window.getCurrentLanguage = getCurrentLanguage;
 }
+
+// ============================================
+// Export to global scope
+// ============================================
+
+// Make version functions available globally
+window.SITE_VERSION = SITE_VERSION;
+window.getAppVersion = getAppVersion;
+window.buildUrlWithVersion = buildUrlWithVersion;
+
+// Log version on load for debugging
+console.log(`%c🎮 El Bebe Games v${SITE_VERSION}`, 'color: #6C5CE7; font-weight: bold; font-size: 14px;');
 
 /**
  * Initialize when DOM is ready

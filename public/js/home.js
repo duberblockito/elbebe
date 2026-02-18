@@ -50,7 +50,10 @@ function createGameCard(game) {
   card.setAttribute('data-game-id', game.id);
   card.setAttribute('data-age', game.recommended_age);
 
-  const thumbnailPath = `games/${game.id}/${game.thumbnail}`;
+  // Add cache busting to thumbnail
+  const thumbnailPath = window.buildUrlWithVersion
+    ? window.buildUrlWithVersion(`games/${game.id}/${game.thumbnail}`)
+    : `games/${game.id}/${game.thumbnail}`;
   const gamePath = `games/${game.id}/`;
 
   card.innerHTML = `
@@ -262,8 +265,10 @@ function launchGame(gameId) {
     });
   }
 
-  // Navigate to game
-  window.location.href = `games/${gameId}/`;
+  // Navigate to game with cache busting
+  const baseUrl = `games/${gameId}/`;
+  const gameUrl = window.buildUrlWithVersion ? window.buildUrlWithVersion(baseUrl) : baseUrl;
+  window.location.href = gameUrl;
 }
 
 // Make launchGame available globally for inline onclick
