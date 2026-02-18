@@ -186,7 +186,6 @@ function playAnimalSound(animalId) {
 
 function initGameBoard() {
   const gameBoard = document.getElementById('gameBoard');
-  const header = document.querySelector('.game-title');
   
   // Clear existing content
   gameBoard.innerHTML = '';
@@ -200,21 +199,8 @@ function initGameBoard() {
     gameBoard.appendChild(icon);
   });
   
-  // Update header
-  const levelNum = gameState.currentLevel + 1;
-  header.textContent = `🐕 Animalitos que Suenan - Nivel ${levelNum}`;
-  
-  // Create score display
-  const scoreText = document.createElement('div');
-  scoreText.className = 'score';
-  scoreText.innerHTML = `🔊 Animales: ${gameState.animalsPlayed}`;
-  gameBoard.appendChild(scoreText);
-  
-  // Create timer display
-  const timerText = document.createElement('div');
-  timerText.className = 'timer';
-  timerText.id = 'timer';
-  gameBoard.appendChild(timerText);
+  // Update HUD (nivel, progreso, tiempo)
+  updateHUD();
 }
 
 function createAnimalIcon(animal) {
@@ -259,7 +245,9 @@ function startGame() {
   
   initAudio();
   initGameBoard();
-  startTimer(LEVELS[gameState.currentLevel].timeLimit);
+  
+  // Initialize timer interval
+  gameState.timerInterval = setInterval(updateTimer, 1000);
   
   gameState.currentLevel = 0;
   gameState.animalsPlayed = 0;
@@ -267,6 +255,9 @@ function startGame() {
   gameState.timeRemaining = LEVELS[gameState.currentLevel].timeLimit * 1000;
   gameState.isRunning = true;
   gameState.isPaused = false;
+  
+  // Update HUD with initial values
+  updateHUD();
   
   // Auto-play random animal from level
   playRandomAnimalFromLevel();
@@ -314,20 +305,8 @@ function startGame() {
 }
 
 function updateTimer() {
-  const timerText = document.getElementById('timer');
-  if (timerText) {
-    const remaining = Math.max(0, gameState.timeRemaining);
-    timerText.textContent = `${remaining}s`;
-    
-    // Change color based on remaining time
-    if (remaining < 10) {
-      timerText.style.color = '#4CAF50'; // Green
-    } else if (remaining < 20) {
-      timerText.style.color = '#FFC107'; // Orange
-    } else {
-      timerText.style.color = '#EF4444'; // Red
-    }
-  }
+  // Update HUD timer bar
+  updateTimerBar();
   
   // Check for time up
   if (gameState.timeRemaining <= 0 && gameState.isRunning) {
@@ -336,10 +315,8 @@ function updateTimer() {
 }
 
 function updateScore() {
-  const scoreText = document.querySelector('.score');
-  if (scoreText) {
-    scoreText.innerHTML = `🔊 Animales: ${gameState.animalsPlayed}`;
-  }
+  // Update HUD progress bar
+  updateProgressBar();
 }
 
 function levelComplete() {
@@ -409,6 +386,9 @@ function nextLevel() {
   // Clear board and reinitialize
   initGameBoard();
   
+  // Update HUD with new level values
+  updateHUD();
+  
   // Start new timer
   gameState.timerInterval = setInterval(updateTimer, 1000);
   
@@ -450,6 +430,91 @@ function loadProgress() {
       console.log('%c💾 Progress loaded', 'color: #F59E0B;');
     } catch (e) {
       console.error('Error loading progress:', e);
+    }
+  }
+}
+
+// ============================================
+// HUD: Heads Up Display Updates
+// ============================================
+
+function updateHUD() {
+  updateLevelDisplay();
+  updateProgressBar();
+  updateTimerBar();
+}
+
+function updateLevelDisplay() {
+  const levelDisplay = document.getElementById('levelDisplay');
+  if (levelDisplay) {
+    const currentLevel = gameState.currentLevel + 1;
+    const totalLevels = LEVELS.length;
+    levelDisplay.textContent = `${currentLevel}/${totalLevels}`;
+  }
+}
+
+function updateProgressBar() {
+  const progressBar = document.getElementById('progressBar');
+  const progressText = document.getElementById('progressText');
+  
+  if (progressBar && progressText) {
+    const currentLevelConfig = LEVELS[gameState.currentLevel];
+    const target = currentLevelConfig.scoreRequirement;
+    const current = gameState.animalsPlayed;
+    
+    // Calculate percentage (clamp between 0-100)
+    const percentage = Math.min(100, Math.max(0, (current / target) * 100));
+    
+    // Update bar width
+    progressBar.style.width = `${percentage}%`;
+    
+    // Update text
+    progressText.textContent = `${current}/${target}`;
+    
+    // Change color based on progress
+    if (percentage >= 100) {
+      progressBar.style.background = 'linear-gradient(90deg, #4CAF50 0%, #66BB6A 100%)';
+    } else if (percentage >= 50) {
+      progressBar.style.background = 'linear-gradient(90deg, #10B981 0%, #4CAF50 100%)';
+    } else {
+      progressBar.style.background = 'linear-gradient(90deg, #10B981 0%, #10B981 100%)';
+    }
+  }
+}
+
+function updateTimerBar() {
+  const timerBar = document.getElementById('timerBar');
+  const timerText = document.getElementById('timerText');
+  
+  if (timerBar && timerText) {
+    const currentLevelConfig = LEVELS[gameState.currentLevel];
+    const totalTime = currentLevelConfig.timeLimit;
+    const remaining = gameState.timeRemaining;
+    
+    // Calculate percentage
+    const percentage = Math.min(100, Math.max(0, (remaining / totalTime) * 100));
+    
+    // Update bar width
+    timerBar.style.width = `${percentage}%`;
+    
+    // Update text
+    timerText.textContent = `${remaining}s`;
+    
+    // Update color based on time remaining
+    const timeRatio = remaining / totalTime;
+    
+    // Remove all time classes first
+    timerBar.classList.remove('high-time', 'medium-time', 'low-time');
+    
+    if (timeRatio > 0.5) {
+      // High time (>50% remaining) - Green
+      timerBar.classList.add('high-time');
+    } else if (timeRatio > 0.25) {
+      // Medium time (25-50% remaining) - Orange
+      timerBar.classList.add('medium-time');
+    } else {
+      // Low time (<25% remaining) - Red with pulse
+      timerBar.classList.add('low-time');
     }
   }
 }
