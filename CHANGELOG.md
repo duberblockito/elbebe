@@ -5,6 +5,25 @@ Todos los cambios notables en este proyecto se documentarán en este archivo.
 El formato se basa en [Keep a Changelog](https://keepachangelog.com/es-ES/1.0.0/),
 y este proyecto se adhiere a [Semantic Versioning](https://semver.org/lang/es/).
 
+## [1.3.0] - 2026-02-18
+
+### Fixed
+-   **BUG-002 - Pinta las Nubes**: Agregados niveles, temporizador y progresión de dificultad
+    - Implementado sistema de 5 niveles con dificultad progresiva (5-12 animales por nivel)
+    - Cada nivel tiene límite de tiempo (30-50 segundos, dentro del rango 20s-5min)
+    - Agregada barra de tiempo visual con cambio de color a rojo cuando queda < 25%
+    - Agregados modales: nivel completado, tiempo agotado, juego completo
+    - Expandido pool de animales a 15 (para variedad en cada nivel)
+    - Implementado localStorage para guardar niveles desbloqueados y progreso total
+    - Cumple game-design-rules.md Sección 7: Levels & Progression
+    - Validación TDD: ✅ Completada
+
+### Changed
+-   `public/games/001-pinta-nubes/game.js`: +510 líneas de lógica de niveles
+-   `public/games/001-pinta-nubes/index.html`: +74 líneas (HUD, modals, timer)
+-   `public/games/001-pinta-nubes/game.css`: +380 líneas (estilos para timer, modals, cloud sizes)
+-   `bugs/BUG-002-pinta-nubes-sin-niveles-timer-progresion.md`: Marcado como [Fixed] con fix applied
+
 ## [1.2.0] - 2026-02-18
 
 ### Added
