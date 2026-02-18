@@ -11,6 +11,12 @@ class WordBuilderGame {
         this.currentLetters = [];
         this.userLetters = [];
 
+        // Timer State
+        this.timeLimit = 60;
+        this.timeRemaining = 60;
+        this.timerInterval = null;
+        this.isTimerRunning = false;
+
         // Word Database
         this.wordDatabase = [
             // Nivel 1 - 3 letras
@@ -67,7 +73,14 @@ class WordBuilderGame {
             finalScore: document.getElementById('final-score'),
             wordsCompleted: document.getElementById('words-completed'),
             nextLevelBtn: document.getElementById('next-level-btn'),
-            backHomeBtn: document.getElementById('back-home-btn')
+            backHomeBtn: document.getElementById('back-home-btn'),
+            timerFill: document.getElementById('timer-fill'),
+            timerText: document.getElementById('timer-text'),
+            timeUpModal: document.getElementById('time-up-modal'),
+            timeUpScore: document.getElementById('time-up-score'),
+            timeUpWords: document.getElementById('time-up-words'),
+            retryLevelBtn: document.getElementById('retry-level-btn'),
+            timeUpBackBtn: document.getElementById('time-up-back-btn')
         };
 
         // Initialize
@@ -78,6 +91,7 @@ class WordBuilderGame {
         this.loadProgress();
         this.setupEventListeners();
         this.loadNewWord();
+        this.startTimer();
         this.updateUI();
     }
 
@@ -105,19 +119,86 @@ class WordBuilderGame {
         this.elements.backHomeBtn.addEventListener('click', () => {
             window.location.href = '../../index.html';
         });
+        this.elements.retryLevelBtn.addEventListener('click', () => this.retryLevel());
+        this.elements.timeUpBackBtn.addEventListener('click', () => {
+            window.location.href = '../../index.html';
+        });
+    }
+
+    startTimer() {
+        if (this.isTimerRunning) {
+            return;
+        }
+
+        this.timeRemaining = this.timeLimit;
+        this.isTimerRunning = true;
+        this.updateTimerUI();
+
+        this.timerInterval = setInterval(() => {
+            this.timeRemaining--;
+            this.updateTimerUI();
+
+            if (this.timeRemaining <= 0) {
+                this.stopTimer();
+                this.showTimeUp();
+            }
+        }, 1000);
+    }
+
+    stopTimer() {
+        if (this.timerInterval) {
+            clearInterval(this.timerInterval);
+            this.timerInterval = null;
+        }
+        this.isTimerRunning = false;
+    }
+
+    updateTimerUI() {
+        const percentage = (this.timeRemaining / this.timeLimit) * 100;
+        this.elements.timerFill.style.width = `${percentage}%`;
+        this.elements.timerText.textContent = `${this.timeRemaining}s`;
+
+        // Change color when time is running low
+        if (percentage <= 20) {
+            this.elements.timerFill.style.backgroundColor = '#e74c3c';
+        } else if (percentage <= 50) {
+            this.elements.timerFill.style.backgroundColor = '#f39c12';
+        } else {
+            this.elements.timerFill.style.backgroundColor = '#3498db';
+        }
+    }
+
+    showTimeUp() {
+        this.stopTimer();
+        this.elements.timeUpScore.textContent = this.score;
+        this.elements.timeUpWords.textContent = this.wordsCompleted;
+        this.elements.timeUpModal.classList.add('show');
+    }
+
+    retryLevel() {
+        this.elements.timeUpModal.classList.remove('show');
+        this.wordsCompleted = 0;
+        this.score = 0;
+        this.loadNewWord();
+        this.startTimer();
+        this.updateUI();
+        this.saveProgress();
     }
 
     getWordsForLevel(level) {
-        // Level 1: 3-4 letters words
+        // Level 1: 3-4 letters words, 60 seconds
         if (level === 1) {
+            this.timeLimit = 60;
             return this.wordDatabase.filter(w => w.word.length <= 4);
         }
-        // Level 2: 4-5 letters words
+        // Level 2: 4-5 letters words, 90 seconds
         else if (level === 2) {
+            this.timeLimit = 90;
             return this.wordDatabase.filter(w => w.word.length >= 4 && w.word.length <= 5);
         }
-        // Level 3+: All words
+        // Level 3+: All words, 120 seconds
         else {
+            this.timeLimit = 120;
             return this.wordDatabase;
         }
     }
@@ -329,10 +410,12 @@ class WordBuilderGame {
     }
 
     nextLevel() {
+        this.stopTimer();
         this.currentLevel++;
         this.wordsCompleted = 0;
         this.elements.gameOverModal.classList.remove('show');
         this.loadNewWord();
+        this.startTimer();
         this.saveProgress();
     }
 

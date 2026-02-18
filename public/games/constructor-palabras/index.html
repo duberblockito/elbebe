@@ -24,6 +24,14 @@
                 </div>
                 <span class="progress-text"><span id="progress-text">0/5</span></span>
             </div>
+
+            <!-- Timer Bar -->
+            <div class="timer-bar-container">
+                <div class="timer-bar">
+                    <div class="timer-fill" id="timer-fill"></div>
+                </div>
+                <span class="timer-text" id="timer-text">60s</span>
+            </div>
         </div>
 
         <!-- Game Area -->
@@ -66,6 +74,20 @@
                 </div>
                 <button class="btn btn-primary" id="next-level-btn">Siguiente Nivel</button>
                 <button class="btn btn-secondary" id="back-home-btn">🏠 Volver al Inicio</button>
+            </div>
+        </div>
+
+        <!-- Time's Up Modal -->
+        <div class="modal" id="time-up-modal">
+            <div class="modal-content">
+                <h2>⏰ ¡Se Acabó el Tiempo!</h2>
+                <p>No completaste las suficientes palabras a tiempo.</p>
+                <div class="level-stats">
+                    <p>Puntos: <span id="time-up-score">0</span></p>
+                    <p>Palabras: <span id="time-up-words">0</span>/5</p>
+                </div>
+                <button class="btn btn-primary" id="retry-level-btn">🔄 Intentar de Nuevo</button>
+                <button class="btn btn-secondary" id="time-up-back-btn">🏠 Volver al Inicio</button>
             </div>
         </div>
     </div>
