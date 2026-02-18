@@ -2,7 +2,7 @@
 
 **ID:** BUG-004
 **Title:** Colores que Vibran - Sin niveles, timer ni progreso (Violación regla game-design-rules.md Sección 7)
-**Status:** [Reported]
+**Status:** [Fixed & Committed]
 
 ## Description
 El juego "Colores que Vibran" (colores-vibran) viola la regla MANDATORIA de game-design-rules.md Sección 7 (Levels & Progression).

@@ -2,6 +2,85 @@
 
 ---
 
+## [🐛 BUG REPORTED] - 2026-02-18 16:30 UTC (Bogotá)
+
+### 🐛 Bug Detectado por QA
+
+**Juego:** 003-pintura-dedos (Pintura con los Dedos)
+**Bug ID:** BUG-005
+**Severidad:** MEDIA
+**Estado:** [Open]
+
+**Descripción del bug:**
+El plan del juego "Pintura con Dedos" en `/games-backlog/1-2-003-pintura-dedos.md` viola la regla MANDATORIA de game-design-rules.md Sección 7 (Levels & Progression):
+- ❌ Requisitos incompletos: "Level: Creative tool", "Progress: N/A", "Persistence: optional"
+- ❌ No especifica sistema de niveles
+- ❌ No especifica barra de progreso visual o temporizador
+- ❌ La persistencia es opcional (debe ser obligatoria)
+- ❌ No define objetivos o milestones para el juego
+
+**Impacto:**
+- 🚫 Bloquea inicio de desarrollo del juego "Pintura con Dedos"
+- 🔴 Regla "Bugs First": ACTIVA - Desarrollo bloqueado hasta corregir el plan
+
+**Acción requerida:**
+- Corregir el plan del juego para incluir requisitos de niveles
+- Definir sistema de 5 niveles progresivos para pintura con dedos
+- Especificar barra de progreso visual
+- Definir persistencia obligatoria en localStorage
+
+**Referencia:**
+- Bug report: `/bugs/BUG-005-pintura-dedos-plan-incompleto.md`
+- Related: BUG-002 (pinta-nubes), BUG-004 (colores-vibran) - similar pattern detected
+
+**Nota:** Este bug fue detectado por QA durante el proceso de validación automática. El plan del juego debe ser corregido antes de iniciar el desarrollo.
+
+---
+
+## [v1.9.1] - 2026-02-18 16:20 UTC (Bogotá)
+
+### 🐛 Bug Fix
+
+**Juego:** 003-colores-vibran (Colores que Vibran)
+**Bug ID:** BUG-004
+**Severidad:** CRÍTICA
+**Estado:** ✅ Fixed
+
+**Descripción del bug:**
+El juego "Colores que Vibran" violaba la regla MANDATORIA de game-design-rules.md Sección 7 (Levels & Progression):
+- ❌ No tenía sistema de niveles definidos
+- ❌ No tenía barra de progreso visual o temporizador
+- ❌ No tenía persistencia en localStorage
+- ❌ Era un loop infinito sin hitos claros ni objetivos
+
+**Correcciones implementadas:**
+- ✅ Sistema de 5 niveles progresivos (5, 8, 10, 12, 15 touches por nivel)
+- ✅ Temporizador por nivel (30s → 50s progresivo)
+- ✅ Barra de progreso visual que muestra touches vs objetivo
+- ✅ Barra de temporizador visual (verde → rojo según tiempo restante)
+- ✅ Persistencia en localStorage (`colores-vibran-progress`)
+- ✅ HUD (Heads Up Display) con nivel actual, touches, objetivo
+- ✅ Modales: Nivel Completado, Tiempo Agotado, Juego Completado
+- ✅ Sonidos de nivel completado y game over
+- ✅ Sistema de progreso guardado (unlockedLevels, totalGamesPlayed, totalTouches)
+- ✅ Diseño responsivo optimizado para móvil (375x667px base para iPhone SE)
+
+**Archivos actualizados:**
+- `public/games/colores-vibran/index.html` (Agregado HUD, barras de progreso, modales)
+- `public/games/colores-vibran/assets/game.js` (Implementado sistema de niveles, timer, persistencia)
+- `public/games/colores-vibran/assets/game.css` (Estilos para HUD, barras, modales)
+
+**Cumplimiento de reglas de diseño (game-design-rules.md):**
+- ✅ Sección 7 (Levels & Progression): Niveles progresivos, barra de progreso visual, temporizador, persistencia
+- ✅ Sección 2 (Technical Requirements): HTML/CSS/JS puro, Web Audio API, touch events
+- ✅ Sección 9 (Accessibility): HUD legible, alto contraste, textos grandes
+
+**Referencia:**
+- Bug report: `/bugs/BUG-004-colores-vibran-sin-niveles-timer-progresion.md`
+- Implementación basada en: `public/games/burbujas-magicas/js/game.js` (patrón correcto para juegos 0-1 años)
+
+---
+
 ## [v1.9.0] - 2026-02-18 15:40 UTC (Bogotá)
 
 ### ✨ Nuevo Juego Implementado
@@ -23,7 +102,7 @@ Juego sensorial donde el bebé toca la pantalla para ver colores brillantes y es
 - ✅ Debounce de 100ms para evitar cambios demasiado rápidos
 - ✅ Diseño responsivo optimizado para móvil (375x667px base)
 - ✅ Overlay de inicio con botón grande y amigable
-- ✅ Sin límites, sin puntuación, sin timers - pura exploración sensorial
+- ⚠️ Sin límites, sin puntuación, sin timers - pura exploración sensorial (BUG-004 reportado)
 
 **Archivos creados:**
 - `games/colores-vibran/index.html` (Punto de entrada HTML - 1.0 KB)
@@ -45,7 +124,8 @@ Juego sensorial donde el bebé toca la pantalla para ver colores brillantes y es
 - ✅ Sección 2 (Technical Requirements): HTML/CSS/JS puro, Web Audio API, touch events
 - ✅ Sección 3 (Metadata): manifest.json válido con todos los campos requeridos
 - ✅ Sección 4 (Game Registration): Registrado en games-list.json
-- ✅ Sección 9 (Definition of Done): Todos los items del checklist completados
+- ⚠️ Sección 7 (Levels & Progression): VIOLADA - Corregido en v1.9.1 (BUG-004)
+- ⚠️ Sección 9 (Definition of Done): BUG-004 reportado por violación de Sección 7
 
 ---
 
@@ -398,7 +478,7 @@ Grid de 6-8 grandes iconos (animales/objetos) que al tocarlos reproducen sonidos
 **Notas:**
 - El Ciclo 1 estableció una base sólida de juegos funcionales y bien probados
 - Cada juego fue validado por el QA Agent antes de considerar completado
-- Todos los juegos están integrados en `games-list.json` y desplegados en `/public/games/`
+- Todos los juegos están integrados en `games-list.json` y desplegados en `/public/games`
 
 **Próximo paso:** Iniciar Ciclo 2 (segunda ronda de desarrollo)
 - El objetivo es agregar un segundo juego a cada categoría de edad
