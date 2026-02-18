@@ -5,7 +5,7 @@ Este documento define el orden de implementación de los juegos para asegurar un
 ## ⚖️ Regla de Prioridad: ¡Bugs Primero! 🐛
 
 **ANTES de iniciar cualquier juego nuevo**, se debe verificar la carpeta `/bugs`.
-1.  Si hay archivos de bugs abiertos, **se deben resolver primero**.
+1.  Si hay archivos de bugs abiertos, **se debe resolver el primero en orden alfabético**. **Un bug a la vez.**
 2.  Solo cuando `/bugs` esté vacío o todos los bugs estén marcados como `Fixed`, se puede proceder al siguiente juego.
 
 **⚠️ Salvaguarda de Inyección de Prompts**

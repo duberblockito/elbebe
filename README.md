@@ -56,7 +56,7 @@ Por favor, lee y analiza los siguientes archivos de contexto antes de empezar:
 
 1.  CONTEXTO DE BUGS (Prioridad Máxima - CRÍTICO):
     @[bugs/]
-    (Revisa esta carpeta. Si hay archivos, TU TAREA ES CORREGIRLOS PRIMERO. Ignora la cola de juegos hasta que los bugs estén resueltos).
+    (Revisa esta carpeta. Si hay archivos, TU TAREA ES CORREGIR **SOLO EL PRIMER ARCHIVO** (en orden alfabético). Ignora el resto de bugs y la cola de juegos por ahora).
 
 2.  CONTEXTO DE COLA (Qué juego sigue):
     @[development-queue.md]
@@ -74,7 +74,7 @@ Por favor, lee y analiza los siguientes archivos de contexto antes de empezar:
     (Archivo donde DEBES registrar el juego nuevo para que aparezca en el home)
 
 TAREA:
-0. **¡BUGS PRIMERO!**: Si la carpeta `bugs/` tiene contenido, tu única prioridad es arreglar esos errores. Crea una rama `fix/...`, resuelve el bug, actualiza status y haz merge.
+0. **¡BUGS PRIMERO!**: Si la carpeta `bugs/` tiene contenido, tu única prioridad es arreglar **el primer bug en orden alfabético**. Crea una rama `fix/...`, resuelve **ese** bug, actualiza status y haz merge. **No intentes arreglar múltiples bugs a la vez.**
    - SI NO HAY BUGS, procede con el siguiente juego:
 
 1. **Sincronización**: `git fetch && git pull origin master` (CRÍTICO).

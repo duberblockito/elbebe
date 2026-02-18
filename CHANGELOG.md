@@ -25,6 +25,7 @@ y este proyecto se adhiere a [Semantic Versioning](https://semver.org/lang/es/).
 -   **Procesos**: Establecida regla "Bugs Primero" en `development-queue.md` y creado template seguro para reportes en `bugs/template.md`.
 -   **Procesos**: Clarificado el ciclo de vida de Git (Fetch/Pull -> Feature Branch -> Auto-Merge -> Master Push).
 -   **Procesos**: Optimizado el Prompt para Agentes IA en README (Prioridad de Bugs y Flujo Git explícito).
+-   **Procesos**: Refinada estrategia de Bugs: "Uno a la vez, en orden alfabético".
 
 ### Fixed
 -   **Mobile**: Corrección del apilamiento de texto en el logo (que anteriormente rompía el diseño).
