@@ -118,6 +118,19 @@
       "thumbnail": "thumbnail.svg",
       "recommended_age": "2-3",
       "tags": ["drag-drop", "touch", "fruits", "levels", "timer", "progress"]
+    },
+    {
+      "id": "002-super-formas",
+      "title": "Super Formas",
+      "title_en": "Super Shapes",
+      "description": "Encaja formas geométricas complejas en agujeros correspondientes para reparar objetos mágicos. Juego educativo de desarrollo cognitivo con 5 niveles progresivos.",
+      "description_en": "Fit complex geometric shapes into corresponding holes to repair magical objects. Educational cognitive development game with 5 progressive levels.",
+      "category": "puzzle",
+      "author": "Elbebe Team",
+      "version": "1.0.0",
+      "thumbnail": "thumbnail.svg",
+      "recommended_age": "3-5",
+      "tags": ["drag-drop", "touch", "shapes", "puzzle", "levels", "timer", "progress", "educational"]
     }
   ]
 }

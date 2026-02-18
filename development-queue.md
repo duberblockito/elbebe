@@ -36,11 +36,11 @@ La estrategia de desarrollo sigue un ciclo "Round Robin" entre las categorías d
 | 0-1 Años | 2 | 2 |
 | 1-2 Años | 2 | 2 |
 | 2-3 Años | 2 | 2 |
-| 3-5 Años | 1 | 2 |
+| 3-5 Años | 2 | 2 |
 | 5-8 Años | 1 | 2 |
 | 8-15 Años | 1 | 2 |
 
-*Nota: Las categorías 0-1, 1-2 y 2-3 ya tienen 2 juegos cada una. Por lo tanto, el foco pasa a la siguiente categoría para igualarlas a 2.*
+*Nota: Las categorías 0-1, 1-2, 2-3 y 3-5 ya tienen 2 juegos cada una. Por lo tanto, el foco pasa a la siguiente categoría para igualarlas a 2.*
 
 ---
 
@@ -56,7 +56,8 @@ Basado en la regla de equilibrio, este es el orden inmediato de desarrollo:
 6.  **[Done]** **0-1 Años**: `002-caja-sonidos` (Caja de Sonidos)
 7.  **[Done]** **1-2 Años**: `002-animalitos-suenan` (Animalitos que Suenan)
 8.  **[Done]** **2-3 Años**: `002-arrastra-fruta` (Arrastra la Fruta)
-9.  **[Next]** **3-5 Años**: `002-super-formas` (Super Formas)
+9.  **[Done]** **3-5 Años**: `002-super-formas` (Super Formas)
+10. **[Next]** **5-8 Años**: `002-constructor-palabras` (Constructor Palabras)
 
 ---
 
@@ -87,26 +88,26 @@ Basado en la regla de equilibrio, este es el orden inmediato de desarrollo:
 
 **Estado:** ⏳ **LISTO PARA EMPEZAR NUEVO JUEGO**
 
-**Próximo juego:** `002-super-formas` (Super Formas - 3-5 Años)
+**Próximo juego:** `002-constructor-palabras` (Constructor Palabras - 5-8 Años)
 
-**Fuente del plan:** Idea #2 de `/games-backlog/3-5-002-super-formas.md`
+**Fuente del plan:** Idea #2 de `/games-backlog/5-8-002-constructor-palabras.md`
 
-**Categoría:** 3-5 Años (Preschoolers)
+**Categoría:** 5-8 Años (Early Elementary)
 
 **Detalles del concepto:**
-Juego de encajar formas complejas en agujeros correspondientes. Incluye formas geométricas, animales y objetos para niños pequeños.
+Juego de ortografía con drag and drop. Los niños arrastran letras para formar palabras.
 
 **Notas:**
-- Último juego completado: `002-arrastra-fruta` (Arrastra la Fruta - 2-3 Años) ✅
-- Fecha de completado: 2026-02-18 13:55 UTC
-- Próximo paso: Iniciar implementación de `002-super-formas`
+- Último juego completado: `002-super-formas` (Super Formas - 3-5 Años) ✅
+- Fecha de completado: 2026-02-18 14:20 UTC
+- Próximo paso: Iniciar implementación de `002-constructor-palabras`
 
 ---
 
 ## 📊 Estado Actual del Proyecto
 
 **Total juegos planificados:** 41
-**Total juegos terminados:** 9/41 (21.9%)
+**Total juegos terminados:** 10/41 (24.4%)
 
 **Estado actual del sistema:**
 - ✅ Bugs: Resueltos y commitados en `/bugs-resolved/`

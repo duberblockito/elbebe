@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Super Formas - Elbebe</title>
+    <link rel="stylesheet" href="game.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- Header del juego -->
+        <header id="game-header">
+            <h1>🔷 Super Formas ✨</h1>
+            <div class="game-info">
+                <div class="level-display">
+                    <span class="label">Nivel:</span>
+                    <span id="level-number">1</span>
+                </div>
+                <div class="score-display">
+                    <span class="label">Reparado:</span>
+                    <span id="score">0</span>/<span id="target">5</span>
+                </div>
+            </div>
+            <!-- Barra de tiempo -->
+            <div class="timer-container">
+                <div id="time-bar" class="time-bar"></div>
+                <span id="time-text">30s</span>
+            </div>
+        </header>
+
+        <!-- Área de juego -->
+        <main id="game-area">
+            <!-- Objeto roto (background) -->
+            <div id="broken-object" class="broken-object">
+                <div class="object-title">🚀 Nave Espacial</div>
+                <div id="shapes-container" class="shapes-container">
+                    <!-- Los agujeros de formas se generan dinámicamente -->
+                </div>
+            </div>
+
+            <!-- Área de formas flotantes -->
+            <div id="shapes-dock" class="shapes-dock">
+                <!-- Las formas se generan dinámicamente -->
+            </div>
+        </main>
+
+        <!-- Footer con botón de inicio -->
+        <footer id="game-footer">
+            <button id="start-btn" class="btn-primary">¡Comenzar! 🎮</button>
+            <button id="home-btn" class="btn-secondary">🏠 Inicio</button>
+        </footer>
+    </div>
+
+    <!-- Modales -->
+    <div id="modal-overlay" class="modal-overlay hidden">
+        <div id="modal-content" class="modal-content">
+            <div class="modal-icon" id="modal-icon">🎉</div>
+            <h2 id="modal-title">¡Nivel Completado!</h2>
+            <p id="modal-message">¡Excelente trabajo!</p>
+            <div class="modal-actions">
+                <button id="modal-primary-btn" class="btn-primary">Continuar</button>
+                <button id="modal-secondary-btn" class="btn-secondary hidden">Reiniciar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>

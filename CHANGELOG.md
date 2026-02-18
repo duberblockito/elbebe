@@ -2,6 +2,50 @@
 
 ---
 
+## [v1.6.0] - 2026-02-18 14:20 UTC (Bogotá)
+
+### ✨ Nuevo Juego Implementado
+
+**Juego:** super-formas (Super Formas)
+**Categoría:** 3-5 Años (Preschoolers)
+**Fuente del plan:** Idea #2 de `/games-backlog/3-5-002-super-formas.md`
+
+**Descripción:**
+Juego educativo de encajar formas geométricas complejas en agujeros correspondientes para reparar objetos mágicos. Los niños desarrollan habilidades cognitivas, reconocimiento de formas y coordinación motora fina. Incluye sistema de 5 niveles progresivos, puntuación, temporizador visual y persistencia en localStorage.
+
+**Características implementadas:**
+- ✅ Sistema de 5 niveles progresivos (30s por nivel)
+- ✅ 9 formas geométricas diferentes (diamante, triángulo, cuadrado, estrella, pentágono, hexágono, corazón, círculo, joya)
+- ✅ 5 objetos mágicos a reparar (Nave Espacial, Puente Mágico, Castillo Encantado, Helicóptero, Casa Mágica)
+- ✅ Dificultad progresiva por niveles (más formas, mayor complejidad)
+- ✅ Temporizador visual con barra de tiempo (verde → naranja → roja según restante)
+- ✅ Sistema de puntuación (contador de formas reparadas)
+- ✅ Persistencia en localStorage (`super-formas-progress`)
+- ✅ Touch events optimizados para móviles (drag and drop táctil)
+- ✅ Diseño responsivo (Desktop, Tablet, Móvil)
+- ✅ Animación de snap-to-fit al encajar forma correcta
+- ✅ Resaltado visual del agujero más cercano mientras se arrastra
+- ✅ Modales: Nivel Completado, Tiempo Agotado, Juego Completado
+- ✅ Efectos visuales y audio (animaciones de highlight, fill success, feedback visual)
+- ✅ Sonidos sintetizados con Web Audio API (éxito, nivel completado, tiempo agotado, error)
+
+**Archivos creados:**
+- `games/002-super-formas/index.html` (Punto de entrada HTML)
+- `games/002-super-formas/game.js` (Lógica del juego - 20.1 KB)
+- `games/002-super-formas/game.css` (Estilos - 7.5 KB)
+- `games/002-super-formas/manifest.json` (Metadatos - 0.4 KB)
+- `games/002-super-formas/thumbnail.svg` (Thumbnail SVG animado - 2.2 KB)
+- `games/002-super-formas/thumbnail.jpg` (Thumbnail JPG - 3.3 KB)
+
+**Tecnologías utilizadas:**
+- HTML5 (semántico)
+- JavaScript ES6+ (Web Audio API, localStorage, touch events, mouse events)
+- CSS3 (flexbox, grid, animaciones, media queries)
+- SVG (thumbnail animado)
+- Responsive design (375x667px base para iPhone SE)
+
+---
+
 ## [v1.5.0] - 2026-02-18 13:55 UTC (Bogotá)
 
 ### ✨ Nuevo Juego Implementado
