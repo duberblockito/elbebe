@@ -80,6 +80,7 @@ Asegúrate de:
     - Al terminar, actualiza `CHANGELOG.md` bumping la versión.
     - Documenta cambios: `git commit -m "feat: add [id-juego]"`.
     - Haz push y solicita merge a master.
+    - Una vez en master, haz push de los cambios (`git push origin master`).
 76. Registrar el juego en 'games-list.json' (CRÍTICO).
 77. Actualizar 'master-game-plan.md' y 'development-queue.md'.
 ```
