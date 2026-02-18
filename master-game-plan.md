@@ -33,6 +33,7 @@ This document outlines the development roadmap for the 41 games currently in the
 |----|-----------|--------|
 | 001 | **Pinta las Nubes** | Reveal animals in clouds. | ✅ Done |
 | 002 | **Arrastra la Fruta** | Sorting game picnic. | ✅ Done |
+| 003 | **Rompecabezas Simple** | Animal puzzle pieces. | ✅ Done |
 
 ## 🧒 3-5 Years (Preschoolers)
 
@@ -62,13 +63,13 @@ This document outlines the development roadmap for the 41 games currently in the
 | Age Group | Completed | Target |
 |-----------|---------|--------|
 | 0-1 Years | 3 | 3 |
-| 1-2 Years | 3 | 2 |
-| 2-3 Years | 2 | 2 |
-| 3-5 Years | 2 | 2 |
-| 5-8 Years | 2 | 2 |
-| 8-15 Years | 2 | 2 |
+| 1-2 Years | 3 | 3 |
+| 2-3 Years | 3 | 3 |
+| 3-5 Years | 2 | 3 |
+| 5-8 Years | 2 | 3 |
+| 8-15 Years | 2 | 3 |
 
-*Nota: `003-colores-vibran` completado y `BUG-004` resuelto*
+*Nota: `003-colores-vibran`, `003-pintura-dedos` y `003-rompecabezas` completados y validados por QA*
 
 ---
 

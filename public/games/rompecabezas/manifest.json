@@ -1,0 +1,10 @@
+{
+  "id": "rompecabezas",
+  "title": "Rompecabezas Simple",
+  "description": "Un rompecabezas simple de piezas que forman animales. Toca una pieza y esta se mueve hacia su posición correcta.",
+  "category": "puzzle",
+  "author": "Blockito AI",
+  "version": "1.0.0",
+  "thumbnail": "thumbnail.jpg",
+  "recommended_age": "2-3"
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Rompecabezas Simple - Juegos Elbebe</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- HUD (Heads Up Display) -->
+        <div id="hud">
+            <div class="hud-level">
+                <span id="level-label">Nivel</span>
+                <span id="level-number">1</span>
+            </div>
+            <div class="hud-progress">
+                <span id="pieces-fixed">0</span>
+                <span class="separator">/</span>
+                <span id="pieces-target">2</span>
+            </div>
+            <div class="hud-timer">
+                <div id="timer-bar" class="timer-bar"></div>
+                <span id="timer-text">30s</span>
+            </div>
+        </div>
+
+        <!-- Game Area -->
+        <div id="game-area">
+            <div id="puzzle-container"></div>
+        </div>
+
+        <!-- Modals -->
+        <div id="modal-overlay" class="modal-overlay hidden">
+            <div id="modal-content" class="modal-content">
+                <h2 id="modal-title"></h2>
+                <p id="modal-message"></p>
+                <button id="modal-button" class="modal-button">Continuar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/game.js"></script>
+</body>
+</html>

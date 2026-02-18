@@ -2,6 +2,74 @@
 
 ---
 
+## [v1.11.0] - 2026-02-18 18:05 UTC (Bogotá)
+
+### ✨ Nuevo Juego Implementado
+
+**Juego:** 003-rompecabezas (Rompecabezas Simple)
+**Categoría:** 2-3 Años (Preschoolers)
+**Fuente del plan:** Idea #18 de `/games-idea/2-3/ideas-2-3.md`
+
+**Descripción:**
+Un rompecabezas simple de piezas que forman animales. El niño toca una pieza y esta se mueve hacia su posición correcta con sonidos divertidos. Incluye 5 niveles progresivos, barra de progreso visual, temporizador y persistencia en localStorage. Diseñado específicamente para niños de 2-3 años que están desarrollando habilidades cognitivas y resolución de problemas.
+
+**Características implementadas:**
+- ✅ Piezas de rompecabezas con partes de animales (cabeza, cuerpo, patas, cola, oreja)
+- ✅ Guía translúcida mostrando dónde debe ir cada pieza
+- ✅ Al tocar una pieza: animación bezier curve hacia posición correcta (0.6s)
+- ✅ Sonido "Click!" al fijar pieza
+- ✅ Brillo visual al completar pieza (celebrate-piece)
+- ✅ Sistema de 5 niveles progresivos:
+  - Nivel 1: 2 piezas, 30s, perro/gato
+  - Nivel 2: 3 piezas, 40s, perro/gato/vaca
+  - Nivel 3: 4 piezas, 50s, perro/gato/vaca/cerdo
+  - Nivel 4: 5 piezas, 60s, perro/gato/vaca/cerdo/oveja
+  - Nivel 5: 6 piezas, 70s, perro/gato/vaca/cerdo/oveja/caballo
+- ✅ Barra de progreso visual mostrando piezas fijadas vs objetivo
+- ✅ Barra de temporizador visual (verde → amarillo → rojo)
+- ✅ HUD (Heads Up Display) con nivel actual, piezas fijadas, objetivo, temporizador
+- ✅ Persistencia en localStorage (`rompecabezas-progress`)
+  - currentLevel: Nivel actual del jugador
+  - maxLevel: Nivel máximo alcanzado
+- ✅ Modales: Nivel Completado, Tiempo Agotado, Juego Completado
+- ✅ Confetti y aplausos al completar niveles
+- ✅ Diseño responsivo optimizado para móvil (375x667px base para iPhone SE)
+- ✅ Touch events con animaciones suaves
+- ✅ Web Audio API para efectos de sonido (click, clack, levelComplete, gameComplete)
+- ✅ Text-to-Speech (TTS) para feedback de voz en español
+- ✅ Piezas flotan suavemente (float animation 2s ease-in-out infinite)
+
+**Archivos creados:**
+- `public/games/rompecabezas/index.html` (Punto de entrada HTML - 1.5 KB)
+- `public/games/rompecabezas/assets/style.css` (Estilos del juego - 7.1 KB)
+- `public/games/rompecabezas/js/game.js` (Lógica del juego - 16.5 KB)
+- `public/games/rompecabezas/manifest.json` (Metadatos - 0.3 KB)
+- `public/games/rompecabezas/thumbnail.txt` (Thumbnail placeholder)
+
+**Archivos desplegados (public):**
+- `public/games/rompecabezas/` (Todos los archivos del juego creados)
+- `public/js/games-list.json` (Juego registrado en el sistema)
+
+**Tecnologías utilizadas:**
+- HTML5 (div elements, absolute positioning)
+- JavaScript ES6+ (localStorage, events, intervals, Web Audio API, Speech Synthesis)
+- CSS3 (flexbox, gradients, animations, bezier curves, responsive design)
+
+**Cumplimiento de reglas de diseño (game-design-rules.md):**
+- ✅ Sección 1 (Directory Structure): Estructura de directorios correcta
+- ✅ Sección 2 (Technical Requirements): HTML/CSS/JS puro, responsive, touch events
+- ✅ Sección 3 (Metadata): manifest.json válido con todos los campos requeridos
+- ✅ Sección 4 (Game Registration): Registrado en games-list.json
+- ✅ Sección 7 (Levels & Progression): 5 niveles, barra de progreso, temporizador, persistencia
+- ✅ Sección 8 (Submission Checklist): Todos los items completados
+- ✅ Sección 9 (Definition of Done): Flujo completo completado
+
+**Referencia:**
+- Plan del juego: Idea #18 en `/games-idea/2-3/ideas-2-3.md`
+- Reglas de diseño: `game-design-rules.md`
+
+---
+
 ## [v1.10.0] - 2026-02-18 17:13 UTC (Bogotá)
 
 ### ✨ Nuevo Juego Implementado

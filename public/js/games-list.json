@@ -29,7 +29,7 @@
       "tags": ["touch", "colors", "sounds", "sensory", "multi-touch"]
     },
     {
-      "id": "pinta-nubes",
+      "id": "001-pinta-nubes",
       "title": "Pinta las Nubes",
       "title_en": "Paint the Clouds",
       "description": "¡Toca las nubes grises para revelar animales coloridos ocultos dentro! Un juego sensorial para descubrir sorpresas.",
@@ -94,7 +94,7 @@
       "tags": ["touch", "sounds", "animals", "objects"]
     },
     {
-      "id": "animalitos-suenan",
+      "id": "002-animalitos-suenan",
       "title": "Animalitos que Suenan",
       "title_en": "Animals that Sound",
       "description": "Orquesta de animales que se iluminan y suenan al tocarlos. Incluye 5 niveles progresivos, sistema de puntuación y temporizador visual.",
@@ -183,6 +183,19 @@
       "thumbnail": "thumbnail.jpg",
       "recommended_age": "1-2",
       "tags": ["touch", "drawing", "colors", "creative", "levels", "timer", "progress", "canvas"]
+    },
+    {
+      "id": "rompecabezas",
+      "title": "Rompecabezas Simple",
+      "title_en": "Simple Puzzle",
+      "description": "Un rompecabezas simple de piezas que forman animales. Toca una pieza y esta se mueve hacia su posición correcta con sonidos divertidos. Incluye 5 niveles progresivos, barra de progreso y temporizador visual.",
+      "description_en": "A simple puzzle game with pieces that form animals. Touch a piece and it moves to its correct position with fun sounds. Includes 5 progressive levels, progress bar, and visual timer.",
+      "category": "puzzle",
+      "author": "Blockito AI",
+      "version": "1.0.0",
+      "thumbnail": "thumbnail.jpg",
+      "recommended_age": "2-3",
+      "tags": ["touch", "puzzle", "animals", "levels", "timer", "progress", "cognitive"]
     }
   ]
 }
