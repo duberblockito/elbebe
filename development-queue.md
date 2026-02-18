@@ -102,10 +102,11 @@ Basado en la regla de equilibrio, este es el orden inmediato de desarrollo:
 **Total juegos terminados:** 12/41 (29.3%)
 
 **Estado actual del sistema:**
-- ✅ Bugs: Resueltos y commitados en `/bugs-resolved/`
+- ✅ Bugs: Todos resueltos y commitados en `/bugs-resolved/` (BUG-001, BUG-002)
 - ✅ Regla "Bugs First": Cumplida
 - ✅ Cron jobs activos: Ideas de juegos generándose automáticamente
 - ✅ QA Agent: Validando juegos automáticamente
-- ✅ Último juego completado: `002-constructor-palabras` (Constructor Palabras)
+- ✅ Último juego completado: `002-art-battle` (Art Battle: Digital Canvas - 8-15 Años)
+- ✅ Bugs recientes resueltos: 2026-02-18 15:36 UTC (BUG-001, BUG-002)
 
 **Próximo juego:** `003-sensory-fun` (Sensory Fun - 0-1 años)
