@@ -1,5 +1,5 @@
 {
-  "version": "1.4.0",
+  "version": "1.9.0",
   "lastUpdated": "2026-02-18",
   "games": [
     {
@@ -157,6 +157,19 @@
       "thumbnail": "thumbnail.jpg",
       "recommended_age": "8-15",
       "tags": ["creative", "drawing", "canvas", "timed", "levels", "progress", "gallery"]
+    },
+    {
+      "id": "colores-vibran",
+      "title": "Colores que Vibran",
+      "title_en": "Colors that Vibrate",
+      "description": "Toca la pantalla para ver colores brillantes y escuchar notas musicales ascendentes. Un juego sensorial perfecto para bebés que exploran causa y efecto.",
+      "description_en": "Tap the screen to see bright colors and hear ascending musical notes. A perfect sensory game for babies exploring cause and effect.",
+      "category": "sensory",
+      "author": "Blockito AI",
+      "version": "1.0.0",
+      "thumbnail": "thumbnail.jpg",
+      "recommended_age": "0-1",
+      "tags": ["touch", "colors", "sounds", "sensory", "music"]
     }
   ]
 }

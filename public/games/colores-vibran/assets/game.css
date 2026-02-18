@@ -1,0 +1,207 @@
+/* Colores que Vibran - Game Styles */
+
+#game-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #000;
+}
+
+#color-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    transition: background-color 0.3s ease;
+}
+
+#vibration-indicator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#vibration-indicator.vibrate {
+    animation: vibrate 0.3s ease;
+}
+
+@keyframes vibrate {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.7;
+    }
+    25% {
+        transform: translate(-50%, -50%) scale(1.3);
+        opacity: 0.4;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(0.9);
+        opacity: 0.6;
+    }
+    75% {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 0.5;
+    }
+}
+
+#note-display {
+    position: absolute;
+    bottom: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 10;
+}
+
+.note-icon {
+    font-size: 120px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.note-icon.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Overlay Styles */
+.game-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.overlay-content {
+    text-align: center;
+    padding: 40px;
+    max-width: 400px;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.game-title {
+    font-size: 48px;
+    font-weight: bold;
+    color: #FF6B9D;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.game-subtitle {
+    font-size: 20px;
+    color: #FFF;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.start-btn {
+    padding: 20px 50px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #FFF;
+    background: linear-gradient(135deg, #FF6B9D 0%, #C44569 100%);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(255, 107, 157, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.start-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 107, 157, 0.5);
+}
+
+.start-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 10px rgba(255, 107, 157, 0.4);
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+    .game-title {
+        font-size: 36px;
+    }
+
+    .game-subtitle {
+        font-size: 18px;
+    }
+
+    .start-btn {
+        padding: 18px 40px;
+        font-size: 24px;
+    }
+
+    #vibration-indicator {
+        width: 150px;
+        height: 150px;
+    }
+
+    .note-icon {
+        font-size: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .game-title {
+        font-size: 32px;
+    }
+
+    .game-subtitle {
+        font-size: 16px;
+    }
+
+    .start-btn {
+        padding: 15px 35px;
+        font-size: 20px;
+    }
+
+    #vibration-indicator {
+        width: 120px;
+        height: 120px;
+    }
+
+    .note-icon {
+        font-size: 80px;
+    }
+}
