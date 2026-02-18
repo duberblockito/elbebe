@@ -1,0 +1,82 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="puzzle1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#feca57;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="puzzle2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#48dbfb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0abde3;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="puzzle3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff9ff3;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f368e0;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="puzzle4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#54a0ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2e86de;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="300" height="300" rx="20" fill="url(#bg)" />
+
+  <!-- Title -->
+  <text x="150" y="40" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="bold" fill="white">
+    Rompecabezas
+  </text>
+
+  <!-- Puzzle Pieces Container -->
+  <g transform="translate(50, 60)">
+    <!-- Piece 1: Top Left (Red-Yellow) -->
+    <path d="M0,0 L90,0 Q100,0 100,10 L100,50 Q90,40 80,50 Q90,60 100,70 L100,90 Q100,100 90,100 L10,100 Q0,100 0,90 L0,10 Q0,0 10,0 Z" fill="url(#puzzle1)" stroke="#ffffff" stroke-width="2" />
+    <circle cx="50" cy="50" r="15" fill="#ffffff" opacity="0.3" />
+
+    <!-- Piece 2: Top Right (Cyan-Blue) -->
+    <path d="M110,0 L200,0 Q210,0 210,10 L210,40 Q200,50 190,40 Q180,50 170,40 L170,10 Q170,0 180,0 Z" fill="url(#puzzle2)" stroke="#ffffff" stroke-width="2" />
+    <circle cx="190" cy="25" r="12" fill="#ffffff" opacity="0.3" />
+
+    <!-- Piece 3: Bottom Left (Pink-Purple) -->
+    <path d="M0,120 L80,120 Q90,120 90,130 L90,160 Q80,170 70,160 Q60,170 50,160 L50,200 Q50,210 40,210 L10,210 Q0,210 0,200 L0,130 Q0,120 10,120 Z" fill="url(#puzzle3)" stroke="#ffffff" stroke-width="2" />
+    <circle cx="50" cy="165" r="12" fill="#ffffff" opacity="0.3" />
+
+    <!-- Piece 4: Bottom Right (Blue-Dark Blue) -->
+    <path d="M110,120 L200,120 Q210,120 210,130 L210,200 Q210,210 200,210 L130,210 Q120,210 120,200 L120,130 Q120,120 130,120 Z" fill="url(#puzzle4)" stroke="#ffffff" stroke-width="2" />
+    <circle cx="165" cy="165" r="15" fill="#ffffff" opacity="0.3" />
+
+    <!-- Connection Dots (Visual cues for puzzle connections) -->
+    <circle cx="100" cy="55" r="6" fill="#ffffff" />
+    <circle cx="100" cy="165" r="6" fill="#ffffff" />
+    <circle cx="65" cy="100" r="6" fill="#ffffff" />
+  </g>
+
+  <!-- Decorative Puzzle Icons (Small) -->
+  <g transform="translate(20, 240)">
+    <path d="M0,0 L25,0 Q28,0 28,3 L28,20 Q25,22 22,20 L22,3 Q22,0 25,0 Z" fill="url(#puzzle1)" opacity="0.8" />
+  </g>
+
+  <g transform="translate(60, 245)">
+    <path d="M0,0 L25,0 Q28,0 28,3 L28,20 Q25,22 22,20 L22,3 Q22,0 25,0 Z" fill="url(#puzzle2)" opacity="0.8" />
+  </g>
+
+  <g transform="translate(100, 240)">
+    <path d="M0,0 L25,0 Q28,0 28,3 L28,20 Q25,22 22,20 L22,3 Q22,0 25,0 Z" fill="url(#puzzle3)" opacity="0.8" />
+  </g>
+
+  <g transform="translate(140, 245)">
+    <path d="M0,0 L25,0 Q28,0 28,3 L28,20 Q25,22 22,20 L22,3 Q22,0 25,0 Z" fill="url(#puzzle4)" opacity="0.8" />
+  </g>
+
+  <!-- Play Button -->
+  <circle cx="250" cy="265" r="20" fill="#ffffff" />
+  <polygon points="243,255 243,275 260,265" fill="url(#bg)" />
+
+  <!-- Age Label -->
+  <text x="150" y="295" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="white" font-weight="bold">
+    2-3 Años
+  </text>
+</svg>

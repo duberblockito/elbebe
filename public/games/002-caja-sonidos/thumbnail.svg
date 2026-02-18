@@ -1,0 +1,69 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="box" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#feca57;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="note1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#48dbfb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0abde3;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="note2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff9ff3;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f368e0;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="note3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#54a0ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2e86de;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="300" height="300" rx="20" fill="url(#bg)" />
+
+  <!-- Title -->
+  <text x="150" y="40" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="bold" fill="white">
+    Caja de Sonidos
+  </text>
+
+  <!-- Sound Box Container -->
+  <rect x="75" y="70" width="150" height="120" rx="15" fill="url(#box)" stroke="#ffffff" stroke-width="3" />
+
+  <!-- Speaker/Box Icon -->
+  <rect x="120" y="95" width="60" height="50" rx="8" fill="#ffffff" />
+  <circle cx="135" cy="120" r="12" fill="url(#note1)" />
+  <circle cx="165" cy="120" r="12" fill="url(#note2)" />
+
+  <!-- Sound Waves -->
+  <path d="M200,120 Q210,105 220,120 Q210,135 200,120" fill="none" stroke="#ffffff" stroke-width="3" />
+  <path d="M210,120 Q225,95 240,120 Q225,145 210,120" fill="none" stroke="#ffffff" stroke-width="3" />
+
+  <!-- Music Notes Floating -->
+  <!-- Note 1 -->
+  <ellipse cx="100" cy="215" rx="10" ry="8" fill="url(#note1)" transform="rotate(-20 100 215)" />
+  <rect x="106" y="190" width="3" height="25" fill="#333" />
+  <path d="M109,190 Q119,180 119,195" fill="none" stroke="#333" stroke-width="3" />
+
+  <!-- Note 2 -->
+  <ellipse cx="150" cy="230" rx="10" ry="8" fill="url(#note2)" transform="rotate(15 150 230)" />
+  <rect x="156" y="205" width="3" height="25" fill="#333" />
+  <path d="M159,205 Q169,195 169,210" fill="none" stroke="#333" stroke-width="3" />
+
+  <!-- Note 3 -->
+  <ellipse cx="200" cy="215" rx="10" ry="8" fill="url(#note3)" transform="rotate(-10 200 215)" />
+  <rect x="206" y="190" width="3" height="25" fill="#333" />
+  <path d="M209,190 Q219,180 219,195" fill="none" stroke="#333" stroke-width="3" />
+
+  <!-- Play Button -->
+  <circle cx="150" cy="265" r="20" fill="#ffffff" />
+  <polygon points="143,255 143,275 160,265" fill="url(#bg)" />
+
+  <!-- Age Label -->
+  <text x="150" y="295" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="white" font-weight="bold">
+    0-1 Años
+  </text>
+</svg>
