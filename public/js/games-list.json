@@ -1,6 +1,6 @@
 {
-  "version": "1.0.0",
-  "lastUpdated": "2025-02-17",
+  "version": "1.1.0",
+  "lastUpdated": "2026-02-18",
   "games": [
     {
       "id": "burbujas-magicas",
@@ -14,6 +14,19 @@
       "thumbnail": "thumbnail.svg",
       "recommended_age": "0-1",
       "tags": ["touch", "colors", "sounds", "sensory"]
+    },
+    {
+      "id": "poppit-burbujas",
+      "title": "Poppit! Burbujas Mágicas",
+      "title_en": "Poppit! Magic Bubbles",
+      "description": "¡Burbujas de colores flotan hacia arriba! Toca las burbujas para explotarlas con partículas mágicas y sonidos divertidos.",
+      "description_en": "Colorful bubbles float up! Touch the bubbles to pop them with magical particles and fun sounds.",
+      "category": "sensory",
+      "author": "El Bebe Games",
+      "version": "1.0.0",
+      "thumbnail": "thumbnail.svg",
+      "recommended_age": "1-2",
+      "tags": ["touch", "colors", "sounds", "sensory", "multi-touch"]
     }
   ]
 }

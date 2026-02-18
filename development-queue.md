@@ -32,7 +32,7 @@ La estrategia de desarrollo sigue un ciclo "Round Robin" entre las categorías d
 | Categoría | Terminados | Meta Actual |
 | :--- | :---: | :---: |
 | 0-1 Años | 1 | 1 |
-| 1-2 Años | 0 | 1 |
+| 1-2 Años | 1 | 1 |
 | 2-3 Años | 0 | 1 |
 | 3-5 Años | 0 | 1 |
 | 5-8 Años | 0 | 1 |
@@ -44,8 +44,8 @@ La estrategia de desarrollo sigue un ciclo "Round Robin" entre las categorías d
 
 Basado en la regla anterior, este es el orden inmediato de desarrollo:
 
-1.  **[NEXT]** **1-2 Años**: `001-poppit-burbujas` (Poppit! Burbujas)
-2.  **2-3 Años**: `001-pinta-nubes` (Pinta las Nubes)
+1.  **[Done]** **1-2 Años**: `001-poppit-burbujas` (Poppit! Burbujas)
+2.  **[NEXT]** **2-3 Años**: `001-pinta-nubes` (Pinta las Nubes)
 3.  **3-5 Años**: `001-chef-monstruos` (Chef de Monstruos)
 4.  **5-8 Años**: `001-math-blaster` (Math Blaster)
 5.  **8-15 Años**: `001-code-quest` (Code Quest)

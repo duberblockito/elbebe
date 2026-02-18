@@ -5,6 +5,15 @@ Todos los cambios notables en este proyecto se documentarán en este archivo.
 El formato se basa en [Keep a Changelog](https://keepachangelog.com/es-ES/1.0.0/),
 y este proyecto se adhiere a [Semantic Versioning](https://semver.org/lang/es/).
 
+## [1.1.0] - 2026-02-18
+
+### Added
+-   **Juego Nuevo**: "Poppit! Burbujas Mágicas" (1-2 años) - Sistema de partículas canvas, multi-touch, burbujas animadas con sonidos generados dinámicamente (Web Audio API).
+-   **Categoría**: Expandida la categoría 1-2 Años con el primer juego del grupo.
+
+### Changed
+-   Actualizado `games-list.json` con la versión 1.1.0 y el nuevo juego registrado.
+
 ## [Unreleased]
 
 ### Added

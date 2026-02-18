@@ -33,7 +33,7 @@ This document outlines the development roadmap for the 41 games currently in the
 
 | ID | Game Name | Concept | Status |
 |----|-----------|---------|--------|
-| 001 | **Poppit! Burbujas** | Advanced bubble popping. | 📝 Ready |
+| 001 | **Poppit! Burbujas** | Advanced bubble popping. | ✅ Done |
 | 002 | **Animalitos que Suenan** | Animal orchestra. | 📝 Ready |
 | 003 | **Pintura con Dedos** | Creative finger painting. | 📝 Ready |
 | 004 | **Cascada Musical** | Musical notes falling. | 📝 Ready |
