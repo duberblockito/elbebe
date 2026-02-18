@@ -11,6 +11,11 @@ y este proyecto se adhiere a [Semantic Versioning](https://semver.org/lang/es/).
 -   Archivo `README.md` con información del proyecto.
 -   Archivo `CHANGELOG.md` para seguimiento de versiones.
 
+### Fixed
+-   **Burbujas Mágicas**: El nivel 1 ahora inicia correctamente al cargar el juego.
+-   **Burbujas Mágicas**: Tamaños de burbujas ahora se calculan dinámicamente según la resolución de pantalla (6%-12% del lado más pequeño) para asegurar que siempre sean fáciles de tocar para niños pequeños.
+-   **Burbujas Mágicas**: Corregido el problema de burbujas bloqueadas - el sistema de respawn ahora funciona correctamente incluso cuando el juego está pausado o entre niveles.
+
 ## [0.2.1] - 2026-02-17 (Mejoras Visuales y Técnicas)
 
 ### Added

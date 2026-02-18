@@ -18,8 +18,13 @@ const CONFIG = {
   minBubbles: 5,
   bubbleSpeedMin: 0.5,
   bubbleSpeedMax: 2,
-  bubbleSizeMin: 40,
-  bubbleSizeMax: 120,
+  // Bubble sizes will be calculated based on screen size
+  get bubbleSizeMin() {
+    return Math.max(50, Math.min(window.innerWidth, window.innerHeight) * 0.06);
+  },
+  get bubbleSizeMax() {
+    return Math.max(80, Math.min(window.innerWidth, window.innerHeight) * 0.12);
+  },
   colors: [
     'rgba(255, 107, 107, 0.7)',   // Red
     'rgba(78, 205, 196, 0.7)',    // Teal
@@ -173,8 +178,10 @@ class Bubble {
 
   reset() {
     this.x = Math.random() * this.canvas.width;
-    this.y = this.canvas.height + this.radius;
-    this.radius = CONFIG.bubbleSizeMin + Math.random() * (CONFIG.bubbleSizeMax - CONFIG.bubbleSizeMin);
+    this.y = this.canvas.height + 100;
+    const minSize = CONFIG.bubbleSizeMin;
+    const maxSize = CONFIG.bubbleSizeMax;
+    this.radius = minSize + Math.random() * (maxSize - minSize);
     this.speed = CONFIG.bubbleSpeedMin + Math.random() * (CONFIG.bubbleSpeedMax - CONFIG.bubbleSpeedMin);
     this.color = CONFIG.colors[Math.floor(Math.random() * CONFIG.colors.length)];
     this.wobble = Math.random() * Math.PI * 2;
@@ -182,6 +189,7 @@ class Bubble {
     this.popped = false;
     this.scale = 0;
     this.appearing = true;
+    this.resetTime = Date.now();
   }
 
   update(deltaTime) {
@@ -281,6 +289,11 @@ function startLevel(levelIndex) {
   state.isLevelComplete = false;
   state.isGameOver = false;
   state.isPaused = false;
+
+  // Reset all bubbles
+  state.bubbles.forEach(bubble => {
+    bubble.reset();
+  });
 
   updateUI();
   hideAllModals();
@@ -484,12 +497,8 @@ function handleInput(x, y) {
       updateUI();
       checkLevelComplete();
 
-      setTimeout(() => {
-        if (state.isRunning && !state.isPaused) {
-          bubble.reset();
-          bubble.popped = false;
-        }
-      }, 500);
+      // Mark bubble for respawn - will be handled in game loop
+      bubble.respawnTime = Date.now() + 500;
 
       if (window.gtag) {
         gtag('event', 'bubble_pop', {
@@ -572,13 +581,25 @@ function gameLoop(timestamp) {
   // Clear canvas
   state.ctx.clearRect(0, 0, state.canvas.width, state.canvas.height);
 
-  // Spawn new bubbles if needed
-  const activeBubbles = state.bubbles.filter(b => !b.popped);
-  if (activeBubbles.length < CONFIG.minBubbles && !state.isPaused) {
-    const inactiveBubbles = state.bubbles.filter(b => b.popped);
-    if (inactiveBubbles.length > 0) {
-      inactiveBubbles[0].reset();
-      inactiveBubbles[0].popped = false;
+  // Handle bubble respawns (safe even when paused)
+  const now = Date.now();
+  state.bubbles.forEach(bubble => {
+    if (bubble.popped && bubble.respawnTime && now >= bubble.respawnTime) {
+      bubble.reset();
+      bubble.popped = false;
+      delete bubble.respawnTime;
+    }
+  });
+
+  // Spawn new bubbles if needed (only when not paused/complete/gameover)
+  if (!state.isPaused && !state.isLevelComplete && !state.isGameOver) {
+    const activeBubbles = state.bubbles.filter(b => !b.popped);
+    if (activeBubbles.length < CONFIG.minBubbles) {
+      const inactiveBubbles = state.bubbles.filter(b => b.popped && !b.respawnTime);
+      if (inactiveBubbles.length > 0) {
+        inactiveBubbles[0].reset();
+        inactiveBubbles[0].popped = false;
+      }
     }
   }
 
@@ -601,6 +622,15 @@ function resizeCanvas() {
   const canvas = state.canvas;
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
+
+  // Recalculate bubble sizes for new screen dimensions
+  state.bubbles.forEach(bubble => {
+    const minSize = CONFIG.bubbleSizeMin;
+    const maxSize = CONFIG.bubbleSizeMax;
+    if (bubble.radius < minSize || bubble.radius > maxSize) {
+      bubble.radius = minSize + Math.random() * (maxSize - minSize);
+    }
+  });
 }
 
 function setupCanvas() {
@@ -610,9 +640,13 @@ function setupCanvas() {
   resizeCanvas();
   window.addEventListener('resize', resizeCanvas);
 
+  // Create bubbles with staggered initial positions
   for (let i = 0; i < CONFIG.maxBubbles; i++) {
     const bubble = new Bubble(state.canvas);
-    bubble.y = state.canvas.height + Math.random() * state.canvas.height;
+    // Distribute bubbles across the screen initially
+    bubble.y = state.canvas.height * 0.8 + Math.random() * (state.canvas.height * 0.5);
+    bubble.scale = 1;
+    bubble.appearing = false;
     state.bubbles.push(bubble);
   }
 }
@@ -626,7 +660,9 @@ function init() {
   loadProgress();
   setupCanvas();
   setupInputs();
-  updateUI();
+
+  // Start level 1
+  startLevel(0);
 
   if (window.gtag) {
     gtag('event', 'game_start', {
