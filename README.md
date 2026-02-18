@@ -75,5 +75,11 @@ Asegúrate de:
 1. Crear la carpeta y archivos en 'public/games/[id-juego]/'.
 2. Implementar la lógica y diseño según el backlog.
 3. Registrar el juego en 'games-list.json' (CRÍTICO).
-4. Actualizar 'CHANGELOG.md' y marcarlo como hecho en 'development-queue.md'.
+75. **Git Flow**:
+    - Crea una rama nueva: `git checkout -b feature/[id-juego]`.
+    - Al terminar, actualiza `CHANGELOG.md` bumping la versión.
+    - Documenta cambios: `git commit -m "feat: add [id-juego]"`.
+    - Haz push y solicita merge a master.
+76. Registrar el juego en 'games-list.json' (CRÍTICO).
+77. Actualizar 'master-game-plan.md' y 'development-queue.md'.
 ```

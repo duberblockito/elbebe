@@ -56,9 +56,19 @@ Basado en la regla anterior, este es el orden inmediato de desarrollo:
 
 ## 📝 Instrucciones para el Desarrollador
 
-1.  Consulta este archivo para saber cuál es el siguiente juego.
-2.  Una vez terminado un juego:
-    -   Actualiza el estado en `master-game-plan.md` a ✅ Done.
-    -   Incrementa el contador en la tabla de "Estado Actual" de este archivo.
-    -   Mueve el juego de "Próximos Juegos" a un historial o elimínalo de la lista.
-    -   Verifica si el ciclo se ha completado para añadir la siguiente ronda de juegos a la cola.
+## 📝 Instrucciones para el Desarrollador
+
+1.  **Consulta** este archivo para identificar el siguiente juego ([NEXT]).
+2.  **Crea una rama nueva** para el desarrollo: `git checkout -b feature/nombre-del-juego`.
+3.  **Desarrolla y Prueba** el juego localmente.
+4.  **Finalización**:
+    -   Actualiza `master-game-plan.md` a ✅ Done.
+    -   Incrementa el contador en este archivo (`development-queue.md`).
+    -   Registra el cambio en `CHANGELOG.md` (incrementa versión minor/patch según corresponda).
+    -   Mueve el juego de "Próximos Juegos" al historial.
+    -   Verifica si el ciclo Round Robin se completó.
+5.  **Entrega**:
+    -   `git add .`
+    -   `git commit -m "feat: implement [game name]"`
+    -   `git push origin feature/nombre-del-juego`
+    -   Solicita/Realiza Merge a `master`.
