@@ -14,49 +14,58 @@ const GameState = {
     isPlaying: false
 };
 
-// Audio
+// Audio System using Web Audio API (no external files)
 const Audio = {
+    context: null,
+
+    init: () => {
+        Audio.context = new (window.AudioContext || window.webkitAudioContext)();
+    },
+
+    playTone: (frequency, duration, type = 'sine') => {
+        if (!Audio.context) Audio.init();
+
+        const oscillator = Audio.context.createOscillator();
+        const gainNode = Audio.context.createGain();
+
+        oscillator.connect(gainNode);
+        gainNode.connect(Audio.context.destination);
+
+        oscillator.frequency.value = frequency;
+        oscillator.type = type;
+
+        gainNode.gain.setValueAtTime(0.3, Audio.context.currentTime);
+        gainNode.gain.exponentialRampToValueAtTime(0.01, Audio.context.currentTime + duration);
+
+        oscillator.start(Audio.context.currentTime);
+        oscillator.stop(Audio.context.currentTime + duration);
+    },
+
     playPop: () => {
-        try {
-            const audio = new Audio('../../assets/sounds/pop.mp3');
-            audio.volume = 0.3;
-            audio.play();
-        } catch (e) {}
+        Audio.playTone(600, 0.1, 'sine');
     },
+
     playCorrect: () => {
-        try {
-            const audio = new Audio('../../assets/sounds/correct.mp3');
-            audio.volume = 0.4;
-            audio.play();
-        } catch (e) {}
+        Audio.playTone(800, 0.2, 'sine');
     },
+
     playWrong: () => {
-        try {
-            const audio = new Audio('../../assets/sounds/wrong.mp3');
-            audio.volume = 0.4;
-            audio.play();
-        } catch (e) {}
+        Audio.playTone(300, 0.3, 'triangle');
     },
+
     playSuccess: () => {
-        try {
-            const audio = new Audio('../../assets/sounds/success.mp3');
-            audio.volume = 0.5;
-            audio.play();
-        } catch (e) {}
+        Audio.playTone(1000, 0.4, 'sine');
     },
+
     playLevelUp: () => {
-        try {
-            const audio = new Audio('../../assets/sounds/levelup.mp3');
-            audio.volume = 0.5;
-            audio.play();
-        } catch (e) {}
+        Audio.playTone(1200, 0.5, 'sine');
     },
+
     playComplete: () => {
-        try {
-            const audio = new Audio('../../assets/sounds/complete.mp3');
-            audio.volume = 0.6;
-            audio.play();
-        } catch (e) {}
+        // Ascending sequence for celebration
+        Audio.playTone(800, 0.3, 'sine');
+        setTimeout(() => Audio.playTone(1000, 0.3, 'sine'), 150);
+        setTimeout(() => Audio.playTone(1200, 0.5, 'sine'), 300);
     }
 };
 
