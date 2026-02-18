@@ -22,6 +22,7 @@ y este proyecto se adhiere a [Semantic Versioning](https://semver.org/lang/es/).
 -   **UI**: Nueva "Barra de Marca" separada del Header para mejorar la jerarquía visual y evitar problemas en móviles.
 -   **Mobile**: Ajuste en la posición `sticky` de los filtros para adaptarse al nuevo header.
 -   **Legal**: Agregado archivo `LICENSE` (MIT) y documentación en README.
+-   **Procesos**: Establecida regla "Bugs Primero" en `development-queue.md` y creado template seguro para reportes en `bugs/template.md`.
 
 ### Fixed
 -   **Mobile**: Corrección del apilamiento de texto en el logo (que anteriormente rompía el diseño).
