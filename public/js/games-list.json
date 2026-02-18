@@ -170,6 +170,19 @@
       "thumbnail": "thumbnail.jpg",
       "recommended_age": "0-1",
       "tags": ["touch", "colors", "sounds", "sensory", "music"]
+    },
+    {
+      "id": "pintura-dedos",
+      "title": "Pintura con los Dedos",
+      "title_en": "Finger Painting",
+      "description": "¡Pinta y crea arte con tus dedos! Un lienzo creativo con 7 colores, sistema de 5 niveles de desafíos creativos, barra de progreso y temporizador visual.",
+      "description_en": "Paint and create art with your fingers! A creative canvas with 7 colors, 5-level creative challenge system, progress bar, and visual timer.",
+      "category": "creative",
+      "author": "Blockito AI",
+      "version": "1.0.0",
+      "thumbnail": "thumbnail.jpg",
+      "recommended_age": "1-2",
+      "tags": ["touch", "drawing", "colors", "creative", "levels", "timer", "progress", "canvas"]
     }
   ]
 }

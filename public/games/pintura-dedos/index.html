@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Pintura con los Dedos - Elbebe</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- HUD - Heads Up Display -->
+        <div id="hud">
+            <div class="hud-row">
+                <div class="hud-item">
+                    <span class="hud-label" data-es="Nivel" data-en="Level">Nivel</span>
+                    <span class="hud-value" id="level-display">1</span>
+                </div>
+                <div class="hud-item">
+                    <span class="hud-label" data-es="Áreas" data-en="Areas">Áreas</span>
+                    <span class="hud-value"><span id="painted-areas">0</span>/<span id="target-areas">5</span></span>
+                </div>
+            </div>
+            <div class="hud-row">
+                <div class="hud-item full-width">
+                    <div class="progress-bar-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progress-fill"></div>
+                        </div>
+                        <span class="progress-label" data-es="Progreso" data-en="Progress">Progreso</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hud-row">
+                <div class="hud-item full-width">
+                    <div class="timer-bar">
+                        <div class="timer-fill" id="timer-fill"></div>
+                        <span class="timer-label" data-es="Tiempo" data-en="Time">Tiempo</span>
+                        <span class="timer-value" id="timer-value">45s</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Canvas Container -->
+        <div id="canvas-container">
+            <canvas id="paint-canvas"></canvas>
+        </div>
+
+        <!-- Color Palette -->
+        <div id="color-palette">
+            <button class="color-btn active" data-color="#FF6B6B" style="background-color: #FF6B6B;"></button>
+            <button class="color-btn" data-color="#4ECDC4" style="background-color: #4ECDC4;"></button>
+            <button class="color-btn" data-color="#45B7D1" style="background-color: #45B7D1;"></button>
+            <button class="color-btn" data-color="#FFA07A" style="background-color: #FFA07A;"></button>
+            <button class="color-btn" data-color="#98D8C8" style="background-color: #98D8C8;"></button>
+            <button class="color-btn" data-color="#F7DC6F" style="background-color: #F7DC6F;"></button>
+            <button class="color-btn" data-color="#BB8FCE" style="background-color: #BB8FCE;"></button>
+        </div>
+
+        <!-- Action Buttons -->
+        <div id="action-buttons">
+            <button id="eraser-btn" class="action-btn">
+                <span data-es="Borrar" data-en="Erase">Borrar</span>
+            </button>
+            <button id="clear-btn" class="action-btn">
+                <span data-es="Limpiar Todo" data-en="Clear All">Limpiar Todo</span>
+            </button>
+            <button id="next-level-btn" class="action-btn" style="display: none;">
+                <span data-es="Siguiente Nivel" data-en="Next Level">Siguiente Nivel</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="level-complete-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2 data-es="¡Nivel Completado!" data-en="Level Complete!">¡Nivel Completado!</h2>
+            <p class="modal-score" id="level-score"></p>
+            <button class="modal-btn" id="modal-next-btn">
+                <span data-es="Siguiente" data-en="Next">Siguiente</span>
+            </button>
+        </div>
+    </div>
+
+    <div id="game-over-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2 data-es="¡Tiempo Agotado!" data-en="Time's Up!">¡Tiempo Agotado!</h2>
+            <p data-es="Intenta nuevamente" data-en="Try again">Intenta nuevamente</p>
+            <button class="modal-btn" id="modal-retry-btn">
+                <span data-es="Reintentar" data-en="Retry">Reintentar</span>
+            </button>
+        </div>
+    </div>
+
+    <div id="game-complete-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2 data-es="¡Juego Completado!" data-en="Game Complete!">¡Juego Completado!</h2>
+            <p class="modal-score" id="final-score"></p>
+            <button class="modal-btn" id="modal-home-btn">
+                <span data-es="Inicio" data-en="Home">Inicio</span>
+            </button>
+        </div>
+    </div>
+
+    <script src="js/game.js"></script>
+</body>
+</html>

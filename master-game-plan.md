@@ -25,6 +25,7 @@ This document outlines the development roadmap for the 41 games currently in the
 |----|-----------|--------|
 | 001 | **Poppit! Burbujas** | Advanced bubble popping. | ✅ Done |
 | 002 | **Animalitos que Suenan** | Animal orchestra. | ✅ Done |
+| 003 | **Pintura con los Dedos** | Finger painting with colors and levels. | ✅ Done |
 
 ## 👦 2-3 Years (Preschoolers)
 
@@ -60,14 +61,14 @@ This document outlines the development roadmap for the 41 games currently in the
 
 | Age Group | Completed | Target |
 |-----------|---------|--------|
-| 0-1 Years | 2 | 3 |
-| 1-2 Years | 2 | 2 |
+| 0-1 Years | 3 | 3 |
+| 1-2 Years | 3 | 2 |
 | 2-3 Years | 2 | 2 |
 | 3-5 Years | 2 | 2 |
 | 5-8 Years | 2 | 2 |
 | 8-15 Years | 2 | 2 |
 
-*Nota: `003-colores-vibran` no cuenta como completado hasta resolver BUG-004*
+*Nota: `003-colores-vibran` completado y `BUG-004` resuelto*
 
 ---
 
