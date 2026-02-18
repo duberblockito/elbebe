@@ -62,18 +62,23 @@ Basado en la regla de equilibrio, este es el orden inmediato de desarrollo:
 12. **[Done]** **0-1 Años**: `003-colores-vibran` (Colores que Vibran) - BUG-004 Fixed
 13. **[Done ✅ QA Validado]** **1-2 Años**: `003-pintura-dedos` (Pintura con los Dedos) - BUG-005 Fixed - IMPLEMENTADO - QA APROBADO
 14. **[Done ✅ QA Validado]** **2-3 Años**: `003-rompecabezas` (Rompecabezas Simple) - IMPLEMENTADO - QA APROBADO
-15. **[Done ✅ Implementado]** **3-5 Años**: `003-tren-numeros` (Tren de Números) - IMPLEMENTADO
-16. **[Done ✅ Implementado]** **5-8 Años**: `003-laberinto-aventura` (Laberinto Aventura) - IMPLEMENTADO
-17. **[NEXT]** **8-15 Años**: `003-science-lab` (Science Lab) - POR DESARROLLAR
+15. **[Blocked 🔴 BUG-009]** **3-5 Años**: `003-tren-numeros` (Tren de Números) - IMPLEMENTADO - PENDIENTE CORRECCIÓN QA
+16. **[Blocked 🔴 BUG-008]** **5-8 Años**: `003-laberinto-aventura` (Laberinto Aventura) - IMPLEMENTADO - PENDIENTE CORRECCIÓN QA
+17. **[BLOCKED 🔴]** **8-15 Años**: `003-science-lab` (Science Lab) - BLOQUEADO - Resolver bugs primero
 
 ---
 
 ## 📝 Instrucciones para el Desarrollador
 
+**⚠️ CRÍTICO: RUTA DE IMPLEMENTACIÓN**
+- **SIEMPRE implementar juegos en:** `/public/games/` (directorio de deployment)
+- **NUNCA implementar en:** `/games/` (directorio de ideas/backlog)
+- Al crear un juego nuevo, crear directamente en `/public/games/nombre-del-juego/`
+
 1.  **Sincronización**: Actualiza tu repositorio local: `git fetch && git pull origin master`.
 2.  **Consulta**: Consulta este archivo para identificar el siguiente juego ([NEXT]).
 3.  **Crea una rama nueva** para el desarrollo: `git checkout -b feature/nombre-del-juego`.
-4.  **Desarrolla y Prueba** el juego localmente.
+4.  **Desarrolla y Prueba** el juego localmente en `/public/games/`.
 5.  **Finalización**:
     -   Actualiza `master-game-plan.md` a ✅ Done.
     -   Incrementa el contador en este archivo (`development-queue.md`).
@@ -165,27 +170,36 @@ Ver `/QA-REPORT-004-rompecabezas.md` para detalles completos de la validación Q
 **Total juegos terminados:** 17/41 (41.5%)
 
 **Estado actual del sistema:**
-- ✅ Bugs: 0 bugs pendientes (TODOS RESUELTOS)
-- ✅ Última corrección: 2026-02-18 18:51 UTC (BUG-006, BUG-007 - Manifest ID issues)
-- ✅ Regla "Bugs First": DESACTIVADA - No hay bugs pendientes, se puede iniciar desarrollo de nuevos juegos
+- ⚠️ Bugs: 2 bugs pendientes (BUG-008, BUG-009)
+- 🔴 Última detección: 2026-02-18 19:50 UTC (QA Validación dual)
+- 🔴 Regla "Bugs First": ACTIVADA - Hay bugs pendientes, NO se puede iniciar desarrollo de nuevos juegos
 - ✅ Cron jobs activos: Ideas de juegos generándose automáticamente
 - ✅ QA Agent: Validando bugs detectados
-- ✅ Último juego implementado: `laberinto-aventura` (Laberinto Aventura - 5-8 Años) - ✅ IMPLEMENTADO
-- ✅ Última validación QA: BUG-006, BUG-007 - 2026-02-18 18:51 UTC - ✅ IMPLEMENTADOR CORRIGIÓ
-- ✅ Bugs resueltos: 2026-02-18 18:51 UTC (BUG-001, BUG-002, BUG-003, BUG-004, BUG-005, BUG-006, BUG-007)
-- ✅ Último bug resuelto: BUG-007 (ID faltante en manifest.json) - 2026-02-18 18:51 UTC
+- ✅ Últimos juegos implementados:
+  - `003-tren-numeros` (Tren de Números - 3-5 Años) - IMPLEMENTADO
+  - `laberinto-aventura` (Laberinto Aventura - 5-8 Años) - IMPLEMENTADO
+- ✅ Última validación QA: 2026-02-18 19:50 UTC - QA-REPORT-006 - 2 bugs detectados
+- ✅ Bugs resueltos previos: 2026-02-18 18:51 UTC (BUG-001, BUG-002, BUG-003, BUG-004, BUG-005, BUG-006, BUG-007)
 - ✅ Juego más reciente: `laberinto-aventura` - 2026-02-18 19:43 UTC (v1.13.0)
 
 ### Bugs Pendientes Actuales
 
-✅ **NO HAY BUGS PENDIENTES** - Todos los bugs han sido resueltos y commiteados
+🔴 **2 BUGS PENDIENTES** - Reportados por QA el 2026-02-18 19:50 UTC
 
-**Última corrección:** 2026-02-18 18:51 UTC
-- ✅ BUG-006: Corregido (ID "pinta-nubes" → "001-pinta-nubes")
-- ✅ BUG-007: Corregido (ID faltante → "002-animalitos-suenan")
+**BUG-008:** SITE_VERSION No Actualizado (laberinto-aventura)
+- Severidad: MEDIA
+- Detalle: SITE_VERSION en public/js/main.js es 1.12.0 pero debería ser 1.13.0
+- Archivo afectado: /bugs/BUG-008-site-version-no-actualizado.md
+- Estado: [Reported]
 
-**Próxima tarea:** Iniciar desarrollo de `003-formas-avanzadas` (Formas Avanzadas - 3-5 Años)
-**Estado:** ✅ DESBLOQUEADO - Se puede iniciar desarrollo de nuevo juego
+**BUG-009:** Archivos de Audio Externos No Existen (003-tren-numeros)
+- Severidad: MEDIA
+- Detalle: El juego intenta cargar archivos MP3 desde ../../assets/sounds/ que no existen
+- Archivo afectado: /bugs/BUG-009-audio-externo-no-existe.md
+- Estado: [Reported]
+
+**Próxima tarea:** Corregir BUG-008 y BUG-009 en orden alfabético
+**Estado:** 🔴 BLOQUEADO - NO se puede iniciar desarrollo de nuevo juego hasta resolver bugs
 
 ⚠️ **ACTUALIZACIÓN DEPLOYMENT (2026-02-18 16:20 UTC):**
 Los siguientes juegos fueron deployados a public/games/ sincronizando documentación con realidad:

@@ -4,10 +4,12 @@ This document outlines the standards and structure required for adding new games
 
 ## 1. Directory Structure
 
-Each game must be self-contained within its own directory under `/games/`.
+Each game must be self-contained within its own directory under `/public/games/`.
+
+**CRITICAL:** Always implement games in `/public/games/` directly. This is the deployment directory.
 
 ```
-/games/
+/public/games/
   /my-new-game/           (Snake case or kebab case folder name)
     index.html            (Entry point)
     manifest.json         (Metadata)
