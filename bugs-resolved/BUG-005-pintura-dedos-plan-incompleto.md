@@ -2,7 +2,7 @@
 
 **ID:** BUG-005
 **Title:** Pintura con Dedos - Plan viola game-design-rules.md Sección 7 (Plan incompleto)
-**Status:** [Fixed]
+**Status:** [Fixed & Committed]
 
 ## Description
 El plan del juego "Pintura con Dedos" (pintura-dedos) en `/games-backlog/1-2-003-pintura-dedos.md` viola la regla MANDATORIA de game-design-rules.md Sección 7 (Levels & Progression).
