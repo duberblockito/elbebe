@@ -1,0 +1,10 @@
+{
+  "id": "002-arrastra-fruta",
+  "title": "Arrastra la Fruta",
+  "description": "Arrastra frutas flotantes a un plato de picnic. Juego de arrastrar y soltar con sistema de niveles, puntuación y feedback visual.",
+  "category": "drag-drop",
+  "author": "Elbebe Team",
+  "version": "1.0.0",
+  "thumbnail": "thumbnail.svg",
+  "recommended_age": "2-3"
+}

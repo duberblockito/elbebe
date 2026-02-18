@@ -17,7 +17,7 @@ This document outlines the development roadmap for the 41 games currently in the
 |----|-----------|--------|
 | 001 | **Burbujas Mágicas** | Pop bubbles with simple taps. | ✅ Done |
 | 002 | **Caja de Sonidos Mágica** | Tap box to hear animals. | ✅ Done |
-| 003 | **Colores que Vibran** | Touch screen for colors and music. | ✅ Done |
+| 003 | **Colores que Vibran** | Touch screen for colors and music. | 🐛 Bug Fixing (BUG-004) |
 
 ## 🧒 1-2 Years (Toddlers)
 
@@ -60,12 +60,14 @@ This document outlines the development roadmap for the 41 games currently in the
 
 | Age Group | Completed | Target |
 |-----------|---------|--------|
-| 0-1 Years | 2 | 2 |
+| 0-1 Years | 2 | 3 |
 | 1-2 Years | 2 | 2 |
 | 2-3 Years | 2 | 2 |
 | 3-5 Years | 2 | 2 |
 | 5-8 Years | 2 | 2 |
 | 8-15 Years | 2 | 2 |
+
+*Nota: `003-colores-vibran` no cuenta como completado hasta resolver BUG-004*
 
 ---
 

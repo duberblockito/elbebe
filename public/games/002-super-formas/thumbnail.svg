@@ -1,0 +1,52 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="shape1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#feca57;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="shape2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#48dbfb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0abde3;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="shape3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff9ff3;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f368e0;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="300" height="300" rx="20" fill="url(#bg)" />
+
+  <!-- Title -->
+  <text x="150" y="40" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="bold" fill="white">
+    Super Formas
+  </text>
+
+  <!-- Shapes -->
+  <!-- Diamond -->
+  <rect x="60" y="70" width="50" height="50" rx="5" transform="rotate(45 85 95)" fill="url(#shape1)" />
+  
+  <!-- Triangle -->
+  <polygon points="150,70 125,120 175,120" fill="url(#shape2)" />
+  
+  <!-- Square -->
+  <rect x="190" y="70" width="50" height="50" rx="5" fill="url(#shape3)" />
+
+  <!-- Star -->
+  <polygon points="150,130 155,145 170,145 158,155 162,170 150,160 138,170 142,155 130,145 145,145" fill="url(#shape1)" />
+
+  <!-- Heart -->
+  <path d="M150,180 C150,180 125,160 125,140 C125,130 135,125 150,135 C165,125 175,130 175,140 C175,160 150,180 150,180" fill="url(#shape2)" />
+
+  <!-- Circle -->
+  <circle cx="150" cy="220" r="25" fill="url(#shape3)" />
+
+  <!-- Icon -->
+  <text x="150" y="275" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="white" font-weight="bold">
+    3-5 Años
+  </text>
+</svg>
