@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+  <rect width="300" height="300" fill="#87CEEB"/>
+  <rect y="200" width="300" height="100" fill="#90EE90"/>
+  <text x="150" y="80" font-family="Arial" font-size="40" text-anchor="middle" fill="#2c3e50">🚂</text>
+  <text x="150" y="130" font-family="Arial" font-size="24" text-anchor="middle" fill="#2c3e50">1️⃣2️⃣3️⃣</text>
+  <text x="150" y="250" font-family="Arial" font-size="18" text-anchor="middle" fill="#34495e" font-weight="bold">Tren de Números</text>
+  <rect x="50" y="150" width="200" height="40" rx="10" fill="#f39c12"/>
+  <text x="150" y="175" font-family="Arial" font-size="14" text-anchor="middle" fill="white" font-weight="bold">Ordena los vagones</text>
+</svg>

@@ -1,0 +1,10 @@
+{
+  "id": "003-tren-numeros",
+  "title": "Tren de Números",
+  "description": "Ordena los vagones del tren numerados del 1 al 10 para que el tren pueda partir. ¡Ayuda al maquinista!",
+  "category": "math",
+  "author": "Blockito AI",
+  "version": "1.0.0",
+  "thumbnail": "thumbnail.jpg",
+  "recommended_age": "3-5"
+}

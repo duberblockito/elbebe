@@ -41,6 +41,7 @@ This document outlines the development roadmap for the 41 games currently in the
 |----|-----------|--------|
 | 001 | **Chef de Monstruos** | Make funny food for monsters. | ✅ Done |
 | 002 | **Super Formas** | Fit complex shapes into holes. | ✅ Done |
+| 003 | **Tren de Números** | Order train cars numbered 1-10. | ✅ Done |
 
 ## 🧒 5-8 Years (Early Elementary)
 
@@ -65,7 +66,7 @@ This document outlines the development roadmap for the 41 games currently in the
 | 0-1 Years | 3 | 3 |
 | 1-2 Years | 3 | 3 |
 | 2-3 Years | 3 | 3 |
-| 3-5 Years | 2 | 3 |
+| 3-5 Years | 3 | 3 |
 | 5-8 Years | 2 | 3 |
 | 8-15 Years | 2 | 3 |
 

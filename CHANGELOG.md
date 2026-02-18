@@ -2,6 +2,68 @@
 
 ---
 
+## [v1.12.0] - 2026-02-18 19:30 UTC (Bogotá)
+
+### ✨ Nuevo Juego Implementado
+
+**Juego:** 003-tren-numeros (Tren de Números)
+**Categoría:** 3-5 Años (Preschoolers)
+**Fuente del plan:** Idea #3 de `/games-idea/3-5/ideas-3-5.md`
+
+**Descripción:**
+Ordena los vagones del tren numerados del 1 al 10 para que el tren pueda partir. El niño arrastra los vagones en el orden correcto y completa los trenes. Incluye 8 niveles progresivos, barra de progreso visual, temporizador y persistencia en localStorage. Diseñado específicamente para niños de 3-5 años que están aprendiendo números y secuencias.
+
+**Características implementadas:**
+- ✅ Vagones numerados (1-5 en primeros niveles, 1-10 en niveles avanzados)
+- ✅ Drag and drop para ordenar vagones (mouse y touch events)
+- ✅ Validación de ordenamiento: solo se permite colocar el vagón correcto en cada posición
+- ✅ Animaciones suaves de movimiento con bezier curves
+- ✅ Sistema de 8 niveles progresivos:
+  - Niveles 1-3: Números 1-5, 45s por tren
+  - Niveles 4-6: Números 1-7, 50s por tren
+  - Niveles 7-8: Números 1-10, 60s por tren
+- ✅ Meta de 3 trenes completados por nivel
+- ✅ Barra de progreso visual mostrando trenes completados vs objetivo
+- ✅ Barra de temporizador visual (verde → amarillo → rojo según tiempo restante)
+- ✅ HUD (Heads Up Display) con nivel actual, trenes completados, meta
+- ✅ Persistencia en localStorage (`003-tren-numeros-progress`)
+  - level: Nivel actual
+  - trainsCompleted: Trenes completados en nivel actual
+  - goal: Meta de trenes para completar nivel
+- ✅ Modales: Nivel Completado, Tiempo Agotado, Juego Completado
+- ✅ Feedback de sonido: pop, correct, wrong, success, levelUp, complete
+- ✅ Diseño responsivo optimizado para móvil (375x667px base para iPhone SE)
+- ✅ Touch events completos para dispositivos móviles
+- ✅ Animaciones de train wiggle y car correct
+- ✅ Estación de tren con background visual atractivo
+- ✅ Vagones con ruedas visuales para mejor contexto
+- ✅ Sistema de arrastrar desde pool a track
+
+**Archivos creados:**
+- `public/games/003-tren-numeros/index.html` (Punto de entrada HTML - 12.0 KB)
+- `public/games/003-tren-numeros/js/game.js` (Lógica del juego - 15.7 KB)
+- `public/games/003-tren-numeros/manifest.json` (Metadatos - 0.3 KB)
+- `public/games/003-tren-numeros/thumbnail.jpg` (Thumbnail SVG - 0.8 KB)
+
+**Archivos actualizados:**
+- `public/js/games-list.json` - Registro del nuevo juego
+- `master-game-plan.md` - Marcado como ✅ Done
+- `development-queue.md` - Movido a Done y actualizado [NEXT]
+- `games-backlog/3-5-003-tren-numeros.md` → `games-done/3-5-003-tren-numeros.md`
+
+**Progreso del proyecto:**
+- Total juegos: 16/41 (39.0%)
+- 3-5 Años: 3/3 (100%) - PRIMERA CATEGORÍA COMPLETADA 🎉
+
+**Notas:**
+- El juego cumple con todas las reglas de game-design-rules.md
+- Sistema de arrastrar y soltar totalmente funcional en móvil y desktop
+- Validación estricta de ordenamiento para asegurar aprendizaje
+- UI colorida y atractiva con emoji de locomotora 🚂
+- Técnicamente listo para revisión QA
+
+---
+
 ## [v1.11.0] - 2026-02-18 18:05 UTC (Bogotá)
 
 ### ✨ Nuevo Juego Implementado

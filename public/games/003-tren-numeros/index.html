@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Tren de Números</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Comic Sans MS', 'Arial Rounded MT Bold', Arial, sans-serif;
+            background: linear-gradient(180deg, #87CEEB 0%, #98FB98 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            touch-action: manipulation;
+        }
+
+        .game-container {
+            max-width: 100%;
+            min-height: 100vh;
+            margin: 0 auto;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hud {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .hud-item {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .hud-value {
+            color: #e74c3c;
+            font-size: 1.3rem;
+        }
+
+        .progress-bar-container {
+            width: 100%;
+            max-width: 600px;
+            height: 25px;
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #f39c12, #e74c3c);
+            border-radius: 12px;
+            transition: width 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .timer-bar-container {
+            width: 100%;
+            max-width: 600px;
+            height: 20px;
+            background: #34495e;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .timer-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #2ecc71, #27ae60);
+            border-radius: 10px;
+            transition: width 0.3s ease, background 0.3s ease;
+        }
+
+        .timer-bar.warning {
+            background: linear-gradient(90deg, #f39c12, #e67e22);
+        }
+
+        .timer-bar.critical {
+            background: linear-gradient(90deg, #e74c3c, #c0392b);
+        }
+
+        .station {
+            width: 100%;
+            max-width: 600px;
+            min-height: 200px;
+            background: linear-gradient(180deg, #f39c12 0%, #e67e22 100%);
+            border-radius: 20px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .station::before {
+            content: "🚂 ESTACIÓN 🚂";
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .train-track {
+            width: 100%;
+            height: 80px;
+            background: repeating-linear-gradient(
+                90deg,
+                #7f8c8d 0px,
+                #7f8c8d 20px,
+                #95a5a6 20px,
+                #95a5a6 40px
+            );
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 5px;
+            gap: 5px;
+            overflow-x: auto;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .train-engine {
+            font-size: 3rem;
+            flex-shrink: 0;
+            animation: trainWiggle 0.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes trainWiggle {
+            from { transform: translateY(0); }
+            to { transform: translateY(-3px); }
+        }
+
+        .car-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .train-car {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(180deg, #3498db 0%, #2980b9 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            border: 3px solid #1a5276;
+            cursor: grab;
+            touch-action: none;
+            user-select: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .train-car.dragging {
+            opacity: 0.5;
+            cursor: grabbing;
+            transform: scale(1.1);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.4);
+        }
+
+        .train-car.correct {
+            background: linear-gradient(180deg, #2ecc71 0%, #27ae60 100%);
+            border-color: #1e8449;
+            animation: carCorrect 0.5s ease;
+        }
+
+        @keyframes carCorrect {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        .car-wheels {
+            display: flex;
+            gap: 10px;
+            margin-top: -5px;
+        }
+
+        .wheel {
+            width: 15px;
+            height: 15px;
+            background: #34495e;
+            border-radius: 50%;
+            border: 2px solid #2c3e50;
+        }
+
+        .cars-pool {
+            width: 100%;
+            max-width: 600px;
+            min-height: 120px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .cars-pool-label {
+            width: 100%;
+            text-align: center;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            padding: 20px;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            max-width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            animation: modalPop 0.3s ease;
+        }
+
+        @keyframes modalPop {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .modal-title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .modal-title.success {
+            color: #27ae60;
+        }
+
+        .modal-title.failure {
+            color: #e74c3c;
+        }
+
+        .modal-title.completed {
+            color: #f39c12;
+        }
+
+        .modal-message {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        .modal-stats {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .modal-stats p {
+            margin: 5px 0;
+            font-size: 1.1rem;
+        }
+
+        .modal-button {
+            background: linear-gradient(180deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.3rem;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            touch-action: manipulation;
+        }
+
+        .modal-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0,0,0,0.3);
+        }
+
+        .modal-button:active {
+            transform: translateY(0);
+        }
+
+        .modal-button.success {
+            background: linear-gradient(180deg, #2ecc71 0%, #27ae60 100%);
+        }
+
+        .modal-button.failure {
+            background: linear-gradient(180deg, #e74c3c 0%, #c0392b 100%);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 375px) {
+            .hud {
+                padding: 8px 10px;
+            }
+
+            .hud-item {
+                font-size: 0.9rem;
+            }
+
+            .hud-value {
+                font-size: 1.1rem;
+            }
+
+            .train-car {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+
+            .train-engine {
+                font-size: 2.5rem;
+            }
+
+            .modal-title {
+                font-size: 1.5rem;
+            }
+
+            .modal-message {
+                font-size: 1rem;
+            }
+
+            .modal-button {
+                padding: 12px 24px;
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <!-- HUD -->
+        <div class="hud">
+            <div class="hud-item">Nivel: <span class="hud-value" id="levelDisplay">1</span></div>
+            <div class="hud-item">Trenes: <span class="hud-value" id="trainsDisplay">0</span></div>
+            <div class="hud-item">Meta: <span class="hud-value" id="goalDisplay">3</span></div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-bar-container">
+            <div class="progress-bar" id="progressBar" style="width: 0%">0/3 trenes</div>
+        </div>
+
+        <!-- Timer Bar -->
+        <div class="timer-bar-container">
+            <div class="timer-bar" id="timerBar" style="width: 100%"></div>
+        </div>
+
+        <!-- Station -->
+        <div class="station">
+            <div class="train-track" id="trainTrack">
+                <div class="train-engine">🚂</div>
+            </div>
+        </div>
+
+        <!-- Cars Pool -->
+        <div class="cars-pool" id="carsPool">
+            <div class="cars-pool-label">Arrastra los vagones aquí para ordenarlos</div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <div class="modal-title" id="modalTitle">¡Nivel Completado!</div>
+            <div class="modal-message" id="modalMessage">El tren está listo para partir</div>
+            <div class="modal-stats" id="modalStats">
+                <p><strong>Estadísticas:</strong></p>
+                <p>⏱️ Tiempo: <span id="modalTime">30s</span></p>
+                <p>🚂 Trenes completados: <span id="modalTrains">0</span></p>
+            </div>
+            <button class="modal-button" id="modalButton">Siguiente Nivel</button>
+        </div>
+    </div>
+
+    <script src="js/game.js"></script>
+</body>
+</html>

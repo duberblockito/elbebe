@@ -196,6 +196,19 @@
       "thumbnail": "thumbnail.jpg",
       "recommended_age": "2-3",
       "tags": ["touch", "puzzle", "animals", "levels", "timer", "progress", "cognitive"]
+    },
+    {
+      "id": "003-tren-numeros",
+      "title": "Tren de Números",
+      "title_en": "Number Train",
+      "description": "Ordena los vagones del tren numerados del 1 al 10 para que el tren pueda partir. Arrastra los vagones en el orden correcto y completa los trenes. Incluye 8 niveles progresivos, barra de progreso y temporizador visual.",
+      "description_en": "Order the train cars numbered 1-10 so the train can depart. Drag the cars in the correct order and complete trains. Includes 8 progressive levels, progress bar, and visual timer.",
+      "category": "math",
+      "author": "Blockito AI",
+      "version": "1.0.0",
+      "thumbnail": "thumbnail.jpg",
+      "recommended_age": "3-5",
+      "tags": ["drag-drop", "touch", "numbers", "levels", "timer", "progress", "math", "educational"]
     }
   ]
 }
