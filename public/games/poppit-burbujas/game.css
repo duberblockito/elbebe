@@ -25,6 +25,7 @@ body {
     height: 100%;
 }
 
+/* Intro Screen */
 #intro {
     position: absolute;
     top: 50%;
@@ -72,6 +73,177 @@ body {
     transform: scale(0.95);
 }
 
+/* Game UI */
+#gameUI {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    z-index: 50;
+}
+
+/* Level Indicator */
+.level-indicator {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    z-index: 50;
+}
+
+#levelText {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #FF6B6B;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Progress Bar */
+.progress-bar-container {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 25px;
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 50;
+}
+
+.progress-bar {
+    background: #f0f0f0;
+    border-radius: 15px;
+    height: 20px;
+    overflow: hidden;
+    margin-bottom: 0.3rem;
+}
+
+.progress-fill {
+    background: linear-gradient(90deg, #4ECDC4, #45B7D1);
+    height: 100%;
+    width: 0%;
+    transition: width 0.3s ease;
+    border-radius: 15px;
+}
+
+.progress-text {
+    text-align: center;
+    font-size: 1rem;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Timer Bar */
+.timer-bar-container {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 25px;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 50;
+}
+
+.timer-bar {
+    background: #f0f0f0;
+    border-radius: 15px;
+    height: 20px;
+    overflow: hidden;
+    margin-bottom: 0.3rem;
+}
+
+.timer-fill {
+    background: linear-gradient(90deg, #FFEAA7, #FFD93D);
+    height: 100%;
+    width: 100%;
+    transition: width 0.1s linear;
+    border-radius: 15px;
+}
+
+.timer-text {
+    text-align: center;
+    font-size: 1rem;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Modals */
+.modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 200;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    background: rgba(255, 255, 255, 0.98);
+    padding: 2rem;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    max-width: 90%;
+    animation: slideUp 0.3s ease;
+}
+
+.modal-content h2 {
+    font-size: 2rem;
+    color: #FF6B6B;
+    margin-bottom: 1rem;
+}
+
+.modal-content p {
+    font-size: 1.2rem;
+    color: #4ECDC4;
+    margin-bottom: 0.5rem;
+}
+
+.modal-content button {
+    font-size: 1.3rem;
+    padding: 0.8rem 1.5rem;
+    margin-top: 1rem;
+    background: #4ECDC4;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 15px rgba(78, 205, 196, 0.4);
+}
+
+.modal-content button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(78, 205, 196, 0.6);
+}
+
+.modal-content button:active {
+    transform: scale(0.95);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Utility */
 .hidden {
     display: none !important;
 }
@@ -89,5 +261,43 @@ body {
     #startBtn {
         font-size: 1.2rem;
         padding: 0.8rem 1.5rem;
+    }
+
+    #levelText {
+        font-size: 1.2rem;
+    }
+
+    .progress-text,
+    .timer-text {
+        font-size: 0.9rem;
+    }
+
+    .modal-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .modal-content p {
+        font-size: 1rem;
+    }
+
+    .modal-content button {
+        font-size: 1.1rem;
+        padding: 0.6rem 1.2rem;
+    }
+}
+
+@media (max-width: 320px) {
+    #levelText {
+        font-size: 1rem;
+    }
+
+    .progress-bar,
+    .timer-bar {
+        height: 15px;
+    }
+
+    .progress-text,
+    .timer-text {
+        font-size: 0.8rem;
     }
 }

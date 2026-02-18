@@ -1,6 +1,15 @@
 // Poppit! Burbujas Mágicas - Game Logic
 // Target: 1-2 years old children
 
+// Level configuration
+const LEVELS = [
+    { target: 5,  timeLimit: 30,  bubbleInterval: 1000, minSpeed: 1, maxSpeed: 2 },
+    { target: 8,  timeLimit: 35,  bubbleInterval: 900,  minSpeed: 1.5, maxSpeed: 2.5 },
+    { target: 10, timeLimit: 40,  bubbleInterval: 800,  minSpeed: 2, maxSpeed: 3 },
+    { target: 12, timeLimit: 45,  bubbleInterval: 700,  minSpeed: 2.5, maxSpeed: 3.5 },
+    { target: 15, timeLimit: 50,  bubbleInterval: 600,  minSpeed: 3, maxSpeed: 4 }
+];
+
 class BubbleGame {
     constructor() {
         this.canvas = document.getElementById('gameCanvas');
@@ -8,9 +17,20 @@ class BubbleGame {
         this.bubbles = [];
         this.particles = [];
         this.isRunning = false;
+        this.isPaused = false;
         this.lastBubbleTime = 0;
-        this.bubbleInterval = 800; // ms between bubbles
         this.audioContext = null;
+
+        // Game state
+        this.gameState = {
+            currentLevel: 0,
+            bubblesPopped: 0,
+            bubblesPoppedInLevel: 0,
+            timeRemaining: 0,
+            isLevelComplete: false,
+            isGameOver: false,
+            unlockedLevels: 1
+        };
 
         // Colors for bubbles
         this.colors = [
@@ -25,6 +45,7 @@ class BubbleGame {
 
         this.resize();
         this.initEventListeners();
+        this.loadProgress();
     }
 
     resize() {
@@ -38,6 +59,7 @@ class BubbleGame {
         // Touch support
         this.canvas.addEventListener('touchstart', (e) => {
             e.preventDefault();
+            if (!this.isRunning || this.isPaused) return;
             for (let touch of e.changedTouches) {
                 this.checkBubblePop(touch.clientX, touch.clientY);
             }
@@ -49,10 +71,12 @@ class BubbleGame {
 
         // Mouse support
         this.canvas.addEventListener('mousedown', (e) => {
+            if (!this.isRunning || this.isPaused) return;
             this.checkBubblePop(e.clientX, e.clientY);
         });
 
         this.canvas.addEventListener('mousemove', (e) => {
+            if (!this.isRunning || this.isPaused) return;
             if (e.buttons === 1) {
                 this.checkBubblePop(e.clientX, e.clientY);
             }
@@ -62,6 +86,42 @@ class BubbleGame {
         document.getElementById('startBtn').addEventListener('click', () => {
             this.startGame();
         });
+
+        // Modal buttons
+        document.getElementById('nextLevelBtn').addEventListener('click', () => {
+            this.nextLevel();
+        });
+
+        document.getElementById('retryLevelBtn').addEventListener('click', () => {
+            this.retryLevel();
+        });
+
+        document.getElementById('playAgainBtn').addEventListener('click', () => {
+            this.restartGame();
+        });
+    }
+
+    // Progress persistence
+    saveProgress() {
+        const progress = {
+            unlockedLevels: this.gameState.unlockedLevels,
+            totalBubblesPopped: this.gameState.bubblesPopped,
+            lastPlayed: new Date().toISOString()
+        };
+        localStorage.setItem('poppit-burbujas-progress', JSON.stringify(progress));
+    }
+
+    loadProgress() {
+        const saved = localStorage.getItem('poppit-burbujas-progress');
+        if (saved) {
+            try {
+                const progress = JSON.parse(saved);
+                this.gameState.unlockedLevels = Math.min(progress.unlockedLevels || 1, LEVELS.length);
+                this.gameState.bubblesPopped = progress.totalBubblesPopped || 0;
+            } catch (e) {
+                console.error('Error loading progress:', e);
+            }
+        }
     }
 
     initAudio() {
@@ -97,10 +157,15 @@ class BubbleGame {
         oscillator.stop(this.audioContext.currentTime + 0.15);
     }
 
+    getCurrentLevelConfig() {
+        return LEVELS[Math.min(this.gameState.currentLevel, LEVELS.length - 1)];
+    }
+
     createBubble() {
+        const levelConfig = this.getCurrentLevelConfig();
         const radius = 30 + Math.random() * 40; // 30-70px
         const x = Math.random() * (this.canvas.width - radius * 2) + radius;
-        const speed = 1 + Math.random() * 2; // 1-3 pixels per frame
+        const speed = levelConfig.minSpeed + Math.random() * (levelConfig.maxSpeed - levelConfig.minSpeed);
         const color = this.colors[Math.floor(Math.random() * this.colors.length)];
 
         this.bubbles.push({
@@ -147,15 +212,141 @@ class BubbleGame {
                 this.playPopSound();
                 this.createParticles(bubble.x, bubble.y, bubble.color, bubble.radius);
                 this.bubbles.splice(i, 1);
+
+                // Update counters
+                this.gameState.bubblesPopped++;
+                this.gameState.bubblesPoppedInLevel++;
+
+                // Check if level is complete
+                const levelConfig = this.getCurrentLevelConfig();
+                if (this.gameState.bubblesPoppedInLevel >= levelConfig.target) {
+                    this.completeLevel();
+                }
+
+                this.updateUI();
                 break; // Only pop one bubble per touch
             }
         }
     }
 
+    updateUI() {
+        const levelConfig = this.getCurrentLevelConfig();
+
+        // Update level indicator
+        document.getElementById('levelText').textContent = `Nivel ${this.gameState.currentLevel + 1}`;
+
+        // Update progress bar
+        const progressPercent = Math.min((this.gameState.bubblesPoppedInLevel / levelConfig.target) * 100, 100);
+        document.getElementById('progressFill').style.width = `${progressPercent}%`;
+        document.getElementById('bubblesPopped').textContent = this.gameState.bubblesPoppedInLevel;
+        document.getElementById('bubblesTarget').textContent = levelConfig.target;
+
+        // Update timer bar
+        const timerPercent = (this.gameState.timeRemaining / levelConfig.timeLimit) * 100;
+        document.getElementById('timerFill').style.width = `${timerPercent}%`;
+        document.getElementById('timerText').textContent = `${Math.ceil(this.gameState.timeRemaining)}s`;
+    }
+
+    showLevelComplete() {
+        this.isPaused = true;
+        const levelConfig = this.getCurrentLevelConfig();
+        document.getElementById('levelBubblesPopped').textContent = this.gameState.bubblesPoppedInLevel;
+        document.getElementById('levelCompleteModal').classList.remove('hidden');
+    }
+
+    showTimeUp() {
+        this.isPaused = true;
+        document.getElementById('timeUpBubblesPopped').textContent = this.gameState.bubblesPoppedInLevel;
+        document.getElementById('timeUpModal').classList.remove('hidden');
+    }
+
+    showGameComplete() {
+        this.isPaused = true;
+        document.getElementById('totalBubblesPopped').textContent = this.gameState.bubblesPopped;
+        document.getElementById('gameCompleteModal').classList.remove('hidden');
+    }
+
+    completeLevel() {
+        this.isPaused = true;
+
+        // Save progress
+        if (this.gameState.currentLevel + 1 > this.gameState.unlockedLevels) {
+            this.gameState.unlockedLevels = this.gameState.currentLevel + 2;
+        }
+        this.saveProgress();
+
+        // Show level complete modal
+        setTimeout(() => {
+            this.showLevelComplete();
+        }, 500);
+    }
+
+    nextLevel() {
+        document.getElementById('levelCompleteModal').classList.add('hidden');
+        this.gameState.currentLevel++;
+
+        // Check if all levels completed
+        if (this.gameState.currentLevel >= LEVELS.length) {
+            this.showGameComplete();
+            return;
+        }
+
+        this.startLevel();
+    }
+
+    retryLevel() {
+        document.getElementById('timeUpModal').classList.add('hidden');
+        this.startLevel();
+    }
+
+    restartGame() {
+        document.getElementById('gameCompleteModal').classList.add('hidden');
+        this.gameState.currentLevel = 0;
+        this.gameState.bubblesPopped = 0;
+        this.startLevel();
+    }
+
+    startLevel() {
+        const levelConfig = this.getCurrentLevelConfig();
+
+        // Reset level state
+        this.gameState.bubblesPoppedInLevel = 0;
+        this.gameState.timeRemaining = levelConfig.timeLimit;
+        this.isPaused = false;
+        this.isLevelComplete = false;
+        this.isGameOver = false;
+
+        // Clear bubbles
+        this.bubbles = [];
+        this.particles = [];
+
+        // Update UI
+        this.updateUI();
+
+        // Start timer
+        this.lastTime = Date.now();
+    }
+
     update() {
-        // Create new bubbles periodically
+        if (!this.isRunning || this.isPaused) return;
+
         const now = Date.now();
-        if (now - this.lastBubbleTime > this.bubbleInterval) {
+        const deltaTime = (now - this.lastTime) / 1000; // Convert to seconds
+        this.lastTime = now;
+
+        // Update timer
+        this.gameState.timeRemaining -= deltaTime;
+        const levelConfig = this.getCurrentLevelConfig();
+
+        if (this.gameState.timeRemaining <= 0) {
+            this.gameState.timeRemaining = 0;
+            this.updateUI();
+            this.showTimeUp();
+            return;
+        }
+
+        // Create new bubbles periodically
+        if (now - this.lastBubbleTime > levelConfig.bubbleInterval) {
             this.createBubble();
             this.lastBubbleTime = now;
         }
@@ -185,6 +376,9 @@ class BubbleGame {
                 this.particles.splice(i, 1);
             }
         }
+
+        // Update UI periodically
+        this.updateUI();
     }
 
     draw() {
@@ -243,10 +437,17 @@ class BubbleGame {
     startGame() {
         this.initAudio();
         document.getElementById('intro').classList.add('hidden');
+        document.getElementById('gameUI').classList.remove('hidden');
+
+        // Reset game state
+        this.gameState.currentLevel = 0;
+        this.gameState.bubblesPopped = 0;
+
         this.isRunning = true;
         this.bubbles = [];
         this.particles = [];
-        this.lastBubbleTime = Date.now();
+
+        this.startLevel();
         this.gameLoop();
     }
 }

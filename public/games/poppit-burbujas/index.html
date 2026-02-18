@@ -9,10 +9,67 @@
 <body>
     <div id="game-container">
         <canvas id="gameCanvas"></canvas>
+
+        <!-- Intro Screen -->
         <div id="intro">
             <h1>🫧 ¡Burbujas Mágicas!</h1>
             <p>Toca las burbujas para explotarlas</p>
             <button id="startBtn">¡Jugar!</button>
+        </div>
+
+        <!-- Game UI -->
+        <div id="gameUI" class="hidden">
+            <!-- Level Indicator -->
+            <div class="level-indicator">
+                <span id="levelText">Nivel 1</span>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="progress-bar-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="progress-text">
+                    <span id="bubblesPopped">0</span> / <span id="bubblesTarget">5</span> burbujas
+                </div>
+            </div>
+
+            <!-- Timer Bar -->
+            <div class="timer-bar-container">
+                <div class="timer-bar">
+                    <div class="timer-fill" id="timerFill"></div>
+                </div>
+                <div class="timer-text" id="timerText">30s</div>
+            </div>
+        </div>
+
+        <!-- Level Complete Modal -->
+        <div class="modal hidden" id="levelCompleteModal">
+            <div class="modal-content">
+                <h2>🎉 ¡Nivel Completado!</h2>
+                <p>Explotaste <span id="levelBubblesPopped">5</span> burbujas</p>
+                <button id="nextLevelBtn">Siguiente Nivel →</button>
+            </div>
+        </div>
+
+        <!-- Time Up Modal -->
+        <div class="modal hidden" id="timeUpModal">
+            <div class="modal-content">
+                <h2>⏰ ¡Se acabó el tiempo!</h2>
+                <p>Explotaste <span id="timeUpBubblesPopped">0</span> burbujas</p>
+                <p>Intenta de nuevo</p>
+                <button id="retryLevelBtn">Intentar de Nuevo</button>
+            </div>
+        </div>
+
+        <!-- Game Complete Modal -->
+        <div class="modal hidden" id="gameCompleteModal">
+            <div class="modal-content">
+                <h2>🏆 ¡Juego Completado!</h2>
+                <p>¡Felicidades! Completaste todos los niveles</p>
+                <p>Total de burbujas explotadas: <span id="totalBubblesPopped">0</span></p>
+                <button id="playAgainBtn">Jugar de Nuevo</button>
+            </div>
         </div>
     </div>
     <script src="game.js"></script>
