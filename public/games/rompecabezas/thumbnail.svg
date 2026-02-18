@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300">
+  <!-- Background -->
+  <rect width="300" height="300" fill="#FFE4B5" rx="20" ry="20"/>
+
+  <!-- Puzzle pieces -->
+  <!-- Piece 1 - Top Left -->
+  <g transform="translate(50, 50)">
+    <path d="M0,0 L60,0 C70,0 75,10 75,20 C75,30 70,40 60,40 L0,40 Z" fill="#FF6B6B" stroke="#333" stroke-width="2"/>
+    <circle cx="35" cy="20" r="10" fill="#FFE4B5"/>
+  </g>
+
+  <!-- Piece 2 - Top Right -->
+  <g transform="translate(135, 50)">
+    <path d="M0,0 L60,0 L60,40 C50,40 45,30 45,20 C45,10 50,0 60,0 L60,40 L0,40 Z" fill="#4ECDC4" stroke="#333" stroke-width="2"/>
+    <circle cx="35" cy="20" r="10" fill="#FFE4B5"/>
+  </g>
+
+  <!-- Piece 3 - Bottom Left -->
+  <g transform="translate(50, 135)">
+    <path d="M0,0 L60,0 L60,40 L0,40 C0,30 -5,20 -15,20 C-5,20 0,30 0,40 Z" fill="#FFD93D" stroke="#333" stroke-width="2"/>
+    <circle cx="35" cy="20" r="10" fill="#FFE4B5"/>
+  </g>
+
+  <!-- Piece 4 - Bottom Right -->
+  <g transform="translate(135, 135)">
+    <path d="M0,0 L60,0 L60,40 C50,40 45,30 45,20 C45,10 50,0 60,0 L60,40 L0,40 Z" fill="#95E1D3" stroke="#333" stroke-width="2"/>
+    <circle cx="35" cy="20" r="10" fill="#FFE4B5"/>
+  </g>
+
+  <!-- Title text -->
+  <text x="150" y="250" text-anchor="middle" font-family="Comic Sans MS, cursive, sans-serif" font-size="24" fill="#333" font-weight="bold">
+    Rompecabezas
+  </text>
+
+  <!-- Decorative elements -->
+  <circle cx="30" cy="30" r="15" fill="#FF6B6B" opacity="0.5"/>
+  <circle cx="270" cy="30" r="15" fill="#4ECDC4" opacity="0.5"/>
+  <circle cx="30" cy="270" r="15" fill="#FFD93D" opacity="0.5"/>
+  <circle cx="270" cy="270" r="15" fill="#95E1D3" opacity="0.5"/>
+</svg>
