@@ -1,0 +1,19 @@
+{
+  "name": "Animalitos que Suenan",
+  "short_name": "animalitos",
+  "version": "1.0.0",
+  "description": "Orquesta de animales que se iluminan y suenan al tocarlos. Incluye 5 niveles progresivos, sistema de puntuación y temporizador visual.",
+  "description_en": "Orchestra of animals that illuminate and play sounds when touched. Includes 5 progressive levels, scoring system, and visual timer.",
+  "icon": "thumbnail.svg",
+  "start_url": "/games/animalitos-suenan/",
+  "display_order": 1,
+  "category": "sensory",
+  "recommended_age": "1-2",
+  "features": [
+    "levels",
+    "timer",
+    "progress",
+    "touch",
+    "audio"
+  ]
+}
