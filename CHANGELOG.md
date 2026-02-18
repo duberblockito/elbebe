@@ -2,6 +2,66 @@
 
 ---
 
+## [v1.4.1] - 2026-02-18 04:35 UTC (Bogotá)
+
+### 🐛 Bug Fixes
+- **CRÍTICO:** Corregido BUG-001 - Poppit! Burbujas Mágicas: Faltaba estructura de niveles, temporizador y progresión
+  - Problema: El juego funcionaba en modo infinito sin objetivos definidos, sin temporizador, sin barra de progreso, sin progresión de dificultad, sin localStorage
+  - Solución:
+    * Agregado array `LEVELS` con 5 niveles de dificultad progresiva
+    * Implementado `gameState` con seguimiento de nivel, burbujas explotadas, tiempo, niveles desbloqueados
+    * Agregadas funciones `saveProgress()` y `loadProgress()` usando `localStorage` con clave `poppit-burbujas-progress`
+    * Implementado sistema de temporizador con cuenta regresiva (30-50s por nivel)
+    * Implementado barra de progreso visual actualizada en tiempo real
+    * Agregados modales: nivel completado, tiempo agotado, juego completo
+    * Objetivos por nivel: 5, 8, 10, 12, 15 burbujas (aumentando progresivamente)
+    * Progresión de dificultad: burbujas más rápidas, intervalos más cortos (1000ms → 600ms)
+  - Estado: ✅ Corregido y mergeado a master
+
+### 📝 Archivos Modificados
+- `public/games/poppit-burbujas/index.html` (+57 lines)
+  - Agregado indicador de nivel actual
+  - Agregada barra de progreso con contador de burbujas explotadas/objetivo
+  - Agregada barra de tiempo con temporizador visual
+  - Agregados modales: nivel completado, tiempo agotado, juego completo
+- `public/games/poppit-burbujas/game.js` (+211 lines)
+  - Agregado array `LEVELS` con 5 niveles de dificultad
+  - Implementado `gameState` con seguimiento completo del juego
+  - Agregadas funciones `saveProgress()` y `loadProgress()`
+  - Implementado sistema de temporizador con cuenta regresiva
+  - Implementado barra de progreso visual actualizada en tiempo real
+  - Agregados modales y transiciones entre niveles
+- `public/games/poppit-burbujas/game.css` (+210 lines)
+  - Agregados estilos para barras de progreso y tiempo
+  - Agregados estilos para modales con animaciones (fadeIn, slideUp)
+  - Colores vibrantes y amigables para niños
+  - Ajustes responsive para 375px y 320px (iPhone SE)
+
+### 🎯 Validación TDD
+- ✅ Niveles divididos (5 niveles, no infinito)
+- ✅ Cada nivel tiene límite de tiempo (30-50s, dentro del rango 20s-5min)
+- ✅ Barra de progreso visual funciona (real-time)
+- ✅ Temporizador visual funciona (cuenta regresiva)
+- ✅ Progresión de dificultad (niveles más difíciles)
+- ✅ LocalStorage guarda progreso (niveles desbloqueados, total de burbujas explotadas)
+- ✅ Responsivo 375x667px
+- ✅ Touch events funcionan (verificado en commit previo)
+
+### 📋 Compliance with Game Design Rules
+- ✅ **7.1 Level Structure** - 5 niveles definidos, cada uno con objetivo específico y duración 30-50s
+- ✅ **7.2 Visual Feedback** - Barra de progreso visual + barra de tiempo visual en tiempo real
+- ✅ **7.3 Persistence** - `localStorage` usado para guardar niveles desbloqueados y progreso total
+
+### 🏷️ Etiquetas
+- BugFix
+- Levels
+- Timer
+- Progression
+- Persistence
+- Responsive
+
+---
+
 ## [v1.4.0] - 2026-02-18 04:15 UTC (Bogotá)
 
 ### ✨ Nuevo Juego
