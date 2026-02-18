@@ -119,6 +119,44 @@
             margin-bottom: 10px;
         }
 
+        /* Timer Bar */
+        #timer-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .timer-label {
+            font-size: clamp(10px, 2.5vw, 12px);
+            color: #666;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+
+        .timer-bar {
+            background: #E0E0E0;
+            border-radius: 10px;
+            height: 20px;
+            overflow: hidden;
+            margin-bottom: 5px;
+        }
+
+        .timer-fill {
+            background: linear-gradient(90deg, #4CAF50, #8BC34A);
+            height: 100%;
+            transition: width 0.3s ease, background 0.3s ease;
+            width: 100%;
+        }
+
+        .timer-text {
+            text-align: center;
+            font-size: clamp(12px, 3vw, 16px);
+            font-weight: bold;
+            color: #667eea;
+        }
+
         /* Canvas Area */
         #canvas-container {
             flex: 1;
@@ -594,7 +632,17 @@
         <div id="progress-container">
             <div id="progress-bar" style="width: 100%"></div>
         </div>
-        <div id="time-text">60s</div>
+
+        <!-- Timer Bar -->
+        <div id="timer-container">
+            <div class="timer-label">Tiempo Restante</div>
+            <div class="timer-bar">
+                <div class="timer-fill" id="timer-fill"></div>
+            </div>
+            <div class="timer-text">
+                <span id="time-remaining">60</span>s
+            </div>
+        </div>
 
         <!-- Canvas Area -->
         <div id="canvas-container">
@@ -663,6 +711,6 @@
         </div>
     </div>
 
-    <script src="game.js"></script>
+    <script src="js/game.js"></script>
 </body>
 </html>
