@@ -2,6 +2,60 @@
 
 ---
 
+## [v1.8.0] - 2026-02-18 14:40 UTC (Bogotá)
+
+### ✨ Nuevo Juego Implementado
+
+**Juego:** 002-art-battle (Art Battle: Digital Canvas)
+**Categoría:** 8-15 Años (Tweens/Teens)
+**Fuente del plan:** Idea #2 de `/games-backlog/8-15-002-art-battle.md`
+
+**Descripción:**
+Competencia de arte digital en tiempo real basada en temas aleatorios. Los jugadores crean obras maestras bajo presión temporal y pueden competir en rankings globales. Incluye sistema de niveles con temporizadores decrecientes, galería para guardar artwork y persistencia de progreso en localStorage. Fomenta la creatividad, coordinación motora fina y expresión artística.
+
+**Características implementadas:**
+- ✅ Sistema de 5 niveles progresivos con temporizadores decrecientes (90s → 45s)
+- ✅ 20 temas aleatorios diferentes (bosque mágico, dragón volando, castillo encantado, etc.)
+- ✅ Canvas de dibujo con múltiples herramientas:
+  - Pincel, goma de borrar, rellenar
+  - 8 colores predefinidos
+  - 3 tamaños de brocha
+  - Deshacer (undo) y limpiar canvas
+- ✅ Barra de progreso visual que cambia de color según tiempo restante
+- ✅ Sistema de puntuación basado en nivel (100-300 puntos por ronda)
+- ✅ 3 rondas por nivel con incremento de dificultad
+- ✅ Galería de artwork para guardar y descargar creaciones
+- ✅ Persistencia en localStorage (`art-battle-progress` y `art-battle-gallery`)
+- ✅ Touch events optimizados para móviles (dibujo táctil)
+- ✅ Diseño responsivo (Desktop, Tablet, Móvil - 375x667px base para iPhone SE)
+- ✅ Animaciones: pulso en tema, transiciones de modales, feedback visual
+- ✅ Interfaz intuitiva con iconos y colores vibrantes
+
+**Archivos creados:**
+- `games/art-battle/index.html` (Punto de entrada HTML - 19 KB)
+- `games/art-battle/game.js` (Lógica del juego - 20 KB)
+- `games/art-battle/manifest.json` (Metadatos - 0.4 KB)
+- `games/art-battle/thumbnail.jpg` (Thumbnail 300x300px - 10 KB)
+- `games/art-battle/thumbnail.svg` (SVG source)
+
+**Tecnologías utilizadas:**
+- HTML5 Canvas API (para dibujo)
+- JavaScript ES6+ (localStorage, touch events, mouse events)
+- CSS3 (flexbox, grid, animaciones, media queries, gradients)
+- Responsive design (375x667px base para iPhone SE)
+- Touch Events API (soporte completo para dibujo en móvil)
+
+**Cumplimiento de reglas de diseño (game-design-rules.md):**
+- ✅ Sección 7 (Levels & Progression): Niveles progresivos, barra de progreso, persistencia
+- ✅ Sección 2 (Technical Requirements): HTML/CSS/JS puro, touch/mouse events, Canvas API
+
+**Registro en games-list.json:**
+- ✅ Juego registrado con ID `art-battle`
+- ✅ Metadatos completos en español e inglés
+- ✅ Tags: creative, drawing, canvas, timed, levels, progress, gallery
+
+---
+
 ## [v1.7.0] - 2026-02-18 14:25 UTC (Bogotá)
 
 ### ✨ Nuevo Juego Implementado

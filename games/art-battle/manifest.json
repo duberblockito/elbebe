@@ -1,0 +1,10 @@
+{
+  "id": "art-battle",
+  "title": "Art Battle: Digital Canvas",
+  "description": "Competencia de arte digital en tiempo real basada en temas aleatorios. Crea obras maestras bajo presión y compite en rankings globales.",
+  "category": "creative",
+  "author": "Elbebe Team",
+  "version": "1.0.0",
+  "thumbnail": "thumbnail.jpg",
+  "recommended_age": "8-15"
+}

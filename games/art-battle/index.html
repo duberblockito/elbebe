@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Art Battle: Digital Canvas - Elbebe</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            overflow: hidden;
+            touch-action: none;
+        }
+
+        #game-container {
+            max-width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+        }
+
+        /* Header */
+        #game-header {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+        }
+
+        .header-title {
+            text-align: center;
+            color: #764ba2;
+            font-size: clamp(14px, 3vw, 20px);
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .game-info {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .info-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: clamp(10px, 2.5vw, 14px);
+        }
+
+        .info-value {
+            font-weight: bold;
+            color: #667eea;
+            font-size: clamp(12px, 3vw, 16px);
+        }
+
+        /* Theme Display */
+        #theme-display {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 12px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: pulse 2s infinite;
+        }
+
+        #theme-label {
+            font-size: clamp(10px, 2.5vw, 12px);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        #theme-text {
+            font-size: clamp(14px, 4vw, 22px);
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        /* Progress Bar */
+        #progress-container {
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            height: 20px;
+            margin-bottom: 10px;
+            overflow: hidden;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        #progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+            border-radius: 10px;
+            transition: width 0.1s linear;
+            box-shadow: 0 0 10px rgba(79, 172, 254, 0.5);
+        }
+
+        #time-text {
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            font-size: clamp(10px, 2.5vw, 14px);
+            margin-bottom: 10px;
+        }
+
+        /* Canvas Area */
+        #canvas-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+
+        #drawing-canvas {
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            cursor: crosshair;
+            touch-action: none;
+            background: white;
+        }
+
+        /* Tools Palette */
+        #tools-palette {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 8px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+        }
+
+        .tool-group {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+        }
+
+        .tool-btn {
+            width: clamp(35px, 8vw, 45px);
+            height: clamp(35px, 8vw, 45px);
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            background: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: clamp(16px, 4vw, 24px);
+            transition: all 0.2s;
+        }
+
+        .tool-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .tool-btn.active {
+            border-color: #667eea;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .color-btn {
+            width: clamp(28px, 6vw, 35px);
+            height: clamp(28px, 6vw, 35px);
+            border: 2px solid #e0e0e0;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .color-btn:hover {
+            transform: scale(1.15);
+        }
+
+        .color-btn.active {
+            border-color: #333;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.3);
+        }
+
+        .size-btn {
+            width: clamp(30px, 7vw, 40px);
+            height: clamp(30px, 7vw, 40px);
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .size-btn.active {
+            border-color: #667eea;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .size-dot {
+            background: #333;
+            border-radius: 50%;
+        }
+
+        /* Footer Buttons */
+        #footer-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .action-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: clamp(12px, 3vw, 16px);
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #667eea;
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+        }
+
+        .action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Modals */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            padding: 20px;
+        }
+
+        .modal-overlay.hidden {
+            display: none;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-icon {
+            font-size: 60px;
+            margin-bottom: 15px;
+        }
+
+        .modal-title {
+            color: #764ba2;
+            font-size: clamp(18px, 5vw, 24px);
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .modal-message {
+            color: #666;
+            font-size: clamp(12px, 3vw, 16px);
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .modal-actions .action-btn {
+            min-width: 120px;
+        }
+
+        /* Gallery */
+        #gallery-view {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 2000;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        #gallery-view.active {
+            display: block;
+        }
+
+        .gallery-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .gallery-title {
+            color: white;
+            font-size: clamp(18px, 4vw, 24px);
+            font-weight: bold;
+        }
+
+        #gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .gallery-info {
+            padding: 10px;
+        }
+
+        .gallery-theme {
+            font-size: clamp(10px, 2.5vw, 12px);
+            color: #666;
+            font-weight: bold;
+        }
+
+        .gallery-date {
+            font-size: clamp(8px, 2vw, 10px);
+            color: #999;
+        }
+
+        .gallery-actions {
+            display: flex;
+            gap: 5px;
+            margin-top: 5px;
+        }
+
+        .gallery-btn {
+            flex: 1;
+            padding: 5px;
+            font-size: clamp(10px, 2vw, 12px);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .gallery-btn-delete {
+            background: #ff6b6b;
+            color: white;
+        }
+
+        .gallery-btn-download {
+            background: #4facfe;
+            color: white;
+        }
+
+        /* Empty Gallery */
+        .empty-gallery {
+            color: white;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .empty-gallery-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+        }
+
+        /* Start Screen */
+        #start-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 3000;
+            padding: 20px;
+            text-align: center;
+        }
+
+        #start-screen.hidden {
+            display: none;
+        }
+
+        .start-icon {
+            font-size: clamp(60px, 15vw, 100px);
+            margin-bottom: 20px;
+            animation: bounce 1s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .start-title {
+            color: white;
+            font-size: clamp(24px, 6vw, 36px);
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .start-subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: clamp(12px, 3vw, 16px);
+            margin-bottom: 30px;
+            max-width: 400px;
+        }
+
+        .start-btn {
+            padding: 15px 40px;
+            font-size: clamp(14px, 4vw, 18px);
+            font-weight: bold;
+            background: white;
+            color: #764ba2;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.2s;
+        }
+
+        .start-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Responsive adjustments for iPhone SE */
+        @media (max-width: 375px) {
+            #game-container {
+                padding: 5px;
+            }
+
+            .header-title {
+                font-size: 14px;
+            }
+
+            .info-item {
+                font-size: 10px;
+            }
+
+            .info-value {
+                font-size: 12px;
+            }
+
+            #theme-display {
+                padding: 8px;
+            }
+
+            #theme-text {
+                font-size: 14px;
+            }
+
+            #tools-palette {
+                padding: 5px;
+            }
+
+            .tool-btn {
+                width: 32px;
+                height: 32px;
+                font-size: 16px;
+            }
+
+            .color-btn {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Start Screen -->
+    <div id="start-screen">
+        <div class="start-icon">🎨⚔️</div>
+        <h1 class="start-title">Art Battle</h1>
+        <p class="start-subtitle">Digital Canvas - ¡Compite creando arte basado en temas aleatorios!</p>
+        <button class="start-btn" id="start-btn">¡Comenzar! 🚀</button>
+    </div>
+
+    <!-- Gallery View -->
+    <div id="gallery-view">
+        <div class="gallery-header">
+            <h2 class="gallery-title">🖼️ Tu Galería</h2>
+            <button class="action-btn btn-secondary" id="close-gallery">Cerrar</button>
+        </div>
+        <div id="gallery-grid"></div>
+    </div>
+
+    <!-- Main Game -->
+    <div id="game-container">
+        <!-- Header -->
+        <header id="game-header">
+            <div class="header-title">🎨 Art Battle ⚔️</div>
+            <div class="game-info">
+                <div class="info-item">
+                    <span>Nivel</span>
+                    <span id="level-number" class="info-value">1</span>
+                </div>
+                <div class="info-item">
+                    <span>Rondas</span>
+                    <span id="rounds-completed" class="info-value">0/3</span>
+                </div>
+                <div class="info-item">
+                    <span>Puntos</span>
+                    <span id="score" class="info-value">0</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Theme Display -->
+        <div id="theme-display">
+            <div id="theme-label">🎯 TEMA ACTUAL</div>
+            <div id="theme-text">Preparando...</div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div id="progress-container">
+            <div id="progress-bar" style="width: 100%"></div>
+        </div>
+        <div id="time-text">60s</div>
+
+        <!-- Canvas Area -->
+        <div id="canvas-container">
+            <canvas id="drawing-canvas"></canvas>
+        </div>
+
+        <!-- Tools Palette -->
+        <div id="tools-palette">
+            <!-- Drawing Tools -->
+            <div class="tool-group">
+                <button class="tool-btn active" data-tool="brush" title="Pincel">🖌️</button>
+                <button class="tool-btn" data-tool="eraser" title="Goma">🧽</button>
+                <button class="tool-btn" data-tool="fill" title="Rellenar">🪣</button>
+            </div>
+
+            <!-- Colors -->
+            <div class="tool-group">
+                <button class="color-btn active" data-color="#000000" style="background: #000000"></button>
+                <button class="color-btn" data-color="#FF0000" style="background: #FF0000"></button>
+                <button class="color-btn" data-color="#FFA500" style="background: #FFA500"></button>
+                <button class="color-btn" data-color="#FFFF00" style="background: #FFFF00"></button>
+                <button class="color-btn" data-color="#008000" style="background: #008000"></button>
+                <button class="color-btn" data-color="#0000FF" style="background: #0000FF"></button>
+                <button class="color-btn" data-color="#800080" style="background: #800080"></button>
+                <button class="color-btn" data-color="#FF69B4" style="background: #FF69B4"></button>
+            </div>
+
+            <!-- Brush Sizes -->
+            <div class="tool-group">
+                <button class="size-btn" data-size="2">
+                    <div class="size-dot" style="width: 4px; height: 4px"></div>
+                </button>
+                <button class="size-btn active" data-size="5">
+                    <div class="size-dot" style="width: 8px; height: 8px"></div>
+                </button>
+                <button class="size-btn" data-size="10">
+                    <div class="size-dot" style="width: 14px; height: 14px"></div>
+                </button>
+            </div>
+
+            <!-- Actions -->
+            <div class="tool-group">
+                <button class="tool-btn" id="clear-canvas" title="Limpiar">🗑️</button>
+                <button class="tool-btn" id="undo-btn" title="Deshacer">↩️</button>
+            </div>
+        </div>
+
+        <!-- Footer Buttons -->
+        <div id="footer-buttons">
+            <button class="action-btn btn-primary" id="submit-artwork">¡Enviar Arte! ✨</button>
+            <button class="action-btn btn-secondary" id="view-gallery">🖼️ Galería</button>
+            <button class="action-btn btn-secondary" id="home-btn">🏠 Inicio</button>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal-overlay" class="modal-overlay hidden">
+        <div class="modal-content">
+            <div class="modal-icon" id="modal-icon">🎉</div>
+            <h2 class="modal-title" id="modal-title">¡Nivel Completado!</h2>
+            <p class="modal-message" id="modal-message">¡Excelente trabajo!</p>
+            <div class="modal-actions" id="modal-actions">
+                <button class="action-btn btn-primary" id="modal-primary-btn">Continuar</button>
+                <button class="action-btn btn-secondary hidden" id="modal-secondary-btn">Reiniciar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>

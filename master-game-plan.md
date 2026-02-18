@@ -51,6 +51,7 @@ This document outlines the development roadmap for the 41 games currently in the
 | ID | Game Name | Concept | Status |
 |----|-----------|--------|
 | 001 | **Code Quest** | Isometric coding adventure. | ✅ Done |
+| 002 | **Art Battle** | Digital canvas art competition with random themes. | ✅ Done |
 
 ---
 
@@ -63,7 +64,7 @@ This document outlines the development roadmap for the 41 games currently in the
 | 2-3 Years | 2 | 2 |
 | 3-5 Years | 2 | 2 |
 | 5-8 Years | 2 | 2 |
-| 8-15 Years | 1 | 2 |
+| 8-15 Years | 2 | 2 |
 
 ---
 

@@ -38,7 +38,7 @@ La estrategia de desarrollo sigue un ciclo "Round Robin" entre las categorías d
 | 2-3 Años | 2 | 2 |
 | 3-5 Años | 2 | 2 |
 | 5-8 Años | 2 | 2 |
-| 8-15 Años | 1 | 2 |
+| 8-15 Años | 2 | 2 |
 
 *Nota: Las categorías 0-1, 1-2, 2-3, 3-5 y 5-8 ya tienen 2 juegos cada una. Por lo tanto, el foco pasa a la siguiente categoría para igualarlas a 2.*
 
@@ -58,7 +58,7 @@ Basado en la regla de equilibrio, este es el orden inmediato de desarrollo:
 8.  **[Done]** **2-3 Años**: `002-arrastra-fruta` (Arrastra la Fruta)
 9.  **[Done]** **3-5 Años**: `002-super-formas` (Super Formas)
 10. **[Done]** **5-8 Años**: `002-constructor-palabras` (Constructor Palabras)
-11. **[Next]** **8-15 Años**: `002-adventure-quest` (Adventure Quest)
+11. **[Done]** **8-15 Años**: `002-art-battle` (Art Battle: Digital Canvas)
 
 ---
 
@@ -85,30 +85,21 @@ Basado en la regla de equilibrio, este es el orden inmediato de desarrollo:
 
 ## 🎮 Juego Actual en Desarrollo
 
-**🏩 No hay juego en desarrollo actualmente**
+**Estado:** ⏸️ **EN ESPERA**
 
-**Estado:** ⏳ **LISTO PARA EMPEZAR NUEVO JUEGO**
-
-**Próximo juego:** `002-adventure-quest` (Adventure Quest - 8-15 Años)
-
-**Fuente del plan:** Pendiente de idea en backlog
-
-**Categoría:** 8-15 Años (Tweens/Teens)
-
-**Detalles del concepto:**
-Pendiente de definición.
+**Último juego completado:** `002-art-battle` (Art Battle: Digital Canvas - 8-15 Años) ✅
+**Fecha de completado:** 2026-02-18 14:40 UTC
 
 **Notas:**
-- Último juego completado: `002-constructor-palabras` (Constructor Palabras - 5-8 Años) ✅
-- Fecha de completado: 2026-02-18 14:25 UTC
-- Próximo paso: Definir e implementar `002-adventure-quest`
+- Todos los juegos del ciclo actual (Nivel 2) están completados.
+- Próximo paso: Iniciar ciclo Nivel 3 comenzando con 0-1 Años.
 
 ---
 
 ## 📊 Estado Actual del Proyecto
 
 **Total juegos planificados:** 41
-**Total juegos terminados:** 11/41 (26.8%)
+**Total juegos terminados:** 12/41 (29.3%)
 
 **Estado actual del sistema:**
 - ✅ Bugs: Resueltos y commitados en `/bugs-resolved/`
@@ -117,4 +108,4 @@ Pendiente de definición.
 - ✅ QA Agent: Validando juegos automáticamente
 - ✅ Último juego completado: `002-constructor-palabras` (Constructor Palabras)
 
-**Próximo juego:** `002-adventure-quest` (Adventure Quest - 8-15 años)
+**Próximo juego:** `003-sensory-fun` (Sensory Fun - 0-1 años)
