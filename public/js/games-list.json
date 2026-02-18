@@ -105,6 +105,19 @@
       "thumbnail": "thumbnail.svg",
       "recommended_age": "1-2",
       "tags": ["touch", "sounds", "animals", "levels", "timer", "progress"]
+    },
+    {
+      "id": "002-arrastra-fruta",
+      "title": "Arrastra la Fruta",
+      "title_en": "Drag the Fruit",
+      "description": "Arrastra frutas flotantes a un plato de picnic. Juego de arrastrar y soltar con sistema de niveles, puntuación y feedback visual.",
+      "description_en": "Drag floating fruits to a picnic plate. Drag and drop game with level system, scoring, and visual feedback.",
+      "category": "drag-drop",
+      "author": "El Bebe Games",
+      "version": "1.0.0",
+      "thumbnail": "thumbnail.svg",
+      "recommended_age": "2-3",
+      "tags": ["drag-drop", "touch", "fruits", "levels", "timer", "progress"]
     }
   ]
 }

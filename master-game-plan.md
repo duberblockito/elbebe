@@ -30,7 +30,7 @@ This document outlines the development roadmap for the 41 games currently in the
 | ID | Game Name | Concept | Status |
 |----|-----------|--------|
 | 001 | **Pinta las Nubes** | Reveal animals in clouds. | ✅ Done |
-| 002 | **Arrastra la Fruta** | Sorting game picnic. | 📝 Ready |
+| 002 | **Arrastra la Fruta** | Sorting game picnic. | ✅ Done |
 
 ## 🧒 3-5 Years (Preschoolers)
 

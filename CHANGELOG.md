@@ -2,6 +2,57 @@
 
 ---
 
+## [v1.5.0] - 2026-02-18 13:55 UTC (Bogotá)
+
+### ✨ Nuevo Juego Implementado
+
+**Juego:** arrastra-fruta (Arrastra la Fruta)
+**Categoría:** 2-3 Años (Preschoolers)
+**Fuente del plan:** Idea #2 de `/games-backlog/2-3-002-arrastra-fruta.md`
+
+**Descripción:**
+Juego de arrastrar y soltar donde los niños arrastran frutas flotantes a un plato de picnic. Incluye sistema de 5 niveles progresivos, puntuación, temporizador visual y persistencia en localStorage. Los niños desarrollan habilidades motoras finas mientras disfrutan de frutas coloridas.
+
+**Características implementadas:**
+- ✅ Sistema de 5 niveles progresivos (30s por nivel)
+- ✅ Temporizador visual con barra de tiempo (verde → naranja → roja según restante)
+- ✅ Sistema de puntuación (contador de frutas arrastradas)
+- ✅ Persistencia en localStorage (`arrastra-fruta-progress`)
+- ✅ Touch events optimizados para móviles (drag and drop táctil)
+- ✅ Diseño responsivo (Desktop, Tablet, Móvil)
+- ✅ 10 frutas diferentes con animación flotante (manzana, naranja, limón, uva, fresa, etc.)
+- ✅ Modales: Nivel Completado, Tiempo Agotado, Juego Completado
+- ✅ Efectos visuales y audio (animaciones de float al arrastrar, feedback visual al soltar)
+- ✅ Sonidos sintetizados con Web Audio API (éxito, nivel completado, tiempo agotado, tick)
+
+**Archivos creados:**
+- `games/002-arrastra-fruta/index.html` (Punto de entrada HTML)
+- `games/002-arrastra-fruta/game.js` (Lógica del juego - 16.5 KB)
+- `games/002-arrastra-fruta/game.css` (Estilos - 7.8 KB)
+- `games/002-arrastra-fruta/manifest.json` (Metadatos - 0.4 KB)
+- `games/002-arrastra-fruta/thumbnail.svg` (Thumbnail SVG animado - 4.0 KB)
+
+**Tecnologías utilizadas:**
+- HTML5 (semántico)
+- JavaScript ES6+ (Web Audio API, localStorage, touch events, mouse events)
+- CSS3 (flexbox, grid, animaciones, media queries)
+- SVG (thumbnail animado)
+- Responsive design (375x667px base para iPhone SE)
+
+**Cumplimiento de reglas de diseño (game-design-rules.md):**
+- ✅ Sección 7 (Levels & Progression): Niveles progresivos, temporizador visual, persistencia
+- ✅ Sección 2 (Technical Requirements): HTML/CSS/JS puro, touch/mouse events, Web Audio API
+- ✅ Sección 4 (Game Registration): Registrado en `games-list.json`
+- ✅ Sección 9 (Accessibility): Objetivos grandes (80x80px mínimo), alto contraste
+- ✅ Sección 10 (Mobile First): Touch events, diseño responsivo, sin gestos complejos
+
+**Valor educativo:**
+- Desarrollo motor fino (coordinación mano-ojo)
+- Reconocimiento de frutas y colores
+- Comprensión de causa-efecto (arrastrar → éxito)
+
+---
+
 ## [v1.4.0] - 2026-02-18 13:40 UTC (Bogotá)
 
 ### ✨ Nuevo Juego Implementado

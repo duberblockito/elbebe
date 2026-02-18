@@ -35,12 +35,12 @@ La estrategia de desarrollo sigue un ciclo "Round Robin" entre las categorías d
 | :--- | :---: | :---: |
 | 0-1 Años | 2 | 2 |
 | 1-2 Años | 2 | 2 |
-| 2-3 Años | 1 | 2 |
+| 2-3 Años | 2 | 2 |
 | 3-5 Años | 1 | 2 |
 | 5-8 Años | 1 | 2 |
 | 8-15 Años | 1 | 2 |
 
-*Nota: La categoría 0-1 ya tiene 2 juegos (Burbujas Mágicas, Caja de Sonidos). Por lo tanto, el foco pasa a la siguiente categoría para igualarlas a 2.*
+*Nota: Las categorías 0-1, 1-2 y 2-3 ya tienen 2 juegos cada una. Por lo tanto, el foco pasa a la siguiente categoría para igualarlas a 2.*
 
 ---
 
@@ -55,7 +55,8 @@ Basado en la regla de equilibrio, este es el orden inmediato de desarrollo:
 5.  **[Done]** **8-15 Años**: `001-code-quest` (Code Quest)
 6.  **[Done]** **0-1 Años**: `002-caja-sonidos` (Caja de Sonidos)
 7.  **[Done]** **1-2 Años**: `002-animalitos-suenan` (Animalitos que Suenan)
-8.  **[Next]** **2-3 Años**: `002-arrastra-fruta` (Arrastra la Fruta)
+8.  **[Done]** **2-3 Años**: `002-arrastra-fruta` (Arrastra la Fruta)
+9.  **[Next]** **3-5 Años**: `002-super-formas` (Super Formas)
 
 ---
 
@@ -86,32 +87,32 @@ Basado en la regla de equilibrio, este es el orden inmediato de desarrollo:
 
 **Estado:** ⏳ **LISTO PARA EMPEZAR NUEVO JUEGO**
 
-**Próximo juego:** `002-arrastra-fruta` (Arrastra la Fruta - 2-3 Años)
+**Próximo juego:** `002-super-formas` (Super Formas - 3-5 Años)
 
-**Fuente del plan:** Idea #2 de `/games-backlog/2-3-002-arrastra-fruta.md`
+**Fuente del plan:** Idea #2 de `/games-backlog/3-5-002-super-formas.md`
 
-**Categoría:** 2-3 Años (Preschoolers)
+**Categoría:** 3-5 Años (Preschoolers)
 
 **Detalles del concepto:**
-Juego de arrastrar y soltar donde los niños arrastran frutas a su cesta correspondiente. Incluye sistema de niveles, puntuación y feedback visual.
+Juego de encajar formas complejas en agujeros correspondientes. Incluye formas geométricas, animales y objetos para niños pequeños.
 
 **Notas:**
-- Último juego completado: `002-animalitos-suenan` (Animalitos que Suenan - 1-2 Años) ✅
-- Fecha de completado: 2026-02-18 13:40 UTC
-- Próximo paso: Iniciar implementación de `002-arrastra-fruta`
+- Último juego completado: `002-arrastra-fruta` (Arrastra la Fruta - 2-3 Años) ✅
+- Fecha de completado: 2026-02-18 13:55 UTC
+- Próximo paso: Iniciar implementación de `002-super-formas`
 
 ---
 
 ## 📊 Estado Actual del Proyecto
 
 **Total juegos planificados:** 41
-**Total juegos terminados:** 8/41 (19.5%)
+**Total juegos terminados:** 9/41 (21.9%)
 
 **Estado actual del sistema:**
 - ✅ Bugs: Resueltos y commitados en `/bugs-resolved/`
 - ✅ Regla "Bugs First": Cumplida
 - ✅ Cron jobs activos: Ideas de juegos generándose automáticamente
 - ✅ QA Agent: Validando juegos automáticamente
-- ✅ Último juego completado: `002-animalitos-suenan` (Animalitos que Suenan)
+- ✅ Último juego completado: `002-arrastra-fruta` (Arrastra la Fruta)
 
-**Próximo juego:** `002-arrastra-fruta` (Arrastra la Fruta - 2-3 años)
+**Próximo juego:** `002-super-formas` (Super Formas - 3-5 años)
