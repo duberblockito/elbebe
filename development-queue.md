@@ -71,4 +71,5 @@ Basado en la regla anterior, este es el orden inmediato de desarrollo:
     -   `git add .`
     -   `git commit -m "feat: implement [game name]"`
     -   `git push origin feature/nombre-del-juego`
-    -   Solicita/Realiza Merge a `master`.
+    -   Realiza Merge a `master`.
+    -   Realiza Push de `master` (`git push origin master`).
