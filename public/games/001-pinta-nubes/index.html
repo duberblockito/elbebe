@@ -15,6 +15,18 @@
             </button>
         </header>
 
+        <!-- Level HUD -->
+        <div class="level-hud">
+            <div class="level-indicator" id="level-indicator">Nivel 1 / 5</div>
+            <div class="timer-container">
+                <div class="timer-text" id="timer-text">Tiempo</div>
+                <div class="timer-bar">
+                    <div class="timer-fill" id="timer-fill"></div>
+                </div>
+                <div class="time-remaining">⏱️ <span id="time-remaining">30</span>s</div>
+            </div>
+        </div>
+
         <main class="game-area">
             <div class="clouds-container" id="clouds-container">
                 <!-- Las nubes se generan dinámicamente -->
@@ -29,9 +41,48 @@
                 <div class="progress-fill" id="progress-fill"></div>
             </div>
             <div class="progress-text">
-                <span id="found-count">0</span> / <span id="total-count">0</span> animales encontrados
+                <span id="found-count">0</span> / <span id="total-count">5</span> animales encontrados
             </div>
         </main>
+
+        <!-- Level Complete Modal -->
+        <div class="modal" id="level-complete-modal">
+            <div class="modal-content">
+                <h2>🎉 ¡Nivel Completado!</h2>
+                <p>Encontraste <span id="level-complete-animals">5</span> animales</p>
+                <button class="modal-btn primary-btn" onclick="nextLevel()">
+                    Siguiente Nivel →
+                </button>
+            </div>
+        </div>
+
+        <!-- Game Over Modal -->
+        <div class="modal" id="game-over-modal">
+            <div class="modal-content">
+                <h2>⏰ ¡Se Acabó el Tiempo!</h2>
+                <p>Encontraste <span id="game-over-found">0</span> de <span id="game-over-target">5</span> animales</p>
+                <div class="modal-buttons">
+                    <button class="modal-btn primary-btn" onclick="retryLevel()">
+                        🔄 Intentar de Nuevo
+                    </button>
+                    <button class="modal-btn secondary-btn" onclick="goToMenu()">
+                        🏠 Volver al Menú
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Complete Modal -->
+        <div class="modal" id="game-complete-modal">
+            <div class="modal-content">
+                <h2>🏆 ¡Juego Completado!</h2>
+                <p>¡Excelente! Completaste todos los niveles</p>
+                <p>Encontraste <strong><span id="game-complete-total">0</span></strong> animales en total</p>
+                <button class="modal-btn primary-btn" onclick="restartGame()">
+                    🔄 Jugar de Nuevo
+                </button>
+            </div>
+        </div>
 
         <div class="celebration" id="celebration">
             <div class="celebration-content">

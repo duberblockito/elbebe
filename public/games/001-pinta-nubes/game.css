@@ -11,6 +11,8 @@
     --text-color: #333;
     --cloud-color: #D3D3D3;
     --cloud-hover-color: #B0C4DE;
+    --timer-green: #4CAF50;
+    --timer-red: #EF4444;
 }
 
 body {
@@ -62,6 +64,61 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+/* Level HUD */
+.level-hud {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(240, 248, 255, 0.9) 100%);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 90;
+}
+
+.level-indicator {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.timer-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.timer-text {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--timer-green);
+    white-space: nowrap;
+}
+
+.timer-bar {
+    width: 120px;
+    height: 20px;
+    background: linear-gradient(135deg, #E0E0E0 0%, #C0C0C0 100%);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.timer-fill {
+    height: 100%;
+    background: linear-gradient(135deg, var(--timer-green) 0%, #45A049 100%);
+    border-radius: 10px;
+    transition: width 1s linear, background 0.3s ease;
+    width: 100%;
+}
+
+.time-remaining {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--timer-green);
+    white-space: nowrap;
+}
+
 .game-area {
     flex: 1;
     position: relative;
@@ -70,7 +127,7 @@ body {
 
 .clouds-container {
     width: 100%;
-    height: calc(100% - 120px);
+    height: calc(100% - 180px);
     position: relative;
     padding: 20px;
     display: flex;
@@ -80,9 +137,8 @@ body {
     gap: 20px;
 }
 
+/* Cloud sizes */
 .cloud {
-    width: 120px;
-    height: 80px;
     background: linear-gradient(135deg, #E0E0E0 0%, #C0C0C0 100%);
     border-radius: 50px;
     position: relative;
@@ -94,26 +150,71 @@ body {
     align-items: center;
 }
 
+.cloud-large {
+    width: 120px;
+    height: 80px;
+}
+
+.cloud-medium {
+    width: 100px;
+    height: 70px;
+}
+
+.cloud-small {
+    width: 80px;
+    height: 55px;
+}
+
 .cloud::before {
     content: '';
     position: absolute;
-    width: 60px;
-    height: 60px;
     background: linear-gradient(135deg, #F0F0F0 0%, #D0D0D0 100%);
     border-radius: 50%;
     top: -20px;
+}
+
+.cloud-large::before {
+    width: 60px;
+    height: 60px;
     left: 15px;
+}
+
+.cloud-medium::before {
+    width: 50px;
+    height: 50px;
+    left: 12px;
+}
+
+.cloud-small::before {
+    width: 40px;
+    height: 40px;
+    left: 10px;
 }
 
 .cloud::after {
     content: '';
     position: absolute;
-    width: 50px;
-    height: 50px;
     background: linear-gradient(135deg, #F0F0F0 0%, #D0D0D0 100%);
     border-radius: 50%;
     top: -15px;
+}
+
+.cloud-large::after {
+    width: 50px;
+    height: 50px;
     right: 20px;
+}
+
+.cloud-medium::after {
+    width: 40px;
+    height: 40px;
+    right: 15px;
+}
+
+.cloud-small::after {
+    width: 35px;
+    height: 35px;
+    right: 12px;
 }
 
 .cloud:active {
@@ -143,6 +244,18 @@ body {
     z-index: 1;
     opacity: 0;
     transition: opacity 0.3s ease;
+}
+
+.cloud-large .animal {
+    font-size: 3rem;
+}
+
+.cloud-medium .animal {
+    font-size: 2.5rem;
+}
+
+.cloud-small .animal {
+    font-size: 2rem;
 }
 
 .cloud.revealed .animal {
@@ -240,6 +353,104 @@ body {
     margin-bottom: 10px;
 }
 
+/* Modals */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal.show {
+    display: flex;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-content {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 90%;
+    width: 350px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-content h2 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.modal-content p {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.modal-content strong {
+    color: var(--accent-color);
+    font-size: 1.3rem;
+}
+
+.modal-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modal-btn {
+    background: linear-gradient(135deg, #4CAF50 0%, #45A049 100%);
+    border: none;
+    border-radius: 15px;
+    padding: 15px 25px;
+    font-size: 1.1rem;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-btn:active {
+    transform: scale(0.95);
+}
+
+.modal-btn:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.secondary-btn {
+    background: linear-gradient(135deg, #607D8B 0%, #455A64 100%);
+}
+
 .celebration {
     display: none;
     position: fixed;
@@ -320,13 +531,47 @@ body {
         font-size: 1rem;
     }
 
-    .cloud {
+    .level-indicator {
+        font-size: 0.95rem;
+    }
+
+    .timer-text {
+        font-size: 0.8rem;
+    }
+
+    .timer-bar {
+        width: 100px;
+    }
+
+    .time-remaining {
+        font-size: 0.9rem;
+    }
+
+    .cloud-large {
         width: 100px;
         height: 70px;
     }
 
-    .animal {
+    .cloud-large .animal {
         font-size: 2.5rem;
+    }
+
+    .cloud-medium {
+        width: 85px;
+        height: 60px;
+    }
+
+    .cloud-medium .animal {
+        font-size: 2rem;
+    }
+
+    .cloud-small {
+        width: 70px;
+        height: 50px;
+    }
+
+    .cloud-small .animal {
+        font-size: 1.8rem;
     }
 
     .animal-feedback {
@@ -335,6 +580,15 @@ body {
 
     .animal-name {
         font-size: 1rem;
+    }
+
+    .modal-content {
+        padding: 25px;
+        width: 90%;
+    }
+
+    .modal-content h2 {
+        font-size: 1.5rem;
     }
 
     .celebration-content {
@@ -357,12 +611,59 @@ body {
         font-size: 0.9rem;
     }
 
-    .cloud {
-        width: 90px;
-        height: 60px;
+    .level-indicator {
+        font-size: 0.85rem;
     }
 
-    .animal {
-        font-size: 2rem;
+    .timer-text {
+        font-size: 0.75rem;
+    }
+
+    .timer-bar {
+        width: 80px;
+    }
+
+    .time-remaining {
+        font-size: 0.85rem;
+    }
+
+    .cloud-large {
+        width: 90px;
+        height: 65px;
+    }
+
+    .cloud-large .animal {
+        font-size: 2.2rem;
+    }
+
+    .cloud-medium {
+        width: 75px;
+        height: 55px;
+    }
+
+    .cloud-medium .animal {
+        font-size: 1.8rem;
+    }
+
+    .cloud-small {
+        width: 65px;
+        height: 45px;
+    }
+
+    .cloud-small .animal {
+        font-size: 1.6rem;
+    }
+
+    .modal-content {
+        padding: 20px;
+    }
+
+    .modal-content h2 {
+        font-size: 1.3rem;
+    }
+
+    .modal-btn {
+        padding: 12px 20px;
+        font-size: 1rem;
     }
 }
