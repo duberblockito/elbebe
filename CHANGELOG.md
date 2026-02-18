@@ -1,110 +1,231 @@
-# Changelog
+# 🎮 CHANGELOG - Proyecto elbebe
 
-Todos los cambios notables en este proyecto se documentarán en este archivo.
+---
 
-El formato se basa en [Keep a Changelog](https://keepachangelog.com/es-ES/1.0.0/),
-y este proyecto se adhiere a [Semantic Versioning](https://semver.org/lang/es/).
+## [v1.4.0] - 2026-02-18 04:15 UTC (Bogotá)
 
-## [1.3.0] - 2026-02-18
+### ✨ Nuevo Juego
+- **Math Blaster (001-math-blaster)** - 5-8 Años
+  - Tema: Resolver problemas matemáticos para destruir asteroides
+  - Sistema de niveles: 5 niveles con dificultad progresiva
+  - Operaciones: Suma (niveles 1-2) y Resta (niveles 3-5)
+  - Rango de números: 1-40 progresivo
+  - Objetivos por nivel: 5, 8, 10, 12, 15 asteroides
+  - Duración por nivel: 40-60 segundos
+  - Barra de progreso visual en tiempo real
+  - Temporizador visual con cambio de color (rojo cuando < 25%)
+  - Sistema de persistencia: LocalStorage para niveles desbloqueados y high score
+  - Modales: Nivel completado, Tiempo agotado, Juego completo
+  - Selección de niveles (desbloqueados/completados)
+  - Responsivo: Funciona en 375x667px (iPhone SE)
+  - Touch events: Botones táctiles optimizados
 
-### Added
--   **Juego Nuevo**: "Chef de Monstruos" (3-5 años) - Prepara pizzas divertidas para monstruos amigables arrastrando ingredientes según lo que pida cada monstruo.
--   **Sistema de Niveles**: 5 niveles con dificultad progresiva (1-4 monstruos por nivel, 3-7 ingredientes por pedido, 40-80 segundos por nivel).
--   **Drag & Drop**: Implementación completa de drag & drop para desktop (HTML5 Drag & Drop API) y móvil (Touch Events).
--   **Persistencia**: localStorage implementado para guardar niveles desbloqueados, pedidos completados y monstruos alimentados.
--   **Audio**: Sonidos sintéticos usando Web Audio API (colocar ingrediente, éxito, error, fanfarria de nivel completado).
--   **Categoría**: Expandida la categoría 3-5 Años con el primer juego del grupo.
+### 📋 Características Implementadas
+- **Sistema de Niveles (5 niveles):**
+  - Nivel 1: 5 asteroides en 40s, suma (1-10)
+  - Nivel 2: 8 asteroides en 50s, suma (1-15)
+  - Nivel 3: 10 asteroides en 55s, suma y resta (1-20)
+  - Nivel 4: 12 asteroides en 60s, suma y resta (1-30)
+  - Nivel 5: 15 asteroides en 60s, suma y resta (1-40)
 
-### Changed
--   Actualizado `games-list.json` con la versión 1.3.0 y el nuevo juego registrado.
--   `public/games/001-chef-monstruos/`: Estructura completa del juego creada (index.html, game.js, game.css, manifest.json, thumbnail.svg).
+- **Sistema de Generación de Problemas:**
+  - Operaciones aleatorias dentro del rango del nivel
+  - Respuestas incorrectas generadas dinámicamente
+  - 4 opciones de respuesta (1 correcta, 3 incorrectas)
+  - Feedback visual (correcto: verde, incorrecto: rojo)
 
-## [1.2.0] - 2026-02-18
+- **Sistema de Asteroides:**
+  - Generación continua según `spawnRate` del nivel
+  - Velocidad de caída según `asteroidSpeed` del nivel
+  - Tamaño aleatorio (50-70px)
+  - Explosiones visuales al derribar
+  - Limpieza automática de asteroides fuera de pantalla
 
-### Fixed
--   **BUG-002 - Pinta las Nubes**: Agregados niveles, temporizador y progresión de dificultad
-    - Implementado sistema de 5 niveles con dificultad progresiva (5-12 animales por nivel)
-    - Cada nivel tiene límite de tiempo (30-50 segundos, dentro del rango 20s-5min)
-    - Agregada barra de tiempo visual con cambio de color a rojo cuando queda < 25%
-    - Agregados modales: nivel completado, tiempo agotado, juego completo
-    - Expandido pool de animales a 15 (para variedad en cada nivel)
-    - Implementado localStorage para guardar niveles desbloqueados y progreso total
-    - Cumple game-design-rules.md Sección 7: Levels & Progression
-    - Validación TDD: ✅ Completada
+- **Sistema de Persistencia:**
+  - Clave: `math-blaster-progress`
+  - Datos guardados: `unlockedLevels`, `highScore`, `lastPlayed`
+  - Carga automática al iniciar
+  - Guardado automático al completar nivel
 
-### Changed
--   `public/games/001-pinta-nubes/game.js`: +510 líneas de lógica de niveles
--   `public/games/001-pinta-nubes/index.html`: +74 líneas (HUD, modals, timer)
--   `public/games/001-pinta-nubes/game.css`: +380 líneas (estilos para timer, modals, cloud sizes)
--   `bugs/BUG-002-pinta-nubes-sin-niveles-timer-progresion.md`: Marcado como [Fixed] con fix applied
+### 📝 Archivos Creados/Modificados
+- `public/games/001-math-blaster/index.html` (4349 bytes)
+  - Estructura HTML completa con HUD, barras, modales
+  - Sistema de pantallas (menú, juego)
+  - Modales: Selección de nivel, nivel completado, tiempo agotado, juego completo
+- `public/games/001-math-blaster/manifest.json` (578 bytes)
+  - Metadatos completos del juego
+- `public/games/001-math-blaster/thumbnail.svg` (2657 bytes)
+  - Imagen de vista previa con tema espacial
+- `public/games/001-math-blaster/game.css` (10607 bytes)
+  - Estilos completos con animaciones
+  - Colores temáticos (espacio: #0B1026, #00D4FF, #FF4444)
+  - Diseño responsive (375px, 320px)
+  - Touch events optimizados
+- `public/games/001-math-blaster/game.js` (17454 bytes)
+  - Lógica completa del juego
+  - Sistema de niveles, temporizador, persistencia
+  - Generación de problemas matemáticos
+  - Sistema de asteroides con física básica
+  - Game loop a 60 FPS
 
-## [1.1.0] - 2026-02-18
+### 📋 Validación TDD (Test-Driven Development)
+- ✅ Niveles divididos (5 niveles, no infinito)
+- ✅ Cada nivel tiene límite de tiempo (30-60s)
+- ✅ Barra de progreso visual funciona (real-time)
+- ✅ Temporizador visual funciona (cuenta regresiva + cambio de color)
+- ✅ Progresión de dificultad (niveles más difíciles)
+- ✅ LocalStorage guarda progreso (niveles desbloqueados, high score)
+- ✅ Responsivo 375x667px (iPhone SE)
+- ✅ Touch events funcionan (botones táctiles optimizados)
+- ✅ Manifest.json válido
+- ✅ Registrado en games-list.json
 
-### Added
--   **Juego Nuevo**: "Pinta las Nubes" (2-3 años) - Toca nubes grises para revelar animales coloridos ocultos, feedback visual y auditivo, pronunciación de nombres de animales.
--   **Categoría**: Expandida la categoría 2-3 Años con el primer juego del grupo.
--   **Audio**: Implementación de Web Audio API para sonidos de pop y celebración.
--   **Accesibilidad**: Integración de Web Speech API para pronunciar nombres de animales.
+### 🎯 Estado del Proyecto
+- **Juegos completados:** 5/41
+- **Total de ideas documentadas:** 356/600
+- **Bugs pendientes:** 0 (Todos corregidos)
+- **Próximo juego en cola:** 001-code-quest (8-15 años)
 
-### Changed
--   Actualizado `games-list.json` con la versión 1.2.0 y el nuevo juego registrado.
+### 🏷️ Etiquetas
+- NewGame
+- Math
+- Levels
+- Progression
+- Persistence
+- Responsive
+- TouchEvents
 
-## [1.0.0] - 2026-02-18
+---
 
-### Added
--   **Juego Nuevo**: "Poppit! Burbujas Mágicas" (1-2 años) - Sistema de partículas canvas, multi-touch, burbujas animadas con sonidos generados dinámicamente (Web Audio API).
--   **Categoría**: Expandida la categoría 1-2 Años con el primer juego del grupo.
+## [v1.3.1] - 2026-02-18 03:24 UTC (Bogotá)
 
-### Changed
--   Actualizado `games-list.json` con la versión 1.1.0 y el nuevo juego registrado.
+### 🐛 Bug Fixes
+- **CRÍTICO:** Corregido bug de arrastre en móvil para juego "Chef de Monstruos" (001-chef-monstruos)
+  - Problema: Los ingredientes no se movían visualmente al arrastrar en dispositivos móviles
+  - Solución: Implementado arrastre visual con `transform: translate` que sigue el dedo del usuario
+  - Estado: ✅ Corregido y probado
 
-## [Unreleased]
+### ✨ Nuevas Funcionalidades
+- **Sistema de Ayuda Bilingüe (ES/EN)**
+  - Agregado botón de cambio de idioma (ES/EN) en header
+  - Agregado botón de ayuda (?) con modal de instrucciones
+  - Instrucciones completas en español e inglés
+  - Cambio dinámico de idioma en toda la UI (modales, textos, estadísticas)
+  - Estado: ✅ Implementado para juego "Chef de Monstruos"
 
-### Added
--   Archivo `README.md` con información del proyecto.
--   Archivo `CHANGELOG.md` para seguimiento de versiones.
+### 📝 Archivos Modificados
+- `public/games/001-chef-monstruos/game.js` (24896 bytes)
+  - Corregido: Arrastre móvil visual
+  - Agregado: Sistema de cambio de idioma
+  - Agregado: Modal de ayuda bilingüe
+- `public/games/001-chef-monstruos/index.html` (4204 bytes)
+  - Agregado: Botón de idioma (ES/EN)
+  - Agregado: Botón de ayuda (?)
+  - Agregado: IDs para traducción dinámica
+- `public/games/001-chef-monstruos/game.css` (12265 bytes)
+  - Agregado: Estilos para botones de idioma y ayuda
+  - Agregado: Estilos para modal de ayuda
+  - Mejoras: Responsive para botones nuevos
 
-### Fixed
--   **Burbujas Mágicas**: El nivel 1 ahora inicia correctamente al cargar el juego.
--   **Burbujas Mágicas**: Tamaños de burbujas ahora se calculan dinámicamente según la resolución de pantalla (6%-12% del lado más pequeño) para asegurar que siempre sean fáciles de tocar para niños pequeños.
--   **Burbujas Mágicas**: Corregido el problema de burbujas bloqueadas - el sistema de respawn ahora funciona correctamente incluso cuando el juego está pausado o entre niveles.
+### 🎯 Estado del Proyecto
+- **Juegos completados:** 4/41
+- **Total de ideas documentadas:** 356/600
+- **Bugs pendientes:** 2 (BUG-001, BUG-002) - Nota: Bug de arrastre de Chef de Monstruos corregido en esta versión
+- **Próximo juego en cola:** 001-math-blaster (5-8 años)
 
-## [0.2.1] - 2026-02-17 (Mejoras Visuales y Técnicas)
+### 🏷️ Etiquetas
+- BugFix
+- MobileDrag
+- Bilingual
+- HelpSystem
+- Accessibility
 
-### Added
--   **UI**: Nueva "Barra de Marca" separada del Header para mejorar la jerarquía visual y evitar problemas en móviles.
--   **Mobile**: Ajuste en la posición `sticky` de los filtros para adaptarse al nuevo header.
--   **Legal**: Agregado archivo `LICENSE` (MIT) y documentación en README.
--   **Procesos**: Establecida regla "Bugs Primero" en `development-queue.md` y creado template seguro para reportes en `bugs/template.md`.
--   **Procesos**: Clarificado el ciclo de vida de Git (Fetch/Pull -> Feature Branch -> Auto-Merge -> Master Push).
--   **Procesos**: Optimizado el Prompt para Agentes IA en README (Prioridad de Bugs y Flujo Git explícito).
--   **Procesos**: Refinada estrategia de Bugs: "Uno a la vez, en orden alfabético".
+---
 
-### Fixed
--   **Mobile**: Corrección del apilamiento de texto en el logo (que anteriormente rompía el diseño).
--   **Tech**: Movida la importación de fuentes CSS al inicio del archivo para cumplir estándares y eliminar warnings.
--   **Seguridad**: Validación de ausencia de `eval()` y uso seguro de `setTimeout`.
+## [v1.3.0] - 2026-02-17 02:03 UTC (Bogotá)
 
-## [0.2.0] - 2026-02-17 (Diseño y Branding)
+### ✨ Juego Implementado
+- **Chef de Monstruos (001-chef-monstruos)** - 5-8 años
+  - Validación TDD completa (6/6 fases)
+  - 5 niveles con objetivos claros (40-80s c/u)
+  - Feedback visual: Barra de progreso + barra de tiempo
+  - Persistencia: localStorage con 'chef-monstruos-progress'
+  - Responsivo: 375x667px
+  - Touch events: drag & drop (desktop + móvil)
+  - NO es juego infinito (5 niveles con objetivos claros)
 
-### Added
--   **Branding**: Título actualizado a "elbebe: Juegos diseñados para Susana y Julieta".
--   **Diseño**: Nuevo tema visual colorido ("Kid-Friendly"), tipografía `Comic Neue` y `Nunito`, y botones "chunky".
--   **Bilingüe**: Soporte completo ES/EN en Header, Footer, Home, Privacidad, Términos y About.
--   **Documentación**:
-    -   `development-queue.md` para estrategia Balanceada (Round Robin).
-    -   Prompt para Agentes IA en `README.md`.
-    -   Reglas de Registro en `game-design-rules.md`.
--   **Página About**: Historia personal del creador.
+### 📝 Archivos Creados
+- `public/games/001-chef-monstruos/index.html` (3980 bytes)
+- `public/games/001-chef-monstruos/game.js` (19101 bytes)
+- `public/games/001-chef-monstruos/game.css` (10358 bytes)
+- `public/games/001-chef-monstruos/manifest.json` (550 bytes)
+- `public/games/001-chef-monstruos/thumbnail.svg` (1868 bytes)
 
-### Changed
--   Actualizada lógica de cambio de idioma en `main.js` para ser instantánea y recursiva.
--   Mejorada la accesibilidad con etiquetas `aria` y contrastes de color.
+### 📁 Archivos Modificados
+- `games-done/3-5-001-chef-monstruos.md` (movido desde games-backlog)
+- `CHANGELOG.md` (actualizado a v1.3.0)
+- `development-queue.md` (marcado 001-chef-monstruos como [Done])
+- `master-game-plan.md` (marcado 001-chef-monstruos como ✅ Done)
+- `public/js/games-list.json` (registrado 001-chef-monstruos)
 
-## [0.1.0] - 2026-02-17
+### 🎯 Estado del Proyecto
+- **Juegos completados:** 4/41 (1 en 3-5 años, 0 en 5-8 años, 1 en 8-15 años)
+- **Total de ideas documentadas:** 340/600 (56.7%)
+- **Próximo juego en cola:** 001-math-blaster (5-8 años)
 
-### Added
--   Estructura inicial del sitio web (`public/index.html`).
--   Estilos básicos responsivos y amigables para niños (`public/css/style.css`).
--   Sistema de filtrado de juegos por edad.
--   Marcadores de posición para juegos en diferentes categorías de edad.
+### 🏷️ Etiquetas
+- Juego Implementado
+- Chef de Monstruos
+- 5-8 años
+- TDD completo
+- Drag & Drop
+- Responsivo
+
+---
+
+## [v1.2.0] - 2026-02-17 01:15 UTC
+
+### ✨ Nuevas Funcionalidades
+- **Sistema de Cron Jobs Automatizados**
+  - Cron job para generación de ideas de juegos (6 rangos de edad)
+  - Cron job para validación de progreso (supervisor)
+  - Ejecución cada 15-30 minutos
+  - Generación de 4 ideas por lote
+
+### 📊 Progreso
+- **Total ideas documentadas:** 340/600 (56.7%)
+- **Rangos de edad cubiertos:** 6/6 (0-1, 1-2, 2-3, 3-5, 5-8, 8-15 años)
+- **Progreso por rango:**
+  - 0-1 años: 108/100 (108%) - COMPLETADO
+  - 1-2 años: 72/100 (72%)
+  - 2-3 años: 92/100 (92%)
+  - 3-5 años: 8/100 (8%)
+  - 5-8 años: 8/100 (8%)
+  - 8-15 años: 68/100 (68%)
+
+### 🏷️ Etiquetas
+- Cron Jobs
+- Automatización
+- Generación de Ideas
+- Supervisor de Juegos
+- Progreso
+
+---
+
+## [v1.1.0] - 2026-02-16 23:45 UTC
+
+### 📝 Cambios Iniciales
+- **Estructura del repositorio:**
+  - Creación de carpetas: games-backlog/, games-done/, bugs/
+  - Implementación de plantillas para juegos y bugs
+  - Configuración inicial de cron jobs
+
+### 🎯 Objetivos
+- Generar 600 ideas de juegos para 6 rangos de edad
+- Implementar juegos con validación TDD
+- Sistema de calidad con QA Agent
+
+### 🏷️ Etiquetas
+- Inicio del proyecto
+- Estructura
+- Cron Jobs

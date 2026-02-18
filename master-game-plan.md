@@ -83,7 +83,7 @@ This document outlines the development roadmap for the 41 games currently in the
 
 | ID | Game Name | Concept | Status |
 |----|-----------|---------|--------|
-| 001 | **Math Blaster** | Blast asteroids with math. | 📝 Ready |
+| 001 | **Math Blaster** | Blast asteroids with math. | ✅ Done |
 | 002 | **Constructor Palabras** | Spelling with drag and drop. | 📝 Ready |
 | 003 | **Laberinto Aventura** | Maze exploration for keys. | 📝 Ready |
 | 004 | **Tour Sistema Solar** | Space trivia and exploration. | 📝 Ready |

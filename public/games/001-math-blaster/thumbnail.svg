@@ -1,0 +1,47 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background: Space -->
+  <rect width="300" height="300" fill="#0B1026"/>
+
+  <!-- Stars -->
+  <circle cx="50" cy="40" r="2" fill="#FFFFFF" opacity="0.8"/>
+  <circle cx="120" cy="80" r="1.5" fill="#FFFFFF" opacity="0.6"/>
+  <circle cx="200" cy="50" r="2" fill="#FFFFFF" opacity="0.7"/>
+  <circle cx="250" cy="100" r="1" fill="#FFFFFF" opacity="0.5"/>
+  <circle cx="30" cy="150" r="1.5" fill="#FFFFFF" opacity="0.6"/>
+  <circle cx="280" cy="180" r="2" fill="#FFFFFF" opacity="0.8"/>
+  <circle cx="100" cy="220" r="1" fill="#FFFFFF" opacity="0.5"/>
+  <circle cx="180" cy="250" r="1.5" fill="#FFFFFF" opacity="0.7"/>
+  <circle cx="60" cy="270" r="1" fill="#FFFFFF" opacity="0.5"/>
+  <circle cx="220" cy="200" r="2" fill="#FFFFFF" opacity="0.6"/>
+
+  <!-- Asteroid 1 (with number) -->
+  <circle cx="80" cy="120" r="35" fill="#4A5568" stroke="#718096" stroke-width="3"/>
+  <circle cx="70" cy="110" r="8" fill="#2D3748"/>
+  <circle cx="95" cy="130" r="5" fill="#2D3748"/>
+  <text x="80" y="127" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">7</text>
+
+  <!-- Asteroid 2 (with number) -->
+  <circle cx="220" cy="140" r="35" fill="#4A5568" stroke="#718096" stroke-width="3"/>
+  <circle cx="210" cy="130" r="6" fill="#2D3748"/>
+  <circle cx="235" cy="150" r="7" fill="#2D3748"/>
+  <text x="220" y="147" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">12</text>
+
+  <!-- Spaceship -->
+  <path d="M150 220 L130 280 L150 260 L170 280 Z" fill="#00D4FF" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="150" cy="255" r="12" fill="#0099CC" stroke="#FFFFFF" stroke-width="1.5"/>
+  <path d="M150 230 L140 200 L150 205 L160 200 Z" fill="#00D4FF"/>
+  <path d="M130 280 L110 290 L125 275 Z" fill="#0066AA"/>
+  <path d="M170 280 L190 290 L175 275 Z" fill="#0066AA"/>
+
+  <!-- Laser beam -->
+  <line x1="150" y1="220" x2="150" y2="155" stroke="#FF4444" stroke-width="4" opacity="0.8"/>
+  <line x1="150" y1="220" x2="150" y2="155" stroke="#FFDD00" stroke-width="2" opacity="0.9"/>
+
+  <!-- Math problem -->
+  <rect x="95" y="30" width="110" height="45" rx="8" fill="#1B2946" stroke="#00D4FF" stroke-width="2"/>
+  <text x="150" y="60" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#FFFFFF" text-anchor="middle">5 + ? = 12</text>
+
+  <!-- Explosion effect -->
+  <circle cx="80" cy="120" r="45" fill="none" stroke="#FF9500" stroke-width="3" opacity="0.6"/>
+  <circle cx="80" cy="120" r="55" fill="none" stroke="#FFDD00" stroke-width="2" opacity="0.4"/>
+</svg>

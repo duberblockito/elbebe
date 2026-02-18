@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Math Blaster - El Bebe Games</title>
+  <link rel="stylesheet" href="game.css">
+</head>
+<body>
+  <!-- Main Menu -->
+  <div id="main-menu" class="screen">
+    <div class="menu-container">
+      <h1 class="game-title">🚀 Math Blaster</h1>
+      <p class="game-subtitle">¡Destruye asteroides con matemáticas!</p>
+
+      <div class="menu-stats">
+        <div class="stat-box">
+          <span class="stat-label">Nivel Máximo</span>
+          <span class="stat-value" id="max-unlocked">1</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-label">Mejor Puntuación</span>
+          <span class="stat-value" id="high-score-display">0</span>
+        </div>
+      </div>
+
+      <button class="btn btn-primary" id="btn-start">¡Jugar!</button>
+      <button class="btn btn-secondary" id="btn-level-select">Seleccionar Nivel</button>
+      <button class="btn btn-tertiary" id="btn-back">Volver al Menú</button>
+    </div>
+  </div>
+
+  <!-- Game Screen -->
+  <div id="game-screen" class="screen hidden">
+    <!-- HUD -->
+    <div class="game-hud">
+      <div class="hud-level">
+        Nivel <span id="current-level">1</span> / 5
+      </div>
+      <div class="hud-score">
+        ⭐ <span id="score">0</span>
+      </div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+      <div class="progress-label">
+        Asteroides: <span id="asteroids-destroyed">0</span> / <span id="asteroids-target">5</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+    </div>
+
+    <!-- Timer Bar -->
+    <div class="timer-container">
+      <div class="timer-label">
+        ⏱️ <span id="time-remaining">40</span>s
+      </div>
+      <div class="timer-bar">
+        <div class="timer-fill" id="timer-fill"></div>
+      </div>
+    </div>
+
+    <!-- Game Area -->
+    <div class="game-area" id="game-area">
+      <!-- Asteroids will be spawned here -->
+    </div>
+
+    <!-- Player Controls -->
+    <div class="player-controls">
+      <div class="math-problem" id="math-problem">
+        3 + 5 = ?
+      </div>
+      <div class="answer-options" id="answer-options">
+        <button class="answer-btn" data-answer="8">8</button>
+        <button class="answer-btn" data-answer="10">10</button>
+        <button class="answer-btn" data-answer="12">12</button>
+        <button class="answer-btn" data-answer="7">7</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Level Select Modal -->
+  <div class="modal" id="level-select-modal">
+    <div class="modal-content">
+      <h2>Selecciona Nivel</h2>
+      <div class="level-buttons" id="level-buttons">
+        <!-- Buttons generated dynamically -->
+      </div>
+      <button class="btn btn-secondary" id="btn-close-level-select">Cerrar</button>
+    </div>
+  </div>
+
+  <!-- Level Complete Modal -->
+  <div class="modal" id="level-complete-modal">
+    <div class="modal-content">
+      <h2>🎉 ¡Nivel Completado!</h2>
+      <p>Derribaste todos los asteroides</p>
+      <p class="level-stat">Puntuación del Nivel: <span id="level-score">0</span></p>
+      <button class="btn btn-primary" id="btn-next-level">Siguiente Nivel →</button>
+    </div>
+  </div>
+
+  <!-- Time Up Modal -->
+  <div class="modal" id="time-up-modal">
+    <div class="modal-content">
+      <h2>⏰ ¡Se Acabó el Tiempo!</h2>
+      <p>Derribaste <span id="destroyed-count">0</span> de <span id="target-count">5</span> asteroides</p>
+      <div class="modal-buttons">
+        <button class="btn btn-primary" id="btn-retry">Intentar de Nuevo</button>
+        <button class="btn btn-secondary" id="btn-menu">Volver al Menú</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Game Complete Modal -->
+  <div class="modal" id="game-complete-modal">
+    <div class="modal-content">
+      <h2>🏆 ¡Felicidades!</h2>
+      <p>Completaste todos los niveles</p>
+      <p class="level-stat">Puntuación Total: <span id="final-score">0</span></p>
+      <p class="level-stat">Mejor Puntuación: <span id="high-score">0</span></p>
+      <button class="btn btn-primary" id="btn-play-again">Jugar de Nuevo</button>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>

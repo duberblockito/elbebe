@@ -1,5 +1,5 @@
 {
-  "version": "1.2.0",
+  "version": "1.3.0",
   "lastUpdated": "2026-02-18",
   "games": [
     {
@@ -53,6 +53,19 @@
       "thumbnail": "thumbnail.svg",
       "recommended_age": "3-5",
       "tags": ["cooking", "drag-drop", "monsters", "logic", "creativity"]
+    },
+    {
+      "id": "001-math-blaster",
+      "title": "Math Blaster",
+      "title_en": "Math Blaster",
+      "description": "¡Resuelve problemas matemáticos para destruir asteroides! Mejora tus habilidades de suma y resta mientras proteges el espacio.",
+      "description_en": "Solve math problems to destroy asteroids! Improve your addition and subtraction skills while protecting space.",
+      "category": "educational",
+      "author": "El Bebe Games",
+      "version": "1.0.0",
+      "thumbnail": "thumbnail.svg",
+      "recommended_age": "5-8",
+      "tags": ["math", "addition", "subtraction", "asteroids", "space"]
     }
   ]
 }
