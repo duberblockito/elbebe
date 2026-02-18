@@ -7,6 +7,20 @@ y este proyecto se adhiere a [Semantic Versioning](https://semver.org/lang/es/).
 
 ## [1.3.0] - 2026-02-18
 
+### Added
+-   **Juego Nuevo**: "Chef de Monstruos" (3-5 años) - Prepara pizzas divertidas para monstruos amigables arrastrando ingredientes según lo que pida cada monstruo.
+-   **Sistema de Niveles**: 5 niveles con dificultad progresiva (1-4 monstruos por nivel, 3-7 ingredientes por pedido, 40-80 segundos por nivel).
+-   **Drag & Drop**: Implementación completa de drag & drop para desktop (HTML5 Drag & Drop API) y móvil (Touch Events).
+-   **Persistencia**: localStorage implementado para guardar niveles desbloqueados, pedidos completados y monstruos alimentados.
+-   **Audio**: Sonidos sintéticos usando Web Audio API (colocar ingrediente, éxito, error, fanfarria de nivel completado).
+-   **Categoría**: Expandida la categoría 3-5 Años con el primer juego del grupo.
+
+### Changed
+-   Actualizado `games-list.json` con la versión 1.3.0 y el nuevo juego registrado.
+-   `public/games/001-chef-monstruos/`: Estructura completa del juego creada (index.html, game.js, game.css, manifest.json, thumbnail.svg).
+
+## [1.2.0] - 2026-02-18
+
 ### Fixed
 -   **BUG-002 - Pinta las Nubes**: Agregados niveles, temporizador y progresión de dificultad
     - Implementado sistema de 5 niveles con dificultad progresiva (5-12 animales por nivel)
@@ -24,7 +38,7 @@ y este proyecto se adhiere a [Semantic Versioning](https://semver.org/lang/es/).
 -   `public/games/001-pinta-nubes/game.css`: +380 líneas (estilos para timer, modals, cloud sizes)
 -   `bugs/BUG-002-pinta-nubes-sin-niveles-timer-progresion.md`: Marcado como [Fixed] con fix applied
 
-## [1.2.0] - 2026-02-18
+## [1.1.0] - 2026-02-18
 
 ### Added
 -   **Juego Nuevo**: "Pinta las Nubes" (2-3 años) - Toca nubes grises para revelar animales coloridos ocultos, feedback visual y auditivo, pronunciación de nombres de animales.
@@ -35,7 +49,7 @@ y este proyecto se adhiere a [Semantic Versioning](https://semver.org/lang/es/).
 ### Changed
 -   Actualizado `games-list.json` con la versión 1.2.0 y el nuevo juego registrado.
 
-## [1.1.0] - 2026-02-18
+## [1.0.0] - 2026-02-18
 
 ### Added
 -   **Juego Nuevo**: "Poppit! Burbujas Mágicas" (1-2 años) - Sistema de partículas canvas, multi-touch, burbujas animadas con sonidos generados dinámicamente (Web Audio API).

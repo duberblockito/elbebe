@@ -1,0 +1,13 @@
+{
+  "id": "001-chef-monstruos",
+  "title": "Chef de Monstruos",
+  "title_en": "Monster Chef",
+  "description": "¡Prepara pizzas divertidas para monstruos amigables! Arrastra ingredientes según lo que pida cada monstruo.",
+  "description_en": "Make fun pizzas for friendly monsters! Drag ingredients according to what each monster requests.",
+  "category": "cooking",
+  "author": "El Bebe Games",
+  "version": "1.0.0",
+  "thumbnail": "thumbnail.svg",
+  "recommended_age": "3-5",
+  "tags": ["cooking", "drag-drop", "monsters", "logic", "creativity"]
+}

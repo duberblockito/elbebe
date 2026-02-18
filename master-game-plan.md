@@ -67,7 +67,7 @@ This document outlines the development roadmap for the 41 games currently in the
 
 | ID | Game Name | Concept | Status |
 |----|-----------|---------|--------|
-| 001 | **Chef de Monstruos** | Make funny food for monsters. | 📝 Ready |
+| 001 | **Chef de Monstruos** | Make funny food for monsters. | ✅ Done |
 | 002 | **Super Formas** | Fit complex shapes into holes. | 📝 Ready |
 | 003 | **Tren de los Números** | Order train cars 1-10. | 📝 Ready |
 | 004 | **Caritas y Emociones** | Match face to story emotion. | 📝 Ready |

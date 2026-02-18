@@ -1,0 +1,646 @@
+/* Chef de Monstruos - Styles
+   Age Group: 3-5 years
+   Version: 1.0.0 */
+
+/* ===============================
+   RESET Y BASE
+   =============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  color: #333;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ===============================
+   HEADER DEL NIVEL
+   =============================== */
+.level-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.level-indicator {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #667eea;
+}
+
+.level-icon {
+  font-size: 1.4rem;
+}
+
+.header-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-menu {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: #667eea;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.btn-menu:hover {
+  transform: scale(1.1);
+  background: #5568d3;
+}
+
+.btn-menu:active {
+  transform: scale(0.95);
+}
+
+/* ===============================
+   HUD DEL JUEGO
+   =============================== */
+.game-hud {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 15px;
+  background: rgba(255, 255, 255, 0.9);
+  margin: 15px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.timer-container,
+.progress-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.timer-bar,
+.progress-bar {
+  flex: 1;
+  height: 25px;
+  background: #E5E7EB;
+  border-radius: 12.5px;
+  overflow: hidden;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.timer-fill,
+.progress-fill {
+  height: 100%;
+  background: #4CAF50;
+  border-radius: 12.5px;
+  transition: width 0.3s ease, background 0.3s ease;
+}
+
+.timer-text,
+.progress-text {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  white-space: nowrap;
+}
+
+.timer-icon {
+  font-size: 1.2rem;
+}
+
+/* ===============================
+   CONTENEDOR DEL JUEGO
+   =============================== */
+.game-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0 15px 15px;
+  height: calc(100vh - 220px);
+  overflow-y: auto;
+}
+
+/* ===============================
+   MONSTRUOS
+   =============================== */
+.monsters-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 15px;
+  padding: 5px;
+}
+
+.monster-card {
+  background: white;
+  border-radius: 20px;
+  padding: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 3px solid transparent;
+}
+
+.monster-card.drag-over {
+  border-color: #667eea;
+  transform: scale(1.02);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+}
+
+.monster-avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+}
+
+.monster-emoji {
+  font-size: 2.5rem;
+}
+
+.monster-avatar.happy {
+  animation: bounce 0.5s ease;
+}
+
+.monster-avatar.shake {
+  animation: shake 0.5s ease;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.monster-info {
+  text-align: center;
+}
+
+.monster-name {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.monster-order {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.monster-order-items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+.order-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.order-item {
+  font-size: 1.8rem;
+  padding: 5px;
+  background: #F3F4F6;
+  border-radius: 10px;
+  transition: transform 0.2s;
+}
+
+.order-item.required {
+  border: 2px dashed #667eea;
+  background: #EEF2FF;
+}
+
+.order-slots {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.order-slot {
+  width: 50px;
+  height: 50px;
+  border: 2px dashed #9CA3AF;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F9FAFB;
+  font-size: 2rem;
+  transition: all 0.3s ease;
+}
+
+.order-slot.filled {
+  border-color: #4CAF50;
+  background: #D4EDDA;
+}
+
+/* ===============================
+   CHEF'S STATION
+   =============================== */
+.chef-station {
+  background: white;
+  border-radius: 20px 20px 0 0;
+  padding: 15px;
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+.chef-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.chef-icon {
+  font-size: 1.8rem;
+}
+
+.chef-header h3 {
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.ingredients-tray {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 10px;
+  background: #F9FAFB;
+  border-radius: 15px;
+  min-height: 80px;
+}
+
+.ingredient-item {
+  width: 60px;
+  height: 60px;
+  border-radius: 15px;
+  background: white;
+  border: 2px solid #E5E7EB;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ingredient-item:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-color: #667eea;
+}
+
+.ingredient-item.dragging {
+  opacity: 0.5;
+  cursor: grabbing;
+}
+
+.ingredient-item:active {
+  transform: scale(0.95);
+}
+
+.ingredient-emoji {
+  font-size: 2.5rem;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* ===============================
+   MODALES
+   =============================== */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  padding: 20px;
+}
+
+.modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 25px;
+  padding: 30px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  transform: scale(0.8);
+  transition: transform 0.3s;
+}
+
+.modal.active .modal-content {
+  transform: scale(1);
+}
+
+.modal-icon {
+  font-size: 4rem;
+  margin-bottom: 15px;
+}
+
+.modal-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.modal-text {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.modal-stats {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #667eea;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 12px 24px;
+  border-radius: 25px;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin: 5px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background: #F3F4F6;
+  color: #666;
+  border: 2px solid #E5E7EB;
+}
+
+.btn-secondary:hover {
+  background: #E5E7EB;
+}
+
+/* ===============================
+   RESPONSIVO
+   =============================== */
+@media (max-width: 375px) {
+  .level-header {
+    padding: 8px 10px;
+  }
+
+  .level-indicator {
+    font-size: 1rem;
+  }
+
+  .game-hud {
+    padding: 8px 10px;
+    margin: 10px;
+  }
+
+  .timer-bar,
+  .progress-bar {
+    height: 20px;
+  }
+
+  .timer-text,
+  .progress-text {
+    font-size: 0.85rem;
+  }
+
+  .monsters-container {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .monster-avatar {
+    width: 60px;
+    height: 60px;
+  }
+
+  .monster-emoji {
+    font-size: 2rem;
+  }
+
+  .monster-name {
+    font-size: 1.1rem;
+  }
+
+  .order-item {
+    font-size: 1.5rem;
+    padding: 3px;
+  }
+
+  .order-slot {
+    width: 45px;
+    height: 45px;
+    font-size: 1.8rem;
+  }
+
+  .ingredient-item {
+    width: 50px;
+    height: 50px;
+  }
+
+  .ingredient-emoji {
+    font-size: 2rem;
+  }
+
+  .modal-content {
+    padding: 20px;
+  }
+
+  .modal-icon {
+    font-size: 3rem;
+  }
+
+  .modal-title {
+    font-size: 1.5rem;
+  }
+
+  .modal-text {
+    font-size: 1rem;
+  }
+
+  .stat-value {
+    font-size: 1.5rem;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .level-indicator {
+    font-size: 0.9rem;
+  }
+
+  .timer-bar,
+  .progress-bar {
+    height: 18px;
+  }
+
+  .monster-avatar {
+    width: 50px;
+    height: 50px;
+  }
+
+  .monster-emoji {
+    font-size: 1.8rem;
+  }
+
+  .order-item {
+    font-size: 1.3rem;
+  }
+
+  .order-slot {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+
+  .ingredient-item {
+    width: 45px;
+    height: 45px;
+  }
+
+  .ingredient-emoji {
+    font-size: 1.8rem;
+  }
+}
+
+/* ===============================
+   ANIMACIONES EXTRA
+   =============================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal.active .modal-content {
+  animation: fadeIn 0.3s ease;
+}
+
+/* ===============================
+   ACCESIBILIDAD
+   =============================== */
+button:focus,
+.ingredient-item:focus {
+  outline: 3px solid #667eea;
+  outline-offset: 2px;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* ===============================
+   PRINT STYLES
+   =============================== */
+@media print {
+  .level-header,
+  .game-hud,
+  .chef-station {
+    display: none;
+  }
+}

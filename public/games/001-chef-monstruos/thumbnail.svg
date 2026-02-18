@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <!-- Background -->
+  <rect width="300" height="300" rx="30" fill="#667eea"/>
+  
+  <!-- Pizza Base -->
+  <ellipse cx="150" cy="180" rx="100" ry="40" fill="#FFD700"/>
+  <ellipse cx="150" cy="175" rx="95" ry="35" fill="#FFF8DC"/>
+  
+  <!-- Cheese -->
+  <ellipse cx="150" cy="175" rx="90" ry="32" fill="#FFA500" opacity="0.3"/>
+  
+  <!-- Pepperoni -->
+  <circle cx="120" cy="165" r="12" fill="#8B0000"/>
+  <circle cx="150" cy="180" r="12" fill="#8B0000"/>
+  <circle cx="180" cy="165" r="12" fill="#8B0000"/>
+  
+  <!-- Olives -->
+  <circle cx="135" cy="170" r="6" fill="#000080"/>
+  <circle cx="165" cy="170" r="6" fill="#000080"/>
+  <circle cx="150" cy="190" r="6" fill="#000080"/>
+  
+  <!-- Monster -->
+  <circle cx="150" cy="80" r="40" fill="#32CD32"/>
+  <ellipse cx="150" cy="95" rx="35" ry="25" fill="#32CD32"/>
+  
+  <!-- Monster Eye -->
+  <ellipse cx="150" cy="70" rx="18" ry="22" fill="white"/>
+  <circle cx="150" cy="72" r="10" fill="#333"/>
+  <circle cx="153" cy="69" r="4" fill="white"/>
+  
+  <!-- Monster Mouth -->
+  <path d="M 130 95 Q 150 110 170 95" stroke="#333" stroke-width="4" fill="none" stroke-linecap="round"/>
+  
+  <!-- Monster Horns -->
+  <path d="M 120 55 Q 115 40 125 35" stroke="#228B22" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M 180 55 Q 185 40 175 35" stroke="#228B22" stroke-width="6" fill="none" stroke-linecap="round"/>
+  
+  <!-- Chef Hat -->
+  <path d="M 130 30 Q 120 10 150 5 Q 180 10 170 30 Z" fill="white" stroke="#DDD" stroke-width="2"/>
+  <rect x="135" y="28" width="30" height="8" fill="white" stroke="#DDD" stroke-width="2"/>
+  
+  <!-- Stars -->
+  <text x="40" y="50" font-size="24">✨</text>
+  <text x="250" y="50" font-size="24">✨</text>
+  <text x="30" y="250" font-size="24">🎉</text>
+  <text x="260" y="250" font-size="24">🎉</text>
+</svg>
