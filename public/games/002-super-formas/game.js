@@ -16,6 +16,7 @@ class SuperFormas {
         this.levelNumber = document.getElementById('level-number');
         this.scoreDisplay = document.getElementById('score');
         this.targetDisplay = document.getElementById('target');
+        this.progressFill = document.getElementById('progress-fill');
         this.timeBar = document.getElementById('time-bar');
         this.timeText = document.getElementById('time-text');
         this.startBtn = document.getElementById('start-btn');
@@ -300,6 +301,7 @@ class SuperFormas {
 
         this.score++;
         this.scoreDisplay.textContent = this.score;
+        this.updateProgressBar();
         this.playSound('collect');
 
         // Verificar si se completó el nivel
@@ -330,6 +332,7 @@ class SuperFormas {
         this.timeLeft = this.timeLimit;
 
         this.updateUI();
+        this.updateProgressBar();
         this.setupLevel();
         this.startTimer();
 
@@ -443,6 +446,16 @@ class SuperFormas {
             this.timeBar.classList.add('danger');
         } else if (this.timeLeft <= 10) {
             this.timeBar.classList.add('warning');
+        }
+    }
+
+    /**
+     * Actualiza la barra de progreso de formas
+     */
+    updateProgressBar() {
+        if (this.progressFill) {
+            const percentage = (this.score / this.target) * 100;
+            this.progressFill.style.width = `${percentage}%`;
         }
     }
 
