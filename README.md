@@ -54,34 +54,40 @@ Tu objetivo es desarrollar el siguiente juego en la cola de producción.
 
 Por favor, lee y analiza los siguientes archivos de contexto antes de empezar:
 
-1.  CONTEXTO DE COLA (Qué juego sigue):
-    @[development-queue.md]
-    (Identifica el juego marcado como [NEXT] en la sección "Próximos Juegos")
+1.  CONTEXTO DE BUGS (Prioridad Máxima - CRÍTICO):
+    @[bugs/]
+    (Revisa esta carpeta. Si hay archivos, TU TAREA ES CORREGIRLOS PRIMERO. Ignora la cola de juegos hasta que los bugs estén resueltos).
 
-2.  REGLAS DE DISEÑO (Estándares Técnicos):
+2.  CONTEXTO DE COLA (Qué juego sigue):
+    @[development-queue.md]
+    (Identifica el juego marcado como [NEXT] en la sección "Próximos Juegos". SOLO si no hay bugs).
+
+3.  REGLAS DE DISEÑO (Estándares Técnicos):
     @[game-design-rules.md]
     (Sigue estrictamente estas reglas: HTML/CSS/JS puro, estructura de carpetas, responsividad móvil)
 
-3.  ESPECIFICACIONES DEL JUEGO (Mecánicas y Assets):
+4.  ESPECIFICACIONES DEL JUEGO (Mecánicas y Assets):
     (Identifica el archivo correspondiente en games-backlog/ según el ID del juego)
 
-4.  REGISTRO CENTRAL (Integración):
+5.  REGISTRO CENTRAL (Integración):
     @[public/js/games-list.json]
     (Archivo donde DEBES registrar el juego nuevo para que aparezca en el home)
 
 TAREA:
-Implementa de principio a fin el siguiente juego.
-Asegúrate de:
-1. Crear la carpeta y archivos en 'public/games/[id-juego]/'.
-2. Implementar la lógica y diseño según el backlog.
-3. Registrar el juego en 'games-list.json' (CRÍTICO).
-75. **Git Flow**:
-    - **Sincroniza**: `git fetch && git pull origin master` (CRÍTICO para evitar conflictos).
-    - Crea una rama nueva: `git checkout -b feature/[id-juego]`.
-    - Al terminar, actualiza `CHANGELOG.md` bumping la versión.
+0. **¡BUGS PRIMERO!**: Si la carpeta `bugs/` tiene contenido, tu única prioridad es arreglar esos errores. Crea una rama `fix/...`, resuelve el bug, actualiza status y haz merge.
+   - SI NO HAY BUGS, procede con el siguiente juego:
+
+1. **Sincronización**: `git fetch && git pull origin master` (CRÍTICO).
+2. Crea una rama nueva: `git checkout -b feature/[id-juego]`.
+3. Crea la carpeta y archivos en 'public/games/[id-juego]/'.
+4. Implementa la lógica y diseño según el backlog y reglas de diseño.
+5. Registra el juego en 'games-list.json' (CRÍTICO).
+6. Al terminar:
+    - Actualiza `CHANGELOG.md` bumpando la versión.
+    - Actualiza `master-game-plan.md` y `development-queue.md`.
     - Documenta cambios: `git commit -m "feat: add [id-juego]"`.
-    - Haz push y solicita merge a master.
+7. **Entrega**:
+    - Haz push: `git push origin feature/[id-juego]`.
+    - Solicita merge a master.
     - Una vez en master, haz push de los cambios (`git push origin master`).
-76. Registrar el juego en 'games-list.json' (CRÍTICO).
-77. Actualizar 'master-game-plan.md' y 'development-queue.md'.
 ```
