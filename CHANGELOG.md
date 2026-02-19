@@ -2,6 +2,56 @@
 
 ---
 
+## [v1.35.0] - 2026-02-19 19:00 UTC
+
+### ✨ Nuevo Juego Agregado
+
+**Juego:** Formas que Rebotan
+**Categoría:** 0-1 Años (Infants)
+**ID:** 0-1-009
+
+**Descripción:**
+Formas coloridas (círculo, cuadrado, triángulo) rebotando lentamente por la pantalla. Toca las formas para hacer que "se rían" con sonidos divertidos y cambien de dirección. Un juego sensorial endless para bebés de 0-1 años que desarrolla coordinación motora y reconocimiento de formas.
+
+**Características implementadas:**
+- ✅ 3 tipos de formas diferentes (círculo, cuadrado, triángulo)
+- ✅ 6 colores vibrantes para las formas
+- ✅ Física de rebote con velocidades aleatorias (1-3 px/frame)
+- ✅ Rotación de las formas durante el rebote
+- ✅ Interacción táctil: tocar hace que la forma "se ría" (jiggle + sonido)
+- ✅ Cambio de dirección aleatorio al tocar la forma
+- ✅ Cambio de color aleatorio al tocar la forma
+- ✅ Sonidos de "risa" generados con Web Audio API
+- ✅ Animación de jiggle (vibración) al tocar las formas
+- ✅ Botón para agregar más formas (hasta 15 máximo)
+- ✅ Contador de formas en pantalla
+- ✅ Contador de tiempo jugado
+- ✅ High score persistente en localStorage (`formas-rebotan-progress`)
+- ✅ 3 tamaños de formas (pequeño, mediano, grande)
+- ✅ HUD (Heads Up Display) con formas, tiempo y high score
+- ✅ Instrucciones en modal al inicio
+- ✅ Responsivo para móviles (375x667px)
+- ✅ Animación de flotación suave de las formas
+
+**Cumplimiento de reglas de diseño (game-design-rules.md):**
+- ✅ Sección 1: Estructura de directorios correcta en `/public/games/`
+- ✅ Sección 2: HTML5, CSS3, Vanilla JavaScript sin frameworks
+- ✅ Sección 2: Responsivo y optimizado para 375x667px (iPhone SE)
+- ✅ Sección 3: manifest.json válido con metadatos completos
+- ✅ Sección 4: Registrado en `public/js/games-list.json`
+- ✅ Sección 7: Sistema de progreso (contador de toques, high score)
+- ✅ Sección 7: Persistencia en localStorage
+- ✅ Sección 8: Checklist de submission completo
+
+**Archivos creados:**
+- `public/games/formas-rebotan/index.html` - Página principal del juego
+- `public/games/formas-rebotan/assets/game.css` - Estilos del juego
+- `public/games/formas-rebotan/js/game.js` - Lógica del juego
+- `public/games/formas-rebotan/manifest.json` - Metadatos del juego
+- `public/games/formas-rebotan/thumbnail.svg` - Miniatura del juego
+
+---
+
 ## [v1.34.0] - 2026-02-19 18:40 UTC
 
 ### ✨ Nuevo Juego Agregado

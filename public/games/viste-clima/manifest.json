@@ -1,0 +1,22 @@
+{
+  "id": "viste-clima",
+  "title": "Vístete para el Clima",
+  "title_en": "Dress for the Weather",
+  "description": "Mira el clima por la ventana y elige la ropa correcta para el personaje. Incluye 5 días con diferentes climas (sol, lluvia, nieve), barra de progreso y temporizador visual.",
+  "description_en": "Look at the weather through the window and choose the correct clothes for the character. Includes 5 days with different weathers (sun, rain, snow), progress bar, and visual timer.",
+  "category": "educational",
+  "author": "El Bebe Games",
+  "version": "1.0.0",
+  "thumbnail": "thumbnail.svg",
+  "recommended_age": "3-5",
+  "tags": [
+    "educational",
+    "clothing",
+    "weather",
+    "touch",
+    "levels",
+    "timer",
+    "progress",
+    "drag-drop"
+  ]
+}

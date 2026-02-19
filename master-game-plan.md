@@ -23,6 +23,7 @@ This document outlines the development roadmap for the 41 games currently in the
 | 006 | **Dedos Mágicos** | Touch screen for colorful trails. | ✅ Done |
 | 007 | **Cochecito de Colores** | Car changes color, plays vroom, moves. | ✅ Done |
 | 008 | **Patitas que Caminan** | Animals walk leaving colorful footprints. Touch to change species and color. | ✅ Done |
+| 009 | **Formas que Rebotan** | Colorful shapes bouncing around screen. Touch to make them laugh. | ✅ Done |
 
 ## 🧒 1-2 Years (Toddlers)
 
@@ -85,14 +86,14 @@ This document outlines the development roadmap for the 41 games currently in the
 
 | Age Group | Completed | Target |
 |-----------|---------:|--------:|
-| 0-1 Years | 8 | 8 |
+| 0-1 Years | 9 | 9 |
 | 1-2 Years | 7 | 7 |
 | 2-3 Years | 6 | 6 |
 | 3-5 Years | 7 | 7 |
 | 5-8 Years | 5 | 5 |
 | 8-15 Years | 5 | 5 |
 
-*Nota: `003-colores-vibran`, `003-pintura-dedos`, `003-rompecabezas`, `laberinto-aventura`, `tren-numeros`, `science-lab`, `eco-warriors`, `peek-a-boo`, `cascada-musical`, `bloques-caen`, `caritas-emociones`, `tour-sistema-solar`, `lluvia-estrellas`, `estrellas-brillantes`, `music-master`, `dedos-magicos`, `apila-animales`, `cochecito-colores`, `pequeno-jardinero`, `patitas-caminan` y `maestro-reloj` completados y validados*
+*Nota: `003-colores-vibran`, `003-pintura-dedos`, `003-rompecabezas`, `laberinto-aventura`, `tren-numeros`, `science-lab`, `eco-warriors`, `peek-a-boo`, `cascada-musical`, `bloques-caen`, `caritas-emociones`, `tour-sistema-solar`, `lluvia-estrellas`, `estrellas-brillantes`, `music-master`, `dedos-magicos`, `apila-animales`, `cochecito-colores`, `pequeno-jardinero`, `patitas-caminan`, `maestro-reloj`, `viste-clima` y `formas-rebotan` completados y validados*
 
 ---
 

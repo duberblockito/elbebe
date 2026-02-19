@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <!-- Background -->
+  <rect width="300" height="300" rx="20" fill="url(#bgGradient)"/>
+  
+  <!-- Gradient Definitions -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="circleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF6B6B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF8E8E;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="squareGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4ECDC4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6ED5CD;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="triangleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFE66D;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFEC8B;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Bouncing Circle -->
+  <circle cx="80" cy="100" r="45" fill="url(#circleGrad)" opacity="0.9">
+    <animate attributeName="cy" values="100;130;100" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Bouncing Square -->
+  <rect x="120" y="80" width="70" height="70" rx="10" fill="url(#squareGrad)" opacity="0.9">
+    <animate attributeName="cy" values="80;110;80" dur="2.5s" repeatCount="indefinite"/>
+  </rect>
+  
+  <!-- Bouncing Triangle -->
+  <polygon points="230,150 200,210 260,210" fill="url(#triangleGrad)" opacity="0.9">
+    <animate attributeName="cy" values="150;180;150" dur="1.8s" repeatCount="indefinite"/>
+  </polygon>
+  
+  <!-- Motion Lines -->
+  <g stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.3">
+    <line x1="40" y1="200" x2="40" y2="220">
+      <animate attributeName="x1" values="40;30;40" dur="1s" repeatCount="indefinite"/>
+    </line>
+    <line x1="50" y1="210" x2="50" y2="235">
+      <animate attributeName="x1" values="50;38;50" dur="1.2s" repeatCount="indefinite"/>
+    </line>
+    <line x1="60" y1="200" x2="60" y2="220">
+      <animate attributeName="x1" values="60;46;60" dur="1.1s" repeatCount="indefinite"/>
+    </line>
+  </g>
+  
+  <!-- Sparkles -->
+  <g fill="white" opacity="0.6">
+    <circle cx="60" cy="60" r="3">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="240" cy="80" r="2">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="1.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="260" cy="180" r="3">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Title Background -->
+  <rect x="20" y="240" width="260" height="50" rx="25" fill="white" opacity="0.9"/>
+  
+  <!-- Title Text -->
+  <text x="150" y="273" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#764ba2">Formas que Rebotan</text>
+</svg>

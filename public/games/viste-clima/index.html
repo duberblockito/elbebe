@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Vístete para el Clima - El Bebe Games</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="assets/game.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- HUD -->
+        <div id="hud">
+            <div class="hud-top">
+                <div class="hud-left">
+                    <span class="hud-label">Día</span>
+                    <span id="level" class="hud-value">1</span>
+                </div>
+                <div class="hud-center">
+                    <span class="hud-label">Acertados</span>
+                    <span id="score" class="hud-value">0</span>
+                    <span class="hud-divider">/</span>
+                    <span id="target" class="hud-value">5</span>
+                </div>
+            </div>
+
+            <!-- Progress Bar -->
+            <div id="progress-container">
+                <div id="progress-bar"></div>
+                <div id="progress-text">0 / 5</div>
+            </div>
+
+            <!-- Timer Bar -->
+            <div id="timer-container">
+                <div id="timer-bar"></div>
+                <div id="timer-text">60s</div>
+            </div>
+        </div>
+
+        <!-- Game Area -->
+        <div id="game-area">
+            <!-- Weather Window -->
+            <div id="weather-window">
+                <div id="weather-scene">
+                    <div id="sun"></div>
+                    <div id="rain"></div>
+                    <div id="snow"></div>
+                </div>
+                <div id="weather-label"></div>
+            </div>
+
+            <!-- Character -->
+            <div id="character">
+                <div id="character-body"></div>
+                <div id="character-head"></div>
+                <div id="character-hair"></div>
+                <div id="character-shirt"></div>
+                <div id="character-pants"></div>
+            </div>
+
+            <!-- Wardrobe -->
+            <div id="wardrobe">
+                <h3>¡Elige la ropa correcta!</h3>
+                <div id="clothing-items"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Instrucciones -->
+    <div id="modal-instructions" class="modal hidden">
+        <div class="modal-content">
+            <h2>👗☀️❄️ Vístete para el Clima</h2>
+            <p>Mira el clima por la ventana y elige la ropa correcta para el personaje.</p>
+            <ul>
+                <li>☀️ Sol: Usa ropa ligera y fresca</li>
+                <li>🌧️ Lluvia: Usa impermeable y paraguas</li>
+                <li>❄️ Nieve: Usa abrigo, gorro y bufanda</li>
+            </ul>
+            <button id="btn-start" class="btn btn-primary">¡Jugar!</button>
+        </div>
+    </div>
+
+    <!-- Modal: Día Completado -->
+    <div id="modal-day-complete" class="modal hidden">
+        <div class="modal-content">
+            <h2>🎉 ¡Día Completado!</h2>
+            <p>Hiciste pasar <span id="final-score">0</span> días</p>
+            <p id="weather-feedback"></p>
+            <button id="btn-next-level" class="btn btn-primary">Siguiente Día</button>
+        </div>
+    </div>
+
+    <!-- Modal: Tiempo Agotado -->
+    <div id="modal-time-up" class="modal hidden">
+        <div class="modal-content">
+            <h2>⏰ ¡Tiempo Agotado!</h2>
+            <p>Lo intentaste bien. ¡Inténtalo de nuevo!</p>
+            <button id="btn-retry-level" class="btn btn-primary">Intentar de Nuevo</button>
+        </div>
+    </div>
+
+    <!-- Modal: Juego Completado -->
+    <div id="modal-game-complete" class="modal hidden">
+        <div class="modal-content">
+            <h2>🏆 ¡Felicidades!</h2>
+            <p>¡Completaste todos los días!</p>
+            <p>Hiciste pasar <span id="total-score">0</span> días en total</p>
+            <p>¡Eres un experto en vestirte para el clima!</p>
+            <button id="btn-play-again" class="btn btn-primary">Jugar de Nuevo</button>
+        </div>
+    </div>
+
+    <script src="js/game.js"></script>
+</body>
+</html>

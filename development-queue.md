@@ -33,14 +33,14 @@ La estrategia de desarrollo sigue un ciclo "Round Robin" entre las categorías d
 
 | Categoría | Terminados | Meta Actual |
 | :--- | :---: | :---: |
-| 0-1 Años | 8 | 8 |
+| 0-1 Años | 9 | 9 |
 | 1-2 Años | 7 | 7 |
 | 2-3 Años | 6 | 6 |
 | 3-5 Años | 7 | 7 |
 | 5-8 Años | 5 | 5 |
 | 8-15 Años | 5 | 5 |
 
-*Nota: `003-colores-vibran`, `003-pintura-dedos`, `003-rompecabezas`, `laberinto-aventura`, `tren-numeros`, `science-lab`, `eco-warriors`, `peek-a-boo`, `cascada-musical`, `2-3-004-bloques-caen`, `caritas-emociones`, `tour-sistema-solar`, `lluvia-estrellas`, `estrellas-brillantes`, `music-master`, `dedos-magicos`, `apila-animales`, `cochecito-colores`, `pequeno-jardinero`, `patitas-caminan`, `maestro-reloj` y `camiones-corren` implementados. Todos los juegos cumplen con todas las reglas del proyecto.*
+*Nota: `003-colores-vibran`, `003-pintura-dedos`, `003-rompecabezas`, `laberinto-aventura`, `tren-numeros`, `science-lab`, `eco-warriors`, `peek-a-boo`, `cascada-musical`, `2-3-004-bloques-caen`, `caritas-emociones`, `tour-sistema-solar`, `lluvia-estrellas`, `estrellas-brillantes`, `music-master`, `dedos-magicos`, `apila-animales`, `cochecito-colores`, `pequeno-jardinero`, `patitas-caminan`, `maestro-reloj`, `camiones-corren`, `viste-clima` y `formas-rebotan` implementados. Todos los juegos cumplen con todas las reglas del proyecto.*
 
 ---
 
@@ -84,6 +84,7 @@ Basado en la regla de equilibrio, este es el orden inmediato de desarrollo:
 34. **[Done ✅]** **2-3 Años**: `2-3-006-carros-vamos` (Los Carros Vamos) - IMPLEMENTADO
 35. **[Done ✅]** **3-5 Años**: `3-5-007-heroe-reciclaje` (Héroe del Reciclaje) - IMPLEMENTADO
 36. **[Done ✅]** **1-2 Años**: `1-2-007-frutas-caen` (Frutas que Caen) - IMPLEMENTADO
+37. **[Done ✅]** **0-1 Años**: `0-1-009-formas-rebotan` (Formas que Rebotan) - IMPLEMENTADO
 
 ---
 

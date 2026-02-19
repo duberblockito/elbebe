@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Formas que Rebotan - El Bebe Games</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="assets/game.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- HUD -->
+        <div id="hud">
+            <div class="hud-top">
+                <div class="hud-left">
+                    <span class="hud-label">Formas</span>
+                    <span id="shape-count" class="hud-value">0</span>
+                </div>
+                <div class="hud-center">
+                    <span class="hud-label">Tiempo</span>
+                    <span id="time" class="hud-value">0:00</span>
+                </div>
+                <div class="hud-right">
+                    <span class="hud-label">High Score</span>
+                    <span id="high-score" class="hud-value">0</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Area -->
+        <div id="game-area">
+            <div id="shapes-container"></div>
+        </div>
+
+        <!-- Controls -->
+        <div id="controls">
+            <button id="btn-add-shape" class="btn btn-primary">+ Forma</button>
+            <button id="btn-reset" class="btn btn-secondary">Reset</button>
+        </div>
+    </div>
+
+    <!-- Modal: Instrucciones -->
+    <div id="modal-instructions" class="modal hidden">
+        <div class="modal-content">
+            <h2>🔵🔺🟦 Formas que Rebotan</h2>
+            <p>Formas coloridas rebotando por la pantalla.</p>
+            <ul>
+                <li>👆 Toca las formas para hacer que "se rían"</li>
+                <li>🎵 Escucha los sonidos divertidos</li>
+                <li>🔄 Las formas cambian de dirección al tocarlas</li>
+                <li>➕ Toca "+ Forma" para agregar más</li>
+            </ul>
+            <button id="btn-start" class="btn btn-primary">¡Jugar!</button>
+        </div>
+    </div>
+
+    <script src="js/game.js"></script>
+</body>
+</html>
