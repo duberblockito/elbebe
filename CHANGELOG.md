@@ -2,6 +2,68 @@
 
 ---
 
+## [v1.17.0] - 2026-02-19 05:20 UTC (Bogotá)
+
+### ✨ Nuevo Juego Implementado
+
+**Juego:** 2-3-004-bloques-caen (Los Bloques Caen)
+**Categoría:** 2-3 Años (Preschoolers)
+**Fuente del plan:** Idea #4 de `/games-backlog/2-3-004-bloques-caen.md`
+
+**Descripción:**
+¡Atrapa los bloques antes de que toquen el suelo! Juego de reflejos con formas geométricas (triángulo, círculo, cuadrado). Diseñado para niños de 2-3 años que desarrollan coordinación mano-ojo y reconocimiento de formas.
+
+**Características implementadas:**
+- ✅ Sistema de 5 niveles progresivos (10, 15, 20, 25, 30 bloques por nivel)
+- ✅ Temporizador por nivel (30s → 70s progresivo)
+- ✅ Barra de progreso visual mostrando bloques atrapados vs objetivo
+- ✅ Barra de temporizador visual (verde → amarillo → rojo según tiempo restante)
+- ✅ Persistencia en localStorage (`bloques-caen-progress`, `bloques-caen-highscore`)
+- ✅ HUD (Heads Up Display) con nivel, puntos, objetivo, high score
+- ✅ Modales: Nivel Completado, Tiempo Agotado, Juego Completado
+- ✅ 3 formas geométricas: Triángulo (rojo), Círculo (azul), Cuadrado (naranja)
+- ✅ Velocidad de caída incrementa con cada nivel (2px → 4px por frame)
+- ✅ Tasa de spawn incrementa con cada nivel (1.5s → 0.7s entre bloques)
+- ✅ Animaciones suaves: fall (caída), feedback (+1), modal-slide-in
+- ✅ Diseño responsivo optimizado para móvil (375x667px base para iPhone SE)
+- ✅ Touch events completos para dispositivos móviles
+- ✅ Sistema de puntos y progreso visual en tiempo real
+- ✅ High score persistente en localStorage
+- ✅ Feedback visual al atrapar bloque (+1 animación)
+- ✅ Generación de bloques continua según nivel actual
+
+**Cumplimiento de reglas de diseño (game-design-rules.md):**
+- ✅ Sección 1: Estructura de directorios correcta
+- ✅ Sección 2: HTML5, CSS3, Vanilla JavaScript sin frameworks
+- ✅ Sección 2: Responsivo y optimizado para 375x667px (iPhone SE)
+- ✅ Sección 3: manifest.json válido con metadatos completos
+- ✅ Sección 4: Registrado en `public/js/games-list.json`
+- ✅ Sección 7: Sistema de niveles (5 niveles, 30-70s por nivel)
+- ✅ Sección 7: Barra de progreso visual (bloques / objetivo)
+- ✅ Sección 7: Barra de temporizador visual con cambios de color
+- ✅ Sección 7: Persistencia en localStorage
+- ✅ Sección 8: Checklist de submission completo
+
+**Archivos creados:**
+- `public/games/2-3-004-bloques-caen/index.html` - Estructura HTML del juego (3.0 KB)
+- `public/games/2-3-004-bloques-caen/assets/styles.css` - Estilos responsivos y animaciones (8.1 KB)
+- `public/games/2-3-004-bloques-caen/js/game.js` - Lógica completa del juego (11.0 KB)
+- `public/games/2-3-004-bloques-caen/manifest.json` - Metadatos del juego
+- `public/games/2-3-004-bloques-caen/thumbnail.svg` - Imagen de previsualización (0.8 KB)
+
+**Actualizaciones de documentación:**
+- ✅ `master-game-plan.md` - Juego marcado como Done
+- ✅ `development-queue.md` - Contador actualizado (2-3 Años: 4/4)
+- ✅ `public/js/games-list.json` - Juego registrado (versión 1.17.0)
+- ✅ `CHANGELOG.md` - Entrada agregada
+
+**Próximo juego a desarrollar:**
+- Según Round Robin: 3-5 Años (004 - [NEXT] en cola)
+- Categorías con 3/4: 3-5 Años, 5-8 Años
+- Siguiente en ciclo: 3-5 Años necesita un juego más para nivel 4
+
+---
+
 ## [v1.16.0] - 2026-02-19 05:00 UTC (Bogotá)
 
 ### ✨ Nuevo Juego Implementado

@@ -35,12 +35,12 @@ La estrategia de desarrollo sigue un ciclo "Round Robin" entre las categorías d
 | :--- | :---: | :---: |
 | 0-1 Años | 4 | 4 |
 | 1-2 Años | 4 | 4 |
-| 2-3 Años | 3 | 4 |
+| 2-3 Años | 4 | 4 |
 | 3-5 Años | 3 | 4 |
 | 5-8 Años | 3 | 4 |
 | 8-15 Años | 4 | 4 |
 
-*Nota: `003-colores-vibran`, `003-pintura-dedos`, `003-rompecabezas` y `laberinto-aventura` implementados. Todos los juegos cumplen con todas las reglas del proyecto.*
+*Nota: `003-colores-vibran`, `003-pintura-dedos`, `003-rompecabezas`, `laberinto-aventura`, `tren-numeros`, `science-lab`, `eco-warriors`, `peek-a-boo`, `cascada-musical` y `2-3-004-bloques-caen` implementados. Todos los juegos cumplen con todas las reglas del proyecto.*
 
 ---
 
@@ -68,6 +68,7 @@ Basado en la regla de equilibrio, este es el orden inmediato de desarrollo:
 18. **[Done ✅]** **8-15 Años**: `004-eco-warriors` (Eco Warriors) - IMPLEMENTADO
 19. **[Done ✅]** **0-1 Años**: `004-peek-a-boo` (Peek-a-Boo) - IMPLEMENTADO
 20. **[Done ✅]** **1-2 Años**: `004-cascada-musical` (Cascada Musical) - IMPLEMENTADO
+21. **[Done ✅]** **2-3 Años**: `2-3-004-bloques-caen` (Los Bloques Caen) - IMPLEMENTADO
 2.  **[Done]** **2-3 Años**: `001-pinta-nubes` (Pinta las Nubes)
 3.  **[Done]** **3-5 Años**: `001-chef-monstruos` (Chef de Monstruos)
 4.  **[Done]** **5-8 Años**: `001-math-blaster` (Math Blaster)

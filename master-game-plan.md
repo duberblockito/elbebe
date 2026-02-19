@@ -36,6 +36,7 @@ This document outlines the development roadmap for the 41 games currently in the
 | 001 | **Pinta las Nubes** | Reveal animals in clouds. | ✅ Done |
 | 002 | **Arrastra la Fruta** | Sorting game picnic. | ✅ Done |
 | 003 | **Rompecabezas Simple** | Animal puzzle pieces. | ✅ Done |
+| 004 | **Los Bloques Caen** | Catch falling shapes. | ✅ Done |
 
 ## 🧒 3-5 Years (Preschoolers)
 
@@ -65,10 +66,10 @@ This document outlines the development roadmap for the 41 games currently in the
 ## 📊 Status Current (Updated)
 
 | Age Group | Completed | Target |
-|-----------|---------|--------|
+|-----------|---------:|--------:|
 | 0-1 Years | 4 | 4 |
 | 1-2 Years | 4 | 4 |
-| 2-3 Years | 3 | 4 |
+| 2-3 Years | 4 | 4 |
 | 3-5 Years | 3 | 4 |
 | 5-8 Years | 3 | 4 |
 | 8-15 Years | 4 | 4 |

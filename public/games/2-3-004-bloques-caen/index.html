@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Los Bloques Caen - Juego para Niños 2-3 Años</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body class="game-page">
+    <header>
+        <nav>
+            <a href="../../index.html" class="btn-home">🏠 Inicio</a>
+            <h1>Los Bloques Caen 🧱</h1>
+        </nav>
+    </header>
+
+    <main class="game-container">
+        <!-- HUD - Heads Up Display -->
+        <div class="game-hud">
+            <div class="hud-item">
+                <span class="hud-label">Nivel</span>
+                <span class="hud-value" id="level-display">1</span>
+            </div>
+            <div class="hud-item">
+                <span class="hud-label">Bloques</span>
+                <span class="hud-value" id="score-display">0</span>
+            </div>
+            <div class="hud-item">
+                <span class="hud-label">Objetivo</span>
+                <span class="hud-value" id="target-display">10</span>
+            </div>
+            <div class="hud-item">
+                <span class="hud-label">Récord</span>
+                <span class="hud-value" id="highscore-display">0</span>
+            </div>
+        </div>
+
+        <!-- Timer Bar -->
+        <div class="timer-container">
+            <div class="timer-bar" id="timer-bar"></div>
+            <div class="timer-text" id="timer-text">30s</div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div class="progress-label">
+                <span>Progreso</span>
+                <span id="progress-text">0/10</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+        </div>
+
+        <!-- Game Area -->
+        <div class="game-area" id="game-area">
+            <!-- Blocks will spawn here -->
+            <div class="game-message" id="game-message">
+                <p>¡Atrapa los bloques antes de que toquen el suelo!</p>
+                <button class="btn-start" id="btn-start">¡Comenzar! 🎮</button>
+            </div>
+        </div>
+
+        <!-- Score Feedback -->
+        <div class="score-feedback" id="score-feedback"></div>
+
+        <!-- Modal Overlay -->
+        <div class="modal-overlay" id="modal-overlay">
+            <div class="modal-content">
+                <h2 id="modal-title">¡Nivel Completado!</h2>
+                <p id="modal-message">¡Excelente trabajo!</p>
+                <div class="modal-stats">
+                    <p>Bloques atrapados: <strong id="modal-score">10</strong></p>
+                </div>
+                <button class="btn-modal" id="btn-modal-continue">Continuar ➡️</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/game.js"></script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 {
-  "version": "1.16.0",
+  "version": "1.17.0",
   "lastUpdated": "2026-02-19",
   "games": [
     {
@@ -434,6 +434,28 @@
         "timer",
         "progress",
         "pentatonic"
+      ]
+    },
+    {
+      "id": "2-3-004-bloques-caen",
+      "title": "Los Bloques Caen",
+      "title_en": "Falling Blocks",
+      "description": "\u00a1Atrapa los bloques antes de que toquen el suelo! Juego de reflejos con formas geom\u00e9tricas (tri\u00e1ngulo, c\u00edrculo, cuadrado). Incluye 5 niveles progresivos, barra de progreso, temporizador visual y sistema de puntuaci\u00f3n con high score.",
+      "description_en": "Catch falling blocks before they hit the ground! A reflex game with geometric shapes (triangle, circle, square). Includes 5 progressive levels, progress bar, visual timer, and scoring system with high score.",
+      "category": "arcade",
+      "author": "Blockito AI",
+      "version": "1.0.0",
+      "thumbnail": "thumbnail.svg",
+      "recommended_age": "2-3",
+      "tags": [
+        "touch",
+        "shapes",
+        "reflex",
+        "levels",
+        "timer",
+        "progress",
+        "arcade",
+        "high-score"
       ]
     }
   ]

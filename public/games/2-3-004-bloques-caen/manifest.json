@@ -1,0 +1,10 @@
+{
+  "id": "2-3-004-bloques-caen",
+  "title": "Los Bloques Caen",
+  "description": "¡Atrapa los bloques antes de que toquen el suelo! Juego de reflejos con formas geométricas.",
+  "category": "arcade",
+  "author": "Blockito",
+  "version": "1.0.0",
+  "thumbnail": "thumbnail.jpg",
+  "recommended_age": "2-3"
+}
