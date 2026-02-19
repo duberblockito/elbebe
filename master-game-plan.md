@@ -19,6 +19,7 @@ This document outlines the development roadmap for the 41 games currently in the
 | 002 | **Caja de Sonidos Mágica** | Tap box to hear animals. | ✅ Done |
 | 003 | **Colores que Vibran** | Touch screen for colors and music. | ✅ Done |
 | 004 | **Peek-a-Boo** | Touch doors to reveal animals. | ✅ Done |
+| 005 | **Lluvia de Estrellas** | Stars falling from top, touch to shine. | ✅ Done |
 
 ## 🧒 1-2 Years (Toddlers)
 
@@ -69,7 +70,7 @@ This document outlines the development roadmap for the 41 games currently in the
 
 | Age Group | Completed | Target |
 |-----------|---------:|--------:|
-| 0-1 Years | 4 | 4 |
+| 0-1 Years | 5 | 5 |
 | 1-2 Years | 4 | 4 |
 | 2-3 Years | 4 | 4 |
 | 3-5 Years | 4 | 4 |

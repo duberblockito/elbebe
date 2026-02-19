@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Lluvia de Estrellas - El Bebe Games</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="assets/game.css">
+</head>
+<body>
+    <!-- HUD - Heads Up Display -->
+    <div id="hud" class="hud">
+        <div class="hud-item">
+            <span class="hud-label">Nivel</span>
+            <span id="levelDisplay" class="hud-value">1/5</span>
+        </div>
+        <div class="hud-item">
+            <span class="hud-label">Estrellas</span>
+            <span id="starsDisplay" class="hud-value">0</span>
+            <span class="hud-divider">/</span>
+            <span id="targetDisplay" class="hud-value">5</span>
+        </div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-label">Progreso</div>
+        <div class="progress-bar-bg">
+            <div id="progressBar" class="progress-bar-fill"></div>
+        </div>
+    </div>
+
+    <!-- Timer Bar -->
+    <div class="timer-container">
+        <div class="timer-label">Tiempo</div>
+        <div class="timer-bar-bg">
+            <div id="timerBar" class="timer-bar-fill"></div>
+        </div>
+    </div>
+
+    <!-- Game Area -->
+    <div id="game-container">
+        <canvas id="gameCanvas"></canvas>
+
+        <!-- Start Overlay -->
+        <div id="game-overlay" class="game-overlay">
+            <div class="overlay-content">
+                <h1 class="game-title">Lluvia de Estrellas</h1>
+                <p class="game-subtitle">¡Toca las estrellas para que brillen!</p>
+                <button id="start-btn" class="start-btn">¡Empezar!</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Level Complete Modal -->
+    <div id="levelCompleteModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-icon">🌟</div>
+            <h2 id="levelCompleteTitle" class="modal-title">¡Nivel Completado!</h2>
+            <p id="levelCompleteMessage" class="modal-message">¡Atrapaste 5 estrellas!</p>
+            <button id="nextLevelBtn" class="modal-button primary">Siguiente Nivel →</button>
+            <button id="menuBtn" class="modal-button secondary">Menú</button>
+        </div>
+    </div>
+
+    <!-- Game Over Modal -->
+    <div id="gameOverModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-icon">⏰</div>
+            <h2 id="gameOverTitle" class="modal-title">¡Se Acabó el Tiempo!</h2>
+            <p id="gameOverMessage" class="modal-message">Atrapaste 3 de 5 estrellas.</p>
+            <button id="retryBtn" class="modal-button primary">Intentar de Nuevo</button>
+            <button id="menuBtn" class="modal-button secondary">Menú</button>
+        </div>
+    </div>
+
+    <!-- Game Complete Modal -->
+    <div id="gameCompleteModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-icon">🏆</div>
+            <h2 id="gameCompleteTitle" class="modal-title">¡Felicidades!</h2>
+            <p id="gameCompleteMessage" class="modal-message">¡Completaste todos los niveles! Total: 45 estrellas.</p>
+            <button id="menuBtn" class="modal-button primary">Menú</button>
+        </div>
+    </div>
+
+    <script src="../../js/main.js"></script>
+    <script src="assets/game.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "id": "lluvia-estrellas",
+  "title": "Lluvia de Estrellas",
+  "title_en": "Starry Rain",
+  "description": "Estrellas que caen del cielo y brillan al tocarlas. Un juego sensorial para bebés con sistema de 5 niveles progresivos.",
+  "description_en": "Stars falling from the sky that shine when touched. A sensory game for babies with 5 progressive levels.",
+  "category": "sensory",
+  "author": "El Bebe Games",
+  "version": "1.0.0",
+  "thumbnail": "thumbnail.svg",
+  "recommended_age": "0-1"
+}

@@ -1,0 +1,61 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a2e;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1a1a4e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2a2a6e;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="300" height="300" fill="url(#skyGradient)" />
+
+  <!-- Small background stars -->
+  <circle cx="30" cy="40" r="2" fill="white" opacity="0.5"/>
+  <circle cx="80" cy="90" r="1.5" fill="white" opacity="0.4"/>
+  <circle cx="250" cy="60" r="2" fill="white" opacity="0.5"/>
+  <circle cx="200" cy="150" r="1.5" fill="white" opacity="0.4"/>
+  <circle cx="50" cy="200" r="2" fill="white" opacity="0.5"/>
+  <circle cx="270" cy="220" r="1.5" fill="white" opacity="0.4"/>
+  <circle cx="150" cy="40" r="2" fill="white" opacity="0.5"/>
+  <circle cx="100" cy="260" r="1.5" fill="white" opacity="0.4"/>
+
+  <!-- Main stars -->
+  <!-- Star 1 -->
+  <g transform="translate(100, 120)" filter="url(#glow)">
+    <polygon points="0,-20 5,-5 20,-5 8,5 13,20 0,12 -13,20 -8,5 -20,-5 -5,-5" fill="#FFD700"/>
+    <circle cx="0" cy="0" r="8" fill="rgba(255,255,255,0.6)"/>
+  </g>
+
+  <!-- Star 2 -->
+  <g transform="translate(200, 180)" filter="url(#glow)">
+    <polygon points="0,-18 4,-4 18,-4 7,4 12,18 0,11 -12,18 -7,4 -18,-4 -4,-4" fill="#FFFACD"/>
+    <circle cx="0" cy="0" r="7" fill="rgba(255,255,255,0.6)"/>
+  </g>
+
+  <!-- Star 3 -->
+  <g transform="translate(150, 240)" filter="url(#glow)">
+    <polygon points="0,-22 6,-6 22,-6 9,6 14,22 0,13 -14,22 -9,6 -22,-6 -6,-6" fill="#FFA500"/>
+    <circle cx="0" cy="0" r="9" fill="rgba(255,255,255,0.6)"/>
+  </g>
+
+  <!-- Sparkles -->
+  <text x="120" y="100" font-size="24" fill="#FFD700" opacity="0.8">✨</text>
+  <text x="220" y="160" font-size="20" fill="#FFFACD" opacity="0.7">✨</text>
+  <text x="170" y="270" font-size="22" fill="#FFA500" opacity="0.8">✨</text>
+
+  <!-- Title -->
+  <text x="150" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="white">Lluvia de</text>
+  <text x="150" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFD700">Estrellas</text>
+
+  <!-- Moon in corner -->
+  <circle cx="270" cy="30" r="20" fill="#FFFACD" opacity="0.9"/>
+  <circle cx="275" cy="28" r="5" fill="#0a0a2e" opacity="0.3"/>
+</svg>

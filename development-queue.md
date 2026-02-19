@@ -33,14 +33,14 @@ La estrategia de desarrollo sigue un ciclo "Round Robin" entre las categorías d
 
 | Categoría | Terminados | Meta Actual |
 | :--- | :---: | :---: |
-| 0-1 Años | 4 | 4 |
+| 0-1 Años | 5 | 5 |
 | 1-2 Años | 4 | 4 |
 | 2-3 Años | 4 | 4 |
 | 3-5 Años | 4 | 4 |
 | 5-8 Años | 4 | 4 |
 | 8-15 Años | 4 | 4 |
 
-*Nota: `003-colores-vibran`, `003-pintura-dedos`, `003-rompecabezas`, `laberinto-aventura`, `tren-numeros`, `science-lab`, `eco-warriors`, `peek-a-boo`, `cascada-musical`, `2-3-004-bloques-caen`, `caritas-emociones` y `tour-sistema-solar` implementados. Todos los juegos cumplen con todas las reglas del proyecto.*
+*Nota: `003-colores-vibran`, `003-pintura-dedos`, `003-rompecabezas`, `laberinto-aventura`, `tren-numeros`, `science-lab`, `eco-warriors`, `peek-a-boo`, `cascada-musical`, `2-3-004-bloques-caen`, `caritas-emociones`, `tour-sistema-solar` y `lluvia-estrellas` implementados. Todos los juegos cumplen con todas las reglas del proyecto.*
 
 ---
 
@@ -71,6 +71,7 @@ Basado en la regla de equilibrio, este es el orden inmediato de desarrollo:
 21. **[Done ✅]** **2-3 Años**: `2-3-004-bloques-caen` (Los Bloques Caen) - IMPLEMENTADO
 22. **[Done ✅]** **3-5 Años**: `caritas-emociones` (Caritas y Emociones) - IMPLEMENTADO
 23. **[Done ✅]** **5-8 Años**: `tour-sistema-solar` (Tour del Sistema Solar) - IMPLEMENTADO
+24. **[Done ✅]** **0-1 Años**: `lluvia-estrellas` (Lluvia de Estrellas) - IMPLEMENTADO
 2.  **[Done]** **2-3 Años**: `001-pinta-nubes` (Pinta las Nubes)
 3.  **[Done]** **3-5 Años**: `001-chef-monstruos` (Chef de Monstruos)
 4.  **[Done]** **5-8 Años**: `001-math-blaster` (Math Blaster)

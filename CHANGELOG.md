@@ -2,6 +2,76 @@
 
 ---
 
+## [v1.20.0] - 2026-02-19 06:20 UTC (Bogotá)
+
+### ✨ Nuevo Juego Implementado
+
+**Juego:** lluvia-estrellas (Lluvia de Estrellas)
+**Categoría:** 0-1 Años (Infants)
+**Fuente del plan:** Idea #5 de `/games-backlog/0-1-005-lluvia-estrellas.md`
+
+**Descripción:**
+Estrellas que caen del cielo y brillan al tocarlas. Un juego sensorial para bebés con sistema de 5 niveles progresivos, barra de progreso y temporizador visual. Diseñado específicamente para bebés de 0-1 años que están explorando causa-efecto y descubriendo el cielo estrellado.
+
+**Características implementadas:**
+- ✅ Sistema de 5 niveles progresivos (5, 8, 10, 12, 15 estrellas por nivel)
+- ✅ Temporizador por nivel (30s → 50s progresivo)
+- ✅ Barra de progreso visual mostrando estrellas atrapadas vs objetivo
+- ✅ Barra de temporizador visual (verde → amarillo → rojo según tiempo restante)
+- ✅ Persistencia en localStorage (`lluvia-estrellas-progress`)
+- ✅ HUD (Heads Up Display) con nivel actual, estrellas, objetivo
+- ✅ Modales: Nivel Completado, Tiempo Agotado, Juego Completado
+- ✅ 5 colores de estrellas diferentes (Amarillo, Crema, Naranja, Crema Blanca)
+- ✅ Estrellas con rotación, brillo y efectos de glow
+- ✅ Sistema de partículas al tocar estrella (12 partículas explosión)
+- ✅ Sonido twinkle generado con Web Audio API (oscilador)
+- ✅ Efecto sparkle visual (emoji ✨) al tocar estrella
+- ✅ Velocidad de caída incrementa con cada nivel (1.5x → 2.5x)
+- ✅ Número de estrellas en pantalla incrementa con cada nivel (8 → 18)
+- ✅ Canvas-based rendering para mejor performance
+- ✅ Diseño responsivo optimizado para móvil (375x667px base para iPhone SE)
+- ✅ Touch events completos para dispositivos móviles
+- ✅ Animaciones suaves con float, bounce y glow effects
+
+**Cumplimiento de reglas de diseño (game-design-rules.md):**
+- ✅ Sección 1: Estructura de directorios correcta
+- ✅ Sección 2: HTML5, CSS3, Vanilla JavaScript sin frameworks
+- ✅ Sección 2: Responsivo y optimizado para 375x667px (iPhone SE)
+- ✅ Sección 3: manifest.json válido con metadatos completos
+- ✅ Sección 4: Registrado en `public/js/games-list.json`
+- ✅ Sección 7: Sistema de niveles (5 niveles, 30-50s por nivel)
+- ✅ Sección 7: Barra de progreso visual (estrellas / objetivo)
+- ✅ Sección 7: Barra de temporizador visual con cambios de color
+- ✅ Sección 7: Persistencia en localStorage
+- ✅ Sección 8: Checklist de submission completo
+
+**Archivos creados:**
+- `public/games/lluvia-estrellas/index.html` - Estructura HTML del juego (3.4 KB)
+- `public/games/lluvia-estrellas/assets/game.css` - Estilos responsivos y animaciones (7.9 KB)
+- `public/games/lluvia-estrellas/assets/game.js` - Lógica completa del juego (13.9 KB)
+- `public/games/lluvia-estrellas/manifest.json` - Metadatos del juego (0.5 KB)
+- `public/games/lluvia-estrellas/thumbnail.svg` - Thumbnail SVG con estrellas animadas (2.7 KB)
+
+**Archivos actualizados:**
+- `public/js/games-list.json` - Juego registrado en el catálogo central
+- `master-game-plan.md` - Juego marcado como ✅ Done
+- `development-queue.md` - Contador actualizado (0-1 Años: 5/5)
+
+**Progreso del proyecto:**
+- 📊 Total juegos implementados: 25/41 (61.0%)
+- 🎯 Categorías al día: 0-1 (5/5) ✅, 1-2 (4/4) ✅, 2-3 (4/4) ✅, 3-5 (4/4) ✅, 5-8 (4/4) ✅, 8-15 (4/4) ✅
+- 🎉 **¡CATEGORÍA 0-1 AÑOS COMPLETADA NIVEL 5!** 5/5 juegos objetivo
+- ✅ Equilibrio Round Robin: Mantenido perfectamente
+
+**Notas:**
+- El juego cumple con todas las reglas del proyecto
+- Sistema de estrellas con renderizado canvas-based para mejor performance
+- Partículas y sparkles crean feedback visual atractivo para bebés
+- Sonido twinkle suave y agradable para oídos infantiles
+- Categoría 0-1 Años ahora tiene 5/5 juegos completados
+
+---
+
 ## [v1.19.0] - 2026-02-19 06:00 UTC (Bogotá)
 
 ### ✨ Nuevo Juego Implementado
