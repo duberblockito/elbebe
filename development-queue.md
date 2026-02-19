@@ -236,15 +236,35 @@ Ver `/QA-REPORT-004-rompecabezas.md` para detalles completos de la validación Q
 
 ### Bugs Pendientes Actuales
 
-🔴 **0 BUGS PENDIENTES** - ✅ TODOS RESUELTOS
+🔴 **1 BUG PENDIENTE** - ⚠️ BLOQUEA DESARROLLO DE NUEVOS JUEGOS
 
 **Directorio /bugs:**
-- (vacío - todos los bugs han sido resueltos)
+- `20260219-211000-BUG-024-workflow-incompleto-no-merge-a-master.md` - CRÍTICA
 
-**Último bug corregido:**
+**BUG-024: Workflow incompleto - fix/BUG-023 no mergeada a master**
+- **Severidad:** CRÍTICA
+- **Reportado:** 2026-02-19 21:10 UTC
+- **Estado:** [Open] - Pendiente de corrección por Implementador
+- **Descripción:** El implementador corrigió BUG-023 en la rama `fix/BUG-023`, pero NO realizó el merge a `origin/master` ni el push. La corrección no está disponible en producción.
+- **Commits pendientes de merge:**
+  - `6fd2225` - "fix: update games-list.json version to 1.38.1 per main.js rules"
+  - `a2b0518` - "chore: move BUG-023 to bugs-resolved/ after fixing"
+- **Impacto:** games-list.json en master sigue en version "1.36.0" (incorrecto), mientras que main.js y CHANGELOG.md están en "1.38.1"
+- **Acción requerida:** Implementador debe mergear fix/BUG-023 a master y hacer push de master
+
+**BUG-023: games-list.json version field no actualizada**
+- **Severidad:** MEDIA
+- **Reportado:** 2026-02-19 20:50 UTC
+- **Estado:** [Fixed] en rama fix/BUG-023 - ⚠️ PENDIENTE MERGE A MASTER
+- **Descripción:** Tras corrección de BUG-022, el implementador actualizó main.js y CHANGELOG.md a v1.38.1, pero olvidó games-list.json que seguía en "1.36.0"
+- **Fix implementado:** games-list.json actualizado de "1.36.0" a "1.38.1"
+- **Workflow incompleto:** Fix implementado en rama fix/BUG-023 pero NO mergeado a master
+- **Ver reporte QA:** `/QA-REPORT-BUG-023.md` para validación completa
+
+**Último bug corregido (y mergeado):**
 - BUG-022 - 2026-02-19 20:41 UTC (SITE_VERSION actualizada de 1.36.0 a 1.38.0)
 - Implementación: 2026-02-19 20:41 UTC (fix/BUG-022-site-version-no-actualizada)
-- Estado: ✅ CORREGIDO - ESPERANDO VALIDACIÓN QA
+- Estado: ✅ CORREGIDO Y MERGEADO A MASTER
 
 **Bugs recientemente resueltos:**
 - BUG-021 - 2026-02-19 20:00 UTC (formas-rebotan y viste-clima commiteados sin rama feature/ - lección aprendida)
@@ -252,12 +272,15 @@ Ver `/QA-REPORT-004-rompecabezas.md` para detalles completos de la validación Q
 - BUG-018 - 2026-02-19 17:06 UTC (camiones-corren sin rama feature/)
 
 **Total bugs resueltos:** 23 (BUG-001 a BUG-022)
+**Total bugs pendientes:** 1 (BUG-024)
+**Total bugs con fix implementado pero pendiente de merge:** 1 (BUG-023)
 
-**Bugs pendientes:**
-- Ninguno
+**Bloquea:**
+- ❌ Desarrollo de nuevos juegos (según regla "Bugs First")
+- ❌ Continuación con siguiente juego en la cola
 
-**Próxima tarea:** Continuar con el siguiente juego en la cola de desarrollo
-**Estado:** ✅ NO HAY BUGS PENDIENTES - SE PUEDE CONTINUAR CON JUEGOS NUEVOS
+**Próxima tarea:** Implementador debe completar workflow de BUG-023 (merge a master + push)
+**Estado:** ⚠️ BUG PENDIENTE - NO SE PUEDE CONTINUAR CON JUEGOS NUEVOS HASTA COMPLETAR WORKFLOW DE BUG-023
 
 ---
 
