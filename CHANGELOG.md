@@ -2,6 +2,54 @@
 
 ---
 
+## [v1.44.0] - 2026-02-19 23:40 UTC
+
+### 🎮 Nuevo Juego - 2-3 Años
+
+**Juego:** Los Animales Cantan
+**ID:** 2-3-003-animales-cantan
+**Categoría:** Música
+**Edad recomendada:** 2-3 años
+
+**Características:**
+- Juego musical de memoria auditiva para niños de 2-3 años
+- 5 niveles progresivos (4-8 animales por secuencia)
+- Secuencias musicales con 8 animales (🐵🐶🐱🐰🐼🦁🐸🐷) cada uno con su nota musical (Do-Re-Mi-Fa-Sol-La-Si-Do5)
+- Escucha la melodía y repítela tocando los animales en el orden correcto
+- Sistema de estrellas (1-3 por nivel) basado en tiempo restante
+- Barra de progreso visual mostrando animales tocados vs objetivo
+- Temporizador visual con cambios de color (verde → amarillo → rojo)
+- Temporizadores progresivos por nivel (30s → 70s según dificultad)
+- Sonidos sintetizados con Web Audio API (notas musicales, éxito, error, fanfare)
+- Animaciones de hint (brillo) para ayudar al niño
+- Persistencia en localStorage (animales-cantan-progress)
+- Modales: Nivel Completado, Tiempo Agotado, Juego Completo
+- Responsivo para móviles (375x667px)
+- Nivel select con desbloqueo progresivo
+- Total de 15 estrellas posibles (3 estrellas × 5 niveles)
+
+**Archivos creados:**
+- `public/games/2-3-003-animales-cantan/index.html` - Juego completo
+- `public/games/2-3-003-animales-cantan/style.css` - Estilos
+- `public/games/2-3-003-animales-cantan/game.js` - Lógica del juego
+- `public/games/2-3-003-animales-cantan/manifest.json` - Metadatos
+- `public/games/2-3-003-animales-cantan/thumbnail.svg` - Miniatura
+
+**Archivos actualizados:**
+- `public/js/games-list.json` - Juego registrado, versión actualizada a 1.44.0
+- `public/js/main.js` - SITE_VERSION actualizada a 1.44.0
+
+**Cumplimiento de reglas:**
+- ✅ Implementado en `/public/games/` (directorio de deployment)
+- ✅ HTML5, CSS3, Vanilla JavaScript (sin frameworks)
+- ✅ Responsivo (funciona en 375x667 - iPhone SE)
+- ✅ 5 niveles progresivos (game-design-rules.md Sección 7)
+- ✅ Barra de progreso visual obligatoria
+- ✅ Temporizador visual con cambios de color (verde → amarillo → rojo)
+- ✅ Persistencia en localStorage implementada
+
+---
+
 ## [v1.43.0] - 2026-02-19 23:20 UTC
 
 ### 🎮 Nuevo Juego - 8-15 Años

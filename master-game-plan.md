@@ -52,6 +52,7 @@ This document outlines the development roadmap for the 41 games currently in the
 | 005 | **Apila los Animales** | Stack animals to build tower. | ✅ Done |
 | 006 | **Los Carros Vamos** | Vehicles move slowly. Touch to make them zoom off screen. | ✅ Done |
 | 007 | **Mezcla los Colores** | Mix color drops to create new colors. | ✅ Done |
+| 008 | **Los Animales Cantan** | Musical memory game with animal notes. | ✅ Done |
 
 ## 🧒 3-5 Years (Preschoolers)
 
@@ -97,7 +98,7 @@ This document outlines the development roadmap for the 41 games currently in the
 |-----------|---------:|--------:|
 | 0-1 Years | 11 | 11 |
 | 1-2 Years | 8 | 8 |
-| 2-3 Years | 7 | 7 |
+| 2-3 Years | 8 | 8 |
 | 3-5 Years | 7 | 7 |
 | 5-8 Years | 7 | 7 |
 | 8-15 Years | 7 | 7 |

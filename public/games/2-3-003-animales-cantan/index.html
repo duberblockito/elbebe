@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los Animales Cantan - El Bebe Games</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- Start Screen -->
+        <div id="start-screen" class="screen">
+            <h1 class="title">🎵 Los Animales Cantan</h1>
+            <div class="animal-preview">
+                <div class="preview-animal">🐵</div>
+                <div class="preview-animal">🐶</div>
+                <div class="preview-animal">🐱</div>
+                <div class="preview-animal">🐰</div>
+            </div>
+            <p class="subtitle">¡Toca los animales en el orden correcto!</p>
+            <button id="start-btn" class="btn-primary">¡Comenzar!</button>
+        </div>
+
+        <!-- Level Select Screen -->
+        <div id="level-select" class="screen hidden">
+            <h2>Selecciona Nivel</h2>
+            <div id="level-buttons"></div>
+            <button id="back-btn" class="btn-secondary">Volver</button>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="game-screen" class="screen hidden">
+            <!-- HUD -->
+            <div class="hud">
+                <div class="hud-left">
+                    <div class="level-indicator">Nivel <span id="current-level">1</span></div>
+                    <div class="progress-text">
+                        <span id="touched-count">0</span>/<span id="target-count">4</span>
+                    </div>
+                </div>
+                <div class="hud-right">
+                    <div class="timer-container">
+                        <div id="timer-bar" class="timer-bar"></div>
+                        <span id="timer-text">30s</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+
+            <!-- Game Message -->
+            <div id="game-message" class="game-message"></div>
+
+            <!-- Animals Grid -->
+            <div class="animals-grid" id="animals-grid"></div>
+        </div>
+
+        <!-- Modal: Level Completed -->
+        <div id="modal-level-complete" class="modal hidden">
+            <div class="modal-content">
+                <h2>¡Nivel Completado! 🎉</h2>
+                <div class="stars" id="stars-container"></div>
+                <p>¡Muy bien! ¡Sigamos!</p>
+                <button id="next-level-btn" class="btn-primary">Siguiente Nivel</button>
+            </div>
+        </div>
+
+        <!-- Modal: Time's Up -->
+        <div id="modal-time-up" class="modal hidden">
+            <div class="modal-content">
+                <h2>⏰ ¡Se acabó el tiempo!</h2>
+                <p>¡No te rindas! ¡Inténtalo de nuevo!</p>
+                <button id="retry-btn" class="btn-primary">Reintentar</button>
+                <button id="back-to-levels-btn" class="btn-secondary">Volver a Niveles</button>
+            </div>
+        </div>
+
+        <!-- Modal: Game Complete -->
+        <div id="modal-game-complete" class="modal hidden">
+            <div class="modal-content">
+                <h2>🏆 ¡Juego Completado!</h2>
+                <p>¡Eres un experto en música animal!</p>
+                <button id="play-again-btn" class="btn-primary">Jugar de Nuevo</button>
+                <button id="back-home-btn" class="btn-secondary">Inicio</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>

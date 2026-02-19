@@ -1,0 +1,23 @@
+{
+  "id": "2-3-003-animales-cantan",
+  "title": "Los Animales Cantan",
+  "title_en": "Animals Sing",
+  "description": "¡Escucha la melodía y repítela tocando los animales en el orden correcto! Un juego musical para niños de 2-3 años que desarrolla la memoria auditiva y el sentido del ritmo.",
+  "description_en": "Listen to the melody and repeat it by touching animals in the correct order! A musical game for children aged 2-3 that develops auditory memory and sense of rhythm.",
+  "category": "music",
+  "author": "El Bebe Games",
+  "version": "1.0.0",
+  "thumbnail": "thumbnail.svg",
+  "recommended_age": "2-3",
+  "tags": [
+    "music",
+    "memory",
+    "touch",
+    "animals",
+    "levels",
+    "timer",
+    "progress",
+    "educational",
+    "rhythm"
+  ]
+}
