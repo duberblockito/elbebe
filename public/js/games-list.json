@@ -1,5 +1,5 @@
 {
-  "version": "1.39.0",
+  "version": "1.40.0",
   "lastUpdated": "2026-02-19",
   "games": [
     {
@@ -924,6 +924,29 @@
         "levels",
         "timer",
         "progress"
+      ]
+    },
+    {
+      "id": "paleontologo-dino",
+      "title": "Paleontólogo Dino",
+      "title_en": "Dino Paleontologist",
+      "description": "¡Conviértete en paleontólogo! Excava la tierra para encontrar huesos de dinosaurios y completa tu colección en el museo. Incluye 8 niveles progresivos con diferentes dinosaurios, barra de progreso visual y persistencia en localStorage.",
+      "description_en": "Become a paleontologist! Excavate the earth to find dinosaur bones and complete your collection at the museum. Includes 8 progressive levels with different dinosaurs, visual progress bar, and localStorage persistence.",
+      "category": "educational",
+      "author": "El Bebe Games",
+      "version": "1.0.0",
+      "thumbnail": "thumbnail.jpg",
+      "recommended_age": "5-8",
+      "tags": [
+        "dinosaurs",
+        "excavation",
+        "touch",
+        "levels",
+        "progress",
+        "educational",
+        "paleontology",
+        "fossils",
+        "collection"
       ]
     }
   ]

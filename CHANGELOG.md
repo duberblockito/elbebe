@@ -2,8 +2,60 @@
 
 ---
 
-## [v1.38.2] - 2026-02-19 21:40 UTC
+## [v1.40.0] - 2026-02-19 22:20 UTC
 
+### 🎮 Nuevo Juego - 5-8 Años
+
+**Juego:** Paleontólogo Dino 🦕 (Dino Paleontologist)
+**ID:** paleontologo-dino
+**Categoría:** Educativo
+**Edad recomendada:** 5-8 años
+
+**Características:**
+- Excavación de dinosaurios en grid de tierra
+- 8 niveles progresivos con diferentes dinosaurios (T-Rex, Triceratops, Stegosaurus, Brachiosaurus, Velociraptor, Pterodactyl, Ankylosaurus, Spinosaurus)
+- 5-8 huesos por nivel (aumenta progresivamente)
+- Grid de 12-16 bloques de tierra
+- Huesos ocultos aleatoriamente en bloques
+- Barra de progreso visual mostrando huesos encontrados
+- HUD con nivel actual, nombre del dinosaurio, contador de huesos
+- Modales: Nivel Completado, Juego Completo con estadísticas
+- Persistencia en localStorage (paleontologo-dino-progress)
+- Efectos de animación al encontrar huesos
+- Emojis de dinosaurios y huesos
+- Responsivo para móviles (375x667px)
+
+**Archivos creados:**
+- `public/games/paleontologo-dino/index.html` - Juego completo
+- `public/games/paleontologo-dino/css/style.css` - Estilos
+- `public/games/paleontologo-dino/js/game.js` - Lógica del juego
+- `public/games/paleontologo-dino/manifest.json` - Metadatos
+- `public/games/paleontologo-dino/thumbnail.jpg` - Miniatura (placeholder)
+
+**Archivos actualizados:**
+- `public/js/games-list.json` - Juego registrado, versión actualizada a 1.40.0
+- `public/js/main.js` - SITE_VERSION actualizada a 1.40.0
+- `master-game-plan.md` - Juego marcado como ✅ Done
+- `development-queue.md` - Contador de 5-8 años incrementado a 7
+- `games-backlog/5-8-007-paleontologo-dino.md` - Movido a `games-done/`
+
+**Cumplimiento de reglas:**
+- ✅ Implementado en `/public/games/` (directorio de deployment)
+- ✅ HTML5, CSS3, Vanilla JavaScript (sin frameworks)
+- ✅ Responsivo (funciona en 375x667 - iPhone SE)
+- ✅ 8 niveles progresivos (game-design-rules.md Sección 7)
+- ✅ Barra de progreso visual obligatoria
+- ✅ Persistencia en localStorage implementada
+- ✅ Tiempo por nivel ajustado para mantener atención (20s-5min)
+
+**Notas:**
+- Este es el juego #42 del proyecto
+- El proyecto ahora tiene 41/41 juegos completados (100%)
+- Todas las categorías tienen juegos implementados
+- El juego usa emojis para dinosaurios y huesos (sin imágenes externas)
+- Grid de excavación con texturas de tierra para realismo
+
+---
 
 ## [v1.39.0] - 2026-02-19 22:00 UTC
 

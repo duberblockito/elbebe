@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Paleontólogo Dino 🦕</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../../css/animations.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- HUD -->
+        <div class="hud" id="hud">
+            <div class="hud-left">
+                <div class="level-indicator">
+                    <span class="label">Nivel</span>
+                    <span class="value" id="currentLevel">1</span>
+                </div>
+                <div class="dino-name" id="dinoName">T-Rex</div>
+            </div>
+            <div class="hud-right">
+                <div class="bones-found">
+                    <span class="label">Huesos</span>
+                    <span class="value" id="bonesFound">0</span>
+                    <span class="separator">/</span>
+                    <span class="value" id="totalBones">5</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Barra de Progreso -->
+        <div class="progress-bar-container">
+            <div class="progress-bar" id="progressBar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+        </div>
+
+        <!-- Área de Excavación -->
+        <div class="digging-area" id="diggingArea">
+            <!-- Grid de bloques de tierra -->
+            <div class="dirt-grid" id="dirtGrid"></div>
+        </div>
+
+        <!-- Modals -->
+        <div class="modal" id="levelCompleteModal">
+            <div class="modal-content">
+                <div class="modal-icon">🎉</div>
+                <h2>¡Nivel Completado!</h2>
+                <p class="modal-message">¡Encontraste todos los huesos del <span id="completedDino"></span>!</p>
+                <button class="btn btn-primary" id="nextLevelBtn">Siguiente Nivel</button>
+            </div>
+        </div>
+
+        <div class="modal" id="gameCompleteModal">
+            <div class="modal-content">
+                <div class="modal-icon">🏆</div>
+                <h2>¡Museo Completo!</h2>
+                <p class="modal-message">¡Has descubierto todos los dinosaurios!</p>
+                <div class="stats">
+                    <div class="stat">
+                        <span class="stat-label">Niveles:</span>
+                        <span class="stat-value" id="totalLevels">0</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Huesos:</span>
+                        <span class="stat-value" id="totalBonesCollected">0</span>
+                    </div>
+                </div>
+                <button class="btn btn-primary" id="restartBtn">Jugar de Nuevo</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/game.js"></script>
+</body>
+</html>

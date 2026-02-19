@@ -6,8 +6,8 @@ This document outlines the development roadmap for the 41 games currently in the
 
 - **Total Games Planned:** 41
 - **Ready for Development:** 40
-- **Completed Games:** 40/41 (97.6%)
-- **Pending Ideas:** 3-5 Years, 5-8 Years, 8-15 Years
+- **Completed Games:** 41/41 (100%)
+- **Pending Ideas:** 8-15 Years
 - **Legacy Games:** 000 - Burbujas Legacy (original HTML prototype)
 
 ---
@@ -49,7 +49,7 @@ This document outlines the development roadmap for the 41 games currently in the
 | 004 | **Los Bloques Caen** | Catch falling shapes. | ✅ Done |
 | 005 | **Apila los Animales** | Stack animals to build tower. | ✅ Done |
 | 006 | **Los Carros Vamos** | Vehicles move slowly. Touch to make them zoom off screen. | ✅ Done |
-| 007 | **Mezcla los Colores** | Mix color drops to create new colors. | ✅ Done
+| 007 | **Mezcla los Colores** | Mix color drops to create new colors. | ✅ Done |
 
 ## 🧒 3-5 Years (Preschoolers)
 
@@ -73,6 +73,7 @@ This document outlines the development roadmap for the 41 games currently in the
 | 004 | **Tour del Sistema Solar** | Interactive space tour, visit planets, learn facts, answer trivia. | ✅ Done |
 | 005 | **Maestro del Reloj** | Set analog clock to time requested by customers. | ✅ Done |
 | 006 | **Conejo Programador** | Place directional commands to guide rabbit to carrot. | ✅ Done |
+| 007 | **Paleontólogo Dino** | Dig up dinosaur bones and assemble them into a skeleton. | ✅ Done |
 
 ## 👱 8-15 Years (Tweens/Teens)
 
@@ -93,9 +94,9 @@ This document outlines the development roadmap for the 41 games currently in the
 |-----------|---------:|--------:|
 | 0-1 Years | 10 | 10 |
 | 1-2 Years | 7 | 7 |
-| 2-3 Years | 6 | 6 |
+| 2-3 Years | 7 | 7 |
 | 3-5 Years | 7 | 7 |
-| 5-8 Years | 6 | 6 |
+| 5-8 Years | 7 | 7 |
 | 8-15 Years | 6 | 6 |
 
 *Nota: `003-colores-vibran`, `003-pintura-dedos`, `003-rompecabezas`, `laberinto-aventura`, `tren-numeros`, `science-lab`, `eco-warriors`, `peek-a-boo`, `cascada-musical`, `bloques-caen`, `caritas-emociones`, `tour-sistema-solar`, `lluvia-estrellas`, `estrellas-brillantes`, `music-master`, `dedos-magicos`, `apila-animales`, `cochecito-colores`, `pequeno-jardinero`, `patitas-caminan`, `maestro-reloj`, `viste-clima` y `formas-rebotan` completados y validados*
