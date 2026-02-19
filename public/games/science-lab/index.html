@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Laboratorio de Ciencia: Fusión de Elementos</title>
+    <link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- HUD - Heads Up Display -->
+        <div class="hud">
+            <div class="hud-left">
+                <div class="level-indicator">
+                    <span class="level-label">NIVEL</span>
+                    <span class="level-value" id="level">1</span>
+                </div>
+            </div>
+            <div class="hud-center">
+                <div class="timer-container">
+                    <div class="timer-bar" id="timer-bar"></div>
+                    <div class="timer-text" id="timer-text">60s</div>
+                </div>
+            </div>
+            <div class="hud-right">
+                <div class="progress-container">
+                    <span class="progress-label">DESCUBIERTOS</span>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                    <span class="progress-value" id="progress-text">0/5</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Elementos Disponibles -->
+        <div class="elements-panel">
+            <h2 class="panel-title">Elementos</h2>
+            <div class="elements-grid" id="elements-grid"></div>
+        </div>
+
+        <!-- Área de Combinación -->
+        <div class="combination-area">
+            <h2 class="panel-title">Zona de Fusión</h2>
+            <div class="drop-zone" id="drop-zone-1"></div>
+            <div class="operator">+</div>
+            <div class="drop-zone" id="drop-zone-2"></div>
+            <div class="operator">=</div>
+            <div class="result-zone" id="result-zone"></div>
+            <button class="combine-btn" id="combine-btn">¡FUSIONAR!</button>
+        </div>
+
+        <!-- Elementos Descubiertos -->
+        <div class="discovered-panel">
+            <h2 class="panel-title">Descubiertos</h2>
+            <div class="discovered-grid" id="discovered-grid"></div>
+        </div>
+    </div>
+
+    <!-- Modal de Nivel Completado -->
+    <div class="modal" id="level-complete-modal">
+        <div class="modal-content">
+            <h2 class="modal-title">¡Nivel Completado! 🎉</h2>
+            <p class="modal-message">Has descubierto todos los elementos necesarios.</p>
+            <div class="modal-stats">
+                <div class="stat">
+                    <span class="stat-label">Elementos descubiertos</span>
+                    <span class="stat-value" id="level-completed-discovered">5</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Tiempo restante</span>
+                    <span class="stat-value" id="level-completed-time">30s</span>
+                </div>
+            </div>
+            <button class="modal-btn" id="next-level-btn">Siguiente Nivel</button>
+        </div>
+    </div>
+
+    <!-- Modal de Tiempo Agotado -->
+    <div class="modal" id="time-up-modal">
+        <div class="modal-content">
+            <h2 class="modal-title">¡Tiempo Agotado! ⏰</h2>
+            <p class="modal-message">Inténtalo de nuevo.</p>
+            <div class="modal-stats">
+                <div class="stat">
+                    <span class="stat-label">Elementos descubiertos</span>
+                    <span class="stat-value" id="time-up-discovered">0</span>
+                </div>
+            </div>
+            <button class="modal-btn" id="retry-btn">Reintentar</button>
+        </div>
+    </div>
+
+    <!-- Modal de Juego Completado -->
+    <div class="modal" id="game-complete-modal">
+        <div class="modal-content">
+            <h2 class="modal-title">¡Felicidades! 🏆</h2>
+            <p class="modal-message">Has completado todos los niveles del Laboratorio de Ciencia.</p>
+            <div class="modal-stats">
+                <div class="stat">
+                    <span class="stat-label">Total elementos descubiertos</span>
+                    <span class="stat-value" id="game-complete-total">20</span>
+                </div>
+            </div>
+            <button class="modal-btn" id="restart-btn">Jugar de Nuevo</button>
+        </div>
+    </div>
+
+    <script src="js/game.js"></script>
+</body>
+</html>

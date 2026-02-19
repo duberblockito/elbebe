@@ -1,0 +1,10 @@
+{
+  "id": "science-lab",
+  "title": "Laboratorio de Ciencia: Fusión de Elementos",
+  "description": "Combina elementos químicos para descubrir nuevos compuestos en este laboratorio virtual.",
+  "category": "science",
+  "author": "El Bebe Games Team",
+  "version": "1.0.0",
+  "thumbnail": "thumbnail.jpg",
+  "recommended_age": "8-15"
+}

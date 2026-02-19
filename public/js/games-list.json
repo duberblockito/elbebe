@@ -222,6 +222,19 @@
       "thumbnail": "thumbnail.png",
       "recommended_age": "5-8",
       "tags": ["adventure", "maze", "puzzle", "levels", "timer", "progress", "keys", "chests"]
+    },
+    {
+      "id": "science-lab",
+      "title": "Laboratorio de Ciencia: Fusión de Elementos",
+      "title_en": "Science Lab: Element Fusion",
+      "description": "Combina elementos químicos para descubrir nuevos compuestos en este laboratorio virtual. Arrastra elementos a la zona de fusión y descubre qué ocurre cuando se mezclan.",
+      "description_en": "Combine chemical elements to discover new compounds in this virtual laboratory. Drag elements to the fusion zone and discover what happens when they mix.",
+      "category": "science",
+      "author": "Elbebe Games Team",
+      "version": "1.0.0",
+      "thumbnail": "thumbnail.jpg",
+      "recommended_age": "8-15",
+      "tags": ["science", "chemistry", "drag-drop", "elements", "fusion", "levels", "timer", "progress", "educational"]
     }
   ]
 }
