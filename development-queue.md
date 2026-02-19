@@ -34,7 +34,7 @@ La estrategia de desarrollo sigue un ciclo "Round Robin" entre las categorías d
 | Categoría | Terminados | Meta Actual |
 | :--- | :---: | :---: |
 | 0-1 Años | 4 | 4 |
-| 1-2 Años | 3 | 4 |
+| 1-2 Años | 4 | 4 |
 | 2-3 Años | 3 | 4 |
 | 3-5 Años | 3 | 4 |
 | 5-8 Años | 3 | 4 |
@@ -49,6 +49,25 @@ La estrategia de desarrollo sigue un ciclo "Round Robin" entre las categorías d
 Basado en la regla de equilibrio, este es el orden inmediato de desarrollo:
 
 1.  **[Done]** **1-2 Años**: `001-poppit-burbujas` (Poppit! Burbujas)
+2.  **[Done]** **2-3 Años**: `001-pinta-nubes` (Pinta las Nubes)
+3.  **[Done]** **3-5 Años**: `001-chef-monstruos` (Chef de Monstruos)
+4.  **[Done]** **5-8 Años**: `001-math-blaster` (Math Blaster)
+5.  **[Done]** **8-15 Años**: `001-code-quest` (Code Quest)
+6.  **[Done]** **0-1 Años**: `002-caja-sonidos` (Caja de Sonidos)
+7.  **[Done]** **1-2 Años**: `002-animalitos-suenan` (Animalitos que Suenan)
+8.  **[Done]** **2-3 Años**: `002-arrastra-fruta` (Arrastra la Fruta)
+9.  **[Done]** **3-5 Años**: `002-super-formas` (Super Formas)
+10. **[Done]** **5-8 Años**: `002-constructor-palabras` (Constructor Palabras)
+11. **[Done]** **8-15 Años**: `002-art-battle` (Art Battle: Digital Canvas)
+12. **[Done]** **0-1 Años**: `003-colores-vibran` (Colores que Vibran) - BUG-004 Fixed
+13. **[Done ✅ QA Validado]** **1-2 Años**: `003-pintura-dedos` (Pintura con los Dedos) - BUG-005 Fixed - IMPLEMENTADO - QA APROBADO
+14. **[Done ✅ QA Validado]** **2-3 Años**: `003-rompecabezas` (Rompecabezas Simple) - IMPLEMENTADO - QA APROBADO
+15. **[Done ✅]** **3-5 Años**: `003-tren-numeros` (Tren de Números) - IMPLEMENTADO - BUG-009 Fixed
+16. **[Done ✅]** **5-8 Años**: `laberinto-aventura` (Laberinto Aventura) - IMPLEMENTADO - BUG-008 Fixed
+17. **[Done ✅]** **8-15 Años**: `003-science-lab` (Science Lab) - READY - Todos los bugs resueltos
+18. **[Done ✅]** **8-15 Años**: `004-eco-warriors` (Eco Warriors) - IMPLEMENTADO
+19. **[Done ✅]** **0-1 Años**: `004-peek-a-boo` (Peek-a-Boo) - IMPLEMENTADO
+20. **[Done ✅]** **1-2 Años**: `004-cascada-musical` (Cascada Musical) - IMPLEMENTADO
 2.  **[Done]** **2-3 Años**: `001-pinta-nubes` (Pinta las Nubes)
 3.  **[Done]** **3-5 Años**: `001-chef-monstruos` (Chef de Monstruos)
 4.  **[Done]** **5-8 Años**: `001-math-blaster` (Math Blaster)

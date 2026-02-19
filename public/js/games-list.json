@@ -1,5 +1,5 @@
 {
-  "version": "1.10.0",
+  "version": "1.16.0",
   "lastUpdated": "2026-02-19",
   "games": [
     {
@@ -411,6 +411,29 @@
         "progress",
         "educational",
         "sustainability"
+      ]
+    },
+    {
+      "id": "cascada-musical",
+      "title": "Cascada Musical",
+      "title_en": "Musical Cascade",
+      "description": "Bloques de colores que caen y tocan notas musicales pentat\u00f3nicas al tocarlos. Un juego sensorial y musical para beb\u00e9s de 1-2 a\u00f1os.",
+      "description_en": "Falling colored blocks that play pentatonic musical notes when touched. A sensory and musical game for babies aged 1-2.",
+      "category": "music",
+      "author": "Blockito AI",
+      "version": "1.0.0",
+      "thumbnail": "thumbnail.jpg",
+      "recommended_age": "1-2",
+      "tags": [
+        "music",
+        "touch",
+        "colors",
+        "sounds",
+        "sensory",
+        "levels",
+        "timer",
+        "progress",
+        "pentatonic"
       ]
     }
   ]

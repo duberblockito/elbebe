@@ -2,6 +2,63 @@
 
 ---
 
+## [v1.16.0] - 2026-02-19 05:00 UTC (Bogotá)
+
+### ✨ Nuevo Juego Implementado
+
+**Juego:** 004-cascada-musical (Cascada Musical)
+**Categoría:** 1-2 Años (Toddlers)
+**Fuente del plan:** Idea #4 de `/games-backlog/1-2-004-cascada-musical.md`
+
+**Descripción:**
+Bloques de colores que caen y tocan notas musicales pentatónicas al tocarlos. Un juego sensorial y musical diseñado para bebés de 1-2 años que exploran causa-efecto y disfrutan de la música.
+
+**Características implementadas:**
+- ✅ Sistema de 5 niveles progresivos (10, 12, 15, 18, 20 bloques por nivel)
+- ✅ Temporizador por nivel (30s → 50s progresivo)
+- ✅ Barra de progreso visual mostrando bloques tocados vs objetivo
+- ✅ Barra de temporizador visual (verde → amarillo → rojo según tiempo restante)
+- ✅ Persistencia en localStorage (`cascada-musical-progress`)
+- ✅ HUD (Heads Up Display) con nivel actual, puntos, objetivo, temporizador
+- ✅ Modales: Nivel Completado, Tiempo Agotado, Juego Completado
+- ✅ 8 bloques de colores diferentes con emojis musicales (🎵🎶🎼🎹🎷🎺🪗🎸)
+- ✅ Escala pentatónica C Mayor (C4, D4, E4, G4, A4) - sonidos agradables para niños
+- ✅ Web Audio API para generación de notas musicales en tiempo real
+- ✅ Animaciones suaves: fall (caída), pop (explosión), modal-fade-in, modal-pop
+- ✅ Diseño responsivo optimizado para móvil (375x667px base para iPhone SE)
+- ✅ Touch events completos para dispositivos móviles
+- ✅ Sistema de puntos y progreso visual en tiempo real
+- ✅ Velocidad de caída incrementa con cada nivel
+- ✅ Generación de bloques continua (1 bloque cada 1.5 segundos)
+- ✅ Puntuación total acumulada a través de todos los niveles
+
+**Cumplimiento de reglas de diseño (game-design-rules.md):**
+- ✅ Sección 1: Estructura de directorios correcta
+- ✅ Sección 2: HTML5, CSS3, Vanilla JavaScript sin frameworks
+- ✅ Sección 2: Responsivo y optimizado para 375x667px (iPhone SE)
+- ✅ Sección 3: manifest.json válido con metadatos completos
+- ✅ Sección 4: Registrado en `public/js/games-list.json`
+- ✅ Sección 7: Sistema de niveles (5 niveles, 30-50s por nivel)
+- ✅ Sección 7: Barra de progreso visual (puntos / objetivo)
+- ✅ Sección 7: Barra de temporizador visual con cambios de color
+- ✅ Sección 7: Persistencia en localStorage
+- ✅ Sección 8: Checklist de submission completo
+
+**Archivos creados:**
+- `public/games/cascada-musical/index.html` - Estructura HTML del juego (2.9 KB)
+- `public/games/cascada-musical/assets/style.css` - Estilos responsivos y animaciones (5.7 KB)
+- `public/games/cascada-musical/js/game.js` - Lógica completa del juego (9.9 KB)
+- `public/games/cascada-musical/manifest.json` - Metadatos del juego (0.7 KB)
+- `public/games/cascada-musical/thumbnail.jpg` - Thumbnail SVG animado (1.4 KB)
+
+**Archivos actualizados:**
+- `public/js/games-list.json` - Juego registrado en el catálogo central
+- `master-game-plan.md` - Juego marcado como ✅ Done
+- `development-queue.md` - Contador actualizado y juego movido a historial
+- `games-backlog/1-2-004-cascada-musical.md` → `games-done/1-2-004-cascada-musical.md`
+
+---
+
 ## [v1.15.0] - 2026-02-19 04:40 UTC (Bogotá)
 
 ### ✨ Nuevo Juego Implementado

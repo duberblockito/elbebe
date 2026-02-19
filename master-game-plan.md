@@ -27,6 +27,7 @@ This document outlines the development roadmap for the 41 games currently in the
 | 001 | **Poppit! Burbujas** | Advanced bubble popping. | ✅ Done |
 | 002 | **Animalitos que Suenan** | Animal orchestra. | ✅ Done |
 | 003 | **Pintura con los Dedos** | Finger painting with colors and levels. | ✅ Done |
+| 004 | **Cascada Musical** | Falling musical blocks with pentatonic notes. | ✅ Done |
 
 ## 👦 2-3 Years (Preschoolers)
 
@@ -65,12 +66,12 @@ This document outlines the development roadmap for the 41 games currently in the
 
 | Age Group | Completed | Target |
 |-----------|---------|--------|
-| 0-1 Years | 3 | 3 |
-| 1-2 Years | 3 | 3 |
-| 2-3 Years | 3 | 3 |
-| 3-5 Years | 3 | 3 |
-| 5-8 Years | 3 | 3 |
-| 8-15 Years | 3 | 3 |
+| 0-1 Years | 4 | 4 |
+| 1-2 Years | 4 | 4 |
+| 2-3 Years | 3 | 4 |
+| 3-5 Years | 3 | 4 |
+| 5-8 Years | 3 | 4 |
+| 8-15 Years | 4 | 4 |
 
 *Nota: `003-colores-vibran`, `003-pintura-dedos`, `003-rompecabezas`, `laberinto-aventura`, `tren-numeros` y `science-lab` completados y validados*
 

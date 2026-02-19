@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Cascada Musical | El Bebe Games</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <!-- HUD (Heads Up Display) -->
+    <div class="hud">
+        <div class="hud-item">
+            <span class="label">Nivel</span>
+            <span class="value" id="level-display">1</span>
+        </div>
+        <div class="hud-item">
+            <span class="label">Puntos</span>
+            <span class="value" id="score-display">0</span>
+            <span class="target">/ <span id="target-display">10</span></span>
+        </div>
+        <div class="hud-item">
+            <span class="label">Tiempo</span>
+            <span class="value" id="time-display">30s</span>
+        </div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progress-bar">
+            <div class="progress-fill" id="progress-fill"></div>
+        </div>
+    </div>
+
+    <!-- Timer Bar -->
+    <div class="timer-container">
+        <div class="timer-bar" id="timer-bar">
+            <div class="timer-fill" id="timer-fill"></div>
+        </div>
+    </div>
+
+    <!-- Game Container -->
+    <div class="game-container" id="game-container">
+        <!-- Blocks will be generated here -->
+    </div>
+
+    <!-- Start Screen -->
+    <div class="modal start-screen" id="start-screen">
+        <div class="modal-content">
+            <h1>🎵 Cascada Musical</h1>
+            <p>Toca los bloques de colores para hacer música</p>
+            <button class="btn btn-primary" id="start-btn">¡Empezar!</button>
+        </div>
+    </div>
+
+    <!-- Level Complete Modal -->
+    <div class="modal level-complete" id="level-complete">
+        <div class="modal-content">
+            <h2>🎉 ¡Nivel Completado!</h2>
+            <p>Puntos: <span id="level-score">0</span></p>
+            <button class="btn btn-primary" id="next-level-btn">Siguiente Nivel</button>
+        </div>
+    </div>
+
+    <!-- Time Up Modal -->
+    <div class="modal time-up" id="time-up">
+        <div class="modal-content">
+            <h2>⏰ ¡Tiempo Agotado!</h2>
+            <p>Puntos: <span id="time-up-score">0</span></p>
+            <button class="btn btn-primary" id="retry-btn">Intentar de Nuevo</button>
+        </div>
+    </div>
+
+    <!-- Game Complete Modal -->
+    <div class="modal game-complete" id="game-complete">
+        <div class="modal-content">
+            <h2>🏆 ¡Juego Completado!</h2>
+            <p>¡Muy bien! Completaste todos los niveles.</p>
+            <p>Puntuación Total: <span id="total-score">0</span></p>
+            <button class="btn btn-primary" id="play-again-btn">Jugar de Nuevo</button>
+        </div>
+    </div>
+
+    <script src="js/game.js"></script>
+</body>
+</html>
