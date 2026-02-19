@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <defs>
+    <radialGradient id="spaceGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#0a0a1a"/>
+    </radialGradient>
+    <radialGradient id="planetGrad1" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" style="stop-color:#e74c3c"/>
+      <stop offset="100%" style="stop-color:#c0392b"/>
+    </radialGradient>
+    <radialGradient id="planetGrad2" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" style="stop-color:#3498db"/>
+      <stop offset="100%" style="stop-color:#2980b9"/>
+    </radialGradient>
+    <radialGradient id="planetGrad3" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" style="stop-color:#2ecc71"/>
+      <stop offset="100%" style="stop-color:#27ae60"/>
+    </radialGradient>
+    <linearGradient id="shipGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4a90e2"/>
+      <stop offset="100%" style="stop-color:#357abd"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Space background -->
+  <rect width="300" height="300" fill="url(#spaceGrad)"/>
+  
+  <!-- Stars -->
+  <circle cx="50" cy="40" r="2" fill="#fff" opacity="0.8"/>
+  <circle cx="250" cy="60" r="1.5" fill="#fff" opacity="0.6"/>
+  <circle cx="100" cy="250" r="2" fill="#fff" opacity="0.7"/>
+  <circle cx="200" cy="220" r="1" fill="#fff" opacity="0.5"/>
+  <circle cx="30" cy="180" r="1.5" fill="#fff" opacity="0.6"/>
+  <circle cx="270" cy="280" r="2" fill="#fff" opacity="0.8"/>
+  <circle cx="150" cy="30" r="1" fill="#fff" opacity="0.5"/>
+  <circle cx="80" cy="120" r="1.5" fill="#fff" opacity="0.6"/>
+  <circle cx="220" cy="100" r="2" fill="#fff" opacity="0.7"/>
+  
+  <!-- Planet 1 (top left) -->
+  <circle cx="80" cy="90" r="35" fill="url(#planetGrad1)"/>
+  <ellipse cx="80" cy="90" rx="50" ry="10" fill="none" stroke="#fff" stroke-width="2" opacity="0.3" transform="rotate(-20 80 90)"/>
+  
+  <!-- Planet 2 (bottom right) -->
+  <circle cx="220" cy="210" r="30" fill="url(#planetGrad2)"/>
+  
+  <!-- Planet 3 (top right) -->
+  <circle cx="250" cy="80" r="20" fill="url(#planetGrad3)"/>
+  <circle cx="265" cy="80" r="4" fill="#aaa"/>
+  
+  <!-- Spaceship -->
+  <g transform="translate(150, 150)">
+    <!-- Ship body -->
+    <polygon points="0,-25 -15,25 0,15 15,25" fill="url(#shipGrad)" stroke="#fff" stroke-width="2"/>
+    <!-- Engine glow -->
+    <polygon points="-5,18 0,35 5,18" fill="#ff6b6b"/>
+    <!-- Window -->
+    <circle cx="0" cy="-5" r="5" fill="#00ff88"/>
+  </g>
+  
+  <!-- Title text -->
+  <text x="150" y="280" text-anchor="middle" fill="#4a90e2" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Space Explorer</text>
+</svg>

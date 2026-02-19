@@ -1,0 +1,257 @@
+/* Space Explorer Game Styles */
+
+.game-container.space-explorer {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: #0a0a1a;
+    overflow: hidden;
+}
+
+/* HUD Styles */
+.hud {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    z-index: 10;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    border: 2px solid #4a90e2;
+}
+
+.hud-level,
+.hud-progress,
+.hud-timer,
+.hud-resources {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.hud-level span,
+.hud-progress span,
+.hud-timer span {
+    color: #4a90e2;
+}
+
+.hud-resources {
+    grid-column: span 2;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+}
+
+.hud-resources .resource {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 16px;
+}
+
+.hud-resources .resource .icon {
+    font-size: 20px;
+}
+
+.value {
+    font-weight: bold;
+    font-size: 18px;
+    color: #00ff88;
+}
+
+/* Progress Bar */
+.progress-bar-container,
+.timer-bar-container {
+    width: 100%;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #00ff88, #00cc66);
+    transition: width 0.3s ease;
+    border-radius: 10px;
+}
+
+.timer-bar {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, #ff4444, #ffcc00, #00ff88);
+    transition: width 1s linear;
+    border-radius: 10px;
+}
+
+/* Game Canvas */
+#game-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    touch-action: none;
+}
+
+/* Controls */
+.controls {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+}
+
+.control-btn {
+    padding: 15px 25px;
+    font-size: 18px;
+    background: linear-gradient(180deg, #4a90e2, #357abd);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+}
+
+.control-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
+}
+
+.control-btn:active {
+    transform: translateY(0);
+}
+
+.control-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Modal */
+.modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: linear-gradient(180deg, #1a1a2e, #16213e);
+    padding: 30px;
+    border-radius: 20px;
+    border: 3px solid #4a90e2;
+    text-align: center;
+    max-width: 400px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.modal-content h2 {
+    color: #4a90e2;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.modal-content p {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.modal-stats {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    color: #00ff88;
+    font-size: 14px;
+}
+
+.btn-primary {
+    padding: 12px 30px;
+    font-size: 16px;
+    background: linear-gradient(180deg, #00ff88, #00cc66);
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hud {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .hud-resources {
+        grid-column: span 1;
+    }
+
+    .controls {
+        bottom: 10px;
+    }
+
+    .control-btn {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+    .modal-content {
+        padding: 20px;
+        max-width: 90%;
+    }
+
+    .modal-content h2 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hud {
+        font-size: 11px;
+    }
+
+    .value {
+        font-size: 16px;
+    }
+
+    .progress-bar-container,
+    .timer-bar-container {
+        height: 15px;
+    }
+
+    .control-btn {
+        padding: 10px 15px;
+        font-size: 12px;
+    }
+}

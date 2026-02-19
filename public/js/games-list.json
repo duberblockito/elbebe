@@ -1,5 +1,5 @@
 {
-  "version": "1.35.0",
+  "version": "1.36.0",
   "lastUpdated": "2026-02-19",
   "games": [
     {
@@ -853,6 +853,31 @@
         "progress",
         "arcade",
         "particles"
+      ]
+    },
+    {
+      "id": "space-explorer",
+      "title": "Space Explorer: Galaxy Mission",
+      "title_en": "Space Explorer: Galaxy Mission",
+      "description": "Pilota una nave espacial, descubre planetas y gestiona colonias en esta simulación de exploración galáctica. Escanea sistemas solares, coloniza mundos y recolecta recursos con niveles progresivos.",
+      "description_en": "Pilot a spaceship, discover planets and manage colonies in this galactic exploration simulation. Scan solar systems, colonize worlds and collect resources with progressive levels.",
+      "category": "strategy",
+      "author": "Elbebe Games Team",
+      "version": "1.0.0",
+      "thumbnail": "thumbnail.svg",
+      "recommended_age": "8-15",
+      "tags": [
+        "space",
+        "exploration",
+        "strategy",
+        "resource-management",
+        "levels",
+        "timer",
+        "progress",
+        "colonies",
+        "procedural-generation",
+        "educational",
+        "science"
       ]
     }
   ]

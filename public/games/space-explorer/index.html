@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Space Explorer: Galaxy Mission</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="assets/game.css">
+</head>
+<body class="game-page">
+    <div class="game-container space-explorer">
+        <!-- HUD: Heads Up Display -->
+        <div class="hud">
+            <div class="hud-level">
+                <span>Nivel:</span>
+                <span id="level-display" class="value">1</span>
+            </div>
+            <div class="hud-progress">
+                <span>Sistemas:</span>
+                <div class="progress-bar-container">
+                    <div id="progress-bar" class="progress-bar"></div>
+                </div>
+                <span id="progress-text" class="value">0/3</span>
+            </div>
+            <div class="hud-timer">
+                <span>Tiempo:</span>
+                <div class="timer-bar-container">
+                    <div id="timer-bar" class="timer-bar"></div>
+                </div>
+                <span id="timer-text" class="value">90s</span>
+            </div>
+            <div class="hud-resources">
+                <span class="resource"><span class="icon">⚡</span><span id="energy-display">50</span></span>
+                <span class="resource"><span class="icon">💎</span><span id="minerals-display">0</span></span>
+            </div>
+        </div>
+
+        <!-- Game Canvas -->
+        <canvas id="game-canvas"></canvas>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button id="btn-scan" class="control-btn">📡 Escanear</button>
+            <button id="btn-colonize" class="control-btn">🚀 Colonizar</button>
+        </div>
+
+        <!-- Modals -->
+        <div id="modal" class="modal hidden">
+            <div class="modal-content">
+                <h2 id="modal-title">Nivel Completado</h2>
+                <p id="modal-message">¡Has descubierto todos los sistemas!</p>
+                <div id="modal-stats" class="modal-stats"></div>
+                <button id="modal-btn" class="btn-primary">Continuar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/game.js"></script>
+</body>
+</html>
