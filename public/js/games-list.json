@@ -1,88 +1,125 @@
 {
-  "version": "1.9.0",
-  "lastUpdated": "2026-02-18",
+  "version": "1.10.0",
+  "lastUpdated": "2026-02-19",
   "games": [
     {
       "id": "burbujas-magicas",
-      "title": "Burbujas Mágicas",
+      "title": "Burbujas M\u00e1gicas",
       "title_en": "Magic Bubbles",
-      "description": "¡Herramientas de colores flotantes que explotan con sonidos suaves cuando las tocas!",
+      "description": "\u00a1Herramientas de colores flotantes que explotan con sonidos suaves cuando las tocas!",
       "description_en": "Colorful floating bubbles that pop with soft sounds when you touch them!",
       "category": "sensory",
       "author": "El Bebe Games",
       "version": "1.0.0",
       "thumbnail": "thumbnail.svg",
       "recommended_age": "0-1",
-      "tags": ["touch", "colors", "sounds", "sensory"]
+      "tags": [
+        "touch",
+        "colors",
+        "sounds",
+        "sensory"
+      ]
     },
     {
       "id": "poppit-burbujas",
       "title": "Poppit! Burbujas",
       "title_en": "Poppit! Bubbles",
-      "description": "¡Burbujas de colores flotan hacia arriba! Toca las burbujas para explotarlas con partículas mágicas y sonidos divertidos.",
+      "description": "\u00a1Burbujas de colores flotan hacia arriba! Toca las burbujas para explotarlas con part\u00edculas m\u00e1gicas y sonidos divertidos.",
       "description_en": "Colorful bubbles float up! Touch bubbles to pop them with magical particles and fun sounds.",
       "category": "sensory",
       "author": "El Bebe Games",
       "version": "1.0.0",
       "thumbnail": "thumbnail.svg",
       "recommended_age": "1-2",
-      "tags": ["touch", "colors", "sounds", "sensory", "multi-touch"]
+      "tags": [
+        "touch",
+        "colors",
+        "sounds",
+        "sensory",
+        "multi-touch"
+      ]
     },
     {
       "id": "001-pinta-nubes",
       "title": "Pinta las Nubes",
       "title_en": "Paint the Clouds",
-      "description": "¡Toca las nubes grises para revelar animales coloridos ocultos dentro! Un juego sensorial para descubrir sorpresas.",
+      "description": "\u00a1Toca las nubes grises para revelar animales coloridos ocultos dentro! Un juego sensorial para descubrir sorpresas.",
       "description_en": "Touch grey clouds to reveal colorful animals hidden inside! A sensory game for discovering surprises.",
       "category": "sensory",
       "author": "El Bebe Games",
       "version": "1.0.0",
       "thumbnail": "thumbnail.svg",
       "recommended_age": "2-3",
-      "tags": ["touch", "animals", "sensory", "colors", "reveal"]
+      "tags": [
+        "touch",
+        "animals",
+        "sensory",
+        "colors",
+        "reveal"
+      ]
     },
     {
       "id": "001-chef-monstruos",
       "title": "Chef de Monstruos",
       "title_en": "Monster Chef",
-      "description": "¡Prepara pizzas divertidas para monstruos amigables! Arrastra ingredientes según lo que pida cada monstruo.",
+      "description": "\u00a1Prepara pizzas divertidas para monstruos amigables! Arrastra ingredientes seg\u00fan lo que pida cada monstruo.",
       "description_en": "Make fun pizzas for friendly monsters! Drag ingredients according to what each monster requests.",
       "category": "cooking",
       "author": "El Bebe Games",
       "version": "1.4.1",
       "thumbnail": "thumbnail.svg",
       "recommended_age": "3-5",
-      "tags": ["touch", "drag-drop", "monsters", "cooking", "creativity"]
+      "tags": [
+        "touch",
+        "drag-drop",
+        "monsters",
+        "cooking",
+        "creativity"
+      ]
     },
     {
       "id": "001-math-blaster",
       "title": "Math Blaster",
       "title_en": "Math Blaster",
-      "description": "¡Resuelve problemas matemáticos para destruir asteroides! Mejora tus habilidades de suma y resta mientras proteges el espacio.",
+      "description": "\u00a1Resuelve problemas matem\u00e1ticos para destruir asteroides! Mejora tus habilidades de suma y resta mientras proteges el espacio.",
       "description_en": "Solve math problems to destroy asteroids! Improve your addition and subtraction skills while protecting space.",
       "category": "educational",
       "author": "El Bebe Games",
       "version": "1.0.0",
       "thumbnail": "thumbnail.svg",
       "recommended_age": "5-8",
-      "tags": ["math", "addition", "subtraction", "asteroids", "space", "educational"]
+      "tags": [
+        "math",
+        "addition",
+        "subtraction",
+        "asteroids",
+        "space",
+        "educational"
+      ]
     },
     {
       "id": "code-quest",
       "title": "Code Quest: Mystery Island",
       "title_en": "Code Quest: Mystery Island",
-      "description": "¡Aprende a programar resolviendo puzzles de código! Usa variables, loops y condicionales para mover el personaje hacia la meta en esta aventura educativa.",
+      "description": "\u00a1Aprende a programar resolviendo puzzles de c\u00f3digo! Usa variables, loops y condicionales para mover el personaje hacia la meta en esta aventura educativa.",
       "description_en": "Learn to program by solving code puzzles! Use variables, loops, and conditionals to move the character to the goal in this educational adventure.",
       "category": "educational",
       "author": "El Bebe Games",
       "version": "1.0.0",
       "thumbnail": "thumbnail.svg",
       "recommended_age": "8-15",
-      "tags": ["coding", "javascript", "logic", "puzzles", "educational", "adventure"]
+      "tags": [
+        "coding",
+        "javascript",
+        "logic",
+        "puzzles",
+        "educational",
+        "adventure"
+      ]
     },
     {
       "id": "002-caja-sonidos",
-      "title": "Caja de Sonidos Mágica",
+      "title": "Caja de Sonidos M\u00e1gica",
       "title_en": "Magical Sound Box",
       "description": "Grid de 6-8 grandes iconos (animales/objetos) que al tocarlos reproducen sonidos y se animan.",
       "description_en": "Grid of 6-8 large icons (animals/objects) that play sounds and animate when touched.",
@@ -91,115 +128,204 @@
       "version": "1.0.0",
       "thumbnail": "thumbnail.svg",
       "recommended_age": "0-1",
-      "tags": ["touch", "sounds", "animals", "objects"]
+      "tags": [
+        "touch",
+        "sounds",
+        "animals",
+        "objects"
+      ]
     },
     {
       "id": "002-animalitos-suenan",
       "title": "Animalitos que Suenan",
       "title_en": "Animals that Sound",
-      "description": "Orquesta de animales que se iluminan y suenan al tocarlos. Incluye 5 niveles progresivos, sistema de puntuación y temporizador visual.",
+      "description": "Orquesta de animales que se iluminan y suenan al tocarlos. Incluye 5 niveles progresivos, sistema de puntuaci\u00f3n y temporizador visual.",
       "description_en": "Orchestra of animals that illuminate and play sounds when touched. Includes 5 progressive levels, scoring system, and visual timer.",
       "category": "sensory",
       "author": "El Bebe Games",
       "version": "1.0.0",
       "thumbnail": "thumbnail.svg",
       "recommended_age": "1-2",
-      "tags": ["touch", "sounds", "animals", "levels", "timer", "progress"]
+      "tags": [
+        "touch",
+        "sounds",
+        "animals",
+        "levels",
+        "timer",
+        "progress"
+      ]
     },
     {
       "id": "002-arrastra-fruta",
       "title": "Arrastra la Fruta",
       "title_en": "Drag the Fruit",
-      "description": "Arrastra frutas flotantes a un plato de picnic. Juego de arrastrar y soltar con sistema de niveles, puntuación y feedback visual.",
+      "description": "Arrastra frutas flotantes a un plato de picnic. Juego de arrastrar y soltar con sistema de niveles, puntuaci\u00f3n y feedback visual.",
       "description_en": "Drag floating fruits to a picnic plate. Drag and drop game with level system, scoring, and visual feedback.",
       "category": "drag-drop",
       "author": "El Bebe Games",
       "version": "1.0.0",
       "thumbnail": "thumbnail.svg",
       "recommended_age": "2-3",
-      "tags": ["drag-drop", "touch", "fruits", "levels", "timer", "progress"]
+      "tags": [
+        "drag-drop",
+        "touch",
+        "fruits",
+        "levels",
+        "timer",
+        "progress"
+      ]
     },
     {
       "id": "002-super-formas",
       "title": "Super Formas",
       "title_en": "Super Shapes",
-      "description": "Encaja formas geométricas complejas en agujeros correspondientes para reparar objetos mágicos. Juego educativo de desarrollo cognitivo con 5 niveles progresivos.",
+      "description": "Encaja formas geom\u00e9tricas complejas en agujeros correspondientes para reparar objetos m\u00e1gicos. Juego educativo de desarrollo cognitivo con 5 niveles progresivos.",
       "description_en": "Fit complex geometric shapes into corresponding holes to repair magical objects. Educational cognitive development game with 5 progressive levels.",
       "category": "puzzle",
       "author": "Elbebe Team",
       "version": "1.0.0",
       "thumbnail": "thumbnail.svg",
       "recommended_age": "3-5",
-      "tags": ["drag-drop", "touch", "shapes", "puzzle", "levels", "timer", "progress", "educational"]
+      "tags": [
+        "drag-drop",
+        "touch",
+        "shapes",
+        "puzzle",
+        "levels",
+        "timer",
+        "progress",
+        "educational"
+      ]
     },
     {
       "id": "002-constructor-palabras",
       "title": "Constructor de Palabras",
       "title_en": "Word Builder",
-      "description": "Arrastra letras para formar palabras que se muestran en imágenes. Juego educativo para aprender ortografía de manera divertida con niveles progresivos.",
+      "description": "Arrastra letras para formar palabras que se muestran en im\u00e1genes. Juego educativo para aprender ortograf\u00eda de manera divertida con niveles progresivos.",
       "description_en": "Drag letters to spell words shown in images. Educational game to learn spelling in a fun way with progressive levels.",
       "category": "educational",
       "author": "Blockito AI",
       "version": "1.0.0",
       "thumbnail": "thumbnail.jpg",
       "recommended_age": "5-8",
-      "tags": ["drag-drop", "touch", "spelling", "letters", "words", "levels", "timer", "progress", "educational"]
+      "tags": [
+        "drag-drop",
+        "touch",
+        "spelling",
+        "letters",
+        "words",
+        "levels",
+        "timer",
+        "progress",
+        "educational"
+      ]
     },
     {
       "id": "art-battle",
       "title": "Art Battle: Digital Canvas",
       "title_en": "Art Battle: Digital Canvas",
-      "description": "Competencia de arte digital en tiempo real basada en temas aleatorios. Crea obras maestras bajo presión y compite en rankings globales.",
+      "description": "Competencia de arte digital en tiempo real basada en temas aleatorios. Crea obras maestras bajo presi\u00f3n y compite en rankings globales.",
       "description_en": "Real-time digital art competition based on random themes. Create masterpieces under pressure and compete in global rankings.",
       "category": "creative",
       "author": "Elbebe Team",
       "version": "1.0.0",
       "thumbnail": "thumbnail.jpg",
       "recommended_age": "8-15",
-      "tags": ["creative", "drawing", "canvas", "timed", "levels", "progress", "gallery"]
+      "tags": [
+        "creative",
+        "drawing",
+        "canvas",
+        "timed",
+        "levels",
+        "progress",
+        "gallery"
+      ]
     },
     {
       "id": "colores-vibran",
       "title": "Colores que Vibran",
       "title_en": "Colors that Vibrate",
-      "description": "Toca la pantalla para ver colores brillantes y escuchar notas musicales ascendentes. Un juego sensorial perfecto para bebés que exploran causa y efecto.",
+      "description": "Toca la pantalla para ver colores brillantes y escuchar notas musicales ascendentes. Un juego sensorial perfecto para beb\u00e9s que exploran causa y efecto.",
       "description_en": "Tap the screen to see bright colors and hear ascending musical notes. A perfect sensory game for babies exploring cause and effect.",
       "category": "sensory",
       "author": "Blockito AI",
       "version": "1.0.0",
       "thumbnail": "thumbnail.jpg",
       "recommended_age": "0-1",
-      "tags": ["touch", "colors", "sounds", "sensory", "music"]
+      "tags": [
+        "touch",
+        "colors",
+        "sounds",
+        "sensory",
+        "music"
+      ]
+    },
+    {
+      "id": "peek-a-boo",
+      "title": "Peek-a-Boo: Animales que Salen",
+      "title_en": "Peek-a-Boo: Animals Coming Out",
+      "description": "Toca las puertas para descubrir animales escondidos. Un juego de exploraci\u00f3n con 5 niveles progresivos, temporizador y sistema de puntuaci\u00f3n.",
+      "description_en": "Touch the doors to discover hidden animals. An exploration game with 5 progressive levels, timer, and scoring system.",
+      "category": "sensory",
+      "author": "Elbebe Games",
+      "version": "1.0.0",
+      "thumbnail": "thumbnail.svg",
+      "recommended_age": "0-1",
+      "tags": [
+        "touch",
+        "animals",
+        "sensory",
+        "levels",
+        "timer",
+        "progress"
+      ]
     },
     {
       "id": "pintura-dedos",
       "title": "Pintura con los Dedos",
       "title_en": "Finger Painting",
-      "description": "¡Pinta y crea arte con tus dedos! Un lienzo creativo con 7 colores, sistema de 5 niveles de desafíos creativos, barra de progreso y temporizador visual.",
+      "description": "\u00a1Pinta y crea arte con tus dedos! Un lienzo creativo con 7 colores, sistema de 5 niveles de desaf\u00edos creativos, barra de progreso y temporizador visual.",
       "description_en": "Paint and create art with your fingers! A creative canvas with 7 colors, 5-level creative challenge system, progress bar, and visual timer.",
       "category": "creative",
       "author": "Blockito AI",
       "version": "1.0.0",
       "thumbnail": "thumbnail.jpg",
       "recommended_age": "1-2",
-      "tags": ["touch", "drawing", "colors", "creative", "levels", "timer", "progress", "canvas"]
+      "tags": [
+        "touch",
+        "drawing",
+        "colors",
+        "creative",
+        "levels",
+        "timer",
+        "progress",
+        "canvas"
+      ]
     },
     {
       "id": "rompecabezas",
       "title": "Rompecabezas Simple",
       "title_en": "Simple Puzzle",
-      "description": "Un rompecabezas simple de piezas que forman animales. Toca una pieza y esta se mueve hacia su posición correcta con sonidos divertidos. Incluye 5 niveles progresivos, barra de progreso y temporizador visual.",
+      "description": "Un rompecabezas simple de piezas que forman animales. Toca una pieza y esta se mueve hacia su posici\u00f3n correcta con sonidos divertidos. Incluye 5 niveles progresivos, barra de progreso y temporizador visual.",
       "description_en": "A simple puzzle game with pieces that form animals. Touch a piece and it moves to its correct position with fun sounds. Includes 5 progressive levels, progress bar, and visual timer.",
       "category": "puzzle",
       "author": "Blockito AI",
       "version": "1.0.0",
       "thumbnail": "thumbnail.jpg",
       "recommended_age": "2-3",
-      "tags": ["touch", "puzzle", "animals", "levels", "timer", "progress", "cognitive"]
+      "tags": [
+        "touch",
+        "puzzle",
+        "animals",
+        "levels",
+        "timer",
+        "progress",
+        "cognitive"
+      ]
     },
     {
       "id": "003-tren-numeros",
-      "title": "Tren de Números",
+      "title": "Tren de N\u00fameros",
       "title_en": "Number Train",
       "description": "Ordena los vagones del tren numerados del 1 al 10 para que el tren pueda partir. Arrastra los vagones en el orden correcto y completa los trenes. Incluye 8 niveles progresivos, barra de progreso y temporizador visual.",
       "description_en": "Order the train cars numbered 1-10 so the train can depart. Drag the cars in the correct order and complete trains. Includes 8 progressive levels, progress bar, and visual timer.",
@@ -208,46 +334,84 @@
       "version": "1.0.0",
       "thumbnail": "thumbnail.jpg",
       "recommended_age": "3-5",
-      "tags": ["drag-drop", "touch", "numbers", "levels", "timer", "progress", "math", "educational"]
+      "tags": [
+        "drag-drop",
+        "touch",
+        "numbers",
+        "levels",
+        "timer",
+        "progress",
+        "math",
+        "educational"
+      ]
     },
     {
       "id": "laberinto-aventura",
       "title": "Laberinto Aventura",
       "title_en": "Maze Adventure",
-      "description": "¡Guía al héroe a través de un laberinto para encontrar llaves y abrir cofres! Usa las flechas o desliza para moverte. Recoge todas las llaves, abre el cofre y busca la salida antes de que se acabe el tiempo.",
+      "description": "\u00a1Gu\u00eda al h\u00e9roe a trav\u00e9s de un laberinto para encontrar llaves y abrir cofres! Usa las flechas o desliza para moverte. Recoge todas las llaves, abre el cofre y busca la salida antes de que se acabe el tiempo.",
       "description_en": "Guide the hero through a maze to find keys and open chests! Use arrows or swipe to move. Collect all keys, open the chest, and find the exit before time runs out.",
       "category": "adventure",
       "author": "Elbebe Games Team",
       "version": "1.0.0",
       "thumbnail": "thumbnail.png",
       "recommended_age": "5-8",
-      "tags": ["adventure", "maze", "puzzle", "levels", "timer", "progress", "keys", "chests"]
+      "tags": [
+        "adventure",
+        "maze",
+        "puzzle",
+        "levels",
+        "timer",
+        "progress",
+        "keys",
+        "chests"
+      ]
     },
     {
       "id": "science-lab",
-      "title": "Laboratorio de Ciencia: Fusión de Elementos",
+      "title": "Laboratorio de Ciencia: Fusi\u00f3n de Elementos",
       "title_en": "Science Lab: Element Fusion",
-      "description": "Combina elementos químicos para descubrir nuevos compuestos en este laboratorio virtual. Arrastra elementos a la zona de fusión y descubre qué ocurre cuando se mezclan.",
+      "description": "Combina elementos qu\u00edmicos para descubrir nuevos compuestos en este laboratorio virtual. Arrastra elementos a la zona de fusi\u00f3n y descubre qu\u00e9 ocurre cuando se mezclan.",
       "description_en": "Combine chemical elements to discover new compounds in this virtual laboratory. Drag elements to the fusion zone and discover what happens when they mix.",
       "category": "science",
       "author": "Elbebe Games Team",
       "version": "1.0.0",
       "thumbnail": "thumbnail.jpg",
       "recommended_age": "8-15",
-      "tags": ["science", "chemistry", "drag-drop", "elements", "fusion", "levels", "timer", "progress", "educational"]
+      "tags": [
+        "science",
+        "chemistry",
+        "drag-drop",
+        "elements",
+        "fusion",
+        "levels",
+        "timer",
+        "progress",
+        "educational"
+      ]
     },
     {
       "id": "eco-warriors",
       "title": "Eco Warriors: Planet Rescue",
       "title_en": "Eco Warriors: Planet Rescue",
-      "description": "Estrategia de restauración ecológica. Gestiona recursos renovables, limpia áreas contaminadas y protege el planeta de desastres ambientales en este juego de estrategia.",
+      "description": "Estrategia de restauraci\u00f3n ecol\u00f3gica. Gestiona recursos renovables, limpia \u00e1reas contaminadas y protege el planeta de desastres ambientales en este juego de estrategia.",
       "description_en": "Ecological restoration strategy game. Manage renewable resources, clean polluted areas and protect the planet from environmental disasters in this strategy game.",
       "category": "strategy",
       "author": "Blockito AI",
       "version": "1.0.0",
       "thumbnail": "thumbnail.jpg",
       "recommended_age": "8-15",
-      "tags": ["strategy", "ecology", "environment", "resources", "levels", "timer", "progress", "educational", "sustainability"]
+      "tags": [
+        "strategy",
+        "ecology",
+        "environment",
+        "resources",
+        "levels",
+        "timer",
+        "progress",
+        "educational",
+        "sustainability"
+      ]
     }
   ]
 }

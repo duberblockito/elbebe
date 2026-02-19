@@ -33,12 +33,12 @@ La estrategia de desarrollo sigue un ciclo "Round Robin" entre las categorías d
 
 | Categoría | Terminados | Meta Actual |
 | :--- | :---: | :---: |
-| 0-1 Años | 3 | 3 |
-| 1-2 Años | 3 | 3 |
-| 2-3 Años | 3 | 3 |
-| 3-5 Años | 3 | 3 |
-| 5-8 Años | 3 | 3 |
-| 8-15 Años | 2 | 3 |
+| 0-1 Años | 4 | 4 |
+| 1-2 Años | 3 | 4 |
+| 2-3 Años | 3 | 4 |
+| 3-5 Años | 3 | 4 |
+| 5-8 Años | 3 | 4 |
+| 8-15 Años | 4 | 4 |
 
 *Nota: `003-colores-vibran`, `003-pintura-dedos`, `003-rompecabezas` y `laberinto-aventura` implementados. Todos los juegos cumplen con todas las reglas del proyecto.*
 
@@ -64,7 +64,9 @@ Basado en la regla de equilibrio, este es el orden inmediato de desarrollo:
 14. **[Done ✅ QA Validado]** **2-3 Años**: `003-rompecabezas` (Rompecabezas Simple) - IMPLEMENTADO - QA APROBADO
 15. **[Done ✅]** **3-5 Años**: `003-tren-numeros` (Tren de Números) - IMPLEMENTADO - BUG-009 Fixed
 16. **[Done ✅]** **5-8 Años**: `laberinto-aventura` (Laberinto Aventura) - IMPLEMENTADO - BUG-008 Fixed
-17. **[Ready ✅]** **8-15 Años**: `003-science-lab` (Science Lab) - READY - Todos los bugs resueltos
+17. **[Done ✅]** **8-15 Años**: `003-science-lab` (Science Lab) - READY - Todos los bugs resueltos
+18. **[Done ✅]** **8-15 Años**: `004-eco-warriors` (Eco Warriors) - IMPLEMENTADO
+19. **[Done ✅]** **0-1 Años**: `004-peek-a-boo` (Peek-a-Boo) - IMPLEMENTADO
 
 ---
 

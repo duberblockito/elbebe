@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Peek-a-Boo: Animales que Salen</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- HUD (Heads Up Display) -->
+        <div class="hud">
+            <div class="hud-item level">
+                <span class="label">Nivel</span>
+                <span class="value" id="level">1</span>
+            </div>
+            <div class="hud-item progress">
+                <span class="label">Puertas</span>
+                <span class="value"><span id="doors-opened">0</span>/<span id="doors-goal">8</span></span>
+            </div>
+            <div class="hud-item timer">
+                <span class="label">Tiempo</span>
+                <span class="value" id="timer">30</span>s
+            </div>
+        </div>
+
+        <!-- Barra de progreso -->
+        <div class="progress-bar-container">
+            <div class="progress-bar" id="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+        </div>
+
+        <!-- Barra de temporizador -->
+        <div class="timer-bar-container">
+            <div class="timer-bar" id="timer-bar"></div>
+        </div>
+
+        <!-- Grid de puertas -->
+        <div class="doors-grid" id="doors-grid">
+            <!-- Las puertas se generan dinámicamente -->
+        </div>
+
+        <!-- Animal revelado (modal) -->
+        <div class="animal-modal" id="animal-modal">
+            <div class="animal-content">
+                <div class="animal-emoji" id="animal-emoji">🐶</div>
+                <button class="close-btn" id="close-modal">¡Muy bien! ✨</button>
+            </div>
+        </div>
+
+        <!-- Modal de Nivel Completado -->
+        <div class="modal level-complete-modal" id="level-complete-modal">
+            <div class="modal-content">
+                <h2>🎉 ¡Nivel Completado!</h2>
+                <p class="level-stats">
+                    Nivel: <span id="final-level">1</span><br>
+                    Puertas abiertas: <span id="final-doors">8</span>
+                </p>
+                <button class="modal-btn" id="next-level-btn">Siguiente Nivel ➡️</button>
+            </div>
+        </div>
+
+        <!-- Modal de Tiempo Agotado -->
+        <div class="modal time-up-modal" id="time-up-modal">
+            <div class="modal-content">
+                <h2>⏰ ¡Se acabó el tiempo!</h2>
+                <p class="time-stats">
+                    Puertas abiertas: <span id="time-up-doors">0</span><br>
+                    Objetivo: <span id="time-up-goal">8</span>
+                </p>
+                <button class="modal-btn" id="retry-level-btn">Intentar de nuevo 🔄</button>
+            </div>
+        </div>
+
+        <!-- Modal de Juego Completado -->
+        <div class="modal game-complete-modal" id="game-complete-modal">
+            <div class="modal-content">
+                <h2>🏆 ¡Felicidades!</h2>
+                <p>¡Has completado todos los niveles de Peek-a-Boo!</p>
+                <p class="game-stats">
+                    Total puertas: <span id="total-doors-final">0</span><br>
+                    Partidas jugadas: <span id="total-games-final">0</span>
+                </p>
+                <button class="modal-btn" id="play-again-btn">Jugar de nuevo 🎮</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/game.js"></script>
+</body>
+</html>

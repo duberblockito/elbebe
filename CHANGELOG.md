@@ -2,6 +2,70 @@
 
 ---
 
+## [v1.15.0] - 2026-02-19 04:40 UTC (Bogotá)
+
+### ✨ Nuevo Juego Implementado
+
+**Juego:** 004-peek-a-boo (Peek-a-Boo: Animales que Salen)
+**Categoría:** 0-1 Años (Infants)
+**Fuente del plan:** Idea #4 de `/games-backlog/0-1-004-peek-a-boo.md`
+
+**Descripción:**
+Toca las puertas para descubrir animales escondidos. Un juego de exploración con 5 niveles progresivos, temporizador y sistema de puntuación. Incluye 2x2 grid de puertas que se abren para revelar animales con sonidos y animaciones. Diseñado específicamente para bebés de 0-1 años que están explorando causa-efecto y descubriendo animales.
+
+**Características implementadas:**
+- ✅ Sistema de 5 niveles progresivos (8, 10, 12, 15, 18 puertas por nivel)
+- ✅ Temporizador por nivel (30s → 50s progresivo)
+- ✅ Barra de progreso visual mostrando puertas abiertas vs objetivo
+- ✅ Barra de temporizador visual (verde → amarillo → rojo según tiempo restante)
+- ✅ Persistencia en localStorage (`peek-a-boo-progress`)
+- ✅ HUD (Heads Up Display) con nivel actual, puertas abiertas, objetivo, temporizador
+- ✅ Modales: Nivel Completado, Tiempo Agotado, Juego Completado
+- ✅ 15 animales diferentes con emojis realistas (🐶🐱🐭🐹🐰🦊🐻🐼🐨🐯🦁🐮🐷🐸🐵)
+- ✅ Animaciones suaves: door-open, animal-bounce, modal-fade-in, modal-pop
+- ✅ Sonidos Web Audio API: doorOpen, animal, levelComplete, timeUp
+- ✅ Diseño responsivo optimizado para móvil (375x667px base para iPhone SE)
+- ✅ Touch events completos para dispositivos móviles
+- ✅ Puertas con efecto 3D (border, box-shadow) y door knob dorado
+- ✅ Pregunta flotante con animación en puertas cerradas
+- ✅ Modal de animal con emoji grande y botón de cierre interactivo
+
+**Cumplimiento de reglas de diseño (game-design-rules.md):**
+- ✅ Sección 1: Estructura de directorios correcta
+- ✅ Sección 2: HTML5, CSS3, Vanilla JavaScript sin frameworks
+- ✅ Sección 2: Responsivo y optimizado para 375x667px (iPhone SE)
+- ✅ Sección 3: manifest.json válido con metadatos completos
+- ✅ Sección 4: Registrado en `public/js/games-list.json`
+- ✅ Sección 7: Sistema de niveles (5 niveles, 30-50s por nivel)
+- ✅ Sección 7: Barra de progreso visual (puertas abiertas / objetivo)
+- ✅ Sección 7: Barra de temporizador visual con cambios de color
+- ✅ Sección 7: Persistencia en localStorage
+- ✅ Sección 8: Checklist de submission completo
+
+**Archivos creados:**
+- `public/games/peek-a-boo/index.html` - Estructura HTML del juego (3.6 KB)
+- `public/games/peek-a-boo/assets/style.css` - Estilos responsivos y animaciones (7.0 KB)
+- `public/games/peek-a-boo/js/game.js` - Lógica completa del juego (13.0 KB)
+- `public/games/peek-a-boo/manifest.json` - Metadatos del juego (0.6 KB)
+- `public/games/peek-a-boo/thumbnail.svg` - Thumbnail SVG animado (1.0 KB)
+
+**Archivos actualizados:**
+- `public/js/games-list.json` - Juego registrado (v1.10.0)
+- `games-backlog/0-1-004-peek-a-boo.md` - Plan corregido para cumplir con Sección 7
+
+**Progreso del proyecto:**
+- Total juegos: 19/41 (46.3%)
+- 0-1 Años: 4/12 (33.3%) - **4to juego agregado** 🎉
+
+**Notas:**
+- Juego implementado completamente siguiendo todas las reglas del proyecto
+- Plan original corregido para incluir requisitos de niveles, timer, progreso y persistencia
+- Diseño visual con gradientes púrpuras y puertas marrones con knobs dorados
+- Animaciones suaves con bezier curves para mejor UX infantil
+- Modal de animal con emoji grande para máxima visibilidad para bebés
+
+---
+
 ## [v1.14.0] - 2026-02-19 04:25 UTC (Bogotá)
 
 ### ✨ Nuevo Juego Implementado

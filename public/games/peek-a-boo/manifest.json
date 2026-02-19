@@ -1,0 +1,13 @@
+{
+  "id": "peek-a-boo",
+  "title": "Peek-a-Boo: Animales que Salen",
+  "title_en": "Peek-a-Boo: Animals Coming Out",
+  "description": "Toca las puertas para descubrir animales escondidos. Un juego de exploración con 5 niveles progresivos, temporizador y sistema de puntuación.",
+  "description_en": "Touch the doors to discover hidden animals. An exploration game with 5 progressive levels, timer, and scoring system.",
+  "category": "sensory",
+  "author": "Elbebe Games",
+  "version": "1.0.0",
+  "thumbnail": "thumbnail.jpg",
+  "recommended_age": "0-1",
+  "tags": ["touch", "animals", "sensory", "levels", "timer", "progress"]
+}

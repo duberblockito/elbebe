@@ -17,7 +17,8 @@ This document outlines the development roadmap for the 41 games currently in the
 |----|-----------|--------|
 | 001 | **Burbujas Mágicas** | Pop bubbles with simple taps. | ✅ Done |
 | 002 | **Caja de Sonidos Mágica** | Tap box to hear animals. | ✅ Done |
-| 003 | **Colores que Vibran** | Touch screen for colors and music. | 🐛 Bug Fixing (BUG-004) |
+| 003 | **Colores que Vibran** | Touch screen for colors and music. | ✅ Done |
+| 004 | **Peek-a-Boo** | Touch doors to reveal animals. | ✅ Done |
 
 ## 🧒 1-2 Years (Toddlers)
 
