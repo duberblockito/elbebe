@@ -20,6 +20,7 @@ This document outlines the development roadmap for the 41 games currently in the
 | 003 | **Colores que Vibran** | Touch screen for colors and music. | ✅ Done |
 | 004 | **Peek-a-Boo** | Touch doors to reveal animals. | ✅ Done |
 | 005 | **Lluvia de Estrellas** | Stars falling from top, touch to shine. | ✅ Done |
+| 006 | **Dedos Mágicos** | Touch screen for colorful trails. | ✅ Done |
 
 ## 🧒 1-2 Years (Toddlers)
 
@@ -74,14 +75,14 @@ This document outlines the development roadmap for the 41 games currently in the
 
 | Age Group | Completed | Target |
 |-----------|---------:|--------:|
-| 0-1 Years | 5 | 5 |
+| 0-1 Years | 6 | 6 |
 | 1-2 Years | 5 | 5 |
 | 2-3 Years | 4 | 4 |
 | 3-5 Years | 4 | 4 |
 | 5-8 Years | 4 | 4 |
 | 8-15 Years | 5 | 5 |
 
-*Nota: `003-colores-vibran`, `003-pintura-dedos`, `003-rompecabezas`, `laberinto-aventura`, `tren-numeros`, `science-lab`, `eco-warriors`, `peek-a-boo`, `cascada-musical`, `bloques-caen`, `caritas-emociones` y `tour-sistema-solar` completados y validados*
+*Nota: `003-colores-vibran`, `003-pintura-dedos`, `003-rompecabezas`, `laberinto-aventura`, `tren-numeros`, `science-lab`, `eco-warriors`, `peek-a-boo`, `cascada-musical`, `bloques-caen`, `caritas-emociones`, `tour-sistema-solar`, `lluvia-estrellas`, `estrellas-brillantes`, `music-master` y `dedos-magicos` completados y validados*
 
 ---
 

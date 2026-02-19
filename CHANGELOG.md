@@ -2,6 +2,67 @@
 
 ---
 
+## [v1.24.0] - 2026-02-19 14:00 UTC
+
+### ✨ Nuevo Juego Agregado
+
+**Juego:** Dedos Mágicos (dedos-magicos)
+**Categoría:** 0-1 Años (Infants)
+**ID:** 0-1-006
+
+**Descripción:**
+Juego sensorial donde el bebé toca la pantalla para crear trails de colores brillantes que se desvanecen lentamente con efectos de glow y partículas.
+
+**Características implementadas:**
+- ✅ Canvas-based rendering con trails de colores
+- ✅ Multi-touch support (varios dedos simultáneos)
+- ✅ Efectos de glow y partículas animadas
+- ✅ Dos modos de juego: Experiencia Libre y Modo Niveles
+- ✅ Sistema de 5 niveles progresivos en Modo Niveles
+- ✅ Objetivos escalables (10-30 estrellas por nivel)
+- ✅ Barra de progreso visual (estrellas recolectadas / objetivo)
+- ✅ HUD con nivel actual y estrellas
+- ✅ Persistencia en localStorage (dedos-magicos-progress)
+- ✅ Synth sounds (Web Audio API) en Modo Niveles
+- ✅ Modales: Nivel Completado, Juego Completado
+- ✅ Pantalla de selección de modo
+- ✅ Responsivo para dispositivos móviles (375x667px)
+
+**Tecnología:**
+- HTML5 Canvas para rendering de trails
+- Vanilla JavaScript sin dependencias externas
+- Web Audio API para síntesis de sonidos
+- Touch events para multi-touch support
+- CSS Animations para UI
+- Gradient effects para glow visual
+
+**Archivos creados:**
+- `public/games/dedos-magicos/index.html` - Página principal del juego
+- `public/games/dedos-magicos/assets/game.css` - Estilos del juego
+- `public/games/dedos-magicos/js/game.js` - Lógica del juego
+- `public/games/dedos-magicos/manifest.json` - Metadatos
+- `public/games/dedos-magicos/thumbnail.svg` - Imagen de preview (SVG)
+
+**Archivos actualizados:**
+- `public/js/games-list.json` - Juego registrado
+- `master-game-plan.md` - Marcado como ✅ Done
+- `development-queue.md` - Marcado como [Done ✅]
+- `CHANGELOG.md` - Entrada agregada
+
+**Validación:**
+- ✅ Cumple con game-design-rules.md Sección 1 (Estructura de directorios)
+- ✅ Cumple con game-design-rules.md Sección 2 (Requisitos técnicos)
+- ✅ Cumple con game-design-rules.md Sección 3 (manifest.json válido)
+- ✅ Cumple con game-design-rules.md Sección 4 (Game Registration)
+- ✅ Cumple con game-design-rules.md Sección 7 (Levels & Progression)
+- ✅ Cumple con game-design-rules.md Sección 8 (Submission Checklist)
+- ✅ Responsivo para 375x667px (iPhone SE)
+- ✅ Multi-touch support funcional
+- ✅ Persistencia en localStorage implementada
+- ✅ JSON válido en games-list.json
+
+---
+
 ## [v1.23.0] - 2026-02-19 07:20 UTC
 
 ### ✨ Nuevo Juego Agregado

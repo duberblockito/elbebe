@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+  <!-- Background: Dark magic theme -->
+  <defs>
+    <radialGradient id="bgGradient" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" style="stop-color:#1a0a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0a0a1a;stop-opacity:1" />
+    </radialGradient>
+    <radialGradient id="glow1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#ff6b9d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff6b9d;stop-opacity:0" />
+    </radialGradient>
+    <radialGradient id="glow2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00d4ff;stop-opacity:0" />
+    </radialGradient>
+    <radialGradient id="glow3" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#00ff88;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00ff88;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="300" height="300" fill="url(#bgGradient)" />
+
+  <!-- Trail 1 - Pink -->
+  <circle cx="80" cy="100" r="30" fill="url(#glow1)" opacity="0.8" />
+  <circle cx="80" cy="100" r="15" fill="#ff6b9d" opacity="0.9" />
+  <circle cx="80" cy="100" r="5" fill="#ffffff" opacity="1.0" />
+
+  <!-- Trail 2 - Blue -->
+  <circle cx="200" cy="150" r="35" fill="url(#glow2)" opacity="0.8" />
+  <circle cx="200" cy="150" r="18" fill="#00d4ff" opacity="0.9" />
+  <circle cx="200" cy="150" r="6" fill="#ffffff" opacity="1.0" />
+
+  <!-- Trail 3 - Green -->
+  <circle cx="150" cy="220" r="32" fill="url(#glow3)" opacity="0.8" />
+  <circle cx="150" cy="220" r="16" fill="#00ff88" opacity="0.9" />
+  <circle cx="150" cy="220" r="5" fill="#ffffff" opacity="1.0" />
+
+  <!-- Stars for level mode -->
+  <text x="150" y="280" text-anchor="middle" font-size="28" fill="#ffd700">⭐</text>
+
+  <!-- Small stars -->
+  <circle cx="30" cy="40" r="3" fill="#ffffff" opacity="0.5" />
+  <circle cx="270" cy="60" r="2" fill="#ffffff" opacity="0.4" />
+  <circle cx="40" cy="270" r="2" fill="#ffffff" opacity="0.3" />
+  <circle cx="260" cy="250" r="3" fill="#ffffff" opacity="0.5" />
+
+  <!-- Title -->
+  <text x="150" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#ffffff">
+    Dedos Mágicos
+  </text>
+  <text x="150" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#ffffff" opacity="0.7">
+    0-1 Años
+  </text>
+</svg>

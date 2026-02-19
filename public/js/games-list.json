@@ -567,6 +567,30 @@
         "stars",
         "combo"
       ]
+    },
+    {
+      "id": "dedos-magicos",
+      "title": "Dedos Mágicos",
+      "title_en": "Magic Fingers",
+      "description": "¡Toca la pantalla para crear luces mágicas brillantes! Trails de colores que se desvanecen con efectos de glow y partículas. Incluye dos modos: experiencia libre y modo niveles con 5 niveles progresivos.",
+      "description_en": "Touch the screen to create magical bright lights! Color trails that fade with glow effects and particles. Includes two modes: free experience and level mode with 5 progressive levels.",
+      "category": "sensory",
+      "author": "Blockito AI",
+      "version": "1.0.0",
+      "thumbnail": "thumbnail.svg",
+      "recommended_age": "0-1",
+      "tags": [
+        "touch",
+        "colors",
+        "sensory",
+        "multi-touch",
+        "canvas",
+        "particles",
+        "glow",
+        "levels",
+        "progress",
+        "synth-sounds"
+      ]
     }
   ]
 }

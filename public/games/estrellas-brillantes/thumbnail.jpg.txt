@@ -1,0 +1,7 @@
+Placeholder thumbnail for Estrellas Brillantes game
+Image should be 300x300px showing:
+- Night sky background with stars
+- Magical glow effects
+- Child-friendly design
+
+TODO: Replace with actual image file

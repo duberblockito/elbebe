@@ -1,0 +1,24 @@
+{
+  "id": "dedos-magicos",
+  "title": "Dedos Mágicos",
+  "description": "¡Toca la pantalla para crear luces mágicas brillantes! Trails de colores que se desvanecen con efectos de glow y partículas.",
+  "category": "sensory",
+  "author": "El Bebe Games Team",
+  "version": "1.0.0",
+  "thumbnail": "thumbnail.jpg",
+  "recommended_age": "0-1",
+  "features": [
+    "Multi-touch support",
+    "Canvas-based rendering",
+    "Visual effects and particles",
+    "Two game modes: Free & Levels",
+    "Progression system",
+    "Persistent progress",
+    "Synth sounds"
+  ],
+  "controls": {
+    "desktop": "Click and drag mouse",
+    "mobile": "Touch and drag finger"
+  },
+  "age_group": "0-1"
+}
