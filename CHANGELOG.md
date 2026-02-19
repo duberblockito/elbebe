@@ -2,6 +2,55 @@
 
 ---
 
+## [v1.30.0] - 2026-02-19 16:40 UTC
+
+### ✨ Nuevo Juego Agregado
+
+**Juego:** Camiones que Corren
+**Categoría:** 1-2 Años (Toddlers)
+**ID:** 1-2-006
+
+**Descripción:**
+Vehículos cruzando la pantalla, touch para acelerar y reproducir sonido de motor. Incluye 5 niveles progresivos, barra de progreso visual, temporizador y sistema de puntuación. Diseñado para niños de 1-2 años que exploran causa y efecto con vehículos.
+
+**Características implementadas:**
+- ✅ Sistema de 5 niveles progresivos (10, 12, 15, 18, 20 vehículos por nivel)
+- ✅ Dificultad progresiva: más vehículos y tiempo ajustado por nivel
+- ✅ Temporizador por nivel (30s → 50s progresivo)
+- ✅ Barra de progreso visual mostrando vehículos tocados vs objetivo
+- ✅ Barra de temporizador visual con cambios de color (naranja → amarillo → rojo)
+- ✅ HUD (Heads Up Display) con nivel actual, puntos
+- ✅ Persistencia en localStorage (`camiones-corren-progress`)
+- ✅ 3 tipos de vehículos (carro, camión, bus)
+- ✅ Efecto de aceleración al tocar vehículos (zoom animation)
+- ✅ Sistema de audio con Web Audio API (sonidos de motor)
+- ✅ Efecto visual de estrellas al tocar vehículos
+- ✅ Road animado con línea de puntos amarilla en movimiento
+- ✅ Ruedas animadas girando
+- ✅ Modales: Instrucciones, Nivel Completado, Tiempo Agotado, Juego Completado
+- ✅ Responsivo para móviles (375x667px)
+
+**Cumplimiento de reglas de diseño (game-design-rules.md):**
+- ✅ Sección 1: Estructura de directorios correcta
+- ✅ Sección 2: HTML5, CSS3, Vanilla JavaScript sin frameworks
+- ✅ Sección 2: Responsivo y optimizado para 375x667px (iPhone SE)
+- ✅ Sección 3: manifest.json válido con metadatos completos
+- ✅ Sección 4: Registrado en `public/js/games-list.json`
+- ✅ Sección 7: Sistema de niveles (5 niveles, 30-50s por nivel)
+- ✅ Sección 7: Barra de progreso visual (vehículos / objetivo)
+- ✅ Sección 7: Barra de temporizador visual con cambios de color
+- ✅ Sección 7: Persistencia en localStorage
+- ✅ Sección 8: Checklist de submission completo
+
+**Archivos creados:**
+- `public/games/camiones-corren/index.html` - Página principal del juego
+- `public/games/camiones-corren/css/game.css` - Estilos del juego
+- `public/games/camiones-corren/js/game.js` - Lógica del juego
+- `public/games/camiones-corren/manifest.json` - Metadatos
+- `public/games/camiones-corren/thumbnail.svg` - Imagen de preview (SVG)
+
+---
+
 ## [v1.29.0] - 2026-02-19 16:20 UTC
 
 ### ✨ Nuevo Juego Agregado

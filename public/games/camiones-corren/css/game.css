@@ -1,0 +1,309 @@
+/* Container */
+.game-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background: linear-gradient(180deg, #87CEEB 0%, #87CEEB 60%, #228B22 60%, #228B22 100%);
+    min-height: 100vh;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+/* Header */
+.game-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.game-header h1 {
+    color: #FF6B35;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* HUD */
+.hud {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.hud-level, .hud-score {
+    background: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Progress Section */
+.progress-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.progress-container, .timer-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 8px 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.progress-bar, .timer-bar {
+    width: 200px;
+    height: 20px;
+    background: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #4CAF50, #8BC34A);
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.timer-bar {
+    background: linear-gradient(90deg, #FF5722, #FF6B35);
+    width: 100%;
+}
+
+.progress-text, .timer-text {
+    font-weight: bold;
+    color: #333;
+    min-width: 50px;
+}
+
+/* Game Screen */
+.game-screen {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    min-height: 400px;
+}
+
+/* Start Screen */
+.start-screen, .level-complete, .time-up, .game-complete {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    text-align: center;
+}
+
+.start-content h2, .level-complete h2, .time-up h2, .game-complete h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #FF6B35;
+}
+
+.start-content p, .level-complete p, .time-up p, .game-complete p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Buttons */
+.btn-start, .btn-next, .btn-retry, .btn-home {
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.5rem;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-start:hover, .btn-next:hover, .btn-retry:hover, .btn-home:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.btn-start:active, .btn-next:active, .btn-retry:active, .btn-home:active {
+    transform: scale(0.95);
+}
+
+/* Road */
+.road {
+    background: linear-gradient(180deg,
+        #87CEEB 0%,
+        #87CEEB 50%,
+        #666 50%,
+        #666 100%
+    );
+    border-radius: 10px;
+    min-height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.road::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: repeating-linear-gradient(
+        90deg,
+        #FFD700,
+        #FFD700 40px,
+        transparent 40px,
+        transparent 80px
+    );
+    animation: road-move 1s linear infinite;
+}
+
+@keyframes road-move {
+    from { background-position: 0 0; }
+    to { background-position: 80px 0; }
+}
+
+/* Vehicles */
+.vehicle {
+    position: absolute;
+    width: 80px;
+    height: 60px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.vehicle:hover, .vehicle:active {
+    transform: scale(1.1);
+}
+
+.vehicle.accelerating {
+    animation: zoom 0.3s ease-out;
+}
+
+@keyframes zoom {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+}
+
+/* Vehicle Body */
+.vehicle-body {
+    width: 100%;
+    height: 100%;
+    background: #FF6B35;
+    border-radius: 10px;
+    position: relative;
+}
+
+.truck .vehicle-body {
+    background: #E74C3C;
+}
+
+.bus .vehicle-body {
+    background: #3498DB;
+}
+
+/* Vehicle Details */
+.vehicle-window {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 20px;
+    background: #87CEEB;
+    border-radius: 5px;
+}
+
+.vehicle-wheels {
+    position: absolute;
+    bottom: -8px;
+    left: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.wheel {
+    width: 16px;
+    height: 16px;
+    background: #333;
+    border-radius: 50%;
+    border: 3px solid #666;
+    animation: wheel-spin 0.5s linear infinite;
+}
+
+@keyframes wheel-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Vehicle Animations */
+.vehicle-1 { animation: move-across 8s linear infinite; }
+.vehicle-2 { animation: move-across 10s linear infinite; animation-delay: -3s; }
+.vehicle-3 { animation: move-across 12s linear infinite; animation-delay: -6s; }
+
+@keyframes move-across {
+    from { left: -100px; }
+    to { left: calc(100% + 100px); }
+}
+
+.vehicle.accelerating .vehicle-1 { animation-duration: 4s; }
+.vehicle.accelerating .vehicle-2 { animation-duration: 5s; }
+.vehicle.accelerating .vehicle-3 { animation-duration: 6s; }
+
+/* Stars Effect */
+.star {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #FFD700;
+    border-radius: 50%;
+    animation: star-pop 0.5s ease-out forwards;
+    pointer-events: none;
+}
+
+@keyframes star-pop {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 375px) {
+    .game-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .hud {
+        font-size: 1rem;
+    }
+
+    .vehicle {
+        width: 60px;
+        height: 45px;
+    }
+
+    .btn-start, .btn-next, .btn-retry, .btn-home {
+        padding: 12px 30px;
+        font-size: 1.2rem;
+    }
+}

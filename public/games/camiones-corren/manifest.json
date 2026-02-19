@@ -1,0 +1,10 @@
+{
+  "id": "camiones-corren",
+  "title": "Camiones que Corren",
+  "description": "Toca los camiones para acelerarlos y escuchar sus sonidos. ¡Caza todos los vehículos antes de que se acabe el tiempo!",
+  "category": "vehicles",
+  "author": "Blockito",
+  "version": "1.0.0",
+  "thumbnail": "thumbnail.jpg",
+  "recommended_age": "1-2"
+}

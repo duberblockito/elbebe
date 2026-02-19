@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camiones que Corren - El Bebe Games</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>🚗 Camiones que Corren</h1>
+            <div class="hud">
+                <div class="hud-level">Nivel: <span id="level">1</span></div>
+                <div class="hud-score">Puntos: <span id="score">0</span></div>
+            </div>
+        </div>
+
+        <div class="progress-section">
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <div class="progress-text"><span id="progress-count">0</span>/10</div>
+            </div>
+            <div class="timer-container">
+                <div class="timer-bar" id="timer-bar"></div>
+                <div class="timer-text"><span id="timer">30</span>s</div>
+            </div>
+        </div>
+
+        <div class="game-screen" id="game-screen">
+            <div class="start-screen" id="start-screen">
+                <div class="start-content">
+                    <h2>🚗 Camiones que Corren</h2>
+                    <p>Toca los camiones para acelerarlos</p>
+                    <button class="btn-start" id="btn-start">¡Jugar!</button>
+                </div>
+            </div>
+            <div class="play-screen" id="play-screen" style="display: none;">
+                <div class="road" id="road"></div>
+            </div>
+            <div class="level-complete" id="level-complete" style="display: none;">
+                <h2>¡Nivel Completado!</h2>
+                <p>🎉 ¡Excelente trabajo!</p>
+                <button class="btn-next" id="btn-next">Siguiente Nivel</button>
+            </div>
+            <div class="time-up" id="time-up" style="display: none;">
+                <h2>⏰ ¡Tiempo Agotado!</h2>
+                <p>Inténtalo de nuevo</p>
+                <button class="btn-retry" id="btn-retry">Reintentar</button>
+            </div>
+            <div class="game-complete" id="game-complete" style="display: none;">
+                <h2>🏆 ¡Juego Completado!</h2>
+                <p>¡Felicidades!</p>
+                <button class="btn-home" id="btn-home">Volver al Inicio</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/game.js"></script>
+</body>
+</html>

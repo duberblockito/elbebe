@@ -34,13 +34,13 @@ La estrategia de desarrollo sigue un ciclo "Round Robin" entre las categorías d
 | Categoría | Terminados | Meta Actual |
 | :--- | :---: | :---: |
 | 0-1 Años | 8 | 8 |
-| 1-2 Años | 5 | 5 |
+| 1-2 Años | 6 | 6 |
 | 2-3 Años | 5 | 5 |
 | 3-5 Años | 5 | 5 |
 | 5-8 Años | 5 | 5 |
 | 8-15 Años | 5 | 5 |
 
-*Nota: `003-colores-vibran`, `003-pintura-dedos`, `003-rompecabezas`, `laberinto-aventura`, `tren-numeros`, `science-lab`, `eco-warriors`, `peek-a-boo`, `cascada-musical`, `2-3-004-bloques-caen`, `caritas-emociones`, `tour-sistema-solar`, `lluvia-estrellas`, `estrellas-brillantes`, `music-master`, `dedos-magicos`, `apila-animales`, `cochecito-colores`, `pequeno-jardinero`, `patitas-caminan` y `maestro-reloj` implementados. Todos los juegos cumplen con todas las reglas del proyecto.*
+*Nota: `003-colores-vibran`, `003-pintura-dedos`, `003-rompecabezas`, `laberinto-aventura`, `tren-numeros`, `science-lab`, `eco-warriors`, `peek-a-boo`, `cascada-musical`, `2-3-004-bloques-caen`, `caritas-emociones`, `tour-sistema-solar`, `lluvia-estrellas`, `estrellas-brillantes`, `music-master`, `dedos-magicos`, `apila-animales`, `cochecito-colores`, `pequeno-jardinero`, `patitas-caminan`, `maestro-reloj` y `camiones-corren` implementados. Todos los juegos cumplen con todas las reglas del proyecto.*
 
 ---
 
@@ -80,6 +80,7 @@ Basado en la regla de equilibrio, este es el orden inmediato de desarrollo:
 30. **[Done ✅]** **3-5 Años**: `pequeno-jardinero` (Pequeño Jardinero) - IMPLEMENTADO
 31. **[Done ✅]** **0-1 Años**: `patitas-caminan` (Patitas que Caminan) - IMPLEMENTADO
 32. **[Done ✅]** **5-8 Años**: `maestro-reloj` (Maestro del Reloj) - IMPLEMENTADO
+33. **[Done ✅]** **1-2 Años**: `camiones-corren` (Camiones que Corren) - IMPLEMENTADO
 
 ---
 
@@ -212,7 +213,7 @@ Ver `/QA-REPORT-004-rompecabezas.md` para detalles completos de la validación Q
 ## 📊 Estado Actual del Proyecto
 
 **Total juegos planificados:** 41
-**Total juegos terminados:** 17/41 (41.5%)
+**Total juegos terminados:** 18/41 (43.9%)
 
 **Estado actual del sistema:**
 - ✅ Bugs: 0 bugs pendientes - ✅ TODOS RESUELTOS

@@ -698,6 +698,28 @@
         "touch",
         "drag"
       ]
+    },
+    {
+      "id": "camiones-corren",
+      "title": "Camiones que Corren",
+      "title_en": "Trucks that Run",
+      "description": "Toca los camiones para acelerarlos y escuchar sus sonidos. Incluye 5 niveles progresivos, barra de progreso visual y temporizador.",
+      "description_en": "Touch trucks to speed them up and hear their engine sounds. Includes 5 progressive levels, visual progress bar, and timer.",
+      "category": "vehicles",
+      "author": "Blockito",
+      "version": "1.0.0",
+      "thumbnail": "thumbnail.svg",
+      "recommended_age": "1-2",
+      "tags": [
+        "touch",
+        "vehicles",
+        "sounds",
+        "levels",
+        "timer",
+        "progress",
+        "acceleration",
+        "sensory"
+      ]
     }
   ]
 }

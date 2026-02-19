@@ -33,6 +33,7 @@ This document outlines the development roadmap for the 41 games currently in the
 | 003 | **Pintura con los Dedos** | Finger painting with colors and levels. | ✅ Done |
 | 004 | **Cascada Musical** | Falling musical blocks with pentatonic notes. | ✅ Done |
 | 005 | **Estrellas Brillantes** | Stars twinkle and explode with magic. | ✅ Done |
+| 006 | **Camiones que Corren** | Vehicles crossing, touch to accelerate. | ✅ Done |
 
 ## 👦 2-3 Years (Preschoolers)
 
@@ -81,7 +82,7 @@ This document outlines the development roadmap for the 41 games currently in the
 | Age Group | Completed | Target |
 |-----------|---------:|--------:|
 | 0-1 Years | 8 | 8 |
-| 1-2 Years | 5 | 5 |
+| 1-2 Years | 6 | 6 |
 | 2-3 Years | 5 | 5 |
 | 3-5 Years | 5 | 5 |
 | 5-8 Years | 5 | 5 |
