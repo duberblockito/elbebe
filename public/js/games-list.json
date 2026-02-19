@@ -676,6 +676,31 @@
       ]
     },
     {
+      "id": "conejo-programador",
+      "title": "Conejo Programador",
+      "title_en": "Programmer Rabbit",
+      "description": "¡Ayuda al conejo a encontrar la zanahoria usando comandos de programación! Coloca comandos en secuencia para guiar al conejo. Incluye 5 niveles progresivos, obstáculos, barra de progreso y temporizador visual.",
+      "description_en": "Help the rabbit find the carrot using programming commands! Place commands in sequence to guide the rabbit. Includes 5 progressive levels, obstacles, progress bar, and visual timer.",
+      "category": "logic",
+      "author": "El Bebe Games",
+      "version": "1.0.0",
+      "thumbnail": "thumbnail.svg",
+      "recommended_age": "5-8",
+      "tags": [
+        "logic",
+        "programming",
+        "sequencing",
+        "levels",
+        "timer",
+        "progress",
+        "rabbit",
+        "carrot",
+        "educational",
+        "grid",
+        "obstacles"
+      ]
+    },
+    {
       "id": "pequeno-jardinero",
       "title": "Pequeño Jardinero",
       "title_en": "Little Gardener",

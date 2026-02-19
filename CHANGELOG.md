@@ -2,6 +2,68 @@
 
 ---
 
+## [v1.36.0] - 2026-02-19 19:20 UTC
+
+### ✨ Nuevo Juego Agregado
+
+**Juego:** Conejo Programador
+**Categoría:** 5-8 Años
+**ID:** 5-8-006
+
+**Descripción:**
+Un juego educativo de programación donde los niños colocan comandos en secuencia para guiar a un conejo a través de una cuadrícula hasta encontrar una zanahoria. Los niños aprenden conceptos básicos de lógica y secuenciación mientras resuelven puzzles progresivamente más difíciles.
+
+**Características implementadas:**
+- ✅ 5 niveles progresivos con dificultad creciente
+- ✅ Grid variable (4x4, 5x5, 6x6) según nivel
+- ✅ Sistema de comandos direccionales (arriba, abajo, izquierda, derecha)
+- ✅ Cola de comandos visual con iconos emoji
+- ✅ Ejecución paso a paso de comandos
+- ✅ Obstáculos que bloquean el camino
+- ✅ Nivel 1: 4x4, sin obstáculos, zanahoria cerca (4 movimientos)
+- ✅ Nivel 2: 4x4, 1 obstáculo simple (6 movimientos)
+- ✅ Nivel 3: 5x5, 3 obstáculos en diagonal (8 movimientos)
+- ✅ Nivel 4: 5x5, laberinto con pasillos (10 movimientos)
+- ✅ Nivel 5: 6x6, laberinto complejo (12 movimientos)
+- ✅ Temporizador visual por nivel (60-80s)
+- ✅ Barra de progreso que muestra comandos vs objetivo
+- ✅ Barra de temporizador visual con cambios de color (verde → amarillo → rojo)
+- ✅ Persistencia en localStorage (`conejo-programador-progress`)
+- ✅ Sistema de desbloqueo de niveles
+- ✅ Animaciones de movimiento del conejo
+- ✅ Modales: Nivel Completado, Tiempo Agotado, Juego Completado
+- ✅ Botón para ejecutar comandos
+- ✅ Botón para reiniciar nivel
+- ✅ Botón para limpiar comandos
+- ✅ Interacción táctil para añadir y remover comandos
+- ✅ Responsivo para móviles (375x667px)
+- ✅ UX intuitiva para niños 5-8 años
+
+**Cumplimiento de reglas de diseño (game-design-rules.md):**
+- ✅ Sección 1: Estructura de directorios correcta en `/public/games/conejo-programador/`
+- ✅ Sección 2: HTML5, CSS3, Vanilla JavaScript sin frameworks
+- ✅ Sección 2: Responsivo y optimizado para 375x667px (iPhone SE)
+- ✅ Sección 3: manifest.json válido con metadatos completos
+- ✅ Sección 4: Registrado en `public/js/games-list.json`
+- ✅ Sección 7: Sistema de niveles (5 niveles progresivos)
+- ✅ Sección 7: Barra de progreso visual funcional
+- ✅ Sección 7: Temporizador visual con cambios de color
+- ✅ Sección 7: Persistencia en localStorage
+- ✅ Sección 8: Checklist de submission completo
+
+**Archivos creados:**
+- `public/games/conejo-programador/index.html` - Página principal del juego
+- `public/games/conejo-programador/assets/game.css` - Estilos del juego
+- `public/games/conejo-programador/js/game.js` - Lógica del juego
+- `public/games/conejo-programador/manifest.json` - Metadatos del juego
+- `public/games/conejo-programador/thumbnail.svg` - Imagen de miniatura SVG
+
+**Referencias:**
+- Plan original: `games-backlog/5-8-006-conejo-programador.md`
+- Reglas de diseño: `game-design-rules.md`
+
+---
+
 ## [v1.35.0] - 2026-02-19 19:00 UTC
 
 ### ✨ Nuevo Juego Agregado

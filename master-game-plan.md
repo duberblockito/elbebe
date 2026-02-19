@@ -69,6 +69,7 @@ This document outlines the development roadmap for the 41 games currently in the
 | 003 | **Laberinto Aventura** | Guide character through maze to find keys and chests. | ✅ Done |
 | 004 | **Tour del Sistema Solar** | Interactive space tour, visit planets, learn facts, answer trivia. | ✅ Done |
 | 005 | **Maestro del Reloj** | Set analog clock to time requested by customers. | ✅ Done |
+| 006 | **Conejo Programador** | Place directional commands to guide rabbit to carrot. | ✅ Done |
 
 ## 👱 8-15 Years (Tweens/Teens)
 
@@ -90,7 +91,7 @@ This document outlines the development roadmap for the 41 games currently in the
 | 1-2 Years | 7 | 7 |
 | 2-3 Years | 6 | 6 |
 | 3-5 Years | 7 | 7 |
-| 5-8 Years | 5 | 5 |
+| 5-8 Years | 6 | 6 |
 | 8-15 Years | 5 | 5 |
 
 *Nota: `003-colores-vibran`, `003-pintura-dedos`, `003-rompecabezas`, `laberinto-aventura`, `tren-numeros`, `science-lab`, `eco-warriors`, `peek-a-boo`, `cascada-musical`, `bloques-caen`, `caritas-emociones`, `tour-sistema-solar`, `lluvia-estrellas`, `estrellas-brillantes`, `music-master`, `dedos-magicos`, `apila-animales`, `cochecito-colores`, `pequeno-jardinero`, `patitas-caminan`, `maestro-reloj`, `viste-clima` y `formas-rebotan` completados y validados*

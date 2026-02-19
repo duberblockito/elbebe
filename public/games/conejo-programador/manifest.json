@@ -1,0 +1,10 @@
+{
+  "id": "conejo-programador",
+  "title": "Conejo Programador",
+  "description": "¡Ayuda al conejo a encontrar la zanahoria usando comandos de programación! Aprende lógica y secuencias de una forma divertida.",
+  "category": "logic",
+  "author": "El Bebe Games",
+  "version": "1.0.0",
+  "thumbnail": "thumbnail.svg",
+  "recommended_age": "5-8"
+}
