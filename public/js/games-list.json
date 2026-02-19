@@ -720,6 +720,28 @@
         "acceleration",
         "sensory"
       ]
+    },
+    {
+      "id": "carros-vamos",
+      "title": "Los Carros Vamos",
+      "title_en": "Cars Go Vroom",
+      "description": "Vehicles move slowly. Touch to make them zoom off screen. Count passed vehicles. Incluye 5 niveles progresivos con tráfico infinito, contador y persistencia en localStorage.",
+      "description_en": "Vehicles move slowly. Touch to make them zoom off screen. Count passed vehicles. Includes 5 progressive levels with infinite traffic, counter, and localStorage persistence.",
+      "category": "vehicles",
+      "author": "Elbebe Games",
+      "version": "1.0.0",
+      "thumbnail": "thumbnail.svg",
+      "recommended_age": "2-3",
+      "tags": [
+        "touch",
+        "vehicles",
+        "sounds",
+        "levels",
+        "timer",
+        "progress",
+        "counting",
+        "reflex"
+      ]
     }
   ]
 }

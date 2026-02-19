@@ -35,7 +35,7 @@ La estrategia de desarrollo sigue un ciclo "Round Robin" entre las categorías d
 | :--- | :---: | :---: |
 | 0-1 Años | 8 | 8 |
 | 1-2 Años | 6 | 6 |
-| 2-3 Años | 5 | 5 |
+| 2-3 Años | 6 | 6 |
 | 3-5 Años | 5 | 5 |
 | 5-8 Años | 5 | 5 |
 | 8-15 Años | 5 | 5 |
@@ -81,6 +81,7 @@ Basado en la regla de equilibrio, este es el orden inmediato de desarrollo:
 31. **[Done ✅]** **0-1 Años**: `patitas-caminan` (Patitas que Caminan) - IMPLEMENTADO
 32. **[Done ✅]** **5-8 Años**: `maestro-reloj` (Maestro del Reloj) - IMPLEMENTADO
 33. **[Done ✅]** **1-2 Años**: `camiones-corren` (Camiones que Corren) - IMPLEMENTADO
+34. **[Done ✅]** **2-3 Años**: `2-3-006-carros-vamos` (Los Carros Vamos) - IMPLEMENTADO
 
 ---
 
@@ -213,7 +214,7 @@ Ver `/QA-REPORT-004-rompecabezas.md` para detalles completos de la validación Q
 ## 📊 Estado Actual del Proyecto
 
 **Total juegos planificados:** 41
-**Total juegos terminados:** 18/41 (43.9%)
+**Total juegos terminados:** 19/41 (46.3%)
 
 **Estado actual del sistema:**
 - ✅ Bugs: 0 bugs pendientes - ✅ TODOS RESUELTOS

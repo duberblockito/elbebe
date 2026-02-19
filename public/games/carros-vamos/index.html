@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Los Carros Vamos - El Bebe Games</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="assets/game.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- HUD -->
+        <div id="hud">
+            <div class="hud-top">
+                <div class="hud-left">
+                    <span class="hud-label">Nivel</span>
+                    <span id="level" class="hud-value">1</span>
+                </div>
+                <div class="hud-center">
+                    <span class="hud-label">Carros</span>
+                    <span id="score" class="hud-value">0</span>
+                    <span class="hud-divider">/</span>
+                    <span id="target" class="hud-value">15</span>
+                </div>
+            </div>
+
+            <!-- Progress Bar -->
+            <div id="progress-container">
+                <div id="progress-bar"></div>
+                <div id="progress-text">0 / 15</div>
+            </div>
+
+            <!-- Timer Bar -->
+            <div id="timer-container">
+                <div id="timer-bar"></div>
+                <div id="timer-text">60s</div>
+            </div>
+        </div>
+
+        <!-- Game Area -->
+        <div id="game-area">
+            <div id="road"></div>
+            <div id="vehicles"></div>
+        </div>
+    </div>
+
+    <!-- Modal: Nivel Completado -->
+    <div id="modal-level-complete" class="modal hidden">
+        <div class="modal-content">
+            <h2>🎉 ¡Nivel Completado!</h2>
+            <p>Hiciste pasar <span id="final-score">0</span> carros</p>
+            <button id="btn-next-level" class="btn btn-primary">Siguiente Nivel</button>
+        </div>
+    </div>
+
+    <!-- Modal: Tiempo Agotado -->
+    <div id="modal-time-up" class="modal hidden">
+        <div class="modal-content">
+            <h2>⏰ ¡Tiempo Agotado!</h2>
+            <p>Lo intentaste bien. ¡Inténtalo de nuevo!</p>
+            <button id="btn-retry-level" class="btn btn-primary">Intentar de Nuevo</button>
+        </div>
+    </div>
+
+    <!-- Modal: Juego Completado -->
+    <div id="modal-game-complete" class="modal hidden">
+        <div class="modal-content">
+            <h2>🏆 ¡Felicidades!</h2>
+            <p>¡Completaste todos los niveles!</p>
+            <p>Hiciste pasar <span id="total-score">0</span> carros en total</p>
+            <button id="btn-play-again" class="btn btn-primary">Jugar de Nuevo</button>
+        </div>
+    </div>
+
+    <script src="js/game.js"></script>
+</body>
+</html>

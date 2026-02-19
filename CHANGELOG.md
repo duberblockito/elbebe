@@ -2,6 +2,54 @@
 
 ---
 
+## [v1.31.0] - 2026-02-19 17:08 UTC
+
+### ✨ Nuevo Juego Agregado
+
+**Juego:** Los Carros Vamos
+**Categoría:** 2-3 Años (Preschoolers)
+**ID:** 2-3-006
+
+**Descripción:**
+Vehículos que se mueven lentamente por la pantalla. Toca los carros para hacerlos acelerar y salir de la pantalla con un sonido de motor. Cuenta cuántos vehículos pasaron. Incluye 5 niveles progresivos con tráfico infinito, contador y persistencia en localStorage. Diseñado para niños de 2-3 años que exploran causa y efecto con vehículos.
+
+**Características implementadas:**
+- ✅ Sistema de 5 niveles progresivos (15, 20, 25, 30, 35 vehículos por nivel)
+- ✅ Dificultad progresiva: más vehículos, tiempo reducido (60s → 35s), velocidad incrementada (1.0x → 1.8x), spawn interval ajustado (2500ms → 1500ms)
+- ✅ Temporizador por nivel (60s → 35s progresivo)
+- ✅ Barra de progreso visual mostrando carros tocados vs objetivo
+- ✅ Barra de temporizador visual con cambios de color (verde → amarillo → rojo)
+- ✅ HUD (Heads Up Display) con nivel actual, carros tocados, objetivo
+- ✅ Persistencia en localStorage (`carros-vamos-progress`)
+- ✅ 5 colores de vehículos (rojo, azul, amarillo, verde, púrpura)
+- ✅ Efecto de aceleración al tocar vehículos (zoom animation + scale 1.2)
+- ✅ Sistema de audio con Web Audio API (sonido "vroom" con sawtooth oscillator)
+- ✅ Movimiento de vehículos desde izquierda hacia derecha
+- ✅ Posición Y aleatoria para cada vehículo
+- ✅ Modales: Nivel Completado, Tiempo Agotado, Juego Completado
+- ✅ Responsivo para móviles (375x667px)
+
+**Cumplimiento de reglas de diseño (game-design-rules.md):**
+- ✅ Sección 1: Estructura de directorios correcta
+- ✅ Sección 2: HTML5, CSS3, Vanilla JavaScript sin frameworks
+- ✅ Sección 2: Responsivo y optimizado para 375x667px (iPhone SE)
+- ✅ Sección 3: manifest.json válido con metadatos completos
+- ✅ Sección 4: Registrado en `public/js/games-list.json`
+- ✅ Sección 7: Sistema de niveles (5 niveles, 35-60s por nivel)
+- ✅ Sección 7: Barra de progreso visual (carros / objetivo)
+- ✅ Sección 7: Barra de temporizador visual con cambios de color
+- ✅ Sección 7: Persistencia en localStorage
+- ✅ Sección 8: Checklist de submission completo
+
+**Archivos creados:**
+- `public/games/carros-vamos/index.html` - Página principal del juego
+- `public/games/carros-vamos/assets/game.css` - Estilos del juego
+- `public/games/carros-vamos/js/game.js` - Lógica del juego
+- `public/games/carros-vamos/manifest.json` - Metadatos
+- `public/games/carros-vamos/thumbnail.svg` - Imagen de preview (SVG)
+
+---
+
 ## [v1.30.0] - 2026-02-19 16:40 UTC
 
 ### ✨ Nuevo Juego Agregado

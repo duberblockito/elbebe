@@ -44,6 +44,7 @@ This document outlines the development roadmap for the 41 games currently in the
 | 003 | **Rompecabezas Simple** | Animal puzzle pieces. | ✅ Done |
 | 004 | **Los Bloques Caen** | Catch falling shapes. | ✅ Done |
 | 005 | **Apila los Animales** | Stack animals to build tower. | ✅ Done |
+| 006 | **Los Carros Vamos** | Vehicles move slowly. Touch to make them zoom off screen. | ✅ Done |
 
 ## 🧒 3-5 Years (Preschoolers)
 
@@ -83,7 +84,7 @@ This document outlines the development roadmap for the 41 games currently in the
 |-----------|---------:|--------:|
 | 0-1 Years | 8 | 8 |
 | 1-2 Years | 6 | 6 |
-| 2-3 Years | 5 | 5 |
+| 2-3 Years | 6 | 6 |
 | 3-5 Years | 5 | 5 |
 | 5-8 Years | 5 | 5 |
 | 8-15 Years | 5 | 5 |

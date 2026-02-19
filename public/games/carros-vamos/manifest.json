@@ -1,0 +1,10 @@
+{
+  "id": "carros-vamos",
+  "title": "Los Carros Vamos",
+  "description": "Vehicles move slowly. Touch to make them zoom off screen. Count passed vehicles.",
+  "category": "action",
+  "author": "Elbebe Games",
+  "version": "1.0.0",
+  "thumbnail": "thumbnail.svg",
+  "recommended_age": "2-3"
+}
