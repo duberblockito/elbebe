@@ -2,6 +2,33 @@
 
 ---
 
+## [v1.13.1] - 2026-02-19 03:40 UTC (Bogotá)
+
+### 🐛 Bug Fix
+
+**Bug ID:** BUG-013 - Carpeta malformada en science-lab (corrección de documentación)
+**Severidad:** MEDIA
+**Estado:** ✅ Fixed
+
+**Descripción del bug:**
+El implementador corrigió correctamente BUG-013 (carpeta malformada en science-lab), pero NO actualizó los archivos de documentación requeridos por las reglas del README.
+
+**Correcciones implementadas:**
+- ✅ CHANGELOG.md actualizado con entrada de BUG-013
+- ✅ development-queue.md actualizado: science-lab cambiado de [BLOCKED 🔴] a [READY ✅]
+- ✅ master-game-plan.md revisado (no requiere actualización para bugs)
+- ✅ games-list.json estaba correctamente actualizado (sin cambios necesarios)
+
+**Archivos actualizados:**
+- `CHANGELOG.md` - Agregada entrada v1.13.1
+- `development-queue.md` - science-lab: [BLOCKED 🔴] → [READY ✅]
+
+**Referencia:**
+- Bug report: `/bugs/20260219-BUG-014-implementador-no-actualizo-documentacion-bug013.md`
+- Original fix: `fix/BUG-013-science-lab-carpeta-malformada`
+
+---
+
 ## [v1.13.0] - 2026-02-18 19:43 UTC (Bogotá)
 
 ### ✨ Nuevo Juego Implementado

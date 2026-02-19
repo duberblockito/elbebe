@@ -64,7 +64,7 @@ Basado en la regla de equilibrio, este es el orden inmediato de desarrollo:
 14. **[Done ✅ QA Validado]** **2-3 Años**: `003-rompecabezas` (Rompecabezas Simple) - IMPLEMENTADO - QA APROBADO
 15. **[Blocked 🔴 BUG-009]** **3-5 Años**: `003-tren-numeros` (Tren de Números) - IMPLEMENTADO - PENDIENTE CORRECCIÓN QA
 16. **[Blocked 🔴 BUG-008]** **5-8 Años**: `003-laberinto-aventura` (Laberinto Aventura) - IMPLEMENTADO - PENDIENTE CORRECCIÓN QA
-17. **[BLOCKED 🔴]** **8-15 Años**: `003-science-lab` (Science Lab) - BLOQUEADO - Resolver bugs primero
+17. **[READY ✅]** **8-15 Años**: `003-science-lab` (Science Lab) - Listo para QA y testing
 
 ---
 
