@@ -1,0 +1,10 @@
+{
+  "id": "caritas-emociones",
+  "title": "Caritas y Emociones",
+  "description": "Elige la expresión facial correcta para cada historia emocional. Aprende a identificar emociones de manera divertida.",
+  "category": "educational",
+  "author": "El Bebe Games",
+  "version": "1.0.0",
+  "thumbnail": "thumbnail.svg",
+  "recommended_age": "3-5"
+}

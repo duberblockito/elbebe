@@ -1,5 +1,5 @@
 {
-  "version": "1.17.0",
+  "version": "1.18.0",
   "lastUpdated": "2026-02-19",
   "games": [
     {
@@ -343,6 +343,27 @@
         "progress",
         "math",
         "educational"
+      ]
+    },
+    {
+      "id": "caritas-emociones",
+      "title": "Caritas y Emociones",
+      "title_en": "Faces and Emotions",
+      "description": "Elige la expresi\u00f3n facial correcta para cada historia emocional. Aprende a identificar emociones de manera divertida con 5 niveles progresivos, barra de progreso y sistema de feedback.",
+      "description_en": "Choose the correct facial expression for each emotional story. Learn to identify emotions in a fun way with 5 progressive levels, progress bar, and feedback system.",
+      "category": "educational",
+      "author": "El Bebe Games",
+      "version": "1.0.0",
+      "thumbnail": "thumbnail.svg",
+      "recommended_age": "3-5",
+      "tags": [
+        "emotions",
+        "touch",
+        "educational",
+        "levels",
+        "progress",
+        "stories",
+        "social-emotional"
       ]
     },
     {

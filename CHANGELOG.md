@@ -2,6 +2,61 @@
 
 ---
 
+## [v1.18.0] - 2026-02-19 05:40 UTC (Bogotá)
+
+### ✨ Nuevo Juego Implementado
+
+**Juego:** caritas-emociones (Caritas y Emociones)
+**Categoría:** 3-5 Años (Preschoolers)
+**Fuente del plan:** Idea #4 de `/games-backlog/3-5-004-caritas-emociones.md`
+
+**Descripción:**
+¡Elige la expresión facial correcta para cada historia emocional! Aprende a identificar emociones de manera divertida con 5 niveles progresivos, barra de progreso y sistema de feedback. Diseñado para niños de 3-5 años que desarrollan inteligencia emocional y empatía.
+
+**Características implementadas:**
+- ✅ Sistema de 5 niveles progresivos (3, 3, 4, 4, 5 historias por nivel)
+- ✅ 4 emociones base: Feliz (😊), Triste (😢), Enojado (😠), Sorprendido (😲)
+- ✅ Barra de progreso visual mostrando respuestas correctas vs objetivo
+- ✅ Base de datos de 30 historias emocionales variadas
+- ✅ Selección aleatoria de historias para cada nivel
+- ✅ Feedback visual y textual para cada respuesta (correcta/incorrecta)
+- ✅ Modales: Nivel Completado, Juego Completado
+- ✅ Sistema de puntuación total acumulada
+- ✅ Diseño responsivo optimizado para móvil (375x667px base para iPhone SE)
+- ✅ Touch events completos para dispositivos móviles
+- ✅ Animaciones suaves: float, bounce, pulse, shake
+- ✅ Historias variadas: situaciones cotidianas con emociones claras
+- ✅ Emojis como caritas faciales (visual atractivo para niños)
+- ✅ Contador de respuestas correctas por nivel
+- ✅ Total de respuestas correctas al final del juego
+- ✅ Botón de "Jugar de Nuevo" y "Volver al Inicio"
+- ✅ Niveles progresivos: más historias y mayor dificultad cognitiva
+- ✅ Feedback explicativo sobre por qué la respuesta es correcta o incorrecta
+
+**Cumplimiento de reglas de diseño (game-design-rules.md):**
+- ✅ Sección 1: Estructura de directorios correcta
+- ✅ Sección 2: HTML5, CSS3, Vanilla JavaScript sin frameworks
+- ✅ Sección 2: Responsivo y optimizado para 375x667px (iPhone SE)
+- ✅ Sección 3: manifest.json válido con metadatos completos
+- ✅ Sección 4: Registrado en `public/js/games-list.json`
+- ✅ Sección 7: Sistema de niveles (5 niveles, 3-5 historias por nivel)
+- ✅ Sección 7: Barra de progreso visual (respuestas / objetivo)
+- ✅ Sección 8: Checklist de submission completo
+
+**Archivos creados:**
+- `public/games/caritas-emociones/index.html` - Estructura HTML del juego (5.3 KB)
+- `public/games/caritas-emociones/style.css` - Estilos responsivos y animaciones (9.8 KB)
+- `public/games/caritas-emociones/js/game.js` - Lógica completa del juego (13.7 KB)
+- `public/games/caritas-emociones/thumbnail.svg` - Thumbnail SVG con 4 caritas emocionales (2.5 KB)
+
+**Progreso del proyecto:**
+- 📊 Total juegos implementados: 23/41 (56.1%)
+- 🎯 Categorías al día: 0-1 (4/4), 1-2 (4/4), 2-3 (4/4), 3-5 (4/4), 8-15 (4/4)
+- ⏳ Próxima categoría: 5-8 Años (3/4 completados)
+- ✅ Equilibrio Round Robin: Mantenido correctamente
+
+---
+
 ## [v1.17.0] - 2026-02-19 05:20 UTC (Bogotá)
 
 ### ✨ Nuevo Juego Implementado

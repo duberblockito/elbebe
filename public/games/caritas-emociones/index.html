@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caritas y Emociones | El Bebe Games</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Game Header -->
+        <header class="game-header">
+            <button class="home-btn" onclick="window.location.href='../../index.html'">🏠 Inicio</button>
+            <div class="game-title">Caritas y Emociones</div>
+            <div class="level-info">Nivel: <span id="current-level">1</span>/5</div>
+        </header>
+
+        <!-- Progress Bar -->
+        <div class="progress-bar-container">
+            <div class="progress-bar" id="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <div class="progress-text"><span id="correct-count">0</span>/<span id="target-count">3</span> correctas</div>
+        </div>
+
+        <!-- Game Content -->
+        <main class="game-main">
+            <!-- Story Section -->
+            <div class="story-section">
+                <div class="story-card">
+                    <div class="story-icon">📖</div>
+                    <div class="story-text" id="story-text">
+                        ¡Hola! Soy Leo. Ayúdame a descubrir cómo se sienten mis amigos.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question Section -->
+            <div class="question-section">
+                <div class="question-text" id="question-text">
+                    ¿Cómo se siente Ana cuando recibe un regalo sorpresa?
+                </div>
+            </div>
+
+            <!-- Emotion Options -->
+            <div class="emotions-grid">
+                <button class="emotion-btn" data-emotion="happy" onclick="selectEmotion('happy')">
+                    <div class="emotion-face">😊</div>
+                    <div class="emotion-label">Feliz</div>
+                </button>
+                <button class="emotion-btn" data-emotion="sad" onclick="selectEmotion('sad')">
+                    <div class="emotion-face">😢</div>
+                    <div class="emotion-label">Triste</div>
+                </button>
+                <button class="emotion-btn" data-emotion="angry" onclick="selectEmotion('angry')">
+                    <div class="emotion-face">😠</div>
+                    <div class="emotion-label">Enojado</div>
+                </button>
+                <button class="emotion-btn" data-emotion="surprised" onclick="selectEmotion('surprised')">
+                    <div class="emotion-face">😲</div>
+                    <div class="emotion-label">Sorprendido</div>
+                </button>
+            </div>
+        </main>
+
+        <!-- Start Screen -->
+        <div class="modal-overlay" id="start-screen">
+            <div class="modal-content start-modal">
+                <div class="modal-icon">🎭</div>
+                <h2 class="modal-title">Caritas y Emociones</h2>
+                <p class="modal-description">
+                    ¡Aprende a identificar emociones! Lee cada historia y elige la carita que mejor describa cómo se siente el personaje.
+                </p>
+                <button class="primary-btn" onclick="startGame()">¡Jugar!</button>
+            </div>
+        </div>
+
+        <!-- Level Complete Modal -->
+        <div class="modal-overlay" id="level-complete">
+            <div class="modal-content">
+                <div class="modal-icon">🎉</div>
+                <h2 class="modal-title">¡Muy Bien!</h2>
+                <p class="modal-description" id="level-complete-text">
+                    Completaste el nivel 1
+                </p>
+                <button class="primary-btn" onclick="nextLevel()">Siguiente Nivel</button>
+            </div>
+        </div>
+
+        <!-- Game Complete Modal -->
+        <div class="modal-overlay" id="game-complete">
+            <div class="modal-content">
+                <div class="modal-icon">🏆</div>
+                <h2 class="modal-title">¡Felicidades!</h2>
+                <p class="modal-description">
+                    ¡Has completado todos los niveles! Eres un experto en emociones.
+                </p>
+                <div class="final-score">
+                    <div class="score-label">Total Correctas:</div>
+                    <div class="score-value" id="final-score">15</div>
+                </div>
+                <button class="primary-btn" onclick="restartGame()">Jugar de Nuevo</button>
+                <button class="secondary-btn" onclick="window.location.href='../../index.html'">Volver al Inicio</button>
+            </div>
+        </div>
+
+        <!-- Feedback Modal -->
+        <div class="modal-overlay" id="feedback-modal">
+            <div class="modal-content feedback-modal">
+                <div class="feedback-icon" id="feedback-icon">✅</div>
+                <h2 class="feedback-title" id="feedback-title">¡Correcto!</h2>
+                <p class="feedback-text" id="feedback-text">
+                    ¡Muy bien! Ana está feliz por el regalo.
+                </p>
+                <button class="primary-btn" onclick="closeFeedback()">Continuar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/game.js"></script>
+</body>
+</html>
