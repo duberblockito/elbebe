@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Frutas que Caen - El Bebe Games</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- Start Screen -->
+        <div id="start-screen" class="screen">
+            <h1>🍎 Frutas que Caen 🍊</h1>
+            <p>¡Toca las frutas para explotarlas!</p>
+            <div id="level-indicator" class="level-info"></div>
+            <button id="start-btn" class="btn-primary">Jugar</button>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="game-screen" class="screen hidden">
+            <!-- HUD -->
+            <div class="hud">
+                <div class="hud-section">
+                    <span class="hud-label">Nivel:</span>
+                    <span id="level-display" class="hud-value">1</span>
+                </div>
+                <div class="hud-section">
+                    <span class="hud-label">Frutas:</span>
+                    <span id="fruits-display" class="hud-value">0 / 10</span>
+                </div>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-label">Progreso</div>
+                <div class="progress-bar">
+                    <div id="progress-fill" class="progress-fill"></div>
+                </div>
+            </div>
+
+            <!-- Timer Bar -->
+            <div class="timer-container">
+                <div class="timer-label">Tiempo</div>
+                <div class="timer-bar">
+                    <div id="timer-fill" class="timer-fill"></div>
+                </div>
+                <div id="timer-text" class="timer-text">30s</div>
+            </div>
+
+            <!-- Game Area -->
+            <div id="game-area" class="game-area"></div>
+        </div>
+
+        <!-- Level Complete Modal -->
+        <div id="level-complete-modal" class="modal hidden">
+            <div class="modal-content">
+                <h2>¡Nivel Completado! 🎉</h2>
+                <p>¡Excelente trabajo!</p>
+                <button id="next-level-btn" class="btn-primary">Siguiente Nivel</button>
+            </div>
+        </div>
+
+        <!-- Game Over Modal -->
+        <div id="game-over-modal" class="modal hidden">
+            <div class="modal-content">
+                <h2>¡Tiempo Agotado!</h2>
+                <p>¡Sigue intentando!</p>
+                <button id="retry-btn" class="btn-primary">Reintentar</button>
+            </div>
+        </div>
+
+        <!-- Game Complete Modal -->
+        <div id="game-complete-modal" class="modal hidden">
+            <div class="modal-content">
+                <h2>¡Juego Completado! 🏆</h2>
+                <p>¡Eres un experto en frutas!</p>
+                <button id="play-again-btn" class="btn-primary">Jugar de Nuevo</button>
+                <button id="back-btn" class="btn-secondary">Volver al Inicio</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/game.js"></script>
+</body>
+</html>

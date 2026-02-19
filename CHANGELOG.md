@@ -2,6 +2,54 @@
 
 ---
 
+## [v1.34.0] - 2026-02-19 18:40 UTC
+
+### ✨ Nuevo Juego Agregado
+
+**Juego:** Frutas que Caen
+**Categoría:** 1-2 Años (Toddlers)
+**ID:** 1-2-007
+
+**Descripción:**
+¡Frutas coloridas caen del cielo! Toca las frutas para explotarlas con efecto de jugo y sonidos divertidos. Juego arcade de reflejos con 5 niveles progresivos, barra de progreso y temporizador visual. Diseñado para niños de 1-2 años que desarrollan coordinación motora y reconocimiento de frutas.
+
+**Características implementadas:**
+- ✅ Sistema de 5 niveles progresivos (10, 15, 20, 25, 30 frutas por nivel)
+- ✅ 8 tipos de frutas diferentes (manzana, naranja, limón, uva, fresa, durazno, pera, cereza)
+- ✅ Física de caída con velocidades progresivas (2 → 4 px/frame)
+- ✅ Tasa de aparición progresiva (1500ms → 800ms)
+- ✅ Efecto de partículas de jugo al explotar frutas
+- ✅ Animación de balanceo suave de las frutas
+- ✅ Sistema de audio con Web Audio API (sonidos de pop, nivel completado, game over)
+- ✅ Temporizador por nivel (30s → 70s progresivo)
+- ✅ Barra de progreso visual mostrando frutas explotadas vs objetivo
+- ✅ Barra de temporizador visual con cambios de color (verde → amarillo → rojo)
+- ✅ HUD (Heads Up Display) con nivel actual, frutas, objetivo
+- ✅ Persistencia en localStorage (`frutas-caen-progress`)
+- ✅ Modales: Nivel Completado, Tiempo Agotado, Juego Completado
+- ✅ Responsivo para móviles (375x667px)
+
+**Cumplimiento de reglas de diseño (game-design-rules.md):**
+- ✅ Sección 1: Estructura de directorios correcta en `/public/games/`
+- ✅ Sección 2: HTML5, CSS3, Vanilla JavaScript sin frameworks
+- ✅ Sección 2: Responsivo y optimizado para 375x667px (iPhone SE)
+- ✅ Sección 3: manifest.json válido con metadatos completos
+- ✅ Sección 4: Registrado en `public/js/games-list.json`
+- ✅ Sección 7: Sistema de niveles (5 niveles, 30-70s por nivel)
+- ✅ Sección 7: Barra de progreso visual (frutas / objetivo)
+- ✅ Sección 7: Barra de temporizador visual con cambios de color
+- ✅ Sección 7: Persistencia en localStorage
+- ✅ Sección 8: Checklist de submission completo
+
+**Archivos creados:**
+- `public/games/frutas-caen/index.html` - Página principal del juego
+- `public/games/frutas-caen/css/style.css` - Estilos del juego
+- `public/games/frutas-caen/js/game.js` - Lógica del juego
+- `public/games/frutas-caen/manifest.json` - Metadatos del juego
+- `public/games/frutas-caen/thumbnail.svg` - Miniatura del juego
+
+---
+
 ## [v1.33.0] - 2026-02-19 17:40 UTC
 
 ### ✨ Nuevo Juego Agregado

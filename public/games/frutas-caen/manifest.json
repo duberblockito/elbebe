@@ -1,0 +1,12 @@
+{
+  "id": "frutas-caen",
+  "title": "Frutas que Caen",
+  "title_en": "Falling Fruits",
+  "description": "¡Frutas coloridas caen del cielo! Toca las frutas para explotarlas con efecto de jugo y sonidos divertidos. Incluye 5 niveles progresivos, barra de progreso y temporizador visual.",
+  "description_en": "Colorful fruits fall from the sky! Touch fruits to explode them with juice effects and fun sounds. Includes 5 progressive levels, progress bar, and visual timer.",
+  "category": "arcade",
+  "author": "El Bebe Games",
+  "version": "1.0.0",
+  "thumbnail": "thumbnail.svg",
+  "recommended_age": "1-2"
+}

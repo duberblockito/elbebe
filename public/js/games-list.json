@@ -1,5 +1,5 @@
 {
-  "version": "1.32.0",
+  "version": "1.34.0",
   "lastUpdated": "2026-02-19",
   "games": [
     {
@@ -309,7 +309,7 @@
       "description": "Toca las puertas para descubrir animales escondidos. Un juego de exploración con 5 niveles progresivos, temporizador y sistema de puntuación.",
       "description_en": "Touch the doors to discover hidden animals. An exploration game with 5 progressive levels, timer, and scoring system.",
       "category": "sensory",
-      "author": "Elbebe Games",
+      "author": "El Bebe Games",
       "version": "1.0.0",
       "thumbnail": "thumbnail.svg",
       "recommended_age": "0-1",
@@ -620,7 +620,7 @@
       "description": "¡Apila animales para construir una torre alta! Toca el animal para agregarlo a la torre. Incluye 5 niveles progresivos, barra de progreso visual y temporizador.",
       "description_en": "Stack animals to build a tall tower! Touch the animal to add it to the tower. Includes 5 progressive levels, visual progress bar, and timer.",
       "category": "stacking",
-      "author": "Elbebe Games",
+      "author": "El Bebe Games",
       "version": "1.0.0",
       "thumbnail": "thumbnail.svg",
       "recommended_age": "2-3",
@@ -683,7 +683,7 @@
       "description": "Ajusta un reloj analógico a la hora solicitada por los clientes. Aprende a leer la hora con 5 niveles progresivos de dificultad (hora exacta, media hora, cuarto de hora), barra de progreso y temporizador visual.",
       "description_en": "Set analog clock to time requested by customers. Learn to tell time with 5 progressive difficulty levels (exact hour, half hour, quarter hour), progress bar, and visual timer.",
       "category": "educational",
-      "author": "Elbebe Games",
+      "author": "El Bebe Games",
       "version": "1.0.0",
       "thumbnail": "thumbnail.svg",
       "recommended_age": "5-8",
@@ -728,7 +728,7 @@
       "description": "Vehicles move slowly. Touch to make them zoom off screen. Count passed vehicles. Incluye 5 niveles progresivos con tráfico infinito, contador y persistencia en localStorage.",
       "description_en": "Vehicles move slowly. Touch to make them zoom off screen. Count passed vehicles. Includes 5 progressive levels with infinite traffic, counter, and localStorage persistence.",
       "category": "vehicles",
-      "author": "Elbebe Games",
+      "author": "El Bebe Games",
       "version": "1.0.0",
       "thumbnail": "thumbnail.svg",
       "recommended_age": "2-3",
@@ -750,7 +750,7 @@
       "description": "Mira el clima por la ventana y elige la ropa correcta para el personaje. Incluye 5 días con diferentes climas (sol, lluvia, nieve), barra de progreso y temporizador visual.",
       "description_en": "Look at the weather through the window and choose the correct clothes for the character. Includes 5 days with different weathers (sun, rain, snow), progress bar, and visual timer.",
       "category": "educational",
-      "author": "Elbebe Games",
+      "author": "El Bebe Games",
       "version": "1.0.0",
       "thumbnail": "thumbnail.svg",
       "recommended_age": "3-5",
@@ -785,6 +785,28 @@
         "levels",
         "timer",
         "progress"
+      ]
+    },
+    {
+      "id": "frutas-caen",
+      "title": "Frutas que Caen",
+      "title_en": "Falling Fruits",
+      "description": "¡Frutas coloridas caen del cielo! Toca las frutas para explotarlas con efecto de jugo y sonidos divertidos. Incluye 5 niveles progresivos, barra de progreso y temporizador visual.",
+      "description_en": "Colorful fruits fall from the sky! Touch fruits to explode them with juice effects and fun sounds. Includes 5 progressive levels, progress bar, and visual timer.",
+      "category": "arcade",
+      "author": "El Bebe Games",
+      "version": "1.0.0",
+      "thumbnail": "thumbnail.svg",
+      "recommended_age": "1-2",
+      "tags": [
+        "touch",
+        "fruits",
+        "reflex",
+        "levels",
+        "timer",
+        "progress",
+        "arcade",
+        "particles"
       ]
     }
   ]
