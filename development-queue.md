@@ -34,7 +34,7 @@ La estrategia de desarrollo sigue un ciclo "Round Robin" entre las categorías d
 | Categoría | Terminados | Meta Actual |
 | :--- | :---: | :---: |
 | 0-1 Años | 10 | 10 |
-| 1-2 Años | 7 | 7 |
+| 1-2 Años | 8 | 8 |
 | 2-3 Años | 7 | 7 |
 | 3-5 Años | 7 | 7 |
 | 5-8 Años | 7 | 7 |
@@ -84,6 +84,7 @@ Basado en la regla de equilibrio, este es el orden inmediato de desarrollo:
 34. **[Done ✅]** **2-3 Años**: `2-3-006-carros-vamos` (Los Carros Vamos) - IMPLEMENTADO
 35. **[Done ✅]** **3-5 Años**: `3-5-007-heroe-reciclaje` (Héroe del Reciclaje) - IMPLEMENTADO
 36. **[Done ✅]** **1-2 Años**: `1-2-007-frutas-caen` (Frutas que Caen) - IMPLEMENTADO
+43. **[Done ✅]** **1-2 Años**: `1-2-008-mirror-caritas` (Mirror de Caritas) - IMPLEMENTADO
 37. **[Done ✅]** **0-1 Años**: `0-1-009-formas-rebotan` (Formas que Rebotan) - IMPLEMENTADO
 38. **[Done ✅]** **5-8 Años**: `5-8-006-conejo-programador` (Conejo Programador) - IMPLEMENTADO
 39. **[Done ✅]** **8-15 Años**: `space-explorer` (Space Explorer: Galaxy Mission) - IMPLEMENTADO

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Mirror de Caritas | El Bebe Games</title>
+    <link rel="stylesheet" href="assets/game.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- HUD - Heads Up Display -->
+        <div class="hud">
+            <div class="hud-item">
+                <span class="hud-label">Nivel:</span>
+                <span id="level-display">1</span>
+            </div>
+            <div class="hud-item">
+                <span class="hud-label">Progreso:</span>
+                <div class="progress-bar-container">
+                    <div id="progress-bar" class="progress-bar"></div>
+                </div>
+            </div>
+            <div class="hud-item">
+                <span class="hud-label">Tiempo:</span>
+                <span id="timer-display">60</span>s
+            </div>
+        </div>
+
+        <!-- Game Area -->
+        <div class="game-area">
+            <div id="emotion-container" class="emotion-container">
+                <div class="face-display">
+                    <svg id="face-svg" viewBox="0 0 200 200" class="face">
+                        <!-- Happy Face -->
+                        <g id="face-happy" class="face-group">
+                            <circle cx="100" cy="100" r="80" fill="#FFD93D" />
+                            <circle cx="70" cy="80" r="12" fill="#333" />
+                            <circle cx="130" cy="80" r="12" fill="#333" />
+                            <path d="M 60 120 Q 100 160 140 120" stroke="#333" stroke-width="8" fill="none" stroke-linecap="round" />
+                        </g>
+
+                        <!-- Sad Face -->
+                        <g id="face-sad" class="face-group" style="display: none;">
+                            <circle cx="100" cy="100" r="80" fill="#87CEEB" />
+                            <circle cx="70" cy="85" r="8" fill="#333" />
+                            <circle cx="130" cy="85" r="8" fill="#333" />
+                            <path d="M 70 90 Q 70 75 60 75" stroke="#333" stroke-width="3" fill="none" />
+                            <path d="M 130 90 Q 130 75 140 75" stroke="#333" stroke-width="3" fill="none" />
+                            <path d="M 60 140 Q 100 100 140 140" stroke="#333" stroke-width="8" fill="none" stroke-linecap="round" />
+                        </g>
+
+                        <!-- Angry Face -->
+                        <g id="face-angry" class="face-group" style="display: none;">
+                            <circle cx="100" cy="100" r="80" fill="#FF6B6B" />
+                            <path d="M 55 70 L 85 85" stroke="#333" stroke-width="6" fill="none" stroke-linecap="round" />
+                            <path d="M 145 70 L 115 85" stroke="#333" stroke-width="6" fill="none" stroke-linecap="round" />
+                            <circle cx="75" cy="90" r="10" fill="#333" />
+                            <circle cx="125" cy="90" r="10" fill="#333" />
+                            <path d="M 70 135 Q 100 145 130 135" stroke="#333" stroke-width="8" fill="none" stroke-linecap="round" />
+                        </g>
+
+                        <!-- Surprised Face -->
+                        <g id="face-surprised" class="face-group" style="display: none;">
+                            <circle cx="100" cy="100" r="80" fill="#DDA0DD" />
+                            <ellipse cx="70" cy="85" rx="15" ry="20" fill="#333" />
+                            <ellipse cx="130" cy="85" rx="15" ry="20" fill="#333" />
+                            <ellipse cx="100" cy="140" rx="20" ry="25" fill="#333" />
+                        </g>
+
+                        <!-- Calm Face -->
+                        <g id="face-calm" class="face-group" style="display: none;">
+                            <circle cx="100" cy="100" r="80" fill="#90EE90" />
+                            <path d="M 60 75 L 80 75 L 60 85 Z" stroke="#333" stroke-width="4" fill="#333" />
+                            <path d="M 140 75 L 120 75 L 140 85 Z" stroke="#333" stroke-width="4" fill="#333" />
+                            <line x1="70" y1="95" x2="70" y2="105" stroke="#333" stroke-width="3" />
+                            <line x1="130" y1="95" x2="130" y2="105" stroke="#333" stroke-width="3" />
+                            <path d="M 75 130 Q 100 120 125 130" stroke="#333" stroke-width="6" fill="none" stroke-linecap="round" />
+                        </g>
+                    </svg>
+                </div>
+
+                <h2 id="emotion-name" class="emotion-name">Feliz 😊</h2>
+
+                <button id="next-btn" class="btn-next">Siguiente Emoción ➡️</button>
+            </div>
+        </div>
+
+        <!-- Modals -->
+        <div id="level-complete-modal" class="modal">
+            <div class="modal-content">
+                <h2>¡Nivel Completado! 🎉</h2>
+                <p>¡Excelente trabajo!</p>
+                <p id="level-stats">Exploraste todas las emociones</p>
+                <button id="next-level-btn" class="btn">Siguiente Nivel</button>
+            </div>
+        </div>
+
+        <div id="game-complete-modal" class="modal">
+            <div class="modal-content">
+                <h2>¡Juego Completado! 🏆</h2>
+                <p>¡Eres un experto en emociones!</p>
+                <p id="final-stats">Completaste 5 niveles</p>
+                <button onclick="location.href='../../index.html'" class="btn">Volver al Inicio</button>
+            </div>
+        </div>
+
+        <div id="time-up-modal" class="modal">
+            <div class="modal-content">
+                <h2>¡Tiempo Agotado! ⏰</h2>
+                <p>¡Inténtalo de nuevo!</p>
+                <button id="retry-btn" class="btn">Intentar de Nuevo</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/game.js"></script>
+</body>
+</html>

@@ -38,6 +38,7 @@ This document outlines the development roadmap for the 41 games currently in the
 | 005 | **Estrellas Brillantes** | Stars twinkle and explode with magic. | ✅ Done |
 | 006 | **Camiones que Corren** | Vehicles crossing, touch to accelerate. | ✅ Done |
 | 007 | **Frutas que Caen** | Falling fruits with juice explosion effects. | ✅ Done |
+| 008 | **Mirror de Caritas** | Interactive emotions book with animated faces. | ✅ Done |
 
 ## 👦 2-3 Years (Preschoolers)
 

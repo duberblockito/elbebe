@@ -1,5 +1,5 @@
 {
-  "version": "1.40.0",
+  "version": "1.41.0",
   "lastUpdated": "2026-02-19",
   "games": [
     {
@@ -195,6 +195,27 @@
         "levels",
         "timer",
         "progress"
+      ]
+    },
+    {
+      "id": "1-2-008-mirror-caritas",
+      "title": "Mirror de Caritas",
+      "title_en": "Emotion Mirror",
+      "description": "Libro interactivo de emociones. Toca las caritas para ver animaciones y escuchar el nombre de cada emoción. Incluye 5 niveles progresivos con emociones básicas para niños de 1-2 años.",
+      "description_en": "Interactive emotions book. Touch faces to see animations and hear emotion names. Includes 5 progressive levels with basic emotions for children aged 1-2.",
+      "category": "educational",
+      "author": "El Bebe Games",
+      "version": "1.0.0",
+      "thumbnail": "thumbnail.svg",
+      "recommended_age": "1-2",
+      "tags": [
+        "touch",
+        "emotions",
+        "educational",
+        "levels",
+        "timer",
+        "progress",
+        "speech"
       ]
     },
     {

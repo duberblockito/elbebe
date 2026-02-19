@@ -2,6 +2,60 @@
 
 ---
 
+## [v1.41.0] - 2026-02-19 22:40 UTC
+
+### 🎮 Nuevo Juego - 1-2 Años
+
+**Juego:** Mirror de Caritas (Emotion Mirror)
+**ID:** 1-2-008-mirror-caritas
+**Categoría:** Educativo
+**Edad recomendada:** 1-2 años
+
+**Características:**
+- Libro interactivo de emociones con 5 caritas animadas
+- 5 niveles progresivos con diferentes emociones (Feliz, Triste, Enojado, Sorprendido, Tranquilo)
+- Temporizador visual (45s → 60s progresivo por nivel)
+- Barra de progreso mostrando emociones exploradas
+- Sonidos sintetizados y voz (Web Speech API) que dice el nombre de la emoción
+- Emojis de emociones y caritas SVG animadas
+- Swipe y tap para navegar entre emociones
+- Persistencia en localStorage (mirror-caritas-progress)
+- Modales: Nivel Completado, Juego Completo, Tiempo Agotado
+- Responsivo para móviles (375x667px)
+
+**Archivos creados:**
+- `public/games/1-2-008-mirror-caritas/index.html` - Juego completo
+- `public/games/1-2-008-mirror-caritas/assets/game.css` - Estilos
+- `public/games/1-2-008-mirror-caritas/js/game.js` - Lógica del juego
+- `public/games/1-2-008-mirror-caritas/manifest.json` - Metadatos
+- `public/games/1-2-008-mirror-caritas/thumbnail.svg` - Miniatura
+
+**Archivos actualizados:**
+- `public/js/games-list.json` - Juego registrado, versión actualizada a 1.41.0
+- `public/js/main.js` - SITE_VERSION actualizada a 1.41.0
+- `master-game-plan.md` - Juego marcado como ✅ Done
+- `development-queue.md` - Contador de 1-2 años incrementado a 8
+- `games-backlog/1-2-008-mirror-caritas.md` - Movido a `games-done/`
+
+**Cumplimiento de reglas:**
+- ✅ Implementado en `/public/games/` (directorio de deployment)
+- ✅ HTML5, CSS3, Vanilla JavaScript (sin frameworks)
+- ✅ Responsivo (funciona en 375x667 - iPhone SE)
+- ✅ 5 niveles progresivos (game-design-rules.md Sección 7)
+- ✅ Barra de progreso visual obligatoria
+- ✅ Temporizador visual con cambios de color (verde → amarillo → rojo)
+- ✅ Persistencia en localStorage implementada
+- ✅ Tiempo por nivel ajustado para mantener atención (45s-60s)
+
+**Notas:**
+- Este es el juego #43 del proyecto
+- Ahora 1-2 años tiene 8 juegos (mismo que 5-8 años)
+- El juego usa Web Speech API para pronunciar nombres de emociones
+- Caritas SVG animadas sin imágenes externas
+- Soporte para swipe y tap en móviles
+
+---
+
 ## [v1.40.0] - 2026-02-19 22:20 UTC
 
 ### 🎮 Nuevo Juego - 5-8 Años
