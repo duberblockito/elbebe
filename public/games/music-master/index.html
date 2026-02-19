@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Music Master: Rhythm Quest</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- HUD - Heads Up Display -->
+        <div id="hud">
+            <div class="hud-section">
+                <div class="hud-label">Nivel</div>
+                <div class="hud-value" id="level-display">1</div>
+            </div>
+            <div class="hud-section">
+                <div class="hud-label">Puntos</div>
+                <div class="hud-value" id="score-display">0</div>
+            </div>
+            <div class="hud-section">
+                <div class="hud-label">Estrellas</div>
+                <div class="hud-value" id="stars-display">0</div>
+            </div>
+            <div class="hud-section">
+                <div class="hud-label">Combo</div>
+                <div class="hud-value" id="combo-display">0x</div>
+            </div>
+        </div>
+
+        <!-- Game Area -->
+        <div id="game-area">
+            <!-- Note tracks -->
+            <div class="note-track" data-track="0">
+                <div class="track-target" id="target-0"></div>
+            </div>
+            <div class="note-track" data-track="1">
+                <div class="track-target" id="target-1"></div>
+            </div>
+            <div class="note-track" data-track="2">
+                <div class="track-target" id="target-2"></div>
+            </div>
+            <div class="note-track" data-track="3">
+                <div class="track-target" id="target-3"></div>
+            </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div class="progress-label">
+                <span>Progreso</span>
+                <span id="progress-text">0/20</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+        </div>
+
+        <!-- Timer -->
+        <div class="timer-container">
+            <div class="timer-label">Tiempo</div>
+            <div class="timer-bar">
+                <div class="timer-fill" id="timer-fill"></div>
+            </div>
+            <div class="timer-text" id="timer-text">60s</div>
+        </div>
+
+        <!-- Screens -->
+        <!-- Start Screen -->
+        <div id="start-screen" class="screen">
+            <div class="screen-content">
+                <h1 class="game-title">🎵 Music Master</h1>
+                <h2 class="game-subtitle">Rhythm Quest</h2>
+                <p class="game-description">¡Toca las notas en el momento exacto!</p>
+                <div class="level-info">
+                    <div class="level-detail">
+                        <span class="level-label">Nivel:</span>
+                        <span class="level-value" id="start-level">1</span>
+                    </div>
+                    <div class="level-detail">
+                        <span class="level-label">Mejor Puntuación:</span>
+                        <span class="level-value" id="best-score">0</span>
+                    </div>
+                </div>
+                <button class="btn btn-primary" id="start-btn">
+                    <span class="btn-icon">▶</span>
+                    <span class="btn-text">Comenzar</span>
+                </button>
+                <button class="btn btn-secondary" id="how-to-btn">
+                    <span class="btn-icon">?</span>
+                    <span class="btn-text">Cómo Jugar</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Level Complete Screen -->
+        <div id="level-complete-screen" class="screen hidden">
+            <div class="screen-content">
+                <h1 class="screen-title">¡Nivel Completado!</h1>
+                <div class="stars-earned" id="stars-earned">
+                    <span class="star">⭐</span>
+                    <span class="star">⭐</span>
+                    <span class="star">⭐</span>
+                </div>
+                <div class="stats-summary">
+                    <div class="stat-row">
+                        <span class="stat-label">Puntuación:</span>
+                        <span class="stat-value" id="final-score">0</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Mejor Combo:</span>
+                        <span class="stat-value" id="max-combo">0x</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Notas Aciertos:</span>
+                        <span class="stat-value" id="hits">0</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Notas Falladas:</span>
+                        <span class="stat-value" id="misses">0</span>
+                    </div>
+                </div>
+                <button class="btn btn-primary" id="next-level-btn">
+                    <span class="btn-icon">▶</span>
+                    <span class="btn-text">Siguiente Nivel</span>
+                </button>
+                <button class="btn btn-secondary" id="replay-btn">
+                    <span class="btn-icon">↺</span>
+                    <span class="btn-text">Repetir</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Time's Up Screen -->
+        <div id="times-up-screen" class="screen hidden">
+            <div class="screen-content">
+                <h1 class="screen-title">¡Tiempo Agotado!</h1>
+                <p class="screen-message">¡Inténtalo de nuevo para ganar más estrellas!</p>
+                <div class="stars-earned" id="times-up-stars">
+                    <span class="star">⭐</span>
+                    <span class="star">⭐</span>
+                    <span class="star">⭐</span>
+                </div>
+                <div class="stats-summary">
+                    <div class="stat-row">
+                        <span class="stat-label">Puntuación:</span>
+                        <span class="stat-value" id="times-up-score">0</span>
+                    </div>
+                </div>
+                <button class="btn btn-primary" id="retry-btn">
+                    <span class="btn-icon">↺</span>
+                    <span class="btn-text">Intentar de Nuevo</span>
+                </button>
+                <button class="btn btn-secondary" id="menu-btn">
+                    <span class="btn-icon">☰</span>
+                    <span class="btn-text">Menú</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Game Complete Screen -->
+        <div id="game-complete-screen" class="screen hidden">
+            <div class="screen-content">
+                <h1 class="screen-title">🎉 ¡Juego Completado!</h1>
+                <p class="screen-message">¡Has completado todos los niveles!</p>
+                <div class="stars-earned" id="game-complete-stars">
+                    <span class="star">⭐</span>
+                    <span class="star">⭐</span>
+                    <span class="star">⭐</span>
+                </div>
+                <div class="stats-summary">
+                    <div class="stat-row">
+                        <span class="stat-label">Total Estrellas:</span>
+                        <span class="stat-value" id="total-stars">0</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Mejor Puntuación:</span>
+                        <span class="stat-value" id="game-best-score">0</span>
+                    </div>
+                </div>
+                <button class="btn btn-primary" id="play-again-btn">
+                    <span class="btn-icon">▶</span>
+                    <span class="btn-text">Jugar de Nuevo</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- How to Play Screen -->
+        <div id="how-to-screen" class="screen hidden">
+            <div class="screen-content">
+                <h1 class="screen-title">Cómo Jugar</h1>
+                <div class="how-to-content">
+                    <div class="how-to-item">
+                        <span class="how-to-icon">🎵</span>
+                        <p>Las notas caen desde arriba</p>
+                    </div>
+                    <div class="how-to-item">
+                        <span class="how-to-icon">👆</span>
+                        <p>Toca cuando la nota llegue al objetivo</p>
+                    </div>
+                    <div class="how-to-item">
+                        <span class="how-to-icon">⭐</span>
+                        <p>Gana puntos y estrellas por aciertos</p>
+                    </div>
+                    <div class="how-to-item">
+                        <span class="how-to-icon">🔥</span>
+                        <p>Combos aumentan tu puntuación</p>
+                    </div>
+                    <div class="how-to-item">
+                        <span class="how-to-icon">⏱️</span>
+                        <p>Completa el nivel antes del tiempo</p>
+                    </div>
+                </div>
+                <button class="btn btn-primary" id="back-to-menu-btn">
+                    <span class="btn-icon">←</span>
+                    <span class="btn-text">Volver</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/game.js"></script>
+</body>
+</html>

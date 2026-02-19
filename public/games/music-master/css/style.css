@@ -1,0 +1,556 @@
+/* Music Master: Rhythm Quest - Styles */
+
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    overflow: hidden;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+
+#game-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* HUD - Heads Up Display */
+#hud {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.hud-section {
+    text-align: center;
+    min-width: 70px;
+}
+
+.hud-label {
+    font-size: 12px;
+    opacity: 0.8;
+    margin-bottom: 3px;
+}
+
+.hud-value {
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#combo-display {
+    color: #ffd700;
+}
+
+/* Game Area */
+#game-area {
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding: 20px 10px 40px;
+    position: relative;
+    background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.4) 100%);
+}
+
+.note-track {
+    width: 60px;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.track-target {
+    width: 100%;
+    height: 80px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3),
+                inset 0 0 20px rgba(255, 255, 255, 0.1);
+    transition: transform 0.1s;
+    z-index: 2;
+}
+
+.track-target.hit {
+    transform: scale(1.1);
+    background: linear-gradient(135deg, rgba(255,215,0,0.4), rgba(255,165,0,0.3));
+    border-color: #ffd700;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.6),
+                inset 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+.note-track:nth-child(1) .track-target {
+    border-color: #ff6b6b;
+    box-shadow: 0 0 20px rgba(255, 107, 107, 0.3);
+}
+
+.note-track:nth-child(2) .track-target {
+    border-color: #4ecdc4;
+    box-shadow: 0 0 20px rgba(78, 205, 196, 0.3);
+}
+
+.note-track:nth-child(3) .track-target {
+    border-color: #ffe66d;
+    box-shadow: 0 0 20px rgba(255, 230, 109, 0.3);
+}
+
+.note-track:nth-child(4) .track-target {
+    border-color: #95e1d3;
+    box-shadow: 0 0 20px rgba(149, 225, 211, 0.3);
+}
+
+/* Falling Notes */
+.note {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,255,255,0.7));
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    z-index: 1;
+    animation: noteFall linear;
+}
+
+.note-track:nth-child(1) .note {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a5a);
+    box-shadow: 0 0 15px rgba(255, 107, 107, 0.6);
+}
+
+.note-track:nth-child(2) .note {
+    background: linear-gradient(135deg, #4ecdc4, #3dbdb5);
+    box-shadow: 0 0 15px rgba(78, 205, 196, 0.6);
+}
+
+.note-track:nth-child(3) .note {
+    background: linear-gradient(135deg, #ffe66d, #f0d95f);
+    box-shadow: 0 0 15px rgba(255, 230, 109, 0.6);
+}
+
+.note-track:nth-child(4) .note {
+    background: linear-gradient(135deg, #95e1d3, #7ed3c4);
+    box-shadow: 0 0 15px rgba(149, 225, 211, 0.6);
+}
+
+@keyframes noteFall {
+    from {
+        transform: translateY(-60px);
+    }
+    to {
+        transform: translateY(calc(100vh - 140px));
+    }
+}
+
+/* Progress Bar */
+.progress-container {
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.progress-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.progress-bar {
+    height: 20px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #00f260, #0575e6);
+    border-radius: 8px;
+    transition: width 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 242, 96, 0.5);
+}
+
+/* Timer */
+.timer-container {
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.timer-label {
+    font-size: 14px;
+    min-width: 50px;
+}
+
+.timer-bar {
+    flex: 1;
+    height: 20px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.timer-fill {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, #00f260, #0575e6);
+    border-radius: 8px;
+    transition: width 1s linear, background 0.3s ease;
+}
+
+.timer-fill.warning {
+    background: linear-gradient(90deg, #f5af19, #f12711);
+}
+
+.timer-fill.critical {
+    background: linear-gradient(90deg, #ff0000, #990000);
+    animation: pulse 0.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+.timer-text {
+    font-size: 18px;
+    font-weight: bold;
+    min-width: 50px;
+    text-align: right;
+}
+
+/* Screens */
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.95), rgba(118, 75, 162, 0.95));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+}
+
+.screen.hidden {
+    display: none;
+}
+
+.screen-content {
+    text-align: center;
+    padding: 20px;
+    max-width: 350px;
+}
+
+.game-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.game-subtitle {
+    font-size: 24px;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.game-description {
+    font-size: 16px;
+    margin-bottom: 25px;
+    opacity: 0.8;
+}
+
+.screen-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.screen-message {
+    font-size: 16px;
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+/* Level Info */
+.level-info {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 25px;
+}
+
+.level-detail {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.level-detail:last-child {
+    margin-bottom: 0;
+}
+
+.level-label {
+    opacity: 0.8;
+}
+
+.level-value {
+    font-weight: bold;
+}
+
+/* Stars */
+.stars-earned {
+    font-size: 48px;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.star {
+    opacity: 0.2;
+    transition: all 0.5s ease;
+    filter: grayscale(100%);
+}
+
+.star.earned {
+    opacity: 1;
+    filter: grayscale(0%);
+    animation: starEarned 0.5s ease;
+}
+
+@keyframes starEarned {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Stats Summary */
+.stats-summary {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.stat-row:last-child {
+    margin-bottom: 0;
+}
+
+.stat-label {
+    opacity: 0.8;
+}
+
+.stat-value {
+    font-weight: bold;
+    color: #ffd700;
+}
+
+/* How To Play */
+.how-to-content {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.how-to-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.how-to-item:last-child {
+    margin-bottom: 0;
+}
+
+.how-to-icon {
+    font-size: 24px;
+    min-width: 40px;
+    text-align: center;
+}
+
+/* Buttons */
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-bottom: 10px;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.btn:last-child {
+    margin-bottom: 0;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.btn-icon {
+    font-size: 20px;
+}
+
+.btn-text {
+    flex: 1;
+}
+
+/* Touch Feedback */
+.touch-feedback {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,215,0,0.6), transparent);
+    pointer-events: none;
+    animation: touchFeedback 0.3s ease-out forwards;
+    z-index: 50;
+}
+
+@keyframes touchFeedback {
+    from {
+        transform: scale(0);
+        opacity: 1;
+    }
+    to {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+/* Score Popup */
+.score-popup {
+    position: absolute;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffd700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    animation: scorePopup 0.8s ease-out forwards;
+    z-index: 50;
+}
+
+@keyframes scorePopup {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+}
+
+/* Responsive */
+@media (max-width: 375px) {
+    .hud-section {
+        min-width: 60px;
+    }
+
+    .hud-value {
+        font-size: 18px;
+    }
+
+    .note-track {
+        width: 50px;
+    }
+
+    .track-target {
+        height: 70px;
+    }
+
+    .note {
+        width: 40px;
+        height: 40px;
+    }
+
+    .game-title {
+        font-size: 28px;
+    }
+
+    .screen-title {
+        font-size: 24px;
+    }
+}
+
+@media (min-width: 376px) and (max-width: 500px) {
+    .note-track {
+        width: 65px;
+    }
+
+    .track-target {
+        height: 85px;
+    }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "music-master",
+  "title": "Music Master: Rhythm Quest",
+  "title_en": "Music Master: Rhythm Quest",
+  "description": "Juego de ritmo que combina toques sincronizados con lecciones de teoría musical. ¡Sigue el ritmo y gana estrellas!",
+  "description_en": "Rhythm game combining timed taps with music theory lessons. Follow the beat and earn stars!",
+  "category": "music",
+  "author": "Blockito AI",
+  "version": "1.0.0",
+  "thumbnail": "thumbnail.jpg",
+  "recommended_age": "8-15",
+  "tags": [
+    "music",
+    "rhythm",
+    "timing",
+    "touch",
+    "levels",
+    "timer",
+    "progress",
+    "educational",
+    "stars",
+    "combo"
+  ]
+}

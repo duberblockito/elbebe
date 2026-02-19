@@ -29,6 +29,7 @@ This document outlines the development roadmap for the 41 games currently in the
 | 002 | **Animalitos que Suenan** | Animal orchestra. | ✅ Done |
 | 003 | **Pintura con los Dedos** | Finger painting with colors and levels. | ✅ Done |
 | 004 | **Cascada Musical** | Falling musical blocks with pentatonic notes. | ✅ Done |
+| 005 | **Estrellas Brillantes** | Stars twinkle and explode with magic. | ✅ Done |
 
 ## 👦 2-3 Years (Preschoolers)
 
@@ -63,6 +64,9 @@ This document outlines the development roadmap for the 41 games currently in the
 |----|-----------|--------|
 | 001 | **Code Quest** | Isometric coding adventure. | ✅ Done |
 | 002 | **Art Battle** | Digital canvas art competition with random themes. | ✅ Done |
+| 003 | **Science Lab** | Element fusion laboratory. | ✅ Done |
+| 004 | **Eco Warriors** | Ecological strategy game. | ✅ Done |
+| 005 | **Music Master** | Rhythm game with music theory lessons. | ✅ Done |
 
 ---
 
@@ -71,11 +75,11 @@ This document outlines the development roadmap for the 41 games currently in the
 | Age Group | Completed | Target |
 |-----------|---------:|--------:|
 | 0-1 Years | 5 | 5 |
-| 1-2 Years | 4 | 4 |
+| 1-2 Years | 5 | 5 |
 | 2-3 Years | 4 | 4 |
 | 3-5 Years | 4 | 4 |
 | 5-8 Years | 4 | 4 |
-| 8-15 Years | 4 | 4 |
+| 8-15 Years | 5 | 5 |
 
 *Nota: `003-colores-vibran`, `003-pintura-dedos`, `003-rompecabezas`, `laberinto-aventura`, `tren-numeros`, `science-lab`, `eco-warriors`, `peek-a-boo`, `cascada-musical`, `bloques-caen`, `caritas-emociones` y `tour-sistema-solar` completados y validados*
 

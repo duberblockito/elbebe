@@ -1,5 +1,5 @@
 {
-  "version": "1.18.0",
+  "version": "1.21.0",
   "lastUpdated": "2026-02-19",
   "games": [
     {
@@ -520,6 +520,52 @@
         "progress",
         "badges",
         "passport"
+      ]
+    },
+    {
+      "id": "estrellas-brillantes",
+      "title": "Estrellas Brillantes",
+      "title_en": "Twinkling Stars",
+      "description": "Toca las estrellas para hacerlas brillar con magia y luz. Un juego sensorial para niños de 1-2 años con sistema de 5 niveles progresivos, barra de progreso y temporizador visual.",
+      "description_en": "Touch stars to make them shine with magic and light. A sensory game for children aged 1-2 with 5 progressive levels, progress bar, and visual timer.",
+      "category": "sensory",
+      "author": "El Bebe Games",
+      "version": "1.0.0",
+      "thumbnail": "thumbnail.jpg",
+      "recommended_age": "1-2",
+      "tags": [
+        "touch",
+        "stars",
+        "sensory",
+        "levels",
+        "timer",
+        "progress",
+        "particles",
+        "magic"
+      ]
+    },
+    {
+      "id": "music-master",
+      "title": "Music Master: Rhythm Quest",
+      "title_en": "Music Master: Rhythm Quest",
+      "description": "Juego de ritmo que combina toques sincronizados con lecciones de teoría musical. ¡Sigue el ritmo y gana estrellas!",
+      "description_en": "Rhythm game combining timed taps with music theory lessons. Follow the beat and earn stars!",
+      "category": "music",
+      "author": "Blockito AI",
+      "version": "1.0.0",
+      "thumbnail": "thumbnail.jpg",
+      "recommended_age": "8-15",
+      "tags": [
+        "music",
+        "rhythm",
+        "timing",
+        "touch",
+        "levels",
+        "timer",
+        "progress",
+        "educational",
+        "stars",
+        "combo"
       ]
     }
   ]
