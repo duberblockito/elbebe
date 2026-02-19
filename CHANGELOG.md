@@ -2,6 +2,104 @@
 
 ---
 
+## [v1.26.0] - 2026-02-19 14:40 UTC
+
+### ✨ Nuevo Juego Agregado
+
+**Juego:** Cochecito de Colores (cochecito-colores)
+**Categoría:** 0-1 Años (Infants)
+**ID:** 0-1-007
+
+**Descripción:**
+Juego sensorial donde un cochecito cambia de color al tocarlo, suena el motor y se mueve ligeramente. Perfecto para bebés que exploran causa y efecto.
+
+**Características implementadas:**
+- ✅ Cochecito SVG animado con efectos visuales
+- ✅ 7 colores rotativos brillantes (rojo, naranja, amarillo, verde, azul, morado, rosa)
+- ✅ Sonido "vroom" sintetizado (Web Audio API) al tocar
+- ✅ Animación de rebote al tocar (izquierda-derecha)
+- ✅ Contador de toques en tiempo real
+- ✅ Persistencia en localStorage (cochecito-colores-progress)
+- ✅ Sol animado con efectos de pulsación
+- ✅ Nubes animadas de fondo
+- ✅ Carretera con líneas de carril
+- ✅ Faros delanteros con parpadeo
+- ✅ Ruedas con detalles visuales
+- ✅ Responsivo para móviles (375x667px)
+- ✅ Touch events optimizados para bebés
+
+**Tecnología:**
+- HTML5 + CSS3 + Vanilla JavaScript
+- SVG graphics para cochecito
+- CSS Animations para movimiento y rebote
+- Web Audio API para síntesis de sonidos "vroom"
+- Touch events multi-touch support
+- LocalStorage para persistencia de toques
+- Responsive design con media queries
+
+**Archivos creados:**
+- `public/games/cochecito-colores/index.html` - Página principal del juego
+- `public/games/cochecito-colores/assets/game.css` - Estilos del juego
+- `public/games/cochecito-colores/js/game.js` - Lógica del juego
+- `public/games/cochecito-colores/manifest.json` - Metadatos
+- `public/games/cochecito-colores/thumbnail.svg` - Imagen de preview (SVG)
+
+**Archivos actualizados:**
+- `public/js/games-list.json` - Juego registrado (versión 1.26.0)
+- `master-game-plan.md` - Marcado como ✅ Done
+- `development-queue.md` - Marcado como [Done ✅]
+- `CHANGELOG.md` - Entrada agregada
+
+---
+
+## [v1.25.0] - 2026-02-19 14:30 UTC
+
+### ✨ Nuevo Juego Agregado
+
+**Juego:** Apila los Animales (apila-animales)
+**Categoría:** 2-3 Años (Toddlers)
+**ID:** 2-3-005
+
+**Descripción:**
+Juego de apilar donde el niño toca animales para agregarlos a una torre. Incluye sistema de niveles progresivos, barra de progreso visual y temporizador.
+
+**Características implementadas:**
+- ✅ Sistema de 5 niveles progresivos (3, 5, 7, 9, 11 animales)
+- ✅ Duración de niveles progresiva (30-50s)
+- ✅ Barra de progreso visual (animales recolectados / objetivo)
+- ✅ Barra de temporizador visual con cambios de color (verde → amarillo → rojo)
+- ✅ HUD con nivel actual y contador de animales
+- ✅ Persistencia en localStorage (apila-animales-progress)
+- ✅ Animación de drop con bezier curves al agregar animal
+- ✅ Efecto wobble al apilar animal
+- ✅ Synth sounds (Web Audio API) para feedback auditivo
+- ✅ Modales: Nivel Completado, Tiempo Agotado, Juego Completado
+- ✅ Responsivo para dispositivos móviles (375x667px)
+- ✅ 11 animales diferentes con emojis (🐘🦒🦁🐼🐨🐯🦓🐻🐰🦊🐭)
+
+**Tecnología:**
+- HTML5 + CSS3 + Vanilla JavaScript
+- CSS Animations para drop y wobble
+- Web Audio API para síntesis de sonidos
+- Touch events optimizados
+- Gradient effects para barra de progreso
+- LocalStorage para persistencia de progreso
+
+**Archivos creados:**
+- `public/games/apila-animales/index.html` - Página principal del juego
+- `public/games/apila-animales/assets/game.css` - Estilos del juego
+- `public/games/apila-animales/js/game.js` - Lógica del juego
+- `public/games/apila-animales/manifest.json` - Metadatos
+- `public/games/apila-animales/thumbnail.svg` - Imagen de preview (SVG)
+
+**Archivos actualizados:**
+- `public/js/games-list.json` - Juego registrado (versión 1.22.0)
+- `master-game-plan.md` - Marcado como ✅ Done
+- `development-queue.md` - Marcado como [Done ✅]
+- `CHANGELOG.md` - Entrada agregada
+
+---
+
 ## [v1.24.0] - 2026-02-19 14:00 UTC
 
 ### ✨ Nuevo Juego Agregado

@@ -21,6 +21,7 @@ This document outlines the development roadmap for the 41 games currently in the
 | 004 | **Peek-a-Boo** | Touch doors to reveal animals. | ✅ Done |
 | 005 | **Lluvia de Estrellas** | Stars falling from top, touch to shine. | ✅ Done |
 | 006 | **Dedos Mágicos** | Touch screen for colorful trails. | ✅ Done |
+| 007 | **Cochecito de Colores** | Car changes color, plays vroom, moves. | ✅ Done |
 
 ## 🧒 1-2 Years (Toddlers)
 
@@ -40,6 +41,7 @@ This document outlines the development roadmap for the 41 games currently in the
 | 002 | **Arrastra la Fruta** | Sorting game picnic. | ✅ Done |
 | 003 | **Rompecabezas Simple** | Animal puzzle pieces. | ✅ Done |
 | 004 | **Los Bloques Caen** | Catch falling shapes. | ✅ Done |
+| 005 | **Apila los Animales** | Stack animals to build tower. | ✅ Done |
 
 ## 🧒 3-5 Years (Preschoolers)
 
@@ -77,7 +79,7 @@ This document outlines the development roadmap for the 41 games currently in the
 |-----------|---------:|--------:|
 | 0-1 Years | 6 | 6 |
 | 1-2 Years | 5 | 5 |
-| 2-3 Years | 4 | 4 |
+| 2-3 Years | 5 | 5 |
 | 3-5 Years | 4 | 4 |
 | 5-8 Years | 4 | 4 |
 | 8-15 Years | 5 | 5 |

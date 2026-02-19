@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="Apila los Animales - Juego educativo para niños de 2-3 años">
+  <title>Apila los Animales - El Bebe Games</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="assets/game.css">
+</head>
+<body>
+  <div id="game-container">
+    <!-- HUD (Heads Up Display) -->
+    <div id="hud">
+      <div id="level-info">
+        <span>Nivel 1</span>
+        <span>0 / 3</span>
+      </div>
+      <div id="progress-container">
+        <div id="progress-bar"></div>
+        <div id="progress-text">0 / 3 animales</div>
+      </div>
+    </div>
+
+    <!-- Game Area -->
+    <div id="game-area">
+      <!-- Animal Container -->
+      <div id="animal-container">
+        <div id="current-animal">🐘</div>
+      </div>
+
+      <!-- Tower -->
+      <div id="tower"></div>
+
+      <!-- Ground -->
+      <div id="ground"></div>
+    </div>
+  </div>
+
+  <!-- Level Complete Modal -->
+  <div id="level-complete-modal" class="modal">
+    <div class="modal-content">
+      <h2>¡Nivel Completado! 🎉</h2>
+      <p>¡Excelente trabajo! Has apilado todos los animales.</p>
+      <div class="stars">⭐⭐⭐</div>
+      <button id="next-level-btn" class="btn">Siguiente Nivel</button>
+    </div>
+  </div>
+
+  <!-- Time Up Modal -->
+  <div id="time-up-modal" class="modal">
+    <div class="modal-content">
+      <h2>¡Se Acabó el Tiempo! ⏰</h2>
+      <p>Inténtalo de nuevo. ¡Tú puedes hacerlo!</p>
+      <button id="retry-level-btn" class="btn">Intentar de Nuevo</button>
+    </div>
+  </div>
+
+  <!-- Game Complete Modal -->
+  <div id="game-complete-modal" class="modal">
+    <div class="modal-content">
+      <h2>¡Juego Completado! 🏆</h2>
+      <p>¡Felicidades! Has completado todos los niveles.</p>
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <button id="play-again-btn" class="btn">Jugar de Nuevo</button>
+    </div>
+  </div>
+
+  <script src="js/game.js"></script>
+</body>
+</html>

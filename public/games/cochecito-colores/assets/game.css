@@ -1,0 +1,165 @@
+/* Cochecito de Colores - Game Styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  overflow: hidden;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.game-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #87CEEB 0%, #87CEEB 60%, #4a4a4a 60%, #4a4a4a 100%);
+  position: relative;
+}
+
+/* Header */
+.game-header {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  z-index: 10;
+}
+
+.game-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+}
+
+.touch-counter {
+  font-size: 18px;
+  color: #333;
+  background: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+}
+
+/* Car Container */
+.car-container {
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease-out;
+  user-select: none;
+  -webkit-user-select: none;
+  z-index: 5;
+}
+
+.car-container:active {
+  transform: scale(1.1);
+}
+
+.car-container.moving {
+  animation: carBounce 0.5s ease-out;
+}
+
+@keyframes carBounce {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-10px);
+  }
+  75% {
+    transform: translateX(10px);
+  }
+}
+
+/* SVG Car */
+.car-svg {
+  width: 200px;
+  height: 200px;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.3));
+}
+
+/* Instructions */
+.instructions {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Color palette for car body */
+.car-body-red { fill: #FF6B6B; }
+.car-body-orange { fill: #FFA500; }
+.car-body-yellow { fill: #FFD700; }
+.car-body-green { fill: #4ECDC4; }
+.car-body-blue { fill: #45B7D1; }
+.car-body-purple { fill: #9B59B6; }
+.car-body-pink { fill: #FF69B4; }
+
+/* Responsive - Mobile */
+@media (max-width: 375px) {
+  .game-title {
+    font-size: 20px;
+  }
+  
+  .touch-counter {
+    font-size: 16px;
+    padding: 6px 12px;
+  }
+  
+  .car-svg {
+    width: 160px;
+    height: 160px;
+  }
+  
+  .instructions {
+    font-size: 16px;
+    bottom: 30px;
+  }
+}
+
+/* Responsive - Tablet */
+@media (min-width: 768px) {
+  .game-title {
+    font-size: 28px;
+  }
+  
+  .touch-counter {
+    font-size: 20px;
+  }
+  
+  .car-svg {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .instructions {
+    font-size: 24px;
+  }
+}

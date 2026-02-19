@@ -33,9 +33,9 @@ La estrategia de desarrollo sigue un ciclo "Round Robin" entre las categorías d
 
 | Categoría | Terminados | Meta Actual |
 | :--- | :---: | :---: |
-| 0-1 Años | 6 | 6 |
+| 0-1 Años | 7 | 7 |
 | 1-2 Años | 5 | 5 |
-| 2-3 Años | 4 | 4 |
+| 2-3 Años | 5 | 5 |
 | 3-5 Años | 4 | 4 |
 | 5-8 Años | 4 | 4 |
 | 8-15 Años | 5 | 5 |
@@ -75,6 +75,8 @@ Basado en la regla de equilibrio, este es el orden inmediato de desarrollo:
 25. **[Done ✅]** **1-2 Años**: `estrellas-brillantes` (Estrellas Brillantes) - IMPLEMENTADO
 26. **[Done ✅]** **8-15 Años**: `music-master` (Music Master: Rhythm Quest) - IMPLEMENTADO
 27. **[Done ✅]** **0-1 Años**: `dedos-magicos` (Dedos Mágicos) - IMPLEMENTADO
+28. **[Done ✅]** **2-3 Años**: `apila-animales` (Apila los Animales) - IMPLEMENTADO
+29. **[Done ✅]** **0-1 Años**: `cochecito-colores` (Cochecito de Colores) - IMPLEMENTADO
 
 ---
 

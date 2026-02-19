@@ -1,0 +1,10 @@
+{
+  "id": "apila-animales",
+  "title": "Apila los Animales",
+  "description": "Apila animales para construir una torre alta. Toca el animal para agregarlo a la torre.",
+  "category": "stacking",
+  "author": "Elbebe Team",
+  "version": "1.0.0",
+  "thumbnail": "thumbnail.svg",
+  "recommended_age": "2-3"
+}

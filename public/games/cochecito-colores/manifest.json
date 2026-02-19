@@ -1,0 +1,12 @@
+{
+  "id": "cochecito-colores",
+  "title": "Cochecito de Colores",
+  "title_en": "Color Car",
+  "description": "¡Un cochecito divertido que cambia de color al tocarlo! Toca el cochecito para ver colores brillantes y escuchar el sonido del motor.",
+  "description_en": "A fun little car that changes color when touched! Tap the car to see bright colors and hear the engine sound.",
+  "category": "sensory",
+  "author": "El Bebe Games",
+  "version": "1.0.0",
+  "thumbnail": "thumbnail.svg",
+  "recommended_age": "0-1"
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="¡Un cochecito divertido que cambia de color al tocarlo! Toca el cochecito para ver colores brillantes y escuchar el sonido del motor.">
+  <meta name="author" content="El Bebe Games">
+  <title>Cochecito de Colores | El Bebe Games</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="assets/game.css">
+</head>
+<body>
+  <div class="game-container">
+    <!-- Header -->
+    <div class="game-header">
+      <h1 class="game-title">🚗 Cochecito de Colores</h1>
+      <div class="touch-counter">¡Tocas: 0!</div>
+    </div>
+    
+    <!-- Car -->
+    <div class="car-container" role="button" tabindex="0" aria-label="Cochecito de colores - Tócame para cambiar de color">
+      <svg class="car-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <!-- Sun -->
+        <circle cx="160" cy="40" r="25" fill="#FFD700">
+          <animate attributeName="r" values="25;27;25" dur="3s" repeatCount="indefinite"/>
+        </circle>
+        
+        <!-- Clouds -->
+        <ellipse cx="50" cy="50" rx="25" ry="12" fill="white" opacity="0.9"/>
+        <ellipse cx="65" cy="47" rx="20" ry="10" fill="white" opacity="0.9"/>
+        
+        <!-- Road -->
+        <rect x="0" y="140" width="200" height="60" fill="#4a4a4a"/>
+        <line x1="0" y1="170" x2="200" y2="170" stroke="white" stroke-width="3" stroke-dasharray="15,10"/>
+        
+        <!-- Car Top -->
+        <rect class="car-top" x="70" y="95" width="60" height="20" rx="5" fill="#45B7D1"/>
+        
+        <!-- Car Body (this element changes color) -->
+        <rect class="car-body" x="60" y="115" width="80" height="30" rx="8" fill="#FF6B6B"/>
+        
+        <!-- Window -->
+        <rect x="80" y="98" width="40" height="12" rx="2" fill="#87CEEB" opacity="0.7"/>
+        
+        <!-- Front Bumper -->
+        <rect x="135" y="120" width="8" height="20" rx="3" fill="#333"/>
+        
+        <!-- Rear Bumper -->
+        <rect x="57" y="120" width="8" height="20" rx="3" fill="#333"/>
+        
+        <!-- Headlights -->
+        <circle cx="142" cy="127" r="4" fill="#FFD700">
+          <animate attributeName="fill-opacity" values="1;0.5;1" dur="1.5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="142" cy="137" r="4" fill="#FFD700">
+          <animate attributeName="fill-opacity" values="1;0.5;1" dur="1.5s" repeatCount="indefinite"/>
+        </circle>
+        
+        <!-- Taillights -->
+        <rect x="58" y="125" width="4" height="8" rx="1" fill="#FF0000"/>
+        <rect x="58" y="132" width="4" height="8" rx="1" fill="#FF0000"/>
+        
+        <!-- Front Wheels -->
+        <circle cx="80" cy="148" r="10" fill="#333"/>
+        <circle cx="80" cy="148" r="5" fill="#666"/>
+        
+        <!-- Rear Wheels -->
+        <circle cx="120" cy="148" r="10" fill="#333"/>
+        <circle cx="120" cy="148" r="5" fill="#666"/>
+        
+        <!-- Wheel Details -->
+        <circle cx="80" cy="148" r="3" fill="#888"/>
+        <circle cx="120" cy="148" r="3" fill="#888"/>
+      </svg>
+    </div>
+    
+    <!-- Instructions -->
+    <div class="instructions">👆 ¡Toca el cochecito!</div>
+  </div>
+  
+  <script src="js/game.js"></script>
+</body>
+</html>

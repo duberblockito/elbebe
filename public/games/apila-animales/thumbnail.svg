@@ -1,0 +1,47 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="300" height="300" fill="#FFE5B4"/>
+
+  <!-- Ground -->
+  <rect x="0" y="260" width="300" height="40" fill="#8B4513"/>
+
+  <!-- Animal 1 (Elephant - bottom) -->
+  <ellipse cx="150" cy="230" rx="35" ry="25" fill="#808080"/>
+  <ellipse cx="150" cy="210" rx="30" ry="25" fill="#808080"/>
+  <circle cx="135" cy="200" r="8" fill="#808080"/>
+  <circle cx="165" cy="200" r="8" fill="#808080"/>
+  <circle cx="132" cy="198" r="3" fill="#000"/>
+  <circle cx="162" cy="198" r="3" fill="#000"/>
+  <ellipse cx="150" cy="208" rx="5" ry="3" fill="#000"/>
+  <rect x="143" y="215" width="14" height="25" fill="#808080"/>
+  <ellipse cx="150" cy="242" rx="8" ry="5" fill="#808080"/>
+
+  <!-- Animal 2 (Giraffe - middle) -->
+  <ellipse cx="150" cy="165" rx="30" ry="20" fill="#DAA520"/>
+  <ellipse cx="150" cy="145" rx="25" ry="20" fill="#DAA520"/>
+  <circle cx="140" cy="130" r="12" fill="#DAA520"/>
+  <circle cx="160" cy="130" r="12" fill="#DAA520"/>
+  <circle cx="138" cy="128" r="4" fill="#000"/>
+  <circle cx="158" cy="128" r="4" fill="#000"/>
+  <ellipse cx="150" cy="145" rx="4" ry="2" fill="#000"/>
+  <rect x="147" y="115" width="6" height="15" fill="#DAA520"/>
+  <circle cx="150" cy="115" r="5" fill="#8B4513"/>
+  <rect x="135" y="140" width="8" height="20" fill="#DAA520"/>
+  <rect x="157" y="140" width="8" height="20" fill="#DAA520"/>
+
+  <!-- Animal 3 (Lion - top) -->
+  <ellipse cx="150" cy="95" rx="25" ry="18" fill="#D2691E"/>
+  <circle cx="150" cy="80" rx="20" ry="18" fill="#FFD700"/>
+  <circle cx="138" cy="75" r="6" fill="#D2691E"/>
+  <circle cx="162" cy="75" r="6" fill="#D2691E"/>
+  <circle cx="136" cy="73" r="3" fill="#000"/>
+  <circle cx="160" cy="73" r="3" fill="#000"/>
+  <ellipse cx="150" cy="80" rx="3" ry="2" fill="#000"/>
+  <rect x="145" y="90" width="10" height="15" fill="#D2691E"/>
+
+  <!-- Stars decoration -->
+  <text x="50" y="60" font-size="40" fill="#FFD700">★</text>
+  <text x="220" y="50" font-size="30" fill="#FFD700">★</text>
+  <text x="30" y="180" font-size="25" fill="#FFD700">★</text>
+  <text x="250" y="200" font-size="35" fill="#FFD700">★</text>
+</svg>
