@@ -1,0 +1,647 @@
+/* Eco Warriors - Game Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #fff;
+    overflow: hidden;
+}
+
+.game-container {
+    max-width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+/* HUD */
+.hud {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.hud-left, .hud-center, .hud-right {
+    flex: 1;
+}
+
+.hud-left {
+    text-align: left;
+}
+
+.hud-center {
+    text-align: center;
+}
+
+.hud-right {
+    text-align: right;
+}
+
+.level-indicator {
+    display: flex;
+    flex-direction: column;
+}
+
+.level-label {
+    font-size: 12px;
+    color: #88ff88;
+    font-weight: bold;
+}
+
+.level-value {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Timer */
+.timer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timer-bar {
+    width: 150px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.timer-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #00ff00, #88ff00);
+    width: 100%;
+    transition: width 0.1s linear, background 0.3s;
+}
+
+.timer-text {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-top: 5px;
+}
+
+/* Sustainability */
+.sustainability-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.sustainability-label {
+    font-size: 10px;
+    color: #88ff88;
+    font-weight: bold;
+}
+
+.sustainability-bar {
+    width: 120px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.sustainability-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #ff4444, #ff8800, #00ff00);
+    width: 0%;
+    transition: width 0.3s;
+}
+
+.sustainability-value {
+    font-size: 20px;
+    font-weight: bold;
+    color: #00ff00;
+}
+
+/* Map Container */
+.map-container {
+    flex: 1;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.map-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+    height: 100%;
+    max-height: 200px;
+}
+
+.map-tile {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.map-tile.clean {
+    background: rgba(0, 255, 136, 0.2);
+    border-color: #00ff88;
+}
+
+.map-tile.polluted {
+    background: rgba(255, 68, 68, 0.2);
+    border-color: #ff4444;
+    animation: pulse-polluted 2s infinite;
+}
+
+.map-tile.restored {
+    background: rgba(0, 204, 255, 0.2);
+    border-color: #00ccff;
+}
+
+@keyframes pulse-polluted {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.map-legend {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+}
+
+.legend-color {
+    width: 15px;
+    height: 15px;
+    border-radius: 3px;
+}
+
+.legend-color.clean {
+    background: #00ff88;
+}
+
+.legend-color.polluted {
+    background: #ff4444;
+}
+
+.legend-color.restored {
+    background: #00ccff;
+}
+
+/* Resources Panel */
+.resources-panel {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.panel-title {
+    font-size: 14px;
+    color: #88ff88;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.resource-item {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.resource-icon {
+    font-size: 24px;
+}
+
+.resource-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.resource-name {
+    font-size: 12px;
+    color: #aaa;
+}
+
+.resource-amount {
+    font-size: 16px;
+    font-weight: bold;
+    color: #00ff88;
+}
+
+.resource-btn {
+    background: linear-gradient(135deg, #00ff88, #00cc66);
+    border: none;
+    border-radius: 5px;
+    color: #000;
+    font-weight: bold;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.2s;
+}
+
+.resource-btn:active {
+    transform: scale(0.95);
+}
+
+/* Actions Panel */
+.actions-panel {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.actions-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.action-btn {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.action-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.action-btn:active {
+    transform: translateY(0);
+}
+
+.action-icon {
+    font-size: 28px;
+}
+
+.action-name {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.action-cost {
+    font-size: 10px;
+    color: #88ff88;
+}
+
+/* Event Panel */
+.event-panel {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a5a);
+    border: 3px solid #fff;
+    border-radius: 10px;
+    padding: 15px;
+    display: none;
+    animation: slide-down 0.3s;
+}
+
+@keyframes slide-down {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.event-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.event-description {
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.event-timer {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.event-timer-bar {
+    width: 100%;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.event-timer-bar-fill {
+    height: 100%;
+    background: #fff;
+    width: 100%;
+    transition: width 0.1s linear;
+}
+
+.event-timer-text {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.event-btn {
+    width: 100%;
+    background: #fff;
+    border: none;
+    border-radius: 5px;
+    color: #ff6b6b;
+    font-weight: bold;
+    padding: 12px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Modals */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    border: 3px solid #00ff88;
+    border-radius: 15px;
+    padding: 30px;
+    max-width: 90%;
+    max-height: 90%;
+    overflow-y: auto;
+    text-align: center;
+}
+
+.modal-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00ff88;
+    margin-bottom: 15px;
+}
+
+.modal-message {
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.modal-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.stat {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(0, 255, 136, 0.3);
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: #aaa;
+    margin-bottom: 5px;
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00ff88;
+}
+
+.modal-btn {
+    background: linear-gradient(135deg, #00ff88, #00cc66);
+    border: none;
+    border-radius: 10px;
+    color: #000;
+    font-weight: bold;
+    padding: 15px 30px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.2s;
+}
+
+.modal-btn:active {
+    transform: scale(0.95);
+}
+
+/* Mobile Responsiveness - iPhone SE (375x667) */
+@media (max-width: 375px) {
+    .game-container {
+        padding: 5px;
+    }
+
+    .hud {
+        padding: 5px;
+        margin-bottom: 5px;
+    }
+
+    .level-value {
+        font-size: 20px;
+    }
+
+    .timer-bar {
+        width: 100px;
+    }
+
+    .timer-text {
+        font-size: 16px;
+    }
+
+    .sustainability-bar {
+        width: 80px;
+    }
+
+    .sustainability-value {
+        font-size: 16px;
+    }
+
+    .map-grid {
+        max-height: 150px;
+    }
+
+    .map-tile {
+        font-size: 20px;
+    }
+
+    .resources-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px;
+    }
+
+    .resource-item {
+        padding: 5px;
+    }
+
+    .resource-icon {
+        font-size: 20px;
+    }
+
+    .resource-name {
+        font-size: 10px;
+    }
+
+    .resource-amount {
+        font-size: 14px;
+    }
+
+    .resource-btn {
+        padding: 3px 8px;
+        font-size: 14px;
+    }
+
+    .actions-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px;
+    }
+
+    .action-btn {
+        padding: 5px;
+    }
+
+    .action-icon {
+        font-size: 20px;
+    }
+
+    .action-name {
+        font-size: 10px;
+    }
+
+    .action-cost {
+        font-size: 8px;
+    }
+
+    .event-panel {
+        padding: 10px;
+    }
+
+    .event-title {
+        font-size: 14px;
+    }
+
+    .event-description {
+        font-size: 12px;
+    }
+
+    .event-btn {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .modal-content {
+        padding: 20px;
+    }
+
+    .modal-title {
+        font-size: 20px;
+    }
+
+    .modal-message {
+        font-size: 14px;
+    }
+
+    .stat-value {
+        font-size: 20px;
+    }
+
+    .modal-btn {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+}
+
+/* Tablet Responsiveness */
+@media (min-width: 376px) and (max-width: 768px) {
+    .map-grid {
+        grid-template-columns: repeat(6, 1fr);
+        max-height: 250px;
+    }
+
+    .resources-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .actions-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Desktop Responsiveness */
+@media (min-width: 769px) {
+    .game-container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .map-grid {
+        grid-template-columns: repeat(8, 1fr);
+        max-height: 300px;
+    }
+
+    .resources-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .actions-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

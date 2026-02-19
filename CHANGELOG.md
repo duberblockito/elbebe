@@ -2,6 +2,66 @@
 
 ---
 
+## [v1.14.0] - 2026-02-19 04:25 UTC (Bogotá)
+
+### ✨ Nuevo Juego Implementado
+
+**Juego:** eco-warriors (Eco Warriors: Planet Rescue)
+**Categoría:** 8-15 Años (Tweens/Teens)
+**Fuente del plan:** Idea #4 de `/games-backlog/8-15-004-eco-warriors.md`
+
+**Descripción:**
+Estrategia de restauración ecológica. Gestiona recursos renovables, limpia áreas contaminadas y protege el planeta de desastres ambientales en este juego de estrategia. Incluye 5 niveles progresivos con mayor dificultad, más eventos aleatorios y objetivos de sostenibilidad más exigentes. Diseñado específicamente para niños de 8-15 años que están aprendiendo sobre ecología, gestión de recursos y sostenibilidad.
+
+**Características implementadas:**
+- ✅ Sistema de gestión de 4 recursos renovables: solar, eólica, hidro y bioenergía
+- ✅ Mapa de isometría con 25 tiles (5x5 grid)
+- ✅ Sistema de restauración de tiles contaminados
+- ✅ Eventos aleatorios de desastres ambientales (tormentas, sequías, derrames químicos, olas de calor)
+- ✅ Sistema de 5 niveles progresivos:
+  - Nivel 1: 120s, objetivo 100% sostenibilidad, 25 tiles a restaurar
+  - Nivel 2: 110s, objetivo 100% sostenibilidad, 30 tiles a restaurar
+  - Nivel 3: 100s, objetivo 100% sostenibilidad, 35 tiles a restaurar
+  - Nivel 4: 90s, objetivo 100% sostenibilidad, 40 tiles a restaurar
+  - Nivel 5: 80s, objetivo 100% sostenibilidad, 45 tiles a restaurar
+- ✅ Barra de progreso visual de sostenibilidad (0-100%)
+- ✅ Temporizador visual con cambios de color (verde → amarillo → rojo)
+- ✅ Persistencia en localStorage (`eco-warriors-progress`)
+- ✅ HUD con nivel actual, temporizador y progreso de sostenibilidad
+- ✅ Modales: Nivel Completado, Tiempo Agotado, Juego Completado
+- ✅ Sistema de acciones de restauración (plantar árboles, limpiar agua, instalar eólica, biorremediación)
+- ✅ Sistema de recolección de recursos con botones interactivos
+
+**Cumplimiento de reglas de diseño (game-design-rules.md):**
+- ✅ Sección 1: Estructura de directorios correcta
+- ✅ Sección 2: HTML5, CSS3, Vanilla JavaScript sin frameworks
+- ✅ Sección 2: Responsivo y optimizado para 375x667px (iPhone SE)
+- ✅ Sección 3: manifest.json válido con metadatos completos
+- ✅ Sección 4: Registrado en `public/js/games-list.json`
+- ✅ Sección 7: Sistema de niveles (5 niveles, 80-120s por nivel)
+- ✅ Sección 7: Barra de progreso visual (sostenibilidad)
+- ✅ Sección 7: Persistencia en localStorage
+- ✅ Sección 8: Checklist de submission completo
+
+**Archivos creados/modificados:**
+- `public/games/eco-warriors/index.html` - Estructura HTML del juego
+- `public/games/eco-warriors/css/game.css` - Estilos responsivos y animaciones
+- `public/games/eco-warriors/js/game.js` - Lógica completa del juego
+- `public/games/eco-warriors/manifest.json` - Metadatos del juego
+- `public/games/eco-warriors/thumbnail.jpg` - Imagen de previsualización (300x300px)
+- `public/js/games-list.json` - Juego registrado
+- `games-done/8-15-004-eco-warriors.md` - Archivo del backlog movido a completados
+- `master-game-plan.md` - Juego marcado como ✅ Done
+- `development-queue.md` - Juego agregado a lista de completados
+
+**Notas:**
+- Juego implementado completamente siguiendo todas las reglas del proyecto
+- Diseño visual optimizado con tema ecológico (verdes, azules)
+- Sistema de eventos aleatorios aumenta rejugabilidad
+- Categoría 8-15 Años ahora tiene 4 juegos completados
+
+---
+
 ## [v1.13.1] - 2026-02-19 04:00 UTC (Bogotá)
 
 ### 🐛 Bug Fix

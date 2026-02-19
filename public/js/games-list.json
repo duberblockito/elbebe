@@ -235,6 +235,19 @@
       "thumbnail": "thumbnail.jpg",
       "recommended_age": "8-15",
       "tags": ["science", "chemistry", "drag-drop", "elements", "fusion", "levels", "timer", "progress", "educational"]
+    },
+    {
+      "id": "eco-warriors",
+      "title": "Eco Warriors: Planet Rescue",
+      "title_en": "Eco Warriors: Planet Rescue",
+      "description": "Estrategia de restauración ecológica. Gestiona recursos renovables, limpia áreas contaminadas y protege el planeta de desastres ambientales en este juego de estrategia.",
+      "description_en": "Ecological restoration strategy game. Manage renewable resources, clean polluted areas and protect the planet from environmental disasters in this strategy game.",
+      "category": "strategy",
+      "author": "Blockito AI",
+      "version": "1.0.0",
+      "thumbnail": "thumbnail.jpg",
+      "recommended_age": "8-15",
+      "tags": ["strategy", "ecology", "environment", "resources", "levels", "timer", "progress", "educational", "sustainability"]
     }
   ]
 }
