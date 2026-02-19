@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Maestro del Reloj - El Bebe Games</title>
+    <link rel="stylesheet" href="assets/game.css">
+    <link href="../../css/animations.css" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+        <!-- HUD - Heads Up Display -->
+        <div class="hud">
+            <div class="hud-left">
+                <div class="hud-item">
+                    <span class="hud-label">Nivel</span>
+                    <span class="hud-value" id="level">1</span>
+                </div>
+                <div class="hud-item">
+                    <span class="hud-label">Puntos</span>
+                    <span class="hud-value" id="score">0/5</span>
+                </div>
+            </div>
+            <div class="hud-center">
+                <div class="game-title">⏰ Maestro del Reloj</div>
+            </div>
+            <div class="hud-right">
+                <div class="timer-display" id="timer">60s</div>
+            </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-bar-container">
+            <div class="progress-label">Progreso del Nivel</div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+        </div>
+
+        <!-- Timer Bar -->
+        <div class="timer-bar-container">
+            <div class="timer-bar" id="timer-bar">
+                <div class="timer-fill" id="timer-fill"></div>
+            </div>
+        </div>
+
+        <!-- Game Area -->
+        <div class="game-area">
+            <!-- Customer Request -->
+            <div class="customer-request">
+                <div class="customer-avatar" id="customer-avatar">👤</div>
+                <div class="customer-speech">
+                    <div class="speech-bubble">
+                        <span id="customer-message">¡Hola! Necesito saber qué hora es...</span>
+                    </div>
+                </div>
+                <div class="request-time" id="request-time">
+                    <span id="target-hour">3</span>:<span id="target-minute">00</span>
+                </div>
+            </div>
+
+            <!-- Analog Clock -->
+            <div class="clock-container">
+                <div class="clock-face">
+                    <!-- Clock Numbers -->
+                    <div class="clock-number" style="--rotation: 0deg;">12</div>
+                    <div class="clock-number" style="--rotation: 30deg;">1</div>
+                    <div class="clock-number" style="--rotation: 60deg;">2</div>
+                    <div class="clock-number" style="--rotation: 90deg;">3</div>
+                    <div class="clock-number" style="--rotation: 120deg;">4</div>
+                    <div class="clock-number" style="--rotation: 150deg;">5</div>
+                    <div class="clock-number" style="--rotation: 180deg;">6</div>
+                    <div class="clock-number" style="--rotation: 210deg;">7</div>
+                    <div class="clock-number" style="--rotation: 240deg;">8</div>
+                    <div class="clock-number" style="--rotation: 270deg;">9</div>
+                    <div class="clock-number" style="--rotation: 300deg;">10</div>
+                    <div class="clock-number" style="--rotation: 330deg;">11</div>
+
+                    <!-- Clock Hands -->
+                    <div class="clock-center"></div>
+                    <div class="hand hour-hand" id="hour-hand"></div>
+                    <div class="hand minute-hand" id="minute-hand"></div>
+
+                    <!-- Hour Markers -->
+                    <div class="hour-marker" style="--rotation: 0deg;"></div>
+                    <div class="hour-marker" style="--rotation: 30deg;"></div>
+                    <div class="hour-marker" style="--rotation: 60deg;"></div>
+                    <div class="hour-marker" style="--rotation: 90deg;"></div>
+                    <div class="hour-marker" style="--rotation: 120deg;"></div>
+                    <div class="hour-marker" style="--rotation: 150deg;"></div>
+                    <div class="hour-marker" style="--rotation: 180deg;"></div>
+                    <div class="hour-marker" style="--rotation: 210deg;"></div>
+                    <div class="hour-marker" style="--rotation: 240deg;"></div>
+                    <div class="hour-marker" style="--rotation: 270deg;"></div>
+                    <div class="hour-marker" style="--rotation: 300deg;"></div>
+                    <div class="hour-marker" style="--rotation: 330deg;"></div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="action-btn check-btn" id="check-btn">
+                    <span class="btn-icon">✓</span>
+                    <span class="btn-text">Verificar</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Instructions Overlay -->
+        <div class="overlay" id="instructions-overlay">
+            <div class="overlay-content">
+                <div class="overlay-icon">⏰</div>
+                <h2 class="overlay-title">Maestro del Reloj</h2>
+                <p class="overlay-text">
+                    ¡Eres el maestro del tiempo! Ajusta el reloj a la hora que solicitan los clientes.
+                </p>
+                <div class="overlay-instructions">
+                    <div class="instruction-item">
+                        <span class="instruction-icon">👆</span>
+                        <span>Toca las manecillas para moverlas</span>
+                    </div>
+                    <div class="instruction-item">
+                        <span class="instruction-icon">🎯</span>
+                        <span>Ajusta la hora y los minutos</span>
+                    </div>
+                    <div class="instruction-item">
+                        <span class="instruction-icon">✓</span>
+                        <span>Presiona "Verificar" cuando estés listo</span>
+                    </div>
+                </div>
+                <button class="overlay-btn" id="start-btn">¡Comenzar!</button>
+            </div>
+        </div>
+
+        <!-- Level Complete Overlay -->
+        <div class="overlay" id="level-complete-overlay" style="display: none;">
+            <div class="overlay-content">
+                <div class="overlay-icon">🎉</div>
+                <h2 class="overlay-title">¡Nivel Completado!</h2>
+                <p class="overlay-text" id="level-complete-message">
+                    ¡Excelente trabajo! Has servido a todos los clientes.
+                </p>
+                <div class="stats" id="level-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Puntos</span>
+                        <span class="stat-value" id="level-score">5/5</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Tiempo</span>
+                        <span class="stat-value" id="level-time">45s</span>
+                    </div>
+                </div>
+                <button class="overlay-btn" id="next-level-btn">Siguiente Nivel</button>
+            </div>
+        </div>
+
+        <!-- Time Up Overlay -->
+        <div class="overlay" id="time-up-overlay" style="display: none;">
+            <div class="overlay-content">
+                <div class="overlay-icon">⏱️</div>
+                <h2 class="overlay-title">¡Tiempo Agotado!</h2>
+                <p class="overlay-text">
+                    ¡Casi lo logras! Inténtalo de nuevo.
+                </p>
+                <button class="overlay-btn" id="retry-btn">Intentar de Nuevo</button>
+            </div>
+        </div>
+
+        <!-- Game Complete Overlay -->
+        <div class="overlay" id="game-complete-overlay" style="display: none;">
+            <div class="overlay-content">
+                <div class="overlay-icon">🏆</div>
+                <h2 class="overlay-title">¡Juego Completado!</h2>
+                <p class="overlay-text">
+                    ¡Felicidades! Has completado todos los niveles y eres un verdadero Maestro del Reloj.
+                </p>
+                <div class="stats" id="game-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Nivel Final</span>
+                        <span class="stat-value" id="final-level">5</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Puntos Totales</span>
+                        <span class="stat-value" id="final-score">25</span>
+                    </div>
+                </div>
+                <button class="overlay-btn" id="play-again-btn">Jugar de Nuevo</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/game.js"></script>
+</body>
+</html>

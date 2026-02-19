@@ -2,6 +2,116 @@
 
 ---
 
+## [v1.29.0] - 2026-02-19 16:20 UTC
+
+### ✨ Nuevo Juego Agregado
+
+**Juego:** Maestro del Reloj
+**Categoría:** 5-8 Años (Early Elementary)
+**ID:** 5-8-005
+
+**Descripción:**
+Ajusta un reloj analógico a la hora solicitada por los clientes. Aprende a leer la hora con 5 niveles progresivos de dificultad (hora exacta, media hora, cuarto de hora), barra de progreso y temporizador visual. Diseñado para niños de 5-8 años que aprenden a leer el reloj analógico de forma divertida.
+
+**Características implementadas:**
+- ✅ Sistema de 5 niveles progresivos (5, 6, 7, 8, 9 clientes por nivel)
+- ✅ Dificultad progresiva: hora exacta → media hora → cuarto de hora
+- ✅ Temporizador por nivel (90s → 70s progresivo)
+- ✅ Barra de progreso visual mostrando clientes atendidos vs objetivo
+- ✅ Barra de temporizador visual con cambios de color (verde → amarillo → rojo)
+- ✅ HUD (Heads Up Display) con nivel actual, puntos, temporizador
+- ✅ Persistencia en localStorage (`maestro-reloj-progress`)
+- ✅ Reloj analógico interactivo con manecillas de hora y minutos
+- ✅ Sistema de clientes aleatorios con avatares y mensajes
+- ✅ Drag/touch en manecillas para ajustar la hora
+- ✅ Validación de hora (verifica que la hora y minutos sean correctos)
+- ✅ Modales: Instrucciones, Nivel Completado, Tiempo Agotado, Juego Completado
+- ✅ Feedback visual con animaciones (shake en respuesta incorrecta)
+- ✅ Responsivo para móviles (375x667px)
+
+**Cumplimiento de reglas de diseño (game-design-rules.md):**
+- ✅ Sección 1: Estructura de directorios correcta
+- ✅ Sección 2: HTML5, CSS3, Vanilla JavaScript sin frameworks
+- ✅ Sección 2: Responsivo y optimizado para 375x667px (iPhone SE)
+- ✅ Sección 3: manifest.json válido con metadatos completos
+- ✅ Sección 4: Registrado en `public/js/games-list.json`
+- ✅ Sección 7: Sistema de niveles (5 niveles, 70-90s por nivel)
+- ✅ Sección 7: Barra de progreso visual (clientes / objetivo)
+- ✅ Sección 7: Barra de temporizador visual con cambios de color
+- ✅ Sección 7: Persistencia en localStorage
+- ✅ Sección 8: Checklist de submission completo
+
+**Archivos creados:**
+- `public/games/maestro-reloj/index.html` - Página principal del juego
+- `public/games/maestro-reloj/assets/game.css` - Estilos del juego
+- `public/games/maestro-reloj/js/game.js` - Lógica del juego
+- `public/games/maestro-reloj/manifest.json` - Metadatos
+- `public/games/maestro-reloj/thumbnail.svg` - Imagen de preview (SVG)
+
+**Documentación actualizada:**
+- ✅ CHANGELOG.md (v1.29.0)
+- ✅ master-game-plan.md (marcado como ✅ Done)
+- ✅ development-queue.md (agregado a lista de completados)
+- ✅ games-list.json (juego registrado)
+- ✅ games-backlog/5-8-005-maestro-reloj.md → games-done/5-8-005-maestro-reloj.md
+
+---
+
+## [v1.28.0] - 2026-02-19 16:00 UTC
+
+### ✨ Nuevo Juego Agregado
+
+**Juego:** Patitas que Caminan
+**Categoría:** 0-1 Años (Infants)
+**ID:** 0-1-008
+
+**Descripción:**
+Animales caminando dejando huellas coloridas. Toca los animales para cambiarlos de color y especie. Incluye 5 niveles progresivos, barra de progreso y temporizador visual. Diseñado para bebés de 0-1 años que exploran causa-efecto y disfrutan de animales en movimiento.
+
+**Características implementadas:**
+- ✅ Sistema de 5 niveles progresivos (5, 8, 10, 12, 15 huellas por nivel)
+- ✅ Temporizador por nivel (30s → 50s progresivo)
+- ✅ Barra de progreso visual mostrando huellas recolectadas vs objetivo
+- ✅ Barra de temporizador visual con cambios de color (verde → amarillo → rojo)
+- ✅ HUD (Heads Up Display) con nivel actual, huellas, objetivo, temporizador
+- ✅ Persistencia en localStorage (`patitas-caminan-progress`)
+- ✅ 3 animales diferentes con colores y emojis de huellas (Pollito, Gatito, Perrito)
+- ✅ Animación de caminata del animal con movimiento de patas
+- ✅ Huellas que aparecen aleatoriamente cerca del animal
+- ✅ Al tocar el animal: cambia de especie y color con animación de escala
+- ✅ Synth sounds (Web Audio API) para cada animal (cheep, meow, woof)
+- ✅ Modales: Nivel Completado, Tiempo Agotado, Juego Completado
+- ✅ Touch en área de juego para mover el animal a posición deseada
+- ✅ Responsivo para móviles (375x667px)
+
+**Cumplimiento de reglas de diseño (game-design-rules.md):**
+- ✅ Sección 1: Estructura de directorios correcta
+- ✅ Sección 2: HTML5, CSS3, Vanilla JavaScript sin frameworks
+- ✅ Sección 2: Responsivo y optimizado para 375x667px (iPhone SE)
+- ✅ Sección 3: manifest.json válido con metadatos completos
+- ✅ Sección 4: Registrado en `public/js/games-list.json`
+- ✅ Sección 7: Sistema de niveles (5 niveles, 30-50s por nivel)
+- ✅ Sección 7: Barra de progreso visual (huellas / objetivo)
+- ✅ Sección 7: Barra de temporizador visual con cambios de color
+- ✅ Sección 7: Persistencia en localStorage
+- ✅ Sección 8: Checklist de submission completo
+
+**Archivos creados:**
+- `public/games/patitas-caminan/index.html` - Página principal del juego
+- `public/games/patitas-caminan/assets/game.css` - Estilos del juego
+- `public/games/patitas-caminan/js/game.js` - Lógica del juego
+- `public/games/patitas-caminan/manifest.json` - Metadatos
+- `public/games/patitas-caminan/thumbnail.svg` - Imagen de preview (SVG)
+
+**Archivos actualizados:**
+- `public/js/games-list.json` - Juego registrado (versión 1.28.0)
+- `master-game-plan.md` - Marcado como ✅ Done
+- `development-queue.md` - Marcado como [Done ✅]
+- `games-backlog/0-1-008-patitas-caminan.md` - Movido a `games-done/`
+
+---
+
+>>>>>>> Stashed changes
 ## [v1.27.0] - 2026-02-19 15:20 UTC
 
 ### ✨ Nuevo Juego Agregado
