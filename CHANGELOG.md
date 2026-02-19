@@ -2,6 +2,46 @@
 
 ---
 
+## [v1.38.1] - 2026-02-19 20:41 UTC
+
+### 🐛 Bug Fix
+
+**Bug:** BUG-022 - SITE_VERSION no actualizada
+**Severidad:** MEDIA
+**Estado:** ✅ Fixed
+
+**Descripción del bug:**
+La constante `SITE_VERSION` en `/public/js/main.js` estaba configurada como `1.36.0`, pero según el `CHANGELOG.md` la versión más reciente debería ser `1.38.0` (último juego implementado: Space Explorer: Galaxy Mission).
+
+**Ubicación del problema:**
+- Archivo: `/public/js/main.js`
+- Línea 20: `const SITE_VERSION = '1.36.0';`
+
+**Versión correcta según CHANGELOG.md:**
+- Última versión: `1.38.0` - 2026-02-19 20:00 UTC
+- Último juego: Space Explorer: Galaxy Mission
+
+**Impacto:**
+- Bajo. El sitio funciona correctamente.
+- El número de versión mostrado en el footer es incorrecto.
+- Puede causar confusión sobre qué versión está en producción.
+
+**Acción correctiva:**
+- ✅ SITE_VERSION actualizada de '1.36.0' a '1.38.0'
+- ✅ Bug marcado como [Fixed] en bugs/
+- ✅ development-queue.md actualizado para reflejar 0 bugs pendientes
+
+**Archivos actualizados:**
+- `public/js/main.js` - SITE_VERSION actualizada
+- `bugs/20260219-203000-BUG-022-site-version-no-actualizada.md` - Estado actualizado a [Fixed]
+- `development-queue.md` - Sección de bugs actualizada
+
+**Notas:**
+- Este bug fue detectado durante validación QA del commit 482606c (carros-vamos)
+- El bug no bloquea desarrollo, pero debe corregirse para mantener consistencia
+
+---
+
 ## [v1.38.0] - 2026-02-19 20:00 UTC
 
 ### 🐛 Bug Fix - BUG DE PROCESO
