@@ -3,10 +3,11 @@
 **Fecha reportado:** 2026-02-19 02:55 UTC
 **Juego afectado:** Science Lab (science-lab - 8-15 Años)
 **Severidad:** CRÍTICA - Estructura de carpetas corrupta
-**Estado:** ✅ FIXED
+**Estado:** ✅ FIXED & COMMITTED
 
 **Fecha resuelto:** 2026-02-19 03:20 UTC
 **Rama:** fix/BUG-013-science-lab-carpeta-malformada
+**Commit:** 55c8ca1
 
 ## Descripción
 
