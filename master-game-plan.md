@@ -57,6 +57,8 @@ This document outlines the development roadmap for the 41 games currently in the
 |----|-----------|--------|
 | 001 | **Code Quest** | Isometric coding adventure. | ✅ Done |
 | 002 | **Art Battle** | Digital canvas art competition with random themes. | ✅ Done |
+| 003 | **Science Lab** | Element fusion lab with chemistry. | ✅ Done |
+| 004 | **Eco Warriors** | Planet rescue strategy game. | ✅ Done |
 
 ---
 
@@ -69,9 +71,9 @@ This document outlines the development roadmap for the 41 games currently in the
 | 2-3 Years | 3 | 3 |
 | 3-5 Years | 3 | 3 |
 | 5-8 Years | 3 | 3 |
-| 8-15 Years | 2 | 3 |
+| 8-15 Years | 4 | 3 |
 
-*Nota: `003-colores-vibran`, `003-pintura-dedos`, `003-rompecabezas` y `laberinto-aventura` completados y validados*
+*Nota: `003-colores-vibran`, `003-pintura-dedos`, `003-rompecabezas`, `laberinto-aventura`, `tren-numeros`, `science-lab` y `eco-warriors` completados y validados*
 
 ---
 

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Eco Warriors: Planet Rescue</title>
+    <link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- HUD - Heads Up Display -->
+        <div class="hud">
+            <div class="hud-left">
+                <div class="level-indicator">
+                    <span class="level-label">NIVEL</span>
+                    <span class="level-value" id="level">1</span>
+                </div>
+            </div>
+            <div class="hud-center">
+                <div class="timer-container">
+                    <div class="timer-bar" id="timer-bar"></div>
+                    <div class="timer-text" id="timer-text">120s</div>
+                </div>
+            </div>
+            <div class="hud-right">
+                <div class="sustainability-container">
+                    <span class="sustainability-label">SOSTENIBILIDAD</span>
+                    <div class="sustainability-bar">
+                        <div class="sustainability-fill" id="sustainability-fill"></div>
+                    </div>
+                    <span class="sustainability-value" id="sustainability-text">0%</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mapa del Ecosistema -->
+        <div class="map-container">
+            <div class="map-grid" id="map-grid"></div>
+            <div class="map-legend">
+                <div class="legend-item">
+                    <div class="legend-color clean"></div>
+                    <span>Limpio</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color polluted"></div>
+                    <span>Contaminado</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color restored"></div>
+                    <span>Restaurado</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Panel de Recursos -->
+        <div class="resources-panel">
+            <h2 class="panel-title">Recursos Renovables</h2>
+            <div class="resources-grid">
+                <div class="resource-item" data-resource="solar">
+                    <div class="resource-icon">☀️</div>
+                    <div class="resource-info">
+                        <span class="resource-name">Solar</span>
+                        <span class="resource-amount" id="solar-amount">0</span>
+                    </div>
+                    <button class="resource-btn" data-action="collect">+</button>
+                </div>
+                <div class="resource-item" data-resource="wind">
+                    <div class="resource-icon">💨</div>
+                    <div class="resource-info">
+                        <span class="resource-name">Eólica</span>
+                        <span class="resource-amount" id="wind-amount">0</span>
+                    </div>
+                    <button class="resource-btn" data-action="collect">+</button>
+                </div>
+                <div class="resource-item" data-resource="water">
+                    <div class="resource-icon">💧</div>
+                    <div class="resource-info">
+                        <span class="resource-name">Hidro</span>
+                        <span class="resource-amount" id="water-amount">0</span>
+                    </div>
+                    <button class="resource-btn" data-action="collect">+</button>
+                </div>
+                <div class="resource-item" data-resource="bio">
+                    <div class="resource-icon">🌱</div>
+                    <div class="resource-info">
+                        <span class="resource-name">Bioenergía</span>
+                        <span class="resource-amount" id="bio-amount">0</span>
+                    </div>
+                    <button class="resource-btn" data-action="collect">+</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Panel de Acciones -->
+        <div class="actions-panel">
+            <h2 class="panel-title">Acciones de Restauración</h2>
+            <div class="actions-grid">
+                <button class="action-btn" data-action="plant-trees" data-cost="5">
+                    <span class="action-icon">🌲</span>
+                    <span class="action-name">Plantar Árboles</span>
+                    <span class="action-cost">5 solar</span>
+                </button>
+                <button class="action-btn" data-action="clean-water" data-cost="10">
+                    <span class="action-icon">🚰</span>
+                    <span class="action-name">Limpiar Agua</span>
+                    <span class="action-cost">10 hidro</span>
+                </button>
+                <button class="action-btn" data-action="install-wind" data-cost="8">
+                    <span class="action-icon">🌀</span>
+                    <span class="action-name">Instalar Eólica</span>
+                    <span class="action-cost">8 eólica</span>
+                </button>
+                <button class="action-btn" data-action="bio-remediation" data-cost="15">
+                    <span class="action-icon">🔬</span>
+                    <span class="action-name">Biorremediación</span>
+                    <span class="action-cost">15 bio</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Evento Activo -->
+        <div class="event-panel" id="event-panel">
+            <h2 class="event-title" id="event-title">¡Evento Inminente!</h2>
+            <p class="event-description" id="event-description">Una tormenta se acerca...</p>
+            <div class="event-timer">
+                <div class="event-timer-bar" id="event-timer-bar"></div>
+                <span class="event-timer-text" id="event-timer-text">30s</span>
+            </div>
+            <button class="event-btn" id="event-btn">Preparar Defensa</button>
+        </div>
+    </div>
+
+    <!-- Modal de Nivel Completado -->
+    <div class="modal" id="level-complete-modal">
+        <div class="modal-content">
+            <h2 class="modal-title">¡Nivel Completado! 🌍</h2>
+            <p class="modal-message">Has restaurado el ecosistema con éxito.</p>
+            <div class="modal-stats">
+                <div class="stat">
+                    <span class="stat-label">Índice de sostenibilidad</span>
+                    <span class="stat-value" id="level-completed-sustainability">100%</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Tiles restaurados</span>
+                    <span class="stat-value" id="level-completed-restored">25</span>
+                </div>
+            </div>
+            <button class="modal-btn" id="next-level-btn">Siguiente Nivel</button>
+        </div>
+    </div>
+
+    <!-- Modal de Tiempo Agotado -->
+    <div class="modal" id="time-up-modal">
+        <div class="modal-content">
+            <h2 class="modal-title">¡Tiempo Agotado! ⏰</h2>
+            <p class="modal-message">El ecosistema necesita más trabajo.</p>
+            <div class="modal-stats">
+                <div class="stat">
+                    <span class="stat-label">Índice de sostenibilidad</span>
+                    <span class="stat-value" id="time-up-sustainability">0%</span>
+                </div>
+            </div>
+            <button class="modal-btn" id="retry-btn">Reintentar</button>
+        </div>
+    </div>
+
+    <!-- Modal de Juego Completado -->
+    <div class="modal" id="game-complete-modal">
+        <div class="modal-content">
+            <h2 class="modal-title">¡Eco Héroe! 🏆</h2>
+            <p class="modal-message">Has salvado el planeta de la contaminación.</p>
+            <div class="modal-stats">
+                <div class="stat">
+                    <span class="stat-label">Total niveles completados</span>
+                    <span class="stat-value" id="game-complete-levels">5</span>
+                </div>
+            </div>
+            <button class="modal-btn" id="restart-btn">Jugar de Nuevo</button>
+        </div>
+    </div>
+
+    <script src="js/game.js"></script>
+</body>
+</html>

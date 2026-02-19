@@ -38,7 +38,7 @@ La estrategia de desarrollo sigue un ciclo "Round Robin" entre las categorías d
 | 2-3 Años | 3 | 3 |
 | 3-5 Años | 3 | 3 |
 | 5-8 Años | 3 | 3 |
-| 8-15 Años | 2 | 3 |
+| 8-15 Años | 4 | 3 |
 
 *Nota: `003-colores-vibran`, `003-pintura-dedos`, `003-rompecabezas` y `laberinto-aventura` implementados. Todos los juegos cumplen con todas las reglas del proyecto.*
 
@@ -62,9 +62,10 @@ Basado en la regla de equilibrio, este es el orden inmediato de desarrollo:
 12. **[Done]** **0-1 Años**: `003-colores-vibran` (Colores que Vibran) - BUG-004 Fixed
 13. **[Done ✅ QA Validado]** **1-2 Años**: `003-pintura-dedos` (Pintura con los Dedos) - BUG-005 Fixed - IMPLEMENTADO - QA APROBADO
 14. **[Done ✅ QA Validado]** **2-3 Años**: `003-rompecabezas` (Rompecabezas Simple) - IMPLEMENTADO - QA APROBADO
-15. **[Blocked 🔴 BUG-009]** **3-5 Años**: `003-tren-numeros` (Tren de Números) - IMPLEMENTADO - PENDIENTE CORRECCIÓN QA
-16. **[Blocked 🔴 BUG-008]** **5-8 Años**: `003-laberinto-aventura` (Laberinto Aventura) - IMPLEMENTADO - PENDIENTE CORRECCIÓN QA
-17. **[BLOCKED 🔴]** **8-15 Años**: `003-science-lab` (Science Lab) - BLOQUEADO - Resolver bugs primero
+15. **[Done ✅]** **3-5 Años**: `003-tren-numeros` (Tren de Números) - IMPLEMENTADO - BUG-009 Fixed
+16. **[Done ✅]** **5-8 Años**: `003-laberinto-aventura` (Laberinto Aventura) - IMPLEMENTADO - BUG-008 Fixed
+17. **[Done ✅]** **8-15 Años**: `003-science-lab` (Science Lab) - IMPLEMENTADO - BUG-016 Fixed
+18. **[Done ✅]** **8-15 Años**: `004-eco-warriors` (Eco Warriors: Planet Rescue) - IMPLEMENTADO - Todos los bugs resueltos
 
 ---
 
