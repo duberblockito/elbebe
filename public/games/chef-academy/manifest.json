@@ -1,0 +1,24 @@
+{
+  "name": "Chef Academy: Culinary Adventure",
+  "short_name": "Chef Academy",
+  "description": "Aprende a cocinar recetas deliciosas en esta academia de cocina virtual para jóvenes chefs.",
+  "version": "1.0.0",
+  "author": "El Bebe Games",
+  "category": "educational",
+  "recommended_age": "8-15",
+  "language": "es",
+  "id": "chef-academy",
+  "tags": [
+    "cooking",
+    "educational",
+    "recipes",
+    "touch",
+    "levels",
+    "timer",
+    "progress",
+    "mini-games"
+  ],
+  "screenshots": [],
+  "created": "2026-02-19",
+  "updated": "2026-02-19"
+}

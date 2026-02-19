@@ -2,6 +2,59 @@
 
 ---
 
+## [v1.43.0] - 2026-02-19 23:20 UTC
+
+### 🎮 Nuevo Juego - 8-15 Años
+
+**Juego:** Chef Academy: Culinary Adventure
+**ID:** chef-academy
+**Categoría:** Educativo
+**Edad recomendada:** 8-15 años
+
+**Características:**
+- Juego de cocina educativo con 8 niveles progresivos de recetas (desayuno simple → platos gourmet)
+- Mini-games de preparación: Picar (taps rápidos), Mezclar (taps o shake), Cocinar (control de temperatura), Decorar (drag & drop)
+- Sistema de estrellas (1-3 por receta) basado en precisión y tiempo
+- Barra de progreso visual mostrando pasos completados vs total
+- Temporizador visual con cambios de color (verde → amarillo → rojo)
+- Temporizadores progresivos por nivel (30s → 100s según dificultad)
+- Recetas incluidas: Huevos Revueltos, Ensalada César, Pasta Carbonara, Pizza Margherita, Salmón al Horno, Risotto de Setas, Paella, Soufflé de Chocolate
+- Sonidos sintetizados con Web Audio API (picar, mezclar, éxito, error)
+- Persistencia en localStorage (chef-academy-progress)
+- Modales: Nivel Completado, Tiempo Agotado, Juego Completo
+- Responsivo para móviles (375x667px)
+- Nivel select con desbloqueo progresivo
+- Total de 24 estrellas posibles (3 estrellas × 8 niveles)
+
+**Archivos creados:**
+- `public/games/chef-academy/index.html` - Juego completo
+- `public/games/chef-academy/css/game.css` - Estilos
+- `public/games/chef-academy/js/game.js` - Lógica del juego
+- `public/games/chef-academy/manifest.json` - Metadatos
+- `public/games/chef-academy/thumbnail.svg` - Miniatura
+- `games-backlog/8-15-007-chef-academy.md` - Plan del juego creado
+
+**Archivos actualizados:**
+- `public/js/games-list.json` - Juego registrado, versión actualizada a 1.43.0
+- `public/js/main.js` - SITE_VERSION actualizada a 1.43.0
+- `master-game-plan.md` - Juego agregado a 8-15 años
+- `development-queue.md` - Contador de 8-15 años incrementado a 7
+
+**Cumplimiento de reglas:**
+- ✅ Implementado en `/public/games/` (directorio de deployment)
+- ✅ HTML5, CSS3, Vanilla JavaScript (sin frameworks)
+- ✅ Responsivo (funciona en 375x667 - iPhone SE)
+- ✅ 8 niveles progresivos (game-design-rules.md Sección 7)
+- ✅ Barra de progreso visual obligatoria
+- ✅ Temporizador visual con cambios de color (verde → amarillo → rojo)
+- ✅ Persistencia en localStorage implementada
+- ✅ Mini-games de interacción táctil variados
+- ✅ Sistema de estrellas basado en desempeño
+
+**Notas:**
+
+---
+
 ## [v1.42.0] - 2026-02-19 23:00 UTC
 
 ### 🎮 Nuevo Juego - 0-1 Años

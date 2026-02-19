@@ -87,6 +87,7 @@ This document outlines the development roadmap for the 41 games currently in the
 | 004 | **Eco Warriors** | Ecological strategy game. | ✅ Done |
 | 005 | **Music Master** | Rhythm game with music theory lessons. | ✅ Done |
 | 006 | **Space Explorer** | Galaxy exploration sim with planets and colonies. | ✅ Done |
+| 007 | **Chef Academy** | Learn to cook delicious recipes in this virtual cooking academy. | ✅ Done |
 
 ---
 
@@ -99,7 +100,7 @@ This document outlines the development roadmap for the 41 games currently in the
 | 2-3 Years | 7 | 7 |
 | 3-5 Years | 7 | 7 |
 | 5-8 Years | 7 | 7 |
-| 8-15 Years | 6 | 6 |
+| 8-15 Years | 7 | 7 |
 
 *Nota: `003-colores-vibran`, `003-pintura-dedos`, `003-rompecabezas`, `laberinto-aventura`, `tren-numeros`, `science-lab`, `eco-warriors`, `peek-a-boo`, `cascada-musical`, `bloques-caen`, `caritas-emociones`, `tour-sistema-solar`, `lluvia-estrellas`, `estrellas-brillantes`, `music-master`, `dedos-magicos`, `apila-animales`, `cochecito-colores`, `pequeno-jardinero`, `patitas-caminan`, `maestro-reloj`, `viste-clima` y `formas-rebotan` completados y validados*
 

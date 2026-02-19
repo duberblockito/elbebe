@@ -38,7 +38,7 @@ La estrategia de desarrollo sigue un ciclo "Round Robin" entre las categorías d
 | 2-3 Años | 7 | 7 |
 | 3-5 Años | 7 | 7 |
 | 5-8 Años | 7 | 7 |
-| 8-15 Años | 6 | 6 |
+| 8-15 Años | 7 | 7 |
 
 *Nota: `003-colores-vibran`, `003-pintura-dedos`, `003-rompecabezas`, `laberinto-aventura`, `tren-numeros`, `science-lab`, `eco-warriors`, `peek-a-boo`, `cascada-musical`, `2-3-004-bloques-caen`, `caritas-emociones`, `tour-sistema-solar`, `lluvia-estrellas`, `estrellas-brillantes`, `music-master`, `dedos-magicos`, `apila-animales`, `cochecito-colores`, `pequeno-jardinero`, `patitas-caminan`, `maestro-reloj`, `camiones-corren`, `viste-clima` y `formas-rebotan` implementados. Todos los juegos cumplen con todas las reglas del proyecto.*
 
@@ -92,6 +92,7 @@ Basado en la regla de equilibrio, este es el orden inmediato de desarrollo:
 41. **[Done ✅]** **2-3 Años**: `2-3-007-mezcla-colores` (Mezcla los Colores) - IMPLEMENTADO
 42. **[Done ✅]** **5-8 Años**: `paleontologo-dino` (Paleontólogo Dino) - IMPLEMENTADO
 43. **[Done ✅]** **0-1 Años**: `pelota-rueda` (Pelota que Rueda) - IMPLEMENTADO
+44. **[Done ✅]** **8-15 Años**: `chef-academy` (Chef Academy: Culinary Adventure) - IMPLEMENTADO
 
 ---
 

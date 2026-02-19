@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Chef Academy: Culinary Adventure</title>
+    <link rel="stylesheet" href="css/game.css">
+    <meta name="description" content="Aprende a cocinar recetas deliciosas en esta academia de cocina virtual para jóvenes chefs.">
+</head>
+<body>
+    <div id="game-container">
+        <!-- HUD - Heads Up Display -->
+        <div id="hud" class="hud">
+            <div class="hud-left">
+                <div class="level-display">Nivel <span id="level-number">1</span>/8</div>
+                <div class="step-display">Paso <span id="current-step">1</span>/<span id="total-steps">3</span></div>
+            </div>
+            <div class="hud-center">
+                <div class="recipe-name" id="recipe-name">Huevos Revueltos</div>
+            </div>
+            <div class="hud-right">
+                <div class="stars-display">⭐ <span id="current-stars">0</span>/3</div>
+                <button id="pause-btn" class="pause-btn">⏸️</button>
+            </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-bar-container">
+            <div class="progress-bar-label">Progreso</div>
+            <div class="progress-bar">
+                <div class="progress-bar-fill" id="progress-fill"></div>
+            </div>
+        </div>
+
+        <!-- Timer Bar -->
+        <div class="timer-bar-container">
+            <div class="timer-bar-label">Tiempo</div>
+            <div class="timer-display" id="timer-display">30s</div>
+            <div class="timer-bar">
+                <div class="timer-bar-fill" id="timer-fill"></div>
+            </div>
+        </div>
+
+        <!-- Main Game Area -->
+        <div id="game-area">
+            <!-- Kitchen Canvas -->
+            <canvas id="kitchen-canvas"></canvas>
+
+            <!-- Mini-game overlays -->
+            <div id="chopping-game" class="mini-game hidden">
+                <div class="mini-game-instruction">¡Toca rápidamente para picar!</div>
+                <div class="chopping-area">
+                    <div class="vegetable" id="chopping-vegetable">🍅</div>
+                    <div class="chopping-progress">
+                        <div class="chopping-progress-fill" id="chopping-fill"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="mixing-game" class="mini-game hidden">
+                <div class="mini-game-instruction">¡Agita el dispositivo o dibuja círculos!</div>
+                <div class="mixing-area">
+                    <div class="bowl" id="mixing-bowl">🥣</div>
+                    <div class="mixing-progress">
+                        <div class="mixing-progress-fill" id="mixing-fill"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="cooking-game" class="mini-game hidden">
+                <div class="mini-game-instruction">Ajusta la temperatura perfecta</div>
+                <div class="cooking-area">
+                    <div class="pan" id="cooking-pan">🍳</div>
+                    <input type="range" class="temperature-slider" id="temperature-slider" min="1" max="5" value="3">
+                    <div class="temperature-indicator" id="temperature-indicator">Media</div>
+                </div>
+            </div>
+
+            <div id="plating-game" class="mini-game hidden">
+                <div class="mini-game-instruction">Arrastra los ingredientes al plato</div>
+                <div class="plating-area">
+                    <div class="plate" id="plating-plate">🍽️</div>
+                    <div class="ingredients-drag" id="ingredients-drag">
+                        <div class="draggable-ingredient" data-ingredient="🍅">🍅</div>
+                        <div class="draggable-ingredient" data-ingredient="🧀">🧀</div>
+                        <div class="draggable-ingredient" data-ingredient="🥬">🥬</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hint/Instructions -->
+        <div class="hint-box" id="hint-box">
+            <span id="hint-text">¡Bienvenido a Chef Academy! Toca para comenzar</span>
+        </div>
+
+        <!-- Start Screen -->
+        <div id="start-screen" class="modal">
+            <div class="modal-content">
+                <h1>👨‍🍳 Chef Academy</h1>
+                <p>Aprende a cocinar recetas deliciosas</p>
+                <div class="chef-avatar">👨‍🍳</div>
+                <button id="start-btn" class="primary-btn">¡A Cocinar!</button>
+                <button id="level-select-btn" class="secondary-btn">Seleccionar Nivel</button>
+            </div>
+        </div>
+
+        <!-- Level Select Screen -->
+        <div id="level-select-screen" class="modal hidden">
+            <div class="modal-content">
+                <h2>Selecciona una Receta</h2>
+                <div class="level-grid" id="level-grid">
+                    <!-- Levels will be generated by JS -->
+                </div>
+                <button id="back-to-start-btn" class="secondary-btn">Volver</button>
+            </div>
+        </div>
+
+        <!-- Level Complete Modal -->
+        <div id="level-complete-modal" class="modal hidden">
+            <div class="modal-content">
+                <h2>🎉 ¡Receta Completada!</h2>
+                <div class="stars-earned" id="stars-earned">⭐⭐⭐</div>
+                <div class="stats">
+                    <p>Tiempo: <span id="final-time">0s</span></p>
+                    <p>Precisión: <span id="final-precision">0%</span></p>
+                </div>
+                <button id="next-level-btn" class="primary-btn">Siguiente Receta</button>
+                <button id="retry-btn" class="secondary-btn">Intentar de Nuevo</button>
+            </div>
+        </div>
+
+        <!-- Time's Up Modal -->
+        <div id="times-up-modal" class="modal hidden">
+            <div class="modal-content">
+                <h2>⏱️ ¡Se Acabó el Tiempo!</h2>
+                <p>No pudiste completar la receta a tiempo.</p>
+                <button id="retry-times-up-btn" class="primary-btn">Intentar de Nuevo</button>
+                <button id="back-to-menu-btn" class="secondary-btn">Volver al Menú</button>
+            </div>
+        </div>
+
+        <!-- Game Complete Modal -->
+        <div id="game-complete-modal" class="modal hidden">
+            <div class="modal-content">
+                <h2>🏆 ¡Chef Ejecutivo!</h2>
+                <p>¡Has completado todas las recetas de la academia!</p>
+                <div class="total-stats">
+                    <p>Total de Estrellas: <span id="total-stars">0</span>/24</p>
+                    <p>Recetas Completadas: <span id="total-recipes">0</span>/8</p>
+                </div>
+                <div class="chef-trophy">🏆👨‍🍳🏆</div>
+                <button id="play-again-btn" class="primary-btn">Jugar de Nuevo</button>
+            </div>
+        </div>
+
+        <!-- Pause Modal -->
+        <div id="pause-modal" class="modal hidden">
+            <div class="modal-content">
+                <h2>⏸️ Pausa</h2>
+                <button id="resume-btn" class="primary-btn">Continuar</button>
+                <button id="restart-btn" class="secondary-btn">Reiniciar</button>
+                <button id="quit-btn" class="secondary-btn">Salir</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/game.js"></script>
+</body>
+</html>

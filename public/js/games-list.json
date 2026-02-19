@@ -1,5 +1,5 @@
 {
-  "version": "1.42.0",
+  "version": "1.43.0",
   "lastUpdated": "2026-02-19",
   "games": [
     {
@@ -989,6 +989,30 @@
         "paleontology",
         "fossils",
         "collection"
+      ]
+    },
+    {
+      "id": "chef-academy",
+      "title": "Chef Academy: Culinary Adventure",
+      "title_en": "Chef Academy: Culinary Adventure",
+      "description": "Aprende a cocinar recetas deliciosas en esta academia de cocina virtual. Incluye 8 niveles progresivos de recetas (desayuno simple → platos gourmet), mini-games de preparación (picar, mezclar, cocinar, decorar), sistema de estrellas (1-3 por receta), barra de progreso visual y temporizador con cambios de color (verde → amarillo → rojo).",
+      "description_en": "Learn to cook delicious recipes in this virtual cooking academy. Includes 8 progressive recipe levels (simple breakfast → gourmet dishes), preparation mini-games (chopping, mixing, cooking, plating), star system (1-3 per recipe), visual progress bar, and timer with color changes (green → yellow → red).",
+      "category": "educational",
+      "author": "El Bebe Games",
+      "version": "1.0.0",
+      "thumbnail": "thumbnail.svg",
+      "recommended_age": "8-15",
+      "tags": [
+        "cooking",
+        "educational",
+        "recipes",
+        "touch",
+        "levels",
+        "timer",
+        "progress",
+        "mini-games",
+        "nutrition",
+        "ingredients"
       ]
     }
   ]
