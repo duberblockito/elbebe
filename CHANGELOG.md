@@ -2,6 +2,59 @@
 
 ---
 
+## [v1.38.0] - 2026-02-19 20:00 UTC
+
+### 🐛 Bug Fix - BUG DE PROCESO
+
+**Bug:** BUG-021 - formas-rebotan y viste-clima commiteados sin rama feature/
+**Severidad:** ALTA
+**Estado:** ✅ Resolved
+
+**Descripción del bug:**
+El commit 7ea7c1b implementó DOS juegos (formas-rebotan y viste-clima) en un SOLO commit, SIN haber creado las ramas feature/ correspondientes. Violación de las reglas de workflow:
+- Sin ramas feature/ para cada juego
+- Múltiples juegos en un solo commit
+- Violación de regla: "Un juego por commit"
+- Violación de regla: "Cada juego requiere su propia rama feature/"
+
+**Juegos afectados:**
+- formas-rebotan (0-1-009) - Formas que Rebotan
+- viste-clima (3-5-006) - Vístete para el Clima
+
+**Estado técnico:**
+- ✅ Ambos juegos funcionalmente correctos
+- ✅ Cumplen con game-design-rules.md
+- ✅ Registrados en games-list.json
+- ✅ CHANGELOG.md y master-game-plan.md actualizados
+
+**Acción correctiva:**
+- ✅ Bug documentado en `bugs-resolved/` como lección aprendida
+- ✅ No se requiere revertir código funcional
+- ✅ Lección documentada en bugs-resolved/ para prevención futura
+- ✅ Reglas reforzadas en workflow de implementación
+
+**Archivos actualizados:**
+- `bugs/20260219-195000-BUG-021-formas-rebotan-viste-clima-sin-rama-feature.md` → `bugs-resolved/`
+- `bugs-resolved/20260219-195000-BUG-021-formas-rebotan-viste-clima-sin-rama-feature.md` - Estado actualizado a [Resolved], sección de resolución agregada
+- `CHANGELOG.md` - Entrada de bug fix agregada
+
+**Lección aprendida:**
+1. **Un juego por commit rule:** Cada commit debe implementar SOLO un juego
+2. **Rama feature/ obligatoria:** Todo desarrollo de juegos debe ocurrir en una rama `feature/[id-juego]-[nombre]`
+3. **No mezclar juegos:** NUNCA implementar múltiples juegos en el mismo commit o rama
+
+**Notas:**
+- Este es un bug de proceso, no técnico
+- Los juegos permanecen en master ya que son funcionalmente correctos
+- El workflow de implementación ahora incluye verificación estricta de estas reglas
+
+**Referencia:**
+- Bug report: `/bugs-resolved/20260219-195000-BUG-021-formas-rebotan-viste-clima-sin-rama-feature.md`
+- Commit violado: `7ea7c1b feat: add 0-1-009-formas-rebotan and 3-5-006-viste-clima games`
+- BUG-020: Lección aprendida previa sobre ramas feature/
+
+---
+
 ## [v1.37.0] - 2026-02-19 19:40 UTC
 
 ### ✨ Nuevo Juego Agregado
