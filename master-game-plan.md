@@ -54,6 +54,7 @@ This document outlines the development roadmap for the 41 games currently in the
 | 001 | **Math Blaster** | Blast asteroids with math. | ✅ Done |
 | 002 | **Constructor Palabras** | Spelling with drag and drop. | ✅ Done |
 | 003 | **Laberinto Aventura** | Guide character through maze to find keys and chests. | ✅ Done |
+| 004 | **Tour del Sistema Solar** | Interactive space tour, visit planets, learn facts, answer trivia. | ✅ Done |
 
 ## 👱 8-15 Years (Tweens/Teens)
 
@@ -72,10 +73,10 @@ This document outlines the development roadmap for the 41 games currently in the
 | 1-2 Years | 4 | 4 |
 | 2-3 Years | 4 | 4 |
 | 3-5 Years | 4 | 4 |
-| 5-8 Years | 3 | 4 |
+| 5-8 Years | 4 | 4 |
 | 8-15 Years | 4 | 4 |
 
-*Nota: `003-colores-vibran`, `003-pintura-dedos`, `003-rompecabezas`, `laberinto-aventura`, `tren-numeros`, `science-lab`, `eco-warriors`, `peek-a-boo`, `cascada-musical`, `bloques-caen` y `caritas-emociones` completados y validados*
+*Nota: `003-colores-vibran`, `003-pintura-dedos`, `003-rompecabezas`, `laberinto-aventura`, `tren-numeros`, `science-lab`, `eco-warriors`, `peek-a-boo`, `cascada-musical`, `bloques-caen`, `caritas-emociones` y `tour-sistema-solar` completados y validados*
 
 ---
 

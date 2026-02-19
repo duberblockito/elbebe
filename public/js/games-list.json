@@ -478,6 +478,28 @@
         "arcade",
         "high-score"
       ]
+    },
+    {
+      "id": "tour-sistema-solar",
+      "title": "Tour del Sistema Solar",
+      "title_en": "Solar System Tour",
+      "description": "Viaja por el espacio, descubre los planetas del sistema solar y aprende datos increíbles respondiendo preguntas de trivia. Incluye sistema de niveles (8 planetas), insignias coleccionables y pasaporte espacial.",
+      "description_en": "Travel through space, discover the planets of the solar system and learn amazing facts by answering trivia questions. Includes level system (8 planets), collectible badges, and space passport.",
+      "category": "educational",
+      "author": "Blockito AI",
+      "version": "1.0.0",
+      "thumbnail": "thumbnail.svg",
+      "recommended_age": "5-8",
+      "tags": [
+        "space",
+        "planets",
+        "trivia",
+        "educational",
+        "levels",
+        "progress",
+        "badges",
+        "passport"
+      ]
     }
   ]
 }

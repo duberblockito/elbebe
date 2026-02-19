@@ -1,0 +1,10 @@
+{
+  "id": "tour-sistema-solar",
+  "title": "Tour del Sistema Solar",
+  "description": "Viaja por el espacio, descubre los planetas del sistema solar y aprende datos increíbles respondiendo preguntas de trivia.",
+  "category": "educational",
+  "author": "El Bebe Games",
+  "version": "1.0.0",
+  "thumbnail": "thumbnail.jpg",
+  "recommended_age": "5-8"
+}

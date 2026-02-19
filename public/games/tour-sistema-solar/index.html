@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour del Sistema Solar 🪐</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Pantalla de Inicio -->
+    <div id="start-screen" class="screen active">
+        <div class="stars"></div>
+        <div class="content">
+            <h1>🚀 Tour del Sistema Solar</h1>
+            <p>¡Viaja por el espacio y descubre los planetas!</p>
+            <button id="start-btn" class="btn-primary">¡Empezar Aventura!</button>
+            <div class="passport-info" id="passport-display">
+                <p>🛂 Pasaporte Espacial</p>
+                <p>Insignias: <span id="badges-count">0</span>/8</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pantalla del Mapa del Sistema Solar -->
+    <div id="map-screen" class="screen">
+        <div class="stars"></div>
+        <div class="map-header">
+            <h2>🌌 Mapa del Sistema Solar</h2>
+            <button id="back-to-home" class="btn-small">🏠 Inicio</button>
+        </div>
+        <div class="solar-system">
+            <div class="orbit mercury-orbit">
+                <button class="planet mercury" data-planet="mercury">
+                    <span class="planet-name">Mercurio</span>
+                </button>
+            </div>
+            <div class="orbit venus-orbit">
+                <button class="planet venus" data-planet="venus">
+                    <span class="planet-name">Venus</span>
+                </button>
+            </div>
+            <div class="orbit earth-orbit">
+                <button class="planet earth" data-planet="earth">
+                    <span class="planet-name">Tierra</span>
+                </button>
+            </div>
+            <div class="orbit mars-orbit">
+                <button class="planet mars" data-planet="mars">
+                    <span class="planet-name">Marte</span>
+                </button>
+            </div>
+            <div class="orbit jupiter-orbit">
+                <button class="planet jupiter" data-planet="jupiter">
+                    <span class="planet-name">Júpiter</span>
+                </button>
+            </div>
+            <div class="orbit saturn-orbit">
+                <button class="planet saturn" data-planet="saturn">
+                    <span class="planet-name">Saturno</span>
+                </button>
+            </div>
+            <div class="orbit uranus-orbit">
+                <button class="planet uranus" data-planet="uranus">
+                    <span class="planet-name">Urano</span>
+                </button>
+            </div>
+            <div class="orbit neptune-orbit">
+                <button class="planet neptune" data-planet="neptune">
+                    <span class="planet-name">Neptuno</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pantalla de Información del Planeta -->
+    <div id="planet-info-screen" class="screen">
+        <div class="stars"></div>
+        <div class="planet-info-content">
+            <button id="back-to-map" class="btn-small">← Volver al Mapa</button>
+            <div class="planet-display">
+                <div class="planet-visual" id="planet-visual"></div>
+                <h2 id="planet-title">Nombre del Planeta</h2>
+                <div class="planet-facts">
+                    <div class="fact">
+                        <span class="fact-icon">📏</span>
+                        <span id="fact-distance">Distancia del Sol: ...</span>
+                    </div>
+                    <div class="fact">
+                        <span class="fact-icon">🌡️</span>
+                        <span id="fact-temperature">Temperatura: ...</span>
+                    </div>
+                    <div class="fact">
+                        <span class="fact-icon">🔄</span>
+                        <span id="fact-rotation">Rotación: ...</span>
+                    </div>
+                </div>
+                <div class="planet-description">
+                    <p id="planet-description">Descripción del planeta...</p>
+                </div>
+                <button id="start-trivia-btn" class="btn-primary">🧠 ¡Jugar Trivia!</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pantalla de Trivia -->
+    <div id="trivia-screen" class="screen">
+        <div class="stars"></div>
+        <div class="trivia-content">
+            <div class="progress-bar-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="trivia-progress"></div>
+                </div>
+                <div class="progress-text">
+                    <span id="question-number">1</span>/3
+                </div>
+            </div>
+            <div class="question-card">
+                <h3 id="trivia-question">Pregunta...</h3>
+                <div class="options" id="trivia-options">
+                    <button class="option-btn" data-option="A">Opción A</button>
+                    <button class="option-btn" data-option="B">Opción B</button>
+                    <button class="option-btn" data-option="C">Opción C</button>
+                </div>
+            </div>
+            <div id="trivia-feedback" class="feedback hidden">
+                <p id="feedback-message">Mensaje de feedback...</p>
+                <button id="next-question-btn" class="btn-primary">Siguiente Pregunta</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Insignia Ganada -->
+    <div id="badge-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>🎉 ¡Felicidades!</h2>
+            <div class="badge-earned">
+                <div class="badge-icon" id="badge-icon">🏆</div>
+                <h3 id="badge-name">Nombre de la Insignia</h3>
+                <p id="badge-description">Descripción de la insignia...</p>
+            </div>
+            <button id="close-badge-modal" class="btn-primary">¡Genial!</button>
+        </div>
+    </div>
+
+    <!-- Modal de Planeta Completado -->
+    <div id="planet-complete-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>✅ ¡Planeta Completado!</h2>
+            <p>Has explorado <span id="completed-planet-name">el planeta</span> y ganado su insignia.</p>
+            <div class="badges-earned-count">
+                <p>Insignias: <span id="badges-total">1</span>/8</p>
+            </div>
+            <div class="modal-buttons">
+                <button id="explore-more-btn" class="btn-primary">Explorar Más</button>
+                <button id="go-to-passport-btn" class="btn-secondary">Ver Pasaporte</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Pasaporte -->
+    <div id="passport-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>🛂 Pasaporte Espacial</h2>
+            <div class="passport-stamps">
+                <h3>Insignias Ganadas:</h3>
+                <div class="badges-grid" id="badges-grid">
+                    <!-- Badges will be inserted here dynamically -->
+                </div>
+            </div>
+            <button id="close-passport-modal" class="btn-primary">Cerrar</button>
+        </div>
+    </div>
+
+    <!-- Audio Elements -->
+    <audio id="bg-music" loop>
+        <source src="assets/space-music.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="click-sound">
+        <source src="assets/click.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="correct-sound">
+        <source src="assets/correct.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="wrong-sound">
+        <source src="assets/wrong.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="badge-sound">
+        <source src="assets/badge.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="js/game.js"></script>
+</body>
+</html>
