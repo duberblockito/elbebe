@@ -1,0 +1,593 @@
+/* Maestro del Reloj - Game Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.game-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+/* HUD - Heads Up Display */
+.hud {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    z-index: 100;
+    color: white;
+    font-size: 14px;
+}
+
+.hud-left,
+.hud-right {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.hud-center {
+    text-align: center;
+}
+
+.game-title {
+    font-size: 16px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hud-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hud-label {
+    font-size: 11px;
+    opacity: 0.8;
+    margin-bottom: 2px;
+}
+
+.hud-value {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.timer-display {
+    font-size: 18px;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 5px 12px;
+    border-radius: 8px;
+}
+
+/* Progress Bar */
+.progress-bar-container {
+    position: fixed;
+    top: 55px;
+    left: 10px;
+    right: 10px;
+    z-index: 99;
+}
+
+.progress-label {
+    font-size: 12px;
+    color: white;
+    margin-bottom: 5px;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%);
+    transition: width 0.3s ease;
+    box-shadow: 0 0 10px rgba(240, 147, 251, 0.5);
+}
+
+/* Timer Bar */
+.timer-bar-container {
+    position: fixed;
+    top: 80px;
+    left: 10px;
+    right: 10px;
+    z-index: 99;
+}
+
+.timer-bar {
+    width: 100%;
+    height: 6px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.timer-fill {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, #4ade80 0%, #22c55e 100%);
+    transition: width 1s linear, background 0.3s ease;
+    box-shadow: 0 0 8px rgba(74, 222, 128, 0.5);
+}
+
+.timer-fill.warning {
+    background: linear-gradient(90deg, #fbbf24 0%, #f59e0b 100%);
+    box-shadow: 0 0 8px rgba(251, 191, 36, 0.5);
+}
+
+.timer-fill.critical {
+    background: linear-gradient(90deg, #ef4444 0%, #dc2626 100%);
+    box-shadow: 0 0 8px rgba(239, 68, 68, 0.5);
+}
+
+/* Game Area */
+.game-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 500px;
+    padding-top: 100px;
+    padding-bottom: 20px;
+}
+
+/* Customer Request */
+.customer-request {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 15px 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    animation: float 3s ease-in-out infinite;
+}
+
+.customer-avatar {
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 10px;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+.customer-speech {
+    text-align: center;
+}
+
+.speech-bubble {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    padding: 12px 18px;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(240, 147, 251, 0.3);
+    position: relative;
+}
+
+.speech-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #f5576c;
+}
+
+.request-time {
+    text-align: center;
+    font-size: 48px;
+    font-weight: bold;
+    color: #667eea;
+    margin-top: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* Analog Clock */
+.clock-container {
+    margin: 20px 0;
+    animation: float 4s ease-in-out infinite;
+}
+
+.clock-face {
+    width: 280px;
+    height: 280px;
+    background: linear-gradient(145deg, #ffffff 0%, #f0f0f0 100%);
+    border-radius: 50%;
+    position: relative;
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.2),
+        inset 0 2px 10px rgba(0, 0, 0, 0.1);
+    border: 8px solid #667eea;
+}
+
+/* Clock Numbers */
+.clock-number {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    top: 50%;
+    left: 50%;
+    margin-top: -17.5px;
+    margin-left: -17.5px;
+    transform-origin: center;
+    transform: rotate(var(--rotation));
+}
+
+.clock-number span {
+    transform: rotate(calc(var(--rotation) * -1));
+}
+
+/* Hour Markers */
+.hour-marker {
+    position: absolute;
+    width: 3px;
+    height: 15px;
+    background: #667eea;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%) rotate(var(--rotation));
+    transform-origin: center 130px;
+    border-radius: 2px;
+}
+
+/* Clock Hands */
+.clock-center {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: #667eea;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hand {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hour-hand {
+    width: 8px;
+    height: 70px;
+    background: linear-gradient(to top, #667eea, #764ba2);
+    margin-left: -4px;
+    z-index: 5;
+}
+
+.minute-hand {
+    width: 6px;
+    height: 100px;
+    background: linear-gradient(to top, #f5576c, #f093fb);
+    margin-left: -3px;
+    z-index: 6;
+}
+
+.hand:hover {
+    filter: brightness(1.2);
+    transform: scale(1.1);
+}
+
+/* Action Buttons */
+.action-buttons {
+    margin-top: 20px;
+}
+
+.check-btn {
+    background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 15px 40px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(34, 197, 94, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.check-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(34, 197, 94, 0.5);
+}
+
+.check-btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.4);
+}
+
+.btn-icon {
+    font-size: 32px;
+}
+
+.btn-text {
+    font-size: 14px;
+}
+
+/* Overlays */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    animation: fadeIn 0.3s ease;
+}
+
+.overlay-content {
+    background: linear-gradient(145deg, #ffffff 0%, #f0f0f0 100%);
+    border-radius: 25px;
+    padding: 30px;
+    text-align: center;
+    max-width: 90%;
+    width: 350px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    animation: scaleIn 0.4s ease;
+}
+
+.overlay-icon {
+    font-size: 64px;
+    margin-bottom: 15px;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+.overlay-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.overlay-text {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.overlay-instructions {
+    text-align: left;
+    margin: 20px 0;
+}
+
+.instruction-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: #555;
+}
+
+.instruction-icon {
+    font-size: 24px;
+}
+
+.overlay-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 15px 35px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    width: 100%;
+}
+
+.overlay-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.5);
+}
+
+.overlay-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+/* Stats */
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 20px 0;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.stat-value {
+    font-size: 28px;
+    font-weight: bold;
+    color: #667eea;
+}
+
+/* Animations */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .hud {
+        padding: 8px 12px;
+    }
+
+    .hud-value,
+    .timer-display {
+        font-size: 16px;
+    }
+
+    .game-title {
+        font-size: 14px;
+    }
+
+    .clock-face {
+        width: 240px;
+        height: 240px;
+    }
+
+    .hour-hand {
+        height: 60px;
+    }
+
+    .minute-hand {
+        height: 85px;
+    }
+
+    .request-time {
+        font-size: 40px;
+    }
+
+    .customer-avatar {
+        font-size: 40px;
+    }
+
+    .overlay-content {
+        padding: 25px;
+        width: 90%;
+    }
+
+    .overlay-icon {
+        font-size: 56px;
+    }
+}
+
+@media (max-width: 375px) {
+    .clock-face {
+        width: 220px;
+        height: 220px;
+    }
+
+    .hour-hand {
+        height: 55px;
+    }
+
+    .minute-hand {
+        height: 80px;
+    }
+
+    .request-time {
+        font-size: 36px;
+    }
+
+    .overlay-content {
+        padding: 20px;
+    }
+}

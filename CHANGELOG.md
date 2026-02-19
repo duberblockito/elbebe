@@ -2,6 +2,62 @@
 
 ---
 
+## [v1.29.0] - 2026-02-19 16:20 UTC
+
+### ✨ Nuevo Juego Agregado
+
+**Juego:** Maestro del Reloj
+**Categoría:** 5-8 Años (Early Elementary)
+**ID:** 5-8-005
+
+**Descripción:**
+Ajusta un reloj analógico a la hora solicitada por los clientes. Aprende a leer la hora con 5 niveles progresivos de dificultad (hora exacta, media hora, cuarto de hora), barra de progreso y temporizador visual. Diseñado para niños de 5-8 años que aprenden a leer el reloj analógico de forma divertida.
+
+**Características implementadas:**
+- ✅ Sistema de 5 niveles progresivos (5, 6, 7, 8, 9 clientes por nivel)
+- ✅ Dificultad progresiva: hora exacta → media hora → cuarto de hora
+- ✅ Temporizador por nivel (90s → 70s progresivo)
+- ✅ Barra de progreso visual mostrando clientes atendidos vs objetivo
+- ✅ Barra de temporizador visual con cambios de color (verde → amarillo → rojo)
+- ✅ HUD (Heads Up Display) con nivel actual, puntos, temporizador
+- ✅ Persistencia en localStorage (`maestro-reloj-progress`)
+- ✅ Reloj analógico interactivo con manecillas de hora y minutos
+- ✅ Sistema de clientes aleatorios con avatares y mensajes
+- ✅ Drag/touch en manecillas para ajustar la hora
+- ✅ Validación de hora (verifica que la hora y minutos sean correctos)
+- ✅ Modales: Instrucciones, Nivel Completado, Tiempo Agotado, Juego Completado
+- ✅ Feedback visual con animaciones (shake en respuesta incorrecta)
+- ✅ Responsivo para móviles (375x667px)
+
+**Cumplimiento de reglas de diseño (game-design-rules.md):**
+- ✅ Sección 1: Estructura de directorios correcta
+- ✅ Sección 2: HTML5, CSS3, Vanilla JavaScript sin frameworks
+- ✅ Sección 2: Responsivo y optimizado para 375x667px (iPhone SE)
+- ✅ Sección 3: manifest.json válido con metadatos completos
+- ✅ Sección 4: Registrado en `public/js/games-list.json`
+- ✅ Sección 7: Sistema de niveles (5 niveles, 70-90s por nivel)
+- ✅ Sección 7: Barra de progreso visual (clientes / objetivo)
+- ✅ Sección 7: Barra de temporizador visual con cambios de color
+- ✅ Sección 7: Persistencia en localStorage
+- ✅ Sección 8: Checklist de submission completo
+
+**Archivos creados:**
+- `public/games/maestro-reloj/index.html` - Página principal del juego
+- `public/games/maestro-reloj/assets/game.css` - Estilos del juego
+- `public/games/maestro-reloj/js/game.js` - Lógica del juego
+- `public/games/maestro-reloj/manifest.json` - Metadatos
+- `public/games/maestro-reloj/thumbnail.svg` - Imagen de preview (SVG)
+
+**Documentación actualizada:**
+- ✅ CHANGELOG.md (v1.29.0)
+- ✅ master-game-plan.md (marcado como ✅ Done)
+- ✅ development-queue.md (agregado a lista de completados)
+- ✅ games-list.json (juego registrado)
+- ✅ games-backlog/5-8-005-maestro-reloj.md → games-done/5-8-005-maestro-reloj.md
+
+---
+
+>>>>>>> feature/5-8-005-maestro-reloj
 ## [v1.28.0] - 2026-02-19 16:00 UTC
 
 ### ✨ Nuevo Juego Agregado
@@ -56,6 +112,10 @@ Animales caminando dejando huellas coloridas. Toca los animales para cambiarlos 
 
 ---
 
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
+>>>>>>> feature/5-8-005-maestro-reloj
 ## [v1.27.0] - 2026-02-19 15:20 UTC
 
 ### ✨ Nuevo Juego Agregado

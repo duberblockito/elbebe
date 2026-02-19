@@ -62,6 +62,7 @@ This document outlines the development roadmap for the 41 games currently in the
 | 002 | **Constructor Palabras** | Spelling with drag and drop. | ✅ Done |
 | 003 | **Laberinto Aventura** | Guide character through maze to find keys and chests. | ✅ Done |
 | 004 | **Tour del Sistema Solar** | Interactive space tour, visit planets, learn facts, answer trivia. | ✅ Done |
+| 005 | **Maestro del Reloj** | Set analog clock to time requested by customers. | ✅ Done |
 
 ## 👱 8-15 Years (Tweens/Teens)
 
@@ -79,14 +80,14 @@ This document outlines the development roadmap for the 41 games currently in the
 
 | Age Group | Completed | Target |
 |-----------|---------:|--------:|
-| 0-1 Years | 7 | 7 |
+| 0-1 Years | 8 | 8 |
 | 1-2 Years | 5 | 5 |
 | 2-3 Years | 5 | 5 |
 | 3-5 Years | 5 | 5 |
-| 5-8 Years | 4 | 4 |
+| 5-8 Years | 5 | 5 |
 | 8-15 Years | 5 | 5 |
 
-*Nota: `003-colores-vibran`, `003-pintura-dedos`, `003-rompecabezas`, `laberinto-aventura`, `tren-numeros`, `science-lab`, `eco-warriors`, `peek-a-boo`, `cascada-musical`, `bloques-caen`, `caritas-emociones`, `tour-sistema-solar`, `lluvia-estrellas`, `estrellas-brillantes`, `music-master`, `dedos-magicos`, `apila-animales`, `cochecito-colores` y `pequeno-jardinero` completados y validados*
+*Nota: `003-colores-vibran`, `003-pintura-dedos`, `003-rompecabezas`, `laberinto-aventura`, `tren-numeros`, `science-lab`, `eco-warriors`, `peek-a-boo`, `cascada-musical`, `bloques-caen`, `caritas-emociones`, `tour-sistema-solar`, `lluvia-estrellas`, `estrellas-brillantes`, `music-master`, `dedos-magicos`, `apila-animales`, `cochecito-colores`, `pequeno-jardinero`, `patitas-caminan` y `maestro-reloj` completados y validados*
 
 ---
 

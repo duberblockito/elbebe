@@ -1,0 +1,10 @@
+{
+  "id": "maestro-reloj",
+  "title": "Maestro del Reloj",
+  "description": "Ajusta un reloj analógico a la hora solicitada por los clientes. Aprende a leer la hora de forma divertida.",
+  "category": "educativo",
+  "author": "El Bebe Games",
+  "version": "1.0.0",
+  "thumbnail": "thumbnail.svg",
+  "recommended_age": "5-8"
+}

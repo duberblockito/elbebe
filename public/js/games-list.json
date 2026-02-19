@@ -1,5 +1,5 @@
 {
-  "version": "1.27.0",
+  "version": "1.29.0",
   "lastUpdated": "2026-02-19",
   "games": [
     {
@@ -674,6 +674,29 @@
         "progress",
         "educational",
         "nature"
+      ]
+    },
+    {
+      "id": "maestro-reloj",
+      "title": "Maestro del Reloj",
+      "title_en": "Clock Master",
+      "description": "Ajusta un reloj analógico a la hora solicitada por los clientes. Aprende a leer la hora con 5 niveles progresivos de dificultad (hora exacta, media hora, cuarto de hora), barra de progreso y temporizador visual.",
+      "description_en": "Set analog clock to time requested by customers. Learn to tell time with 5 progressive difficulty levels (exact hour, half hour, quarter hour), progress bar, and visual timer.",
+      "category": "educational",
+      "author": "Elbebe Games",
+      "version": "1.0.0",
+      "thumbnail": "thumbnail.svg",
+      "recommended_age": "5-8",
+      "tags": [
+        "clock",
+        "time",
+        "analog",
+        "educational",
+        "levels",
+        "timer",
+        "progress",
+        "touch",
+        "drag"
       ]
     }
   ]

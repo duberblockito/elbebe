@@ -1,0 +1,69 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background Gradient -->
+    <defs>
+        <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+        </linearGradient>
+        <linearGradient id="clockGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#f0f0f0;stop-opacity:1" />
+        </linearGradient>
+        <linearGradient id="hourHand" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+        </linearGradient>
+        <linearGradient id="minuteHand" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#f5576c;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#f093fb;stop-opacity:1" />
+        </linearGradient>
+    </defs>
+
+    <!-- Background -->
+    <rect width="300" height="300" rx="30" ry="30" fill="url(#bgGradient)"/>
+
+    <!-- Clock Face -->
+    <circle cx="150" cy="150" r="100" fill="url(#clockGradient)" stroke="#667eea" stroke-width="8"/>
+
+    <!-- Clock Numbers -->
+    <text x="150" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333">12</text>
+    <text x="185" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333">1</text>
+    <text x="210" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333">2</text>
+    <text x="220" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333">3</text>
+    <text x="210" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333">4</text>
+    <text x="220" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333">5</text>
+    <text x="210" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333">6</text>
+    <text x="185" y="225" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333">7</text>
+    <text x="150" y="235" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333">8</text>
+    <text x="115" y="225" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333">9</text>
+    <text x="90" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333">10</text>
+    <text x="80" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333">11</text>
+
+    <!-- Hour Markers -->
+    <line x1="150" y1="50" x2="150" y2="58" stroke="#667eea" stroke-width="3" stroke-linecap="round"/>
+    <line x1="200" y1="68" x2="194" y2="74" stroke="#667eea" stroke-width="3" stroke-linecap="round"/>
+    <line x1="232" y1="100" x2="224" y2="100" stroke="#667eea" stroke-width="3" stroke-linecap="round"/>
+    <line x1="250" y1="150" x2="242" y2="150" stroke="#667eea" stroke-width="3" stroke-linecap="round"/>
+    <line x1="232" y1="200" x2="224" y2="200" stroke="#667eea" stroke-width="3" stroke-linecap="round"/>
+    <line x1="200" y1="232" x2="194" y2="226" stroke="#667eea" stroke-width="3" stroke-linecap="round"/>
+    <line x1="150" y1="250" x2="150" y2="242" stroke="#667eea" stroke-width="3" stroke-linecap="round"/>
+    <line x1="100" y1="232" x2="106" y2="226" stroke="#667eea" stroke-width="3" stroke-linecap="round"/>
+    <line x1="68" y1="200" x2="76" y2="200" stroke="#667eea" stroke-width="3" stroke-linecap="round"/>
+    <line x1="50" y1="150" x2="58" y2="150" stroke="#667eea" stroke-width="3" stroke-linecap="round"/>
+    <line x1="68" y1="100" x2="76" y2="100" stroke="#667eea" stroke-width="3" stroke-linecap="round"/>
+    <line x1="100" y1="68" x2="106" y2="74" stroke="#667eea" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- Clock Hands (set to 3:00) -->
+    <!-- Hour Hand pointing to 3 -->
+    <rect x="147" y="120" width="6" height="35" rx="3" fill="url(#hourHand)" transform="rotate(90, 150, 150)"/>
+
+    <!-- Minute Hand pointing to 12 -->
+    <rect x="148" y="100" width="4" height="50" rx="2" fill="url(#minuteHand)"/>
+
+    <!-- Center Dot -->
+    <circle cx="150" cy="150" r="8" fill="#667eea"/>
+
+    <!-- Clock Icon Overlay -->
+    <circle cx="270" cy="30" r="20" fill="#f5576c" stroke="#ffffff" stroke-width="2"/>
+    <text x="270" y="37" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#ffffff">⏰</text>
+</svg>
