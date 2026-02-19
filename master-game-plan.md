@@ -69,9 +69,9 @@ This document outlines the development roadmap for the 41 games currently in the
 | 2-3 Years | 3 | 3 |
 | 3-5 Years | 3 | 3 |
 | 5-8 Years | 3 | 3 |
-| 8-15 Years | 2 | 3 |
+| 8-15 Years | 3 | 3 |
 
-*Nota: `003-colores-vibran`, `003-pintura-dedos`, `003-rompecabezas` y `laberinto-aventura` completados y validados*
+*Nota: `003-colores-vibran`, `003-pintura-dedos`, `003-rompecabezas`, `laberinto-aventura`, `tren-numeros` y `science-lab` completados y validados*
 
 ---
 
