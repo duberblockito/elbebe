@@ -1,7 +1,28 @@
 {
-  "version": "1.22.0",
+  "version": "1.27.0",
   "lastUpdated": "2026-02-19",
   "games": [
+    {
+      "id": "patitas-caminan",
+      "title": "Patitas que Caminan",
+      "title_en": "Walking Footprints",
+      "description": "Animales caminando dejando huellas coloridas. Toca los animales para cambiarlos de color y especie. Incluye 5 niveles progresivos, barra de progreso y temporizador visual.",
+      "description_en": "Animals walking leaving colorful footprints. Touch animals to change their color and species. Includes 5 progressive levels, progress bar, and visual timer.",
+      "category": "sensory",
+      "author": "Elbebe Games",
+      "version": "1.0.0",
+      "thumbnail": "thumbnail.svg",
+      "recommended_age": "0-1",
+      "tags": [
+        "touch",
+        "animals",
+        "colors",
+        "sensory",
+        "levels",
+        "timer",
+        "progress"
+      ]
+    },
     {
       "id": "burbujas-magicas",
       "title": "Burbujas Mágicas",

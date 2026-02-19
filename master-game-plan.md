@@ -22,6 +22,7 @@ This document outlines the development roadmap for the 41 games currently in the
 | 005 | **Lluvia de Estrellas** | Stars falling from top, touch to shine. | ✅ Done |
 | 006 | **Dedos Mágicos** | Touch screen for colorful trails. | ✅ Done |
 | 007 | **Cochecito de Colores** | Car changes color, plays vroom, moves. | ✅ Done |
+| 008 | **Patitas que Caminan** | Animals walk leaving colorful footprints. Touch to change species and color. | ✅ Done |
 
 ## 🧒 1-2 Years (Toddlers)
 

@@ -33,7 +33,7 @@ La estrategia de desarrollo sigue un ciclo "Round Robin" entre las categorías d
 
 | Categoría | Terminados | Meta Actual |
 | :--- | :---: | :---: |
-| 0-1 Años | 7 | 7 |
+| 0-1 Años | 8 | 8 |
 | 1-2 Años | 5 | 5 |
 | 2-3 Años | 5 | 5 |
 | 3-5 Años | 5 | 5 |
@@ -78,6 +78,7 @@ Basado en la regla de equilibrio, este es el orden inmediato de desarrollo:
 28. **[Done ✅]** **2-3 Años**: `apila-animales` (Apila los Animales) - IMPLEMENTADO
 29. **[Done ✅]** **0-1 Años**: `cochecito-colores` (Cochecito de Colores) - IMPLEMENTADO
 30. **[Done ✅]** **3-5 Años**: `pequeno-jardinero` (Pequeño Jardinero) - IMPLEMENTADO
+31. **[Done ✅]** **0-1 Años**: `patitas-caminan` (Patitas que Caminan) - IMPLEMENTADO
 
 ---
 

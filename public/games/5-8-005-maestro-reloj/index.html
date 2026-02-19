@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Maestro del Reloj</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Header con información del nivel y progreso -->
+        <div class="game-header">
+            <div class="level-info">
+                <span class="level-label">Nivel</span>
+                <span class="level-number" id="currentLevel">1</span>
+            </div>
+            <div class="clients-info">
+                <span class="clients-label">Clientes</span>
+                <span class="clients-count"><span id="clientsSatisfied">0</span>/<span id="clientsTarget">5</span></span>
+            </div>
+            <div class="timer-info">
+                <span class="timer-label">Tiempo</span>
+                <span class="timer-value" id="timerValue">60s</span>
+            </div>
+        </div>
+
+        <!-- Barra de progreso visual -->
+        <div class="progress-bar-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <!-- Área del juego -->
+        <div class="game-area">
+            <!-- Cliente actual -->
+            <div class="customer-area">
+                <div class="customer-avatar" id="customerAvatar">👨</div>
+                <div class="customer-bubble">
+                    <p class="customer-request">¡Hola! ¿Puedes poner el reloj en las <span id="requestedTime">3:00</span>?</p>
+                </div>
+            </div>
+
+            <!-- Reloj analógico -->
+            <div class="clock-container">
+                <div class="clock-face" id="clockFace">
+                    <!-- Marcadores de horas -->
+                    <div class="hour-marker" style="transform: rotate(0deg) translate(0, -85px);">12</div>
+                    <div class="hour-marker" style="transform: rotate(30deg) translate(0, -85px);">1</div>
+                    <div class="hour-marker" style="transform: rotate(60deg) translate(0, -85px);">2</div>
+                    <div class="hour-marker" style="transform: rotate(90deg) translate(0, -85px);">3</div>
+                    <div class="hour-marker" style="transform: rotate(120deg) translate(0, -85px);">4</div>
+                    <div class="hour-marker" style="transform: rotate(150deg) translate(0, -85px);">5</div>
+                    <div class="hour-marker" style="transform: rotate(180deg) translate(0, -85px);">6</div>
+                    <div class="hour-marker" style="transform: rotate(210deg) translate(0, -85px);">7</div>
+                    <div class="hour-marker" style="transform: rotate(240deg) translate(0, -85px);">8</div>
+                    <div class="hour-marker" style="transform: rotate(270deg) translate(0, -85px);">9</div>
+                    <div class="hour-marker" style="transform: rotate(300deg) translate(0, -85px);">10</div>
+                    <div class="hour-marker" style="transform: rotate(330deg) translate(0, -85px);">11</div>
+
+                    <!-- Agujas del reloj -->
+                    <div class="clock-hand hour-hand" id="hourHand"></div>
+                    <div class="clock-hand minute-hand" id="minuteHand"></div>
+                    <div class="clock-center"></div>
+                </div>
+            </div>
+
+            <!-- Botón de verificación -->
+            <div class="check-button-container">
+                <button class="check-button" id="checkButton">¡Listo!</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Nivel Completado -->
+    <div class="modal" id="levelCompletedModal" style="display: none;">
+        <div class="modal-content">
+            <h2>¡Excelente! 🎉</h2>
+            <p class="modal-message">Has completado el nivel satisfaciendo a todos los clientes.</p>
+            <button class="modal-button" id="nextLevelButton">Siguiente Nivel</button>
+        </div>
+    </div>
+
+    <!-- Modal de Tiempo Agotado -->
+    <div class="modal" id="timeUpModal" style="display: none;">
+        <div class="modal-content">
+            <h2>¡Se acabó el tiempo! ⏰</h2>
+            <p class="modal-message">¡No te rindas! Intenta de nuevo.</p>
+            <button class="modal-button" id="retryButton">Intentar de Nuevo</button>
+        </div>
+    </div>
+
+    <!-- Modal de Juego Completado -->
+    <div class="modal" id="gameCompletedModal" style="display: none;">
+        <div class="modal-content">
+            <h2>¡Felicidades! 🏆</h2>
+            <p class="modal-message">¡Has completado todos los niveles! Eres un verdadero Maestro del Reloj.</p>
+            <button class="modal-button" id="playAgainButton">Jugar de Nuevo</button>
+        </div>
+    </div>
+
+    <script src="js/game.js"></script>
+</body>
+</html>

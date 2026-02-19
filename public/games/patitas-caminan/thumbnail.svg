@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300">
+  <!-- Fondo con gradiente -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grassGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#98fb98;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#228b22;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Fondo -->
+  <rect width="300" height="300" fill="url(#bgGradient)" rx="20" ry="20"/>
+
+  <!-- Cielo -->
+  <rect x="20" y="20" width="260" height="180" fill="#87ceeb" rx="10" ry="10"/>
+
+  <!-- Césped -->
+  <rect x="20" y="190" width="260" height="90" fill="url(#grassGradient)" rx="10" ry="10"/>
+
+  <!-- Sol -->
+  <circle cx="250" cy="60" r="30" fill="#ffeb3b" stroke="#f9a825" stroke-width="3"/>
+  <g stroke="#ffeb3b" stroke-width="4" stroke-linecap="round">
+    <line x1="250" y1="10" x2="250" y2="25"/>
+    <line x1="285" y1="35" x2="275" y2="40"/>
+    <line x1="285" y1="70" x2="270" y2="65"/>
+    <line x1="285" y1="105" x2="270" y2="100"/>
+  </g>
+
+  <!-- Pollito -->
+  <g transform="translate(60, 210)">
+    <!-- Cuerpo -->
+    <ellipse cx="40" cy="30" rx="25" ry="20" fill="#ffeb3b" stroke="#f9a825" stroke-width="2"/>
+    <!-- Cara -->
+    <circle cx="30" cy="25" r="3" fill="#333"/>
+    <circle cx="45" cy="25" r="3" fill="#333"/>
+    <ellipse cx="37" cy="32" rx="5" ry="4" fill="#ff9800"/>
+    <!-- Pico -->
+    <polygon points="37,35 33,40 41,40" fill="#ff9800"/>
+    <!-- Patas -->
+    <line x1="30" y1="48" x2="28" y2="55" stroke="#ffeb3b" stroke-width="4" stroke-linecap="round"/>
+    <line x1="40" y1="48" x2="42" y2="55" stroke="#ffeb3b" stroke-width="4" stroke-linecap="round"/>
+  </g>
+
+  <!-- Gatito -->
+  <g transform="translate(130, 220)">
+    <!-- Cuerpo -->
+    <ellipse cx="40" cy="30" rx="22" ry="18" fill="#ff9800" stroke="#e65100" stroke-width="2"/>
+    <!-- Orejas -->
+    <polygon points="25,15 30,2 35,15" fill="#ff9800" stroke="#e65100" stroke-width="1"/>
+    <polygon points="45,15 50,2 55,15" fill="#ff9800" stroke="#e65100" stroke-width="1"/>
+    <!-- Cara -->
+    <circle cx="32" cy="28" r="3" fill="#333"/>
+    <circle cx="48" cy="28" r="3" fill="#333"/>
+    <ellipse cx="40" cy="35" rx="4" ry="3" fill="#e65100"/>
+    <!-- Patas -->
+    <line x1="28" y1="46" x2="26" y2="52" stroke="#ff9800" stroke-width="4" stroke-linecap="round"/>
+    <line x1="45" y1="46" x2="47" y2="52" stroke="#ff9800" stroke-width="4" stroke-linecap="round"/>
+  </g>
+
+  <!-- Perrito -->
+  <g transform="translate(200, 210)">
+    <!-- Cuerpo -->
+    <ellipse cx="40" cy="30" rx="25" ry="20" fill="#795548" stroke="#3e2723" stroke-width="2"/>
+    <!-- Orejas -->
+    <ellipse cx="20" cy="15" rx="10" ry="15" fill="#795548" stroke="#3e2723" stroke-width="1" transform="rotate(-30 20 15)"/>
+    <ellipse cx="60" cy="15" rx="10" ry="15" fill="#795548" stroke="#3e2723" stroke-width="1" transform="rotate(30 60 15)"/>
+    <!-- Cara -->
+    <circle cx="30" cy="28" r="3" fill="#333"/>
+    <circle cx="50" cy="28" r="3" fill="#333"/>
+    <ellipse cx="40" cy="35" rx="8" ry="5" fill="#3e2723"/>
+    <circle cx="40" cy="33" r="2" fill="#000"/>
+    <!-- Patas -->
+    <line x1="28" y1="48" x2="25" y2="55" stroke="#795548" stroke-width="4" stroke-linecap="round"/>
+    <line x1="45" y1="48" x2="48" y2="55" stroke="#795548" stroke-width="4" stroke-linecap="round"/>
+  </g>
+
+  <!-- Huellas -->
+  <text x="45" y="260" font-size="20" fill="#ffeb3b" opacity="0.7">🐣</text>
+  <text x="115" y="265" font-size="20" fill="#ff9800" opacity="0.7">🐱</text>
+  <text x="185" y="255" font-size="20" fill="#795548" opacity="0.7">🐶</text>
+  <text x="75" y="275" font-size="16" fill="#ffeb3b" opacity="0.5">🐣</text>
+  <text x="150" y="280" font-size="16" fill="#ff9800" opacity="0.5">🐱</text>
+
+  <!-- Texto del juego -->
+  <text x="150" y="135" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#fff" text-anchor="middle">
+    Patitas que Caminan
+  </text>
+  <text x="150" y="160" font-family="Arial, sans-serif" font-size="14" fill="#e0e0e0" text-anchor="middle">
+    Toca los animales
+  </text>
+</svg>

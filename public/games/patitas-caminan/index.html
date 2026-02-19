@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Patitas que Caminan</title>
+    <link rel="stylesheet" href="assets/game.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- HUD -->
+        <div class="hud">
+            <div class="hud-item">
+                <span class="hud-label">Nivel</span>
+                <span class="hud-value" id="level">1</span>
+            </div>
+            <div class="hud-item">
+                <span class="hud-label">Tiempo</span>
+                <span class="hud-value" id="timer">30s</span>
+            </div>
+            <div class="hud-item">
+                <span class="hud-label">Huellas</span>
+                <span class="hud-value"><span id="footprints">0</span>/<span id="target">5</span></span>
+            </div>
+        </div>
+
+        <!-- Barra de progreso -->
+        <div class="progress-bar-container">
+            <div class="progress-bar" id="progressBar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+        </div>
+
+        <!-- Barra de temporizador -->
+        <div class="timer-bar-container">
+            <div class="timer-bar" id="timerBar"></div>
+        </div>
+
+        <!-- Área del juego -->
+        <div class="game-area" id="gameArea">
+            <!-- Animal -->
+            <div class="animal" id="animal">
+                <div class="animal-body">
+                    <div class="animal-face">
+                        <div class="eye eye-left">●</div>
+                        <div class="eye eye-right">●</div>
+                        <div class="nose">○</div>
+                        <div class="mouth">ω</div>
+                    </div>
+                </div>
+                <div class="animal-leg leg-front-left"></div>
+                <div class="animal-leg leg-front-right"></div>
+                <div class="animal-leg leg-back-left"></div>
+                <div class="animal-leg leg-back-right"></div>
+            </div>
+        </div>
+
+        <!-- Botón Home -->
+        <a href="../../index.html" class="home-button">🏠</a>
+    </div>
+
+    <!-- Modales -->
+    <div class="modal" id="levelCompleteModal">
+        <div class="modal-content">
+            <h2>¡Nivel Completado!</h2>
+            <p>¡Excelente trabajo!</p>
+            <button class="modal-button" onclick="nextLevel()">Siguiente Nivel →</button>
+        </div>
+    </div>
+
+    <div class="modal" id="gameOverModal">
+        <div class="modal-content">
+            <h2>¡Tiempo Agotado!</h2>
+            <p>¡Inténtalo de nuevo!</p>
+            <button class="modal-button" onclick="retryLevel()">Reintentar</button>
+        </div>
+    </div>
+
+    <div class="modal" id="gameCompleteModal">
+        <div class="modal-content">
+            <h2>🎉 ¡Juego Completado! 🎉</h2>
+            <p>¡Eres un experto en caminar!</p>
+            <p>Completaste todos los 5 niveles</p>
+            <button class="modal-button" onclick="playAgain()">Jugar de Nuevo</button>
+        </div>
+    </div>
+
+    <script src="js/game.js"></script>
+</body>
+</html>

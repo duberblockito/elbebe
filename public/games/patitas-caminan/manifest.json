@@ -1,0 +1,10 @@
+{
+  "id": "patitas-caminan",
+  "title": "Patitas que Caminan",
+  "description": "Animales caminando dejando huellas coloridas. Toca los animales para cambiarlos de color y especie.",
+  "category": "animales",
+  "author": "Elbebe Games",
+  "version": "1.0.0",
+  "thumbnail": "thumbnail.svg",
+  "recommended_age": "0-1"
+}
