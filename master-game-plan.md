@@ -4,9 +4,9 @@ This document outlines the development roadmap for the 41 games currently in the
 
 ## 📊 Status Overview
 
-- **Total Games Planned:** 41
-- **Ready for Development:** 40
-- **Completed Games:** 41/41 (100%)
+- **Total Games Planned:** 42
+- **Ready for Development:** 41
+- **Completed Games:** 42/42 (100%)
 - **Pending Ideas:** 8-15 Years
 - **Legacy Games:** 000 - Burbujas Legacy (original HTML prototype)
 
@@ -26,6 +26,7 @@ This document outlines the development roadmap for the 41 games currently in the
 | 008 | **Patitas que Caminan** | Animals walk leaving colorful footprints. Touch to change species and color. | ✅ Done |
 | 009 | **Formas que Rebotan** | Colorful shapes bouncing around screen. Touch to make them laugh. | ✅ Done |
 | 010 | **Mariposas que Vuelan** | Butterflies flying across screen. Touch to land on flowers or change wing color. | ✅ Done |
+| 011 | **Pelota que Rueda** | Use gyroscope or touch drag to move ball to goal, dodge obstacles. | ✅ Done |
 
 ## 🧒 1-2 Years (Toddlers)
 
@@ -93,8 +94,8 @@ This document outlines the development roadmap for the 41 games currently in the
 
 | Age Group | Completed | Target |
 |-----------|---------:|--------:|
-| 0-1 Years | 10 | 10 |
-| 1-2 Years | 7 | 7 |
+| 0-1 Years | 11 | 11 |
+| 1-2 Years | 8 | 8 |
 | 2-3 Years | 7 | 7 |
 | 3-5 Years | 7 | 7 |
 | 5-8 Years | 7 | 7 |

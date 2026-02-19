@@ -2,6 +2,58 @@
 
 ---
 
+## [v1.42.0] - 2026-02-19 23:00 UTC
+
+### 🎮 Nuevo Juego - 0-1 Años
+
+**Juego:** Pelota que Rueda (Rolling Ball)
+**ID:** 0-1-011-pelota-rueda
+**Categoría:** Física
+**Edad recomendada:** 0-1 años
+
+**Características:**
+- Juego de física con pelota que se mueve por giroscopio o touch
+- 5 niveles progresivos con obstáculos crecientes (2, 4, 6, 8, 10 obstáculos)
+- Temporizador visual (30s → 45s progresivo por nivel)
+- Barra de progreso mostrando distancia a la meta
+- Sistema de puntuación basado en tiempo restante
+- Gyroscope API con fallback a touch drag
+- Obstáculos coloridos con rebotes físicos
+- Meta visual con indicador de dirección
+- Persistencia en localStorage (pelota-rueda-progress)
+- Efectos de sonido en colisiones y meta (Web Audio API)
+- Modales: Nivel Completado, Juego Completo, Tiempo Agotado
+- Responsivo para móviles (375x667px)
+
+**Archivos creados:**
+- `public/games/pelota-rueda/index.html` - Juego completo
+- `public/games/pelota-rueda/css/game.css` - Estilos
+- `public/games/pelota-rueda/js/game.js` - Lógica del juego
+- `public/games/pelota-rueda/manifest.json` - Metadatos
+- `public/games/pelota-rueda/thumbnail.svg` - Miniatura
+
+**Archivos actualizados:**
+- `public/js/games-list.json` - Juego registrado, versión actualizada a 1.42.0
+- `public/js/main.js` - SITE_VERSION actualizada a 1.42.0
+- `master-game-plan.md` - Juego agregado a 0-1 años
+- `development-queue.md` - Contador de 0-1 años incrementado a 11
+- `games-backlog/0-1-011-pelota-rueda.md` - Movido a `games-done/`
+
+**Cumplimiento de reglas:**
+- ✅ Implementado en `/public/games/` (directorio de deployment)
+- ✅ HTML5, CSS3, Vanilla JavaScript (sin frameworks)
+- ✅ Responsivo (funciona en 375x667 - iPhone SE)
+- ✅ 5 niveles progresivos (game-design-rules.md Sección 7)
+- ✅ Barra de progreso visual obligatoria
+- ✅ Temporizador visual con cambios de color (verde → amarillo → rojo)
+- ✅ Persistencia en localStorage implementada
+- ✅ Gyroscope API con touch fallback para dispositivos sin sensor
+- ✅ Física simple con fricción y colisiones
+
+**Notas:**
+
+---
+
 ## [v1.41.0] - 2026-02-19 22:40 UTC
 
 ### 🎮 Nuevo Juego - 1-2 Años

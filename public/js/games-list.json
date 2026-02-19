@@ -1,7 +1,28 @@
 {
-  "version": "1.41.0",
+  "version": "1.42.0",
   "lastUpdated": "2026-02-19",
   "games": [
+    {
+      "id": "pelota-rueda",
+      "title": "Pelota que Rueda",
+      "title_en": "Rolling Ball",
+      "description": "Usa el giro del dispositivo o arrastra para mover la pelota hacia la meta. Esquiva obstáculos y llega antes de que se acabe el tiempo. Incluye 5 niveles progresivos, barra de progreso y temporizador visual.",
+      "description_en": "Use device tilt or drag to move the ball toward the goal. Dodge obstacles and reach the goal before time runs out. Includes 5 progressive levels, progress bar, and visual timer.",
+      "category": "physics",
+      "author": "El Bebe Games",
+      "version": "1.0.0",
+      "thumbnail": "thumbnail.svg",
+      "recommended_age": "0-1",
+      "tags": [
+        "touch",
+        "physics",
+        "gyroscope",
+        "levels",
+        "timer",
+        "progress",
+        "obstacles"
+      ]
+    },
     {
       "id": "patitas-caminan",
       "title": "Patitas que Caminan",

@@ -33,7 +33,7 @@ La estrategia de desarrollo sigue un ciclo "Round Robin" entre las categorías d
 
 | Categoría | Terminados | Meta Actual |
 | :--- | :---: | :---: |
-| 0-1 Años | 10 | 10 |
+| 0-1 Años | 11 | 11 |
 | 1-2 Años | 8 | 8 |
 | 2-3 Años | 7 | 7 |
 | 3-5 Años | 7 | 7 |
@@ -91,6 +91,7 @@ Basado en la regla de equilibrio, este es el orden inmediato de desarrollo:
 40. **[Done ✅]** **0-1 Años**: `0-1-010-mariposas-vuelan` (Mariposas que Vuelan) - IMPLEMENTADO
 41. **[Done ✅]** **2-3 Años**: `2-3-007-mezcla-colores` (Mezcla los Colores) - IMPLEMENTADO
 42. **[Done ✅]** **5-8 Años**: `paleontologo-dino` (Paleontólogo Dino) - IMPLEMENTADO
+43. **[Done ✅]** **0-1 Años**: `pelota-rueda` (Pelota que Rueda) - IMPLEMENTADO
 
 ---
 

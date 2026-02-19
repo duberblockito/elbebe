@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+    <title>Pelota que Rueda - El Bebe Games</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- HUD -->
+        <div id="hud">
+            <div id="level-display">Nivel 1</div>
+            <div id="timer-display">30s</div>
+            <div id="score-display">Puntos: 0</div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div id="progress-container">
+            <div id="progress-bar"></div>
+        </div>
+
+        <!-- Timer Bar -->
+        <div id="timer-bar-container">
+            <div id="timer-bar"></div>
+        </div>
+
+        <!-- Game Canvas -->
+        <canvas id="gameCanvas"></canvas>
+
+        <!-- Goal Indicator -->
+        <div id="goal-indicator">¡Llega a la meta!</div>
+
+        <!-- Start Screen -->
+        <div id="start-screen" class="modal">
+            <h1>🏀 Pelota que Rueda</h1>
+            <p>Usa el giro del dispositivo o arrastra para mover la pelota</p>
+            <p>Llega a la meta antes de que se acabe el tiempo</p>
+            <button id="start-btn">¡Jugar!</button>
+        </div>
+
+        <!-- Level Complete Modal -->
+        <div id="level-complete-modal" class="modal hidden">
+            <h2>✅ ¡Nivel Completado!</h2>
+            <p id="level-score">Puntos: 0</p>
+            <button id="next-level-btn">Siguiente Nivel</button>
+        </div>
+
+        <!-- Time Up Modal -->
+        <div id="time-up-modal" class="modal hidden">
+            <h2>⏰ ¡Tiempo Agotado!</h2>
+            <p id="final-score">Puntos: 0</p>
+            <button id="retry-btn">Intentar de Nuevo</button>
+        </div>
+
+        <!-- Game Complete Modal -->
+        <div id="game-complete-modal" class="modal hidden">
+            <h2>🎉 ¡Juego Completado!</h2>
+            <p id="total-score">Puntos Totales: 0</p>
+            <button id="play-again-btn">Jugar de Nuevo</button>
+        </div>
+    </div>
+
+    <script src="js/game.js"></script>
+</body>
+</html>
