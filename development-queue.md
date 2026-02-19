@@ -36,11 +36,11 @@ La estrategia de desarrollo sigue un ciclo "Round Robin" entre las categorías d
 | 0-1 Años | 7 | 7 |
 | 1-2 Años | 5 | 5 |
 | 2-3 Años | 5 | 5 |
-| 3-5 Años | 4 | 4 |
+| 3-5 Años | 5 | 5 |
 | 5-8 Años | 4 | 4 |
 | 8-15 Años | 5 | 5 |
 
-*Nota: `003-colores-vibran`, `003-pintura-dedos`, `003-rompecabezas`, `laberinto-aventura`, `tren-numeros`, `science-lab`, `eco-warriors`, `peek-a-boo`, `cascada-musical`, `2-3-004-bloques-caen`, `caritas-emociones`, `tour-sistema-solar`, `lluvia-estrellas`, `estrellas-brillantes`, `music-master` y `dedos-magicos` implementados. Todos los juegos cumplen con todas las reglas del proyecto.*
+*Nota: `003-colores-vibran`, `003-pintura-dedos`, `003-rompecabezas`, `laberinto-aventura`, `tren-numeros`, `science-lab`, `eco-warriors`, `peek-a-boo`, `cascada-musical`, `2-3-004-bloques-caen`, `caritas-emociones`, `tour-sistema-solar`, `lluvia-estrellas`, `estrellas-brillantes`, `music-master`, `dedos-magicos`, `apila-animales`, `cochecito-colores` y `pequeno-jardinero` implementados. Todos los juegos cumplen con todas las reglas del proyecto.*
 
 ---
 
@@ -77,6 +77,7 @@ Basado en la regla de equilibrio, este es el orden inmediato de desarrollo:
 27. **[Done ✅]** **0-1 Años**: `dedos-magicos` (Dedos Mágicos) - IMPLEMENTADO
 28. **[Done ✅]** **2-3 Años**: `apila-animales` (Apila los Animales) - IMPLEMENTADO
 29. **[Done ✅]** **0-1 Años**: `cochecito-colores` (Cochecito de Colores) - IMPLEMENTADO
+30. **[Done ✅]** **3-5 Años**: `pequeno-jardinero` (Pequeño Jardinero) - IMPLEMENTADO
 
 ---
 

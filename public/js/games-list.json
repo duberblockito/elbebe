@@ -632,6 +632,28 @@
         "sensory",
         "cars"
       ]
+    },
+    {
+      "id": "pequeno-jardinero",
+      "title": "Pequeño Jardinero",
+      "title_en": "Little Gardener",
+      "description": "¡Cuida una planta regándola, dándole sol y deshierbando hasta que florezca! Usa la herramienta correcta para cada estado de la planta.",
+      "description_en": "Care for a plant by watering it, giving it sun, and weeding until it blooms! Use the correct tool for each plant state.",
+      "category": "educational",
+      "author": "Blockito AI",
+      "version": "1.0.0",
+      "thumbnail": "thumbnail.svg",
+      "recommended_age": "3-5",
+      "tags": [
+        "touch",
+        "plants",
+        "gardening",
+        "levels",
+        "timer",
+        "progress",
+        "educational",
+        "nature"
+      ]
     }
   ]
 }

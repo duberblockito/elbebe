@@ -51,6 +51,7 @@ This document outlines the development roadmap for the 41 games currently in the
 | 002 | **Super Formas** | Fit complex shapes into holes. | ✅ Done |
 | 003 | **Tren de Números** | Order train cars numbered 1-10. | ✅ Done |
 | 004 | **Caritas y Emociones** | Choose facial expressions for stories. | ✅ Done |
+| 005 | **Pequeño Jardinero** | Care for a plant by watering, giving sun, and weeding until it blooms. | ✅ Done |
 
 ## 🧒 5-8 Years (Early Elementary)
 
@@ -77,14 +78,14 @@ This document outlines the development roadmap for the 41 games currently in the
 
 | Age Group | Completed | Target |
 |-----------|---------:|--------:|
-| 0-1 Years | 6 | 6 |
+| 0-1 Years | 7 | 7 |
 | 1-2 Years | 5 | 5 |
 | 2-3 Years | 5 | 5 |
-| 3-5 Years | 4 | 4 |
+| 3-5 Years | 5 | 5 |
 | 5-8 Years | 4 | 4 |
 | 8-15 Years | 5 | 5 |
 
-*Nota: `003-colores-vibran`, `003-pintura-dedos`, `003-rompecabezas`, `laberinto-aventura`, `tren-numeros`, `science-lab`, `eco-warriors`, `peek-a-boo`, `cascada-musical`, `bloques-caen`, `caritas-emociones`, `tour-sistema-solar`, `lluvia-estrellas`, `estrellas-brillantes`, `music-master` y `dedos-magicos` completados y validados*
+*Nota: `003-colores-vibran`, `003-pintura-dedos`, `003-rompecabezas`, `laberinto-aventura`, `tren-numeros`, `science-lab`, `eco-warriors`, `peek-a-boo`, `cascada-musical`, `bloques-caen`, `caritas-emociones`, `tour-sistema-solar`, `lluvia-estrellas`, `estrellas-brillantes`, `music-master`, `dedos-magicos`, `apila-animales`, `cochecito-colores` y `pequeno-jardinero` completados y validados*
 
 ---
 

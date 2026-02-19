@@ -1,0 +1,10 @@
+{
+  "id": "pequeno-jardinero",
+  "title": "Pequeño Jardinero",
+  "description": "Cuida una planta regándola, dándole sol y deshierbando hasta que florezca.",
+  "category": "3-5-años",
+  "author": "Blockito AI Assistant",
+  "version": "1.0.0",
+  "thumbnail": "thumbnail.svg",
+  "recommended_age": "3-5"
+}

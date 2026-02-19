@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Pequeño Jardinero - El Bebe Games</title>
+    <link rel="stylesheet" href="assets/game.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- HUD -->
+        <div id="hud">
+            <div id="level-display">Nivel: 1</div>
+            <div id="progress-bar-container">
+                <div id="progress-bar"></div>
+                <div id="progress-text">0/5</div>
+            </div>
+            <div id="timer-bar-container">
+                <div id="timer-bar"></div>
+                <div id="timer-text">60s</div>
+            </div>
+        </div>
+
+        <!-- Garden Area -->
+        <div id="garden">
+            <div id="plant-container">
+                <div id="plant-sprite"></div>
+            </div>
+        </div>
+
+        <!-- Tools -->
+        <div id="tools">
+            <button id="tool-water" class="tool active" data-tool="water">
+                <span class="tool-icon">💧</span>
+                <span class="tool-label">Regar</span>
+            </button>
+            <button id="tool-sun" class="tool" data-tool="sun">
+                <span class="tool-icon">☀️</span>
+                <span class="tool-label">Sol</span>
+            </button>
+            <button id="tool-weed" class="tool" data-tool="weed">
+                <span class="tool-icon">🌿</span>
+                <span class="tool-label">Desherbar</span>
+            </button>
+        </div>
+
+        <!-- Modals -->
+        <div id="modal-overlay" class="hidden">
+            <div id="modal-content">
+                <h2 id="modal-title">¡Nivel Completado!</h2>
+                <p id="modal-message">¡Tu planta ha crecido!</p>
+                <button id="modal-button">Continuar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/game.js"></script>
+</body>
+</html>

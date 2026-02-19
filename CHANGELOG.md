@@ -2,6 +2,58 @@
 
 ---
 
+## [v1.27.0] - 2026-02-19 15:20 UTC
+
+### ✨ Nuevo Juego Agregado
+
+**Juego:** Pequeño Jardinero (pequeno-jardinero)
+**Categoría:** 3-5 Años (Preschoolers)
+**ID:** 3-5-005
+
+**Descripción:**
+Juego educativo donde los niños cuidan plantas regándolas, dándoles sol y deshierbando hasta que florezcan. Incluye sistema de niveles progresivos, temporizador visual y persistencia de progreso.
+
+**Características implementadas:**
+- ✅ Máquina de estados de planta (sedienta, pálida, con maleza, sana)
+- ✅ 3 herramientas: Regar (💧), Sol (☀️), Desherbar (🌿)
+- ✅ 5 niveles progresivos con plantas diferentes
+- ✅ Duración de niveles: 45s → 65s (progresivo)
+- ✅ Barra de progreso visual (plantas cuidadas / objetivo)
+- ✅ Barra de temporizador visual con cambios de color (verde → amarillo → rojo)
+- ✅ HUD con nivel actual y contador de plantas
+- ✅ Persistencia en localStorage (pequeno-jardinero-progress)
+- ✅ Sonidos sintetizados (Web Audio API) para cada herramienta
+- ✅ Feedback visual y sonoro al usar herramienta correcta/incorrecta
+- ✅ Modales: Nivel Completado, Juego Completado
+- ✅ Emojis de plantas por estado y por nivel
+- ✅ Animación de shake al usar herramienta incorrecta
+- ✅ Responsivo para móviles (375x667px)
+
+**Tecnología:**
+- HTML5 + CSS3 + Vanilla JavaScript
+- Emojis de plantas para representación visual
+- Web Audio API para síntesis de sonidos
+- Touch events optimizados para niños
+- LocalStorage para persistencia de nivel
+- Responsive design con media queries
+- Máquina de estados para gestión de planta
+- Animaciones CSS para feedback visual
+
+**Archivos creados:**
+- `public/games/pequeno-jardinero/index.html` - Página principal del juego
+- `public/games/pequeno-jardinero/assets/game.css` - Estilos del juego
+- `public/games/pequeno-jardinero/js/game.js` - Lógica del juego
+- `public/games/pequeno-jardinero/manifest.json` - Metadatos
+- `public/games/pequeno-jardinero/thumbnail.svg` - Imagen de preview (SVG)
+
+**Archivos actualizados:**
+- `public/js/games-list.json` - Juego registrado (versión 1.27.0)
+- `master-game-plan.md` - Marcado como ✅ Done
+- `development-queue.md` - Marcado como [Done ✅]
+- `games-backlog/3-5-005-pequeno-jardinero.md` - Movido a `games-done/`
+
+---
+
 ## [v1.26.0] - 2026-02-19 14:40 UTC
 
 ### ✨ Nuevo Juego Agregado
