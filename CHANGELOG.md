@@ -2,6 +2,35 @@
 
 ---
 
+## [v1.13.1] - 2026-02-19 04:00 UTC (Bogotá)
+
+### 🐛 Bug Fix
+
+**Bug:** BUG-015 - SITE_VERSION no actualizada después de BUG-014
+**Severidad:** CRÍTICA
+**Estado:** ✅ Fixed
+
+**Descripción del bug:**
+El commit `afdfeba` actualizó CHANGELOG.md con v1.13.1 para documentar BUG-013, pero olvidó actualizar `SITE_VERSION` en `public/js/main.js`. Esto causó una discrepancia entre la versión documentada y la versión del código.
+
+**Correcciones implementadas:**
+- ✅ Actualizada constante `SITE_VERSION` en `public/js/main.js` de `1.13.0` a `1.13.1`
+- ✅ Bug movido de `bugs/` a `bugs-resolved/`
+- ✅ Versión sincronizada entre CHANGELOG.md y main.js
+
+**Archivos modificados:**
+- `public/js/main.js` - SITE_VERSION actualizado a 1.13.1
+- `bugs-resolved/BUG-015-site-version-no-actualizada-bug-014.md` - Bug movido a resueltos
+
+**Cumplimiento de reglas de diseño (game-design-rules.md):**
+- ✅ Sección 9 (Definition of Done): SITE_VERSION actualizada para coincidir con CHANGELOG.md
+
+**Notas:**
+- Este fix corrige una violación de la regla CRÍTICA de Definition of Done
+- La versión 1.13.1 ahora está correctamente sincronizada en todo el proyecto
+
+---
+
 ## [v1.13.0] - 2026-02-18 19:43 UTC (Bogotá)
 
 ### ✨ Nuevo Juego Implementado
