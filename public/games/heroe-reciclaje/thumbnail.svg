@@ -1,0 +1,32 @@
+<svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="300" height="300" fill="#4CAF50"/>
+  
+  <!-- Recycling Symbol -->
+  <g transform="translate(150, 150)">
+    <!-- Triangle Arrows -->
+    <path d="M0 -80 L40 30 L-40 30 Z" fill="#2196F3" stroke="#1976D2" stroke-width="3"/>
+    <path d="M-70 40 L10 30 L-10 80 Z" fill="#FFC107" stroke="#FFA000" stroke-width="3"/>
+    <path d="M70 40 L-10 30 L10 80 Z" fill="#FF5722" stroke="#E64A19" stroke-width="3"/>
+    
+    <!-- Arrows -->
+    <path d="M0 -60 L10 -50 L0 -65 L-10 -50 Z" fill="white"/>
+    <path d="M-50 50 L-40 55 L-55 60 Z" fill="white"/>
+    <path d="M50 50 L40 55 L55 60 Z" fill="white"/>
+    
+    <!-- Center Circle -->
+    <circle cx="0" cy="10" r="25" fill="#4CAF50" stroke="#388E3C" stroke-width="3"/>
+    
+    <!-- Recycling Icon -->
+    <text x="0" y="20" text-anchor="middle" font-size="40" fill="white">♻️</text>
+  </g>
+  
+  <!-- Trash Icons -->
+  <text x="50" y="250" font-size="40">📄</text>
+  <text x="120" y="250" font-size="40">🧴</text>
+  <text x="190" y="250" font-size="40">🍾</text>
+  <text x="260" y="250" font-size="40">🍎</text>
+  
+  <!-- Title -->
+  <text x="150" y="285" text-anchor="middle" font-size="16" font-weight="bold" fill="white">Héroe del Reciclaje</text>
+</svg>

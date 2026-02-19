@@ -1,0 +1,22 @@
+{
+  "id": "heroe-reciclaje",
+  "title": "Héroe del Reciclaje",
+  "title_en": "Recycling Hero",
+  "description": "¡Clasifica los residuos en los contenedores correctos! Papel, plástico, vidrio y orgánico. Aprende a reciclar mientras juegas con 5 niveles progresivos.",
+  "description_en": "Sort waste into the correct bins! Paper, plastic, glass, and organic. Learn to recycle while playing with 5 progressive levels.",
+  "category": "educational",
+  "author": "Blockito AI",
+  "version": "1.0.0",
+  "thumbnail": "thumbnail.jpg",
+  "recommended_age": "3-5",
+  "tags": [
+    "recycling",
+    "touch",
+    "drag-drop",
+    "environment",
+    "educational",
+    "levels",
+    "timer",
+    "progress"
+  ]
+}

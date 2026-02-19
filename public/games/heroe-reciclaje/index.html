@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Héroe del Reciclaje - El Bebe Games</title>
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- HUD - Heads Up Display -->
+        <div id="hud">
+            <div class="hud-item">
+                <span class="hud-label">Nivel</span>
+                <span class="hud-value" id="level-display">1</span>
+            </div>
+            <div class="hud-item">
+                <span class="hud-label">Progreso</span>
+                <span class="hud-value"><span id="sorted-count">0</span>/<span id="target-count">10</span></span>
+            </div>
+            <div class="hud-item timer-item">
+                <span class="hud-label">Tiempo</span>
+                <div class="timer-bar-container">
+                    <div class="timer-bar" id="timer-bar"></div>
+                </div>
+                <span class="hud-value" id="timer-display">60s</span>
+            </div>
+        </div>
+
+        <!-- Conveyor Belt Area -->
+        <div id="conveyor-area">
+            <div class="conveyor-belt" id="conveyor-belt">
+                <!-- Trash items will be spawned here -->
+            </div>
+        </div>
+
+        <!-- Bins Area -->
+        <div id="bins-area">
+            <div class="bin bin-paper" data-type="paper">
+                <div class="bin-icon">📄</div>
+                <div class="bin-label">Papel</div>
+                <div class="bin-color blue"></div>
+            </div>
+            <div class="bin bin-plastic" data-type="plastic">
+                <div class="bin-icon">🧴</div>
+                <div class="bin-label">Plástico</div>
+                <div class="bin-color yellow"></div>
+            </div>
+            <div class="bin bin-glass" data-type="glass">
+                <div class="bin-icon">🍾</div>
+                <div class="bin-label">Vidrio</div>
+                <div class="bin-color green"></div>
+            </div>
+            <div class="bin bin-organic" data-type="organic">
+                <div class="bin-icon">🍎</div>
+                <div class="bin-label">Orgánico</div>
+                <div class="bin-color brown"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="modal-overlay" class="modal-overlay hidden">
+        <div id="modal-content" class="modal-content">
+            <h2 id="modal-title">¡Nivel Completado!</h2>
+            <p id="modal-message">¡Excelente trabajo!</p>
+            <button id="modal-button" class="modal-button">Continuar</button>
+        </div>
+    </div>
+
+    <script src="js/game.js"></script>
+</body>
+</html>

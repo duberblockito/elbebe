@@ -1,5 +1,5 @@
 {
-  "version": "1.29.0",
+  "version": "1.32.0",
   "lastUpdated": "2026-02-19",
   "games": [
     {
@@ -741,6 +741,50 @@
         "progress",
         "counting",
         "reflex"
+      ]
+    },
+    {
+      "id": "viste-clima",
+      "title": "Vístete para el Clima",
+      "title_en": "Dress for the Weather",
+      "description": "Mira el clima por la ventana y elige la ropa correcta para el personaje. Incluye 5 días con diferentes climas (sol, lluvia, nieve), barra de progreso y temporizador visual.",
+      "description_en": "Look at the weather through the window and choose the correct clothes for the character. Includes 5 days with different weathers (sun, rain, snow), progress bar, and visual timer.",
+      "category": "educational",
+      "author": "Elbebe Games",
+      "version": "1.0.0",
+      "thumbnail": "thumbnail.svg",
+      "recommended_age": "3-5",
+      "tags": [
+        "educational",
+        "clothing",
+        "weather",
+        "touch",
+        "levels",
+        "timer",
+        "progress",
+        "drag-drop"
+      ]
+    },
+    {
+      "id": "heroe-reciclaje",
+      "title": "Héroe del Reciclaje",
+      "title_en": "Recycling Hero",
+      "description": "¡Clasifica los residuos en los contenedores correctos! Papel, plástico, vidrio y orgánico. Aprende a reciclar mientras juegas con 5 niveles progresivos, barra de progreso y temporizador visual.",
+      "description_en": "Sort waste into the correct bins! Paper, plastic, glass, and organic. Learn to recycle while playing with 5 progressive levels, progress bar, and visual timer.",
+      "category": "educational",
+      "author": "Blockito AI",
+      "version": "1.0.0",
+      "thumbnail": "thumbnail.svg",
+      "recommended_age": "3-5",
+      "tags": [
+        "recycling",
+        "touch",
+        "drag-drop",
+        "environment",
+        "educational",
+        "levels",
+        "timer",
+        "progress"
       ]
     }
   ]

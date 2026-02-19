@@ -36,7 +36,7 @@ La estrategia de desarrollo sigue un ciclo "Round Robin" entre las categorías d
 | 0-1 Años | 8 | 8 |
 | 1-2 Años | 6 | 6 |
 | 2-3 Años | 6 | 6 |
-| 3-5 Años | 5 | 5 |
+| 3-5 Años | 7 | 7 |
 | 5-8 Años | 5 | 5 |
 | 8-15 Años | 5 | 5 |
 
@@ -82,6 +82,7 @@ Basado en la regla de equilibrio, este es el orden inmediato de desarrollo:
 32. **[Done ✅]** **5-8 Años**: `maestro-reloj` (Maestro del Reloj) - IMPLEMENTADO
 33. **[Done ✅]** **1-2 Años**: `camiones-corren` (Camiones que Corren) - IMPLEMENTADO
 34. **[Done ✅]** **2-3 Años**: `2-3-006-carros-vamos` (Los Carros Vamos) - IMPLEMENTADO
+35. **[Done ✅]** **3-5 Años**: `3-5-007-heroe-reciclaje` (Héroe del Reciclaje) - IMPLEMENTADO
 
 ---
 

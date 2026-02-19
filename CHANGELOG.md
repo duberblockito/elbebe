@@ -2,6 +2,105 @@
 
 ---
 
+## [v1.33.0] - 2026-02-19 17:40 UTC
+
+### ✨ Nuevo Juego Agregado
+
+**Juego:** Héroe del Reciclaje
+**Categoría:** 3-5 Años (Preschoolers)
+**ID:** 3-5-007
+
+**Descripción:**
+¡Clasifica los residuos en los contenedores correctos! Papel, plástico, vidrio y orgánico. Aprende a reciclar mientras juegas con 5 niveles progresivos, barra de progreso y temporizador visual. Diseñado para niños de 3-5 años que aprenden sobre el medio ambiente y reciclaje.
+
+**Características implementadas:**
+- ✅ Sistema de 5 niveles progresivos (10, 12, 15, 18, 20 residuos por nivel)
+- ✅ Cuatro tipos de contenedores: Papel (azul), Plástico (amarillo), Vidrio (verde), Orgánico (marrón)
+- ✅ 20 tipos de residuos diferentes (5 por categoría)
+- ✅ Cinta transportadora animada con movimiento de residuos
+- ✅ Drag & drop táctil para clasificar residuos
+- ✅ Feedback visual correcto (checkmark + sonido musical)
+- ✅ Feedback visual incorrecto (shake animation + sonido de error)
+- ✅ Temporizador por nivel (60s → 40s progresivo)
+- ✅ Barra de progreso visual mostrando residuos clasificados vs objetivo
+- ✅ Barra de temporizador visual con cambios de color (verde → amarillo → rojo)
+- ✅ HUD (Heads Up Display) con nivel actual, clasificados, objetivo, tiempo
+- ✅ Persistencia en localStorage (`heroe-reciclaje-progress`)
+- ✅ Sistema de audio con Web Audio API (sonidos para correcto, incorrecto, pickup, nivel completado)
+- ✅ Efecto de partículas de feedback (✅/❌)
+- ✅ Highlight del contenedor correcto al arrastrar residuo
+- ✅ Modales: Nivel Completado, Tiempo Agotado, Juego Completado
+- ✅ Responsivo para móviles (375x667px)
+
+**Cumplimiento de reglas de diseño (game-design-rules.md):**
+- ✅ Sección 1: Estructura de directorios correcta en `/public/games/`
+- ✅ Sección 2: HTML5, CSS3, Vanilla JavaScript sin frameworks
+- ✅ Sección 2: Responsivo y optimizado para 375x667px (iPhone SE)
+- ✅ Sección 3: manifest.json válido con metadatos completos
+- ✅ Sección 4: Registrado en `public/js/games-list.json`
+- ✅ Sección 7: Sistema de niveles (5 niveles, 40-60s por nivel)
+- ✅ Sección 7: Barra de progreso visual (residuos / objetivo)
+- ✅ Sección 7: Barra de temporizador visual con cambios de color
+- ✅ Sección 7: Persistencia en localStorage
+- ✅ Sección 8: Checklist de submission completo
+
+**Archivos creados:**
+- `public/games/heroe-reciclaje/index.html` - Página principal del juego
+- `public/games/heroe-reciclaje/assets/styles.css` - Estilos del juego
+- `public/games/heroe-reciclaje/js/game.js` - Lógica del juego
+- `public/games/heroe-reciclaje/manifest.json` - Metadatos
+- `public/games/heroe-reciclaje/thumbnail.svg` - Imagen de preview (SVG)
+
+---
+
+## [v1.32.0] - 2026-02-19 17:30 UTC
+
+### ✨ Nuevo Juego Agregado
+
+**Juego:** Vístete para el Clima
+**Categoría:** 3-5 Años (Preschoolers)
+**ID:** 3-5-006
+
+**Descripción:**
+Mira el clima por la ventana y elige la ropa correcta para el personaje. Incluye 5 días con diferentes climas (sol, lluvia, nieve), barra de progreso y temporizador visual. Diseñado para niños de 3-5 años que aprenden a vestirse apropiadamente según el clima.
+
+**Características implementadas:**
+- ✅ Sistema de 5 días progresivos (5, 6, 7, 8, 10 prendas por día)
+- ✅ Tres tipos de clima: Sol, Lluvia, Nieve
+- ✅ Prendas de ropa categorizadas por clima (18 items totales: 6 ligeros, 6 de lluvia, 6 de nieve)
+- ✅ Temporizador por día (60s → 40s progresivo)
+- ✅ Barra de progreso visual mostrando prendas correctas vs objetivo
+- ✅ Barra de temporizador visual con cambios de color (azul → amarillo → rojo)
+- ✅ HUD (Heads Up Display) con día actual, aciertos, objetivo
+- ✅ Persistencia en localStorage (`viste-clima-progress`)
+- ✅ Ventana del clima con animaciones (sol brillando, lluvia cayendo, nieve flotando)
+- ✅ Personaje que cambia de ropa según selección
+- ✅ Feedback visual (shake animation) en selección incorrecta
+- ✅ Feedback textual según clima completado
+- ✅ Modales: Instrucciones, Día Completado, Tiempo Agotado, Juego Completado
+- ✅ Responsivo para móviles (375x667px)
+
+**Cumplimiento de reglas de diseño (game-design-rules.md):**
+- ✅ Sección 1: Estructura de directorios correcta
+- ✅ Sección 2: HTML5, CSS3, Vanilla JavaScript sin frameworks
+- ✅ Sección 2: Responsivo y optimizado para 375x667px (iPhone SE)
+- ✅ Sección 3: manifest.json válido con metadatos completos
+- ✅ Sección 4: Registrado en `public/js/games-list.json`
+- ✅ Sección 7: Sistema de niveles (5 días, 40-60s por día)
+- ✅ Sección 7: Barra de progreso visual (prendas / objetivo)
+- ✅ Sección 7: Barra de temporizador visual con cambios de color
+- ✅ Sección 7: Persistencia en localStorage
+- ✅ Sección 8: Checklist de submission completo
+
+**Archivos creados:**
+- `public/games/viste-clima/index.html` - Página principal del juego
+- `public/games/viste-clima/assets/game.css` - Estilos del juego
+- `public/games/viste-clima/js/game.js` - Lógica del juego
+- `public/games/viste-clima/manifest.json` - Metadatos
+- `public/games/viste-clima/thumbnail.svg` - Imagen de preview (SVG)
+
+---
+
 ## [v1.31.0] - 2026-02-19 17:08 UTC
 
 ### ✨ Nuevo Juego Agregado

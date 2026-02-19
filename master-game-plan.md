@@ -55,6 +55,8 @@ This document outlines the development roadmap for the 41 games currently in the
 | 003 | **Tren de Números** | Order train cars numbered 1-10. | ✅ Done |
 | 004 | **Caritas y Emociones** | Choose facial expressions for stories. | ✅ Done |
 | 005 | **Pequeño Jardinero** | Care for a plant by watering, giving sun, and weeding until it blooms. | ✅ Done |
+| 006 | **Vístete para el Clima** | Dress character according to weather. | ✅ Done |
+| 007 | **Héroe del Reciclaje** | Sort trash into recycling bins. | ✅ Done |
 
 ## 🧒 5-8 Years (Early Elementary)
 
