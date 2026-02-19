@@ -1,5 +1,5 @@
 {
-  "version": "1.38.1",
+  "version": "1.38.2",
   "lastUpdated": "2026-02-19",
   "games": [
     {
@@ -878,6 +878,30 @@
         "procedural-generation",
         "educational",
         "science"
+      ]
+    },
+    {
+      "id": "0-1-010-mariposas-vuelan",
+      "title": "Mariposas que Vuelan",
+      "title_en": "Butterflies Fly",
+      "description": "Mariposas coloridas volando por el cielo. Toca las mariposas para que aterricen en las flores y cambien de color. Incluye 5 niveles progresivos, barra de progreso y temporizador visual.",
+      "description_en": "Colorful butterflies flying across the sky. Touch butterflies to make them land on flowers and change color. Includes 5 progressive levels, progress bar, and visual timer.",
+      "category": "sensory",
+      "author": "El Bebe Games",
+      "version": "1.0.0",
+      "thumbnail": "thumbnail.svg",
+      "recommended_age": "0-1",
+      "tags": [
+        "touch",
+        "butterflies",
+        "colors",
+        "animals",
+        "sensory",
+        "levels",
+        "timer",
+        "progress",
+        "flowers",
+        "nature"
       ]
     }
   ]

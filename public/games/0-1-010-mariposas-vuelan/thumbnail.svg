@@ -1,0 +1,93 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Sky gradient background -->
+  <defs>
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#98FB98;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="wingGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF69B4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF1493;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="300" height="300" fill="url(#skyGradient)" />
+
+  <!-- Sun -->
+  <circle cx="250" cy="50" r="30" fill="#FFD700" opacity="0.8">
+    <animate attributeName="r" values="30;35;30" dur="2s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- Clouds -->
+  <ellipse cx="80" cy="60" rx="40" ry="20" fill="white" opacity="0.7" />
+  <ellipse cx="200" cy="80" rx="35" ry="18" fill="white" opacity="0.6" />
+
+  <!-- Flowers at bottom -->
+  <g transform="translate(50, 250)">
+    <ellipse cx="0" cy="0" rx="15" ry="20" fill="#FF69B4" />
+    <ellipse cx="0" cy="0" rx="15" ry="20" fill="#FF69B4" transform="rotate(60)" />
+    <ellipse cx="0" cy="0" rx="15" ry="20" fill="#FF69B4" transform="rotate(120)" />
+    <circle cx="0" cy="0" r="10" fill="#FFD700" />
+  </g>
+
+  <g transform="translate(150, 260)">
+    <ellipse cx="0" cy="0" rx="15" ry="20" fill="#87CEEB" />
+    <ellipse cx="0" cy="0" rx="15" ry="20" fill="#87CEEB" transform="rotate(60)" />
+    <ellipse cx="0" cy="0" rx="15" ry="20" fill="#87CEEB" transform="rotate(120)" />
+    <circle cx="0" cy="0" r="10" fill="#FFD700" />
+  </g>
+
+  <g transform="translate(250, 255)">
+    <ellipse cx="0" cy="0" rx="15" ry="20" fill="#DDA0DD" />
+    <ellipse cx="0" cy="0" rx="15" ry="20" fill="#DDA0DD" transform="rotate(60)" />
+    <ellipse cx="0" cy="0" rx="15" ry="20" fill="#DDA0DD" transform="rotate(120)" />
+    <circle cx="0" cy="0" r="10" fill="#FFD700" />
+  </g>
+
+  <!-- Butterfly (main) -->
+  <g transform="translate(150, 150)">
+    <!-- Left wing -->
+    <ellipse cx="-25" cy="0" rx="30" ry="35" fill="url(#wingGradient)" opacity="0.9">
+      <animate attributeName="rx" values="30;10;30" dur="0.3s" repeatCount="indefinite" />
+    </ellipse>
+
+    <!-- Right wing -->
+    <ellipse cx="25" cy="0" rx="30" ry="35" fill="url(#wingGradient)" opacity="0.9">
+      <animate attributeName="rx" values="30;10;30" dur="0.3s" repeatCount="indefinite" />
+    </ellipse>
+
+    <!-- Body -->
+    <ellipse cx="0" cy="0" rx="5" ry="30" fill="#4a4a4a" />
+
+    <!-- Antennae -->
+    <path d="M -3 -25 Q -10 -35 -15 -30" stroke="#4a4a4a" stroke-width="2" fill="none" />
+    <path d="M 3 -25 Q 10 -35 15 -30" stroke="#4a4a4a" stroke-width="2" fill="none" />
+  </g>
+
+  <!-- Small butterflies in background -->
+  <g transform="translate(80, 120) scale(0.5)">
+    <ellipse cx="-25" cy="0" rx="30" ry="35" fill="#87CEEB" opacity="0.6">
+      <animate attributeName="rx" values="30;10;30" dur="0.4s" repeatCount="indefinite" />
+    </ellipse>
+    <ellipse cx="25" cy="0" rx="30" ry="35" fill="#87CEEB" opacity="0.6">
+      <animate attributeName="rx" values="30;10;30" dur="0.4s" repeatCount="indefinite" />
+    </ellipse>
+    <ellipse cx="0" cy="0" rx="5" ry="30" fill="#4a4a4a" />
+  </g>
+
+  <g transform="translate(220, 100) scale(0.4)">
+    <ellipse cx="-25" cy="0" rx="30" ry="35" fill="#FFD700" opacity="0.5">
+      <animate attributeName="rx" values="30;10;30" dur="0.35s" repeatCount="indefinite" />
+    </ellipse>
+    <ellipse cx="25" cy="0" rx="30" ry="35" fill="#FFD700" opacity="0.5">
+      <animate attributeName="rx" values="30;10;30" dur="0.35s" repeatCount="indefinite" />
+    </ellipse>
+    <ellipse cx="0" cy="0" rx="5" ry="30" fill="#4a4a4a" />
+  </g>
+
+  <!-- Title -->
+  <text x="150" y="30" font-family="Comic Sans MS, cursive" font-size="18" font-weight="bold" fill="#2E7D32" text-anchor="middle">
+    🦋 Mariposas Vuelan
+  </text>
+</svg>

@@ -2,6 +2,60 @@
 
 ---
 
+## [v1.38.2] - 2026-02-19 21:40 UTC
+
+### 🎮 Nuevo Juego - 0-1 Años
+
+**Juego:** Mariposas que Vuelan (Butterflies Fly)
+**ID:** 0-1-010-mariposas-vuelan
+**Categoría:** Sensorial
+**Edad recomendada:** 0-1 años
+
+**Características:**
+- Mariposas coloridas volando por el cielo
+- Toca las mariposas para que aterricen en las flores
+- Las mariposas cambian de color al tocarlas
+- 5 niveles progresivos (5, 6, 7, 8, 10 mariposas)
+- Temporizador visual (30s, 40s, 50s, 60s, 70s)
+- Barra de progreso mostrando mariposas coleccionadas
+- Sonidos sintetizados para interacción
+- Partículas visuales al tocar mariposas
+- Persistencia en localStorage
+- Diseño responsivo para móviles y tabletas
+- Animaciones suaves de alas y movimiento
+
+**Archivos creados:**
+- `public/games/0-1-010-mariposas-vuelan/index.html` - Juego completo (HTML/CSS/JS)
+- `public/games/0-1-010-mariposas-vuelan/manifest.json` - Metadatos del juego
+- `public/games/0-1-010-mariposas-vuelan/thumbnail.svg` - Miniatura animada
+
+**Archivos actualizados:**
+- `public/js/games-list.json` - Juego registrado, versión actualizada a 1.38.2
+- `public/js/main.js` - SITE_VERSION actualizada a 1.38.2
+- `master-game-plan.md` - Juego marcado como ✅ Done
+- `development-queue.md` - Contador de 0-1 años incrementado a 10
+- `games-backlog/0-1-010-mariposas-vuelan.md` - Movido a /games-done/
+
+**Cumplimiento de reglas:**
+- ✅ Implementado en `/public/games/` (directorio de deployment)
+- ✅ HTML5, CSS3, Vanilla JavaScript (sin frameworks)
+- ✅ Responsivo (funciona en 375x667 - iPhone SE)
+- ✅ 5 niveles progresivos (game-design-rules.md Sección 7)
+- ✅ Barra de progreso visual obligatoria
+- ✅ Temporizador visual con cambios de color
+- ✅ Persistencia en localStorage (`mariposas-vuelan-progress`)
+- ✅ Touch events para móviles
+- ✅ Manifest.json válido
+- ✅ Registrado en games-list.json
+- ✅ Thumbnail incluido
+
+**Estadísticas del proyecto:**
+- Total juegos implementados: 40/41 (97.6%)
+- Juegos 0-1 años: 10/9 (meta superada)
+- Todos los bugs resueltos: ✅
+
+---
+
 ## [v1.38.1] - 2026-02-19 20:41 UTC
 
 ### 🐛 Bug Fix

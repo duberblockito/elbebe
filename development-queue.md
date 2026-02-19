@@ -33,7 +33,7 @@ La estrategia de desarrollo sigue un ciclo "Round Robin" entre las categorías d
 
 | Categoría | Terminados | Meta Actual |
 | :--- | :---: | :---: |
-| 0-1 Años | 9 | 9 |
+| 0-1 Años | 10 | 10 |
 | 1-2 Años | 7 | 7 |
 | 2-3 Años | 6 | 6 |
 | 3-5 Años | 7 | 7 |
@@ -87,6 +87,7 @@ Basado en la regla de equilibrio, este es el orden inmediato de desarrollo:
 37. **[Done ✅]** **0-1 Años**: `0-1-009-formas-rebotan` (Formas que Rebotan) - IMPLEMENTADO
 38. **[Done ✅]** **5-8 Años**: `5-8-006-conejo-programador` (Conejo Programador) - IMPLEMENTADO
 39. **[Done ✅]** **8-15 Años**: `space-explorer` (Space Explorer: Galaxy Mission) - IMPLEMENTADO
+40. **[Done ✅]** **0-1 Años**: `0-1-010-mariposas-vuelan` (Mariposas que Vuelan) - IMPLEMENTADO
 
 ---
 

@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Mariposas que Vuelan - El Bebe Games</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(135deg, #87CEEB 0%, #98FB98 100%);
+            min-height: 100vh;
+            overflow: hidden;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .game-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            max-width: 100%;
+            max-height: 100vh;
+        }
+
+        /* Sky background with clouds */
+        .sky {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, #87CEEB 0%, #B0E0E6 50%, #98FB98 100%);
+            z-index: 1;
+        }
+
+        /* Clouds */
+        .cloud {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: floatCloud linear infinite;
+        }
+
+        .cloud::before, .cloud::after {
+            content: '';
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+        }
+
+        @keyframes floatCloud {
+            0% { transform: translateX(-100px); }
+            100% { transform: translateX(calc(100vw + 100px)); }
+        }
+
+        /* Sun */
+        .sun {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle, #FFD700 0%, #FFA500 100%);
+            border-radius: 50%;
+            box-shadow: 0 0 40px rgba(255, 215, 0, 0.6);
+            z-index: 2;
+        }
+
+        /* Flowers */
+        .flower {
+            position: absolute;
+            bottom: 0;
+            width: 60px;
+            height: 80px;
+            z-index: 3;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .flower:active {
+            transform: scale(1.1);
+        }
+
+        .flower-center {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 30px;
+            background: radial-gradient(circle, #FFD700 0%, #FFA500 100%);
+            border-radius: 50%;
+            z-index: 2;
+        }
+
+        .flower-petal {
+            position: absolute;
+            bottom: 25px;
+            left: 50%;
+            width: 25px;
+            height: 35px;
+            border-radius: 50%;
+            transform-origin: bottom center;
+        }
+
+        .flower-stem {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 6px;
+            height: 50px;
+            background: #228B22;
+            z-index: 1;
+        }
+
+        /* Butterfly */
+        .butterfly {
+            position: absolute;
+            cursor: pointer;
+            z-index: 10;
+            transition: transform 0.3s ease;
+            touch-action: manipulation;
+        }
+
+        .butterfly:active {
+            transform: scale(1.2);
+        }
+
+        .butterfly-body {
+            position: relative;
+            width: 8px;
+            height: 40px;
+            background: #4a4a4a;
+            border-radius: 4px;
+            margin: 0 auto;
+        }
+
+        .butterfly-wing {
+            position: absolute;
+            width: 30px;
+            height: 35px;
+            border-radius: 50%;
+            animation: flap 0.3s ease-in-out infinite;
+        }
+
+        .butterfly-wing.left {
+            left: -25px;
+            top: 2px;
+            transform-origin: right center;
+        }
+
+        .butterfly-wing.right {
+            right: -25px;
+            top: 2px;
+            transform-origin: left center;
+            animation-delay: 0.15s;
+        }
+
+        @keyframes flap {
+            0%, 100% { transform: scaleX(1); }
+            50% { transform: scaleX(0.3); }
+        }
+
+        /* HUD */
+        .hud {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.9);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .hud-info {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .hud-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .hud-subtitle {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .hud-stats {
+            display: flex;
+            gap: 20px;
+        }
+
+        .hud-stat {
+            text-align: center;
+        }
+
+        .hud-stat-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2E7D32;
+        }
+
+        .hud-stat-label {
+            font-size: 0.7rem;
+            color: #666;
+            text-transform: uppercase;
+        }
+
+        /* Progress bar */
+        .progress-container {
+            position: fixed;
+            top: 80px;
+            left: 20px;
+            right: 20px;
+            z-index: 999;
+        }
+
+        .progress-bar {
+            height: 20px;
+            background: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4CAF50 0%, #8BC34A 100%);
+            transition: width 0.3s ease;
+            border-radius: 10px;
+        }
+
+        .progress-text {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #333;
+            margin-top: 5px;
+            font-weight: bold;
+        }
+
+        /* Timer bar */
+        .timer-container {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            z-index: 999;
+        }
+
+        .timer-bar {
+            height: 25px;
+            background: #e0e0e0;
+            border-radius: 12.5px;
+            overflow: hidden;
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .timer-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #2196F3 0%, #03A9F4 100%);
+            transition: width 1s linear, background 0.3s ease;
+            border-radius: 12.5px;
+        }
+
+        .timer-text {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #333;
+            margin-top: 5px;
+            font-weight: bold;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.show {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 90%;
+            animation: popIn 0.3s ease;
+        }
+
+        @keyframes popIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .modal-title {
+            font-size: 1.8rem;
+            color: #2E7D32;
+            margin-bottom: 15px;
+        }
+
+        .modal-message {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .modal-button {
+            background: linear-gradient(135deg, #4CAF50 0%, #8BC34A 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            font-family: inherit;
+        }
+
+        .modal-button:active {
+            transform: scale(0.95);
+        }
+
+        /* Butterfly colors */
+        .butterfly-pink .butterfly-wing { background: linear-gradient(135deg, #FF69B4 0%, #FF1493 100%); }
+        .butterfly-blue .butterfly-wing { background: linear-gradient(135deg, #87CEEB 0%, #4169E1 100%); }
+        .butterfly-yellow .butterfly-wing { background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); }
+        .butterfly-purple .butterfly-wing { background: linear-gradient(135deg, #DDA0DD 0%, #9370DB 100%); }
+        .butterfly-orange .butterfly-wing { background: linear-gradient(135deg, #FFA500 0%, #FF4500 100%); }
+        .butterfly-green .butterfly-wing { background: linear-gradient(135deg, #90EE90 0%, #228B22 100%); }
+
+        /* Particles */
+        .particle {
+            position: absolute;
+            pointer-events: none;
+            z-index: 100;
+            animation: fadeOut 0.5s ease-out forwards;
+        }
+
+        @keyframes fadeOut {
+            0% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0; transform: scale(0) translateY(20px); }
+        }
+
+        /* Level indicator */
+        .level-badge {
+            position: fixed;
+            top: 120px;
+            left: 20px;
+            background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 1rem;
+            font-weight: bold;
+            z-index: 998;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container" id="gameContainer">
+        <!-- Sky background -->
+        <div class="sky"></div>
+
+        <!-- Sun -->
+        <div class="sun"></div>
+
+        <!-- Flowers will be dynamically added -->
+        <div id="flowersContainer"></div>
+
+        <!-- Butterflies will be dynamically added -->
+        <div id="butterfliesContainer"></div>
+
+        <!-- HUD -->
+        <div class="hud">
+            <div class="hud-info">
+                <div class="hud-title">🦋 Mariposas Vuelan</div>
+                <div class="hud-subtitle">Butterflies Fly</div>
+            </div>
+            <div class="hud-stats">
+                <div class="hud-stat">
+                    <div class="hud-stat-value" id="collectedValue">0</div>
+                    <div class="hud-stat-label">Collected</div>
+                </div>
+                <div class="hud-stat">
+                    <div class="hud-stat-value" id="levelValue">1</div>
+                    <div class="hud-stat-label">Level</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress bar -->
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="progress-text" id="progressText">0 / 5 butterflies collected</div>
+        </div>
+
+        <!-- Level badge -->
+        <div class="level-badge" id="levelBadge">Nivel 1</div>
+
+        <!-- Timer -->
+        <div class="timer-container">
+            <div class="timer-bar">
+                <div class="timer-fill" id="timerFill"></div>
+            </div>
+            <div class="timer-text" id="timerText">30s</div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <div class="modal-title" id="modalTitle">¡Nivel Completado!</div>
+                <div class="modal-message" id="modalMessage">¡Bien hecho! Coleccionaste todas las mariposas.</div>
+                <button class="modal-button" id="modalButton">Siguiente Nivel</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Game Configuration
+        const CONFIG = {
+            levels: [
+                { butterflies: 5, time: 30, speed: 2 },
+                { butterflies: 6, time: 40, speed: 2.5 },
+                { butterflies: 7, time: 50, speed: 3 },
+                { butterflies: 8, time: 60, speed: 3.5 },
+                { butterflies: 10, time: 70, speed: 4 }
+            ],
+            colors: ['pink', 'blue', 'yellow', 'purple', 'orange', 'green'],
+            flowerColors: ['#FF69B4', '#87CEEB', '#FFD700', '#DDA0DD', '#FFA500', '#90EE90'],
+            flowerPositions: [10, 30, 50, 70, 90]
+        };
+
+        // Game State
+        let gameState = {
+            currentLevel: 1,
+            butterfliesCollected: 0,
+            timeRemaining: 30,
+            butterflies: [],
+            flowers: [],
+            isPlaying: false,
+            timerInterval: null
+        };
+
+        // DOM Elements
+        const elements = {
+            gameContainer: document.getElementById('gameContainer'),
+            flowersContainer: document.getElementById('flowersContainer'),
+            butterfliesContainer: document.getElementById('butterfliesContainer'),
+            collectedValue: document.getElementById('collectedValue'),
+            levelValue: document.getElementById('levelValue'),
+            progressFill: document.getElementById('progressFill'),
+            progressText: document.getElementById('progressText'),
+            timerFill: document.getElementById('timerFill'),
+            timerText: document.getElementById('timerText'),
+            levelBadge: document.getElementById('levelBadge'),
+            modal: document.getElementById('modal'),
+            modalTitle: document.getElementById('modalTitle'),
+            modalMessage: document.getElementById('modalMessage'),
+            modalButton: document.getElementById('modalButton')
+        };
+
+        // Audio Context
+        let audioContext = null;
+
+        function initAudio() {
+            if (!audioContext) {
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            }
+        }
+
+        function playSound(frequency, duration, type = 'sine') {
+            initAudio();
+            const oscillator = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
+
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+
+            oscillator.frequency.value = frequency;
+            oscillator.type = type;
+
+            gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + duration);
+
+            oscillator.start(audioContext.currentTime);
+            oscillator.stop(audioContext.currentTime + duration);
+        }
+
+        function playButterflySound() {
+            playSound(800 + Math.random() * 200, 0.3, 'sine');
+            setTimeout(() => playSound(1000 + Math.random() * 200, 0.2, 'sine'), 100);
+        }
+
+        function playLevelCompleteSound() {
+            [523.25, 659.25, 783.99, 1046.50].forEach((freq, i) => {
+                setTimeout(() => playSound(freq, 0.3, 'triangle'), i * 150);
+            });
+        }
+
+        function playGameOverSound() {
+            [392.00, 349.23, 329.63].forEach((freq, i) => {
+                setTimeout(() => playSound(freq, 0.4, 'sine'), i * 200);
+            });
+        }
+
+        // Create clouds
+        function createClouds() {
+            for (let i = 0; i < 5; i++) {
+                const cloud = document.createElement('div');
+                cloud.className = 'cloud';
+                cloud.style.width = `${80 + Math.random() * 60}px`;
+                cloud.style.height = `${40 + Math.random() * 30}px`;
+                cloud.style.top = `${50 + Math.random() * 150}px`;
+                cloud.style.left = `${Math.random() * 100}%`;
+                cloud.style.animationDuration = `${20 + Math.random() * 20}s`;
+                cloud.style.animationDelay = `${-Math.random() * 20}s`;
+                elements.gameContainer.insertBefore(cloud, elements.flowersContainer);
+            }
+        }
+
+        // Create flowers
+        function createFlowers() {
+            elements.flowersContainer.innerHTML = '';
+            gameState.flowers = [];
+
+            CONFIG.flowerPositions.forEach((pos, index) => {
+                const flower = document.createElement('div');
+                flower.className = 'flower';
+                flower.style.left = `${pos}%`;
+
+                // Create petals
+                const petalCount = 6;
+                const petalColor = CONFIG.flowerColors[index % CONFIG.flowerColors.length];
+
+                for (let i = 0; i < petalCount; i++) {
+                    const petal = document.createElement('div');
+                    petal.className = 'flower-petal';
+                    petal.style.background = petalColor;
+                    petal.style.transform = `rotate(${(i * 360 / petalCount)}deg) translateY(-10px)`;
+                    flower.appendChild(petal);
+                }
+
+                // Center
+                const center = document.createElement('div');
+                center.className = 'flower-center';
+                flower.appendChild(center);
+
+                // Stem
+                const stem = document.createElement('div');
+                stem.className = 'flower-stem';
+                flower.appendChild(stem);
+
+                elements.flowersContainer.appendChild(flower);
+                gameState.flowers.push(flower);
+            });
+        }
+
+        // Create butterfly
+        function createButterfly() {
+            const butterfly = document.createElement('div');
+            butterfly.className = 'butterfly';
+
+            const colorClass = CONFIG.colors[Math.floor(Math.random() * CONFIG.colors.length)];
+            butterfly.classList.add(`butterfly-${colorClass}`);
+
+            // Body
+            const body = document.createElement('div');
+            body.className = 'butterfly-body';
+            butterfly.appendChild(body);
+
+            // Wings
+            const leftWing = document.createElement('div');
+            leftWing.className = 'butterfly-wing left';
+            butterfly.appendChild(leftWing);
+
+            const rightWing = document.createElement('div');
+            rightWing.className = 'butterfly-wing right';
+            butterfly.appendChild(rightWing);
+
+            // Random starting position
+            const startX = -50;
+            const startY = 100 + Math.random() * (window.innerHeight - 300);
+            butterfly.style.left = `${startX}px`;
+            butterfly.style.top = `${startY}px`;
+
+            // Movement data
+            const butterflyData = {
+                element: butterfly,
+                x: startX,
+                y: startY,
+                speed: CONFIG.levels[gameState.currentLevel - 1].speed,
+                targetY: startY,
+                color: colorClass,
+                angle: 0
+            };
+
+            // Touch/Click event
+            butterfly.addEventListener('touchstart', (e) => {
+                e.preventDefault();
+                handleButterflyClick(butterflyData);
+            });
+            butterfly.addEventListener('click', () => handleButterflyClick(butterflyData));
+
+            elements.butterfliesContainer.appendChild(butterfly);
+            gameState.butterflies.push(butterflyData);
+        }
+
+        // Handle butterfly click
+        function handleButterflyClick(butterflyData) {
+            if (!gameState.isPlaying) return;
+
+            playButterflySound();
+
+            // Create particles
+            createParticles(butterflyData.x + 30, butterflyData.y + 20, butterflyData.color);
+
+            // Find nearest flower
+            let nearestFlower = null;
+            let nearestDistance = Infinity;
+
+            gameState.flowers.forEach(flower => {
+                const rect = flower.getBoundingClientRect();
+                const flowerX = rect.left + rect.width / 2;
+                const flowerY = rect.top;
+
+                const distance = Math.sqrt(
+                    Math.pow(flowerX - (butterflyData.x + 30), 2) +
+                    Math.pow(flowerY - (butterflyData.y + 20), 2)
+                );
+
+                if (distance < nearestDistance) {
+                    nearestDistance = distance;
+                    nearestFlower = flower;
+                }
+            });
+
+            // Change color
+            const newColor = CONFIG.colors[Math.floor(Math.random() * CONFIG.colors.length)];
+            butterflyData.element.classList.remove(`butterfly-${butterflyData.color}`);
+            butterflyData.element.classList.add(`butterfly-${newColor}`);
+            butterflyData.color = newColor;
+
+            // Move towards flower
+            if (nearestFlower && nearestDistance < 300) {
+                animateToFlower(butterflyData, nearestFlower);
+            } else {
+                // Remove butterfly and count as collected
+                removeButterfly(butterflyData);
+                gameState.butterfliesCollected++;
+                updateUI();
+                checkLevelComplete();
+            }
+        }
+
+        // Animate butterfly to flower
+        function animateToFlower(butterflyData, flower) {
+            const rect = flower.getBoundingClientRect();
+            const targetX = rect.left + rect.width / 2 - 30;
+            const targetY = rect.top;
+
+            butterflyData.targetX = targetX;
+            butterflyData.targetY = targetY;
+            butterflyData.landing = true;
+        }
+
+        // Create particles
+        function createParticles(x, y, color) {
+            const particleCount = 8;
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = `${x}px`;
+                particle.style.top = `${y}px`;
+                particle.style.width = '10px';
+                particle.style.height = '10px';
+                particle.style.background = `linear-gradient(135deg, ${getColorHex(color)} 0%, #fff 100%)`;
+                particle.style.borderRadius = '50%';
+
+                const angle = (i * 360 / particleCount) * Math.PI / 180;
+                const distance = 30 + Math.random() * 30;
+                particle.style.transform = `translate(${Math.cos(angle) * distance}px, ${Math.sin(angle) * distance}px)`;
+
+                elements.gameContainer.appendChild(particle);
+
+                setTimeout(() => particle.remove(), 500);
+            }
+        }
+
+        function getColorHex(color) {
+            const colors = {
+                pink: '#FF69B4',
+                blue: '#4169E1',
+                yellow: '#FFD700',
+                purple: '#9370DB',
+                orange: '#FFA500',
+                green: '#228B22'
+            };
+            return colors[color] || '#fff';
+        }
+
+        // Remove butterfly
+        function removeButterfly(butterflyData) {
+            butterflyData.element.remove();
+            gameState.butterflies = gameState.butterflies.filter(b => b !== butterflyData);
+        }
+
+        // Update butterfly positions
+        function updateButterflies() {
+            gameState.butterflies.forEach(butterflyData => {
+                if (butterflyData.landing) {
+                    // Move towards flower
+                    const dx = butterflyData.targetX - butterflyData.x;
+                    const dy = butterflyData.targetY - butterflyData.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < 5) {
+                        // Landed
+                        removeButterfly(butterflyData);
+                        gameState.butterfliesCollected++;
+                        updateUI();
+                        checkLevelComplete();
+                    } else {
+                        butterflyData.x += (dx / distance) * 3;
+                        butterflyData.y += (dy / distance) * 3;
+                        butterflyData.element.style.left = `${butterflyData.x}px`;
+                        butterflyData.element.style.top = `${butterflyData.y}px`;
+                    }
+                } else {
+                    // Fly across screen
+                    butterflyData.x += butterflyData.speed;
+                    butterflyData.angle += 0.1;
+                    butterflyData.y += Math.sin(butterflyData.angle) * 0.5;
+
+                    butterflyData.element.style.left = `${butterflyData.x}px`;
+                    butterflyData.element.style.top = `${butterflyData.y}px`;
+
+                    // Remove if off screen
+                    if (butterflyData.x > window.innerWidth + 50) {
+                        removeButterfly(butterflyData);
+                        spawnNewButterfly();
+                    }
+                }
+            });
+        }
+
+        // Spawn new butterfly
+        function spawnNewButterfly() {
+            if (gameState.butterflies.length < CONFIG.levels[gameState.currentLevel - 1].butterflies) {
+                createButterfly();
+            }
+        }
+
+        // Update UI
+        function updateUI() {
+            const levelConfig = CONFIG.levels[gameState.currentLevel - 1];
+            const progress = (gameState.butterfliesCollected / levelConfig.butterflies) * 100;
+
+            elements.collectedValue.textContent = gameState.butterfliesCollected;
+            elements.levelValue.textContent = gameState.currentLevel;
+            elements.progressFill.style.width = `${progress}%`;
+            elements.progressText.textContent = `${gameState.butterfliesCollected} / ${levelConfig.butterflies} mariposas`;
+            elements.levelBadge.textContent = `Nivel ${gameState.currentLevel}`;
+
+            // Timer color
+            const timerPercent = (gameState.timeRemaining / levelConfig.time) * 100;
+            elements.timerFill.style.width = `${timerPercent}%`;
+
+            if (timerPercent > 50) {
+                elements.timerFill.style.background = 'linear-gradient(90deg, #4CAF50 0%, #8BC34A 100%)';
+            } else if (timerPercent > 25) {
+                elements.timerFill.style.background = 'linear-gradient(90deg, #FFC107 0%, #FF9800 100%)';
+            } else {
+                elements.timerFill.style.background = 'linear-gradient(90deg, #f44336 0%, #F44336 100%)';
+            }
+
+            elements.timerText.textContent = `${Math.ceil(gameState.timeRemaining)}s`;
+        }
+
+        // Check level complete
+        function checkLevelComplete() {
+            const levelConfig = CONFIG.levels[gameState.currentLevel - 1];
+
+            if (gameState.butterfliesCollected >= levelConfig.butterflies) {
+                completeLevel();
+            }
+        }
+
+        // Complete level
+        function completeLevel() {
+            gameState.isPlaying = false;
+            clearInterval(gameState.timerInterval);
+
+            playLevelCompleteSound();
+
+            if (gameState.currentLevel < CONFIG.levels.length) {
+                showModal('¡Nivel Completado!', '¡Bien hecho! Coleccionaste todas las mariposas.', 'Siguiente Nivel', () => {
+                    nextLevel();
+                });
+            } else {
+                showModal('¡Juego Completado! 🎉', '¡Felicidades! Completaste todos los niveles.', 'Jugar de Nuevo', () => {
+                    restartGame();
+                });
+            }
+        }
+
+        // Game over
+        function gameOver() {
+            gameState.isPlaying = false;
+            clearInterval(gameState.timerInterval);
+
+            playGameOverSound();
+
+            showModal('¡Tiempo Agotado!', `Coleccionaste ${gameState.butterfliesCollected} mariposas.`, 'Intentar de Nuevo', () => {
+                restartLevel();
+            });
+        }
+
+        // Show modal
+        function showModal(title, message, buttonText, callback) {
+            elements.modalTitle.textContent = title;
+            elements.modalMessage.textContent = message;
+            elements.modalButton.textContent = buttonText;
+            elements.modal.classList.add('show');
+
+            elements.modalButton.onclick = () => {
+                elements.modal.classList.remove('show');
+                callback();
+            };
+        }
+
+        // Next level
+        function nextLevel() {
+            gameState.currentLevel++;
+            gameState.butterfliesCollected = 0;
+            startLevel();
+        }
+
+        // Restart level
+        function restartLevel() {
+            gameState.butterfliesCollected = 0;
+            startLevel();
+        }
+
+        // Restart game
+        function restartGame() {
+            gameState.currentLevel = 1;
+            gameState.butterfliesCollected = 0;
+            startLevel();
+        }
+
+        // Start level
+        function startLevel() {
+            const levelConfig = CONFIG.levels[gameState.currentLevel - 1];
+
+            gameState.timeRemaining = levelConfig.time;
+            gameState.butterflies = [];
+            gameState.isPlaying = true;
+
+            // Clear butterflies
+            elements.butterfliesContainer.innerHTML = '';
+
+            // Create initial butterflies
+            for (let i = 0; i < levelConfig.butterflies; i++) {
+                setTimeout(() => createButterfly(), i * 500);
+            }
+
+            // Start timer
+            gameState.timerInterval = setInterval(() => {
+                gameState.timeRemaining -= 0.1;
+
+                if (gameState.timeRemaining <= 0) {
+                    gameOver();
+                } else {
+                    updateUI();
+                }
+            }, 100);
+
+            updateUI();
+        }
+
+        // Game loop
+        function gameLoop() {
+            updateButterflies();
+            requestAnimationFrame(gameLoop);
+        }
+
+        // Save progress
+        function saveProgress() {
+            const progress = {
+                currentLevel: gameState.currentLevel,
+                butterfliesCollected: gameState.butterfliesCollected
+            };
+            localStorage.setItem('mariposas-vuelan-progress', JSON.stringify(progress));
+        }
+
+        // Load progress
+        function loadProgress() {
+            const saved = localStorage.getItem('mariposas-vuelan-progress');
+            if (saved) {
+                const progress = JSON.parse(saved);
+                gameState.currentLevel = progress.currentLevel || 1;
+            }
+        }
+
+        // Initialize game
+        function initGame() {
+            createClouds();
+            createFlowers();
+            loadProgress();
+            startLevel();
+            gameLoop();
+
+            // Save progress periodically
+            setInterval(saveProgress, 5000);
+        }
+
+        // Start game on load
+        window.addEventListener('load', initGame);
+    </script>
+</body>
+</html>
