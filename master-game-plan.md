@@ -49,6 +49,7 @@ This document outlines the development roadmap for the 41 games currently in the
 | 004 | **Los Bloques Caen** | Catch falling shapes. | ✅ Done |
 | 005 | **Apila los Animales** | Stack animals to build tower. | ✅ Done |
 | 006 | **Los Carros Vamos** | Vehicles move slowly. Touch to make them zoom off screen. | ✅ Done |
+| 007 | **Mezcla los Colores** | Mix color drops to create new colors. | ✅ Done
 
 ## 🧒 3-5 Years (Preschoolers)
 

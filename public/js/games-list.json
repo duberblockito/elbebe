@@ -1,5 +1,5 @@
 {
-  "version": "1.38.2",
+  "version": "1.39.0",
   "lastUpdated": "2026-02-19",
   "games": [
     {
@@ -902,6 +902,28 @@
         "progress",
         "flowers",
         "nature"
+      ]
+    },
+    {
+      "id": "2-3-007-mezcla-colores",
+      "title": "Mezcla los Colores",
+      "title_en": "Mix the Colors",
+      "description": "Arrastra gotas de colores a los charcos y mezcla dos colores para crear nuevos. Incluye 5 niveles progresivos, barra de progreso visual y temporizador. Diseñado para niños de 2-3 años que aprenden sobre mezcla de colores de forma divertida.",
+      "description_en": "Drag color drops to puddles and mix two colors to create new ones. Includes 5 progressive levels, visual progress bar, and timer. Designed for children aged 2-3 who learn about color mixing in a fun way.",
+      "category": "educational",
+      "author": "El Bebe Games",
+      "version": "1.0.0",
+      "thumbnail": "thumbnail.svg",
+      "recommended_age": "2-3",
+      "tags": [
+        "colors",
+        "mixing",
+        "educational",
+        "touch",
+        "drag-drop",
+        "levels",
+        "timer",
+        "progress"
       ]
     }
   ]

@@ -4,6 +4,58 @@
 
 ## [v1.38.2] - 2026-02-19 21:40 UTC
 
+
+## [v1.39.0] - 2026-02-19 22:00 UTC
+
+### 🎮 Nuevo Juego - 2-3 Años
+
+**Juego:** Mezcla los Colores (Mix the Colors)
+**ID:** 2-3-007-mezcla-colores
+**Categoría:** Educativo
+**Edad recomendada:** 2-3 años
+
+**Características:**
+- Gotas de colores que se mezclan en charcos
+- Mezcla rojo + amarillo = naranja
+- Mezcla amarillo + azul = verde
+- Mezcla rojo + azul = morado
+- 5 niveles progresivos (5, 6, 7, 8, 10 mezclas)
+- Temporizador visual (60s → 40s progresivo)
+- Barra de progreso mostrando mezclas vs objetivo
+- Barra de temporizador visual con cambios de color
+- Drag & drop táctil para mezclar colores
+- Efectos de partículas al completar mezcla
+- Sonidos sintetizados (Web Audio API)
+- Persistencia en localStorage
+- Responsivo para móviles (375x667px)
+
+**Archivos creados:**
+- `public/games/2-3-007-mezcla-colores/index.html` - Juego completo
+- `public/games/2-3-007-mezcla-colores/assets/game.css` - Estilos
+- `public/games/2-3-007-mezcla-colores/js/game.js` - Lógica del juego
+- `public/games/2-3-007-mezcla-colores/manifest.json` - Metadatos
+- `public/games/2-3-007-mezcla-colores/thumbnail.svg` - Miniatura
+
+**Archivos actualizados:**
+- `public/js/games-list.json` - Juego registrado, versión actualizada a 1.39.0
+- `public/js/main.js` - SITE_VERSION actualizada a 1.39.0
+- `master-game-plan.md` - Juego marcado como ✅ Done
+- `development-queue.md` - Contador de 2-3 años incrementado a 7
+
+**Cumplimiento de reglas:**
+- ✅ Implementado en `/public/games/` (directorio de deployment)
+- ✅ HTML5, CSS3, Vanilla JavaScript (sin frameworks)
+- ✅ Responsivo (funciona en 375x667 - iPhone SE)
+- ✅ 5 niveles progresivos (game-design-rules.md Sección 7)
+- ✅ Barra de progreso visual obligatoria
+- ✅ Barra de temporizador visual con cambios de color
+- ✅ Persistencia en localStorage (`mezcla-colores-progress`)
+- ✅ Touch events para móviles
+- ✅ Manifest.json válido
+- ✅ Registrado en games-list.json
+- ✅ Thumbnail incluido
+
+---
 ### 🎮 Nuevo Juego - 0-1 Años
 
 **Juego:** Mariposas que Vuelan (Butterflies Fly)

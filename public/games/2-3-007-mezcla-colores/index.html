@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Mezcla los Colores - El Bebe Games</title>
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="assets/game.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- HUD -->
+        <div id="hud">
+            <div class="hud-item">
+                <span class="hud-label">Nivel</span>
+                <span id="level-display" class="hud-value">1</span>
+            </div>
+            <div class="hud-item">
+                <span class="hud-label">Mezclas</span>
+                <span id="mixes-display" class="hud-value">0</span>
+                <span id="goal-display" class="hud-goal">/ 5</span>
+            </div>
+            <div class="hud-item">
+                <span class="hud-label">Tiempo</span>
+                <span id="time-display" class="hud-value">60s</span>
+            </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div id="progress-container">
+            <div id="progress-bar"></div>
+            <div id="progress-text">0 / 5 mezclas</div>
+        </div>
+
+        <!-- Timer Bar -->
+        <div id="timer-container">
+            <div id="timer-bar"></div>
+        </div>
+
+        <!-- Game Canvas -->
+        <div id="game-area">
+            <div id="puddles-container"></div>
+            <div id="drops-container"></div>
+            <div id="instructions-overlay" class="overlay">
+                <div class="modal-content">
+                    <h2>🎨 Mezcla los Colores</h2>
+                    <p>¡Arrastra las gotas de colores a los charcos para mezclarlos!</p>
+                    <p><strong>Reglas:</strong></p>
+                    <ul>
+                        <li>🔴 + 🟡 = 🟠 (Rojo + Amarillo = Naranja)</li>
+                        <li>🟡 + 🔵 = 🟢 (Amarillo + Azul = Verde)</li>
+                        <li>🔴 + 🔵 = 🟣 (Rojo + Azul = Morado)</li>
+                    </ul>
+                    <button id="start-btn" class="game-btn">¡Jugar!</button>
+                </div>
+            </div>
+            <div id="level-complete-overlay" class="overlay hidden">
+                <div class="modal-content">
+                    <h2>🎉 ¡Nivel Completado!</h2>
+                    <p>¡Excelente trabajo mezclando colores!</p>
+                    <p id="level-stats"></p>
+                    <button id="next-level-btn" class="game-btn">Siguiente Nivel</button>
+                </div>
+            </div>
+            <div id="game-over-overlay" class="overlay hidden">
+                <div class="modal-content">
+                    <h2>⏰ ¡Tiempo Agotado!</h2>
+                    <p>No completaste el nivel a tiempo.</p>
+                    <p id="game-over-stats"></p>
+                    <button id="retry-btn" class="game-btn">Intentar de Nuevo</button>
+                </div>
+            </div>
+            <div id="game-complete-overlay" class="overlay hidden">
+                <div class="modal-content">
+                    <h2>🏆 ¡Juego Completado!</h2>
+                    <p>¡Eres un experto mezclando colores!</p>
+                    <p id="final-stats"></p>
+                    <button id="home-btn" class="game-btn">Volver al Inicio</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>
